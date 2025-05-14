@@ -59,6 +59,10 @@ export const translations: Record<string, Record<string, string>> = {
     en: "Turn up the volume on your success with Yeon's complete toolkit for indie artists.",
     pt: "Aumente o volume do seu sucesso com o kit completo da Yeon para artistas independentes."
   },
+  ctaNewDescription: {
+    en: "The complete app will be released soon, subscribe to our newsletter to be the first to know",
+    pt: "O app completo será lançado em breve, inscreva-se na newsletter e fique sabendo primeiro"
+  },
   ctaButton: {
     en: "Join Waitlist",
     pt: "Entrar na Lista de Espera"
