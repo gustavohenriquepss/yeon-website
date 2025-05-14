@@ -1,5 +1,4 @@
 
-
 export interface Distributor {
   id: string;
   name: string;
@@ -30,7 +29,6 @@ export const distributors: Distributor[] = [
     id: "unitedmasters",
     name: "UnitedMasters",
     feesPercentage: 10,
-    logo: "https://play-lh.googleusercontent.com/6k6YkU5_OHLjqMIfMWYO9QMhaYbNVlE7bf8ZUe4LWyL0tSOho75u1vBVggRXFzCUlQ=w600-h300-pc0xffffff-pd"
+    logo: "https://cdn6.aptoide.com/imgs/f/5/a/f5ad4c7f71818f4d8035a7374c6dbb78_icon.png"
   }
 ];
-
