@@ -2,13 +2,20 @@
 import React from "react";
 import { Instagram, Twitter } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { LucideIcon } from "lucide-react";
 
 interface SocialLinkProps {
   className?: string;
 }
 
+type SocialLinkItem = {
+  name: string;
+  url: string;
+  icon: LucideIcon | React.FC;
+};
+
 const SocialLinks: React.FC<SocialLinkProps> = ({ className }) => {
-  const socialLinks = [
+  const socialLinks: SocialLinkItem[] = [
     {
       name: "Instagram",
       url: "https://instagram.com/yeon.live",
@@ -43,22 +50,21 @@ const SocialLinks: React.FC<SocialLinkProps> = ({ className }) => {
 
   return (
     <div className={cn("flex items-center gap-3", className)}>
-      {socialLinks.map((link) => (
-        <a
-          key={link.name}
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-yeon-purple transition-colors"
-          aria-label={link.name}
-        >
-          {typeof link.icon === "function" ? (
-            <link.icon />
-          ) : (
-            <link.icon className="w-5 h-5" />
-          )}
-        </a>
-      ))}
+      {socialLinks.map((link) => {
+        const IconComponent = link.icon;
+        return (
+          <a
+            key={link.name}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-yeon-purple transition-colors"
+            aria-label={link.name}
+          >
+            <IconComponent className="w-5 h-5" />
+          </a>
+        );
+      })}
     </div>
   );
 };
