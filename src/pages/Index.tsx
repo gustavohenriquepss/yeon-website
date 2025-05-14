@@ -1,9 +1,12 @@
+
 import React from 'react';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { useLanguage } from '@/context/LanguageContext';
 import LanguageToggle from '@/components/LanguageToggle';
 import StreamingCalculator from '@/components/StreamingCalculator';
 import CTASection from '@/components/CTASection';
+import Logo from '@/components/Logo';
+
 const IndexContent: React.FC = () => {
   const {
     t
@@ -11,10 +14,8 @@ const IndexContent: React.FC = () => {
   return <div className="min-h-screen bg-yeon-dark-bg text-white">
       <div className="container px-4 py-8">
         <header className="flex justify-between items-center mb-12">
-          <div>
-            <h1 className="text-2xl md:text-3xl font-bold text-yeon-purple">
-              {t('appTitle')}
-            </h1>
+          <div className="flex items-center">
+            <Logo />
           </div>
           <LanguageToggle />
         </header>
@@ -40,9 +41,11 @@ const IndexContent: React.FC = () => {
       </div>
     </div>;
 };
+
 const Index: React.FC = () => {
   return <LanguageProvider>
       <IndexContent />
     </LanguageProvider>;
 };
+
 export default Index;
