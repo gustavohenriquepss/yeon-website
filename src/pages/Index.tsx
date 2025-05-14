@@ -6,6 +6,7 @@ import LanguageToggle from '@/components/LanguageToggle';
 import StreamingCalculator from '@/components/StreamingCalculator';
 import CTASection from '@/components/CTASection';
 import Logo from '@/components/Logo';
+import SocialLinks from '@/components/SocialLinks';
 
 const IndexContent: React.FC = () => {
   const {
@@ -17,7 +18,10 @@ const IndexContent: React.FC = () => {
           <div className="flex items-center">
             <Logo />
           </div>
-          <LanguageToggle />
+          <div className="flex items-center gap-6">
+            <SocialLinks />
+            <LanguageToggle />
+          </div>
         </header>
 
         <main className="max-w-5xl mx-auto">
