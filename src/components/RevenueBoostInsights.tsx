@@ -1,39 +1,37 @@
-
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Revenue } from '@/hooks/useCalculator';
 import { Platform } from '@/data/platforms';
 import { Lightbulb, ChevronDown } from 'lucide-react';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-
 interface RevenueBoostInsightsProps {
   results: Revenue[];
   platforms: Platform[];
   totalRevenue: number;
   visible: boolean;
 }
-
 const RevenueBoostInsights: React.FC<RevenueBoostInsightsProps> = ({
   results,
   platforms,
   totalRevenue,
   visible
 }) => {
-  const { t } = useLanguage();
-
+  const {
+    t
+  } = useLanguage();
   if (!visible || totalRevenue === 0) return null;
 
   // Calculate insights based on the user's streaming data
   const generateInsights = () => {
-    const insights: Array<{ id: string; title: string; description: string; expanded: string }> = [];
-    
+    const insights: Array<{
+      id: string;
+      title: string;
+      description: string;
+      expanded: string;
+    }> = [];
+
     // Get platforms being used
     const usedPlatforms = results.filter(r => r.streams > 0).map(r => {
       const platform = platforms.find(p => p.id === r.platformId);
@@ -42,22 +40,17 @@ const RevenueBoostInsights: React.FC<RevenueBoostInsightsProps> = ({
         platformInfo: platform
       };
     });
-    
+
     // Sort by streams
     const sortedByStreams = [...usedPlatforms].sort((a, b) => b.streams - a.streams);
     // Sort by revenue
     const sortedByRevenue = [...usedPlatforms].sort((a, b) => b.amount - a.amount);
-    
+
     // Most streamed platform has low rate
     if (sortedByStreams.length > 0 && sortedByRevenue.length > 0) {
       const mostStreamedPlatform = sortedByStreams[0];
-      const highestRatePlatforms = platforms
-        .filter(p => p.rate > (mostStreamedPlatform.platformInfo?.rate || 0))
-        .sort((a, b) => b.rate - a.rate)
-        .slice(0, 2);
-      
-      if (highestRatePlatforms.length > 0 && mostStreamedPlatform.platformInfo?.rate && 
-          highestRatePlatforms[0].rate > mostStreamedPlatform.platformInfo.rate * 1.5) {
+      const highestRatePlatforms = platforms.filter(p => p.rate > (mostStreamedPlatform.platformInfo?.rate || 0)).sort((a, b) => b.rate - a.rate).slice(0, 2);
+      if (highestRatePlatforms.length > 0 && mostStreamedPlatform.platformInfo?.rate && highestRatePlatforms[0].rate > mostStreamedPlatform.platformInfo.rate * 1.5) {
         insights.push({
           id: 'better-platforms',
           title: t('insightBetterPlatforms'),
@@ -66,13 +59,10 @@ const RevenueBoostInsights: React.FC<RevenueBoostInsightsProps> = ({
         });
       }
     }
-    
+
     // Missing high-paying platforms
-    const unusedHighPayingPlatforms = platforms
-      .filter(p => !usedPlatforms.some(up => up.platformId === p.id))
-      .filter(p => p.rate >= 0.007) // Filter for high paying platforms
-      .sort((a, b) => b.rate - a.rate);
-    
+    const unusedHighPayingPlatforms = platforms.filter(p => !usedPlatforms.some(up => up.platformId === p.id)).filter(p => p.rate >= 0.007) // Filter for high paying platforms
+    .sort((a, b) => b.rate - a.rate);
     if (unusedHighPayingPlatforms.length > 0) {
       insights.push({
         id: 'missing-platforms',
@@ -81,7 +71,7 @@ const RevenueBoostInsights: React.FC<RevenueBoostInsightsProps> = ({
         expanded: t('insightMissingPlatformsExpanded')
       });
     }
-    
+
     // Direct sales suggestion
     insights.push({
       id: 'direct-sales',
@@ -89,7 +79,7 @@ const RevenueBoostInsights: React.FC<RevenueBoostInsightsProps> = ({
       description: t('insightDirectSalesDesc'),
       expanded: t('insightDirectSalesExpanded')
     });
-    
+
     // PRO publishing suggestion
     insights.push({
       id: 'pro-publishing',
@@ -97,14 +87,10 @@ const RevenueBoostInsights: React.FC<RevenueBoostInsightsProps> = ({
       description: t('insightProPublishingDesc'),
       expanded: t('insightProPublishingExpanded')
     });
-    
     return insights;
   };
-  
   const insights = generateInsights();
-
-  return (
-    <div className="mt-8 animate-fade-in">
+  return <div className="mt-8 animate-fade-in">
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="revenue-insights" className="border-none">
           <AccordionTrigger className="bg-yeon-darker-bg border border-white/5 rounded-t-lg px-4 py-3 hover:no-underline">
@@ -115,8 +101,7 @@ const RevenueBoostInsights: React.FC<RevenueBoostInsightsProps> = ({
           </AccordionTrigger>
           <AccordionContent className="pt-0 bg-yeon-darker-bg border-x border-b border-white/5 rounded-b-lg">
             <div className="p-4 space-y-2">
-              {insights.map((insight) => (
-                <Collapsible key={insight.id} className="bg-secondary/30 rounded-lg border border-white/5 overflow-hidden">
+              {insights.map(insight => <Collapsible key={insight.id} className="bg-secondary/30 rounded-lg border border-white/5 overflow-hidden">
                   <CollapsibleTrigger className="w-full flex items-start justify-between p-4 text-left">
                     <div className="flex items-start gap-3">
                       <Lightbulb className="h-5 w-5 text-yeon-purple mt-0.5 flex-shrink-0" />
@@ -132,14 +117,11 @@ const RevenueBoostInsights: React.FC<RevenueBoostInsightsProps> = ({
                       <p className="text-sm text-muted-foreground pl-8">{insight.expanded}</p>
                     </div>
                   </CollapsibleContent>
-                </Collapsible>
-              ))}
+                </Collapsible>)}
             </div>
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-    </div>
-  );
+    </div>;
 };
-
 export default RevenueBoostInsights;
