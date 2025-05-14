@@ -20,7 +20,7 @@ const StreamingCalculator: React.FC = () => {
     resetCalculator,
     selectDistributor,
     results,
-    distributorResults,
+    distributorResults: calculatorDistributorResults,
     totalRevenue,
     hasCalculated,
     selectedDistributor,
@@ -102,7 +102,7 @@ const StreamingCalculator: React.FC = () => {
         visible={hasCalculated} 
       />
       
-      {hasCalculated && (
+      {hasCalculated && totalRevenue > 0 && (
         <>
           <RevenueBoostInsights
             results={results}
