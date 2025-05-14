@@ -5,7 +5,7 @@ import { Label } from '@/components/ui/label';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { useLanguage } from '@/context/LanguageContext';
 import { Platform } from '@/data/platforms';
-import { info } from 'lucide-react';
+import { Info } from 'lucide-react';
 
 interface PlatformInputProps {
   platform: Platform;
@@ -21,7 +21,7 @@ const PlatformInput: React.FC<PlatformInputProps> = ({ platform, value, onChange
   };
 
   return (
-    <div className="flex flex-col p-4 rounded-xl bg-yeon-card-bg border border-white/5 hover:border-yeon-purple/20 transition-all">
+    <div className="flex flex-col p-4 rounded-xl bg-[#3D3D3D] border border-white/5 hover:border-[#FF3C27]/20 transition-all">
       <div className="flex items-center mb-3 gap-3">
         <div 
           className="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center p-1"
@@ -40,7 +40,7 @@ const PlatformInput: React.FC<PlatformInputProps> = ({ platform, value, onChange
           <Tooltip>
             <TooltipTrigger asChild>
               <span className="ml-auto text-muted-foreground hover:text-foreground cursor-help">
-                <info className="h-4 w-4" />
+                <Info className="h-4 w-4" />
               </span>
             </TooltipTrigger>
             <TooltipContent className="flex flex-col gap-1">
@@ -57,7 +57,7 @@ const PlatformInput: React.FC<PlatformInputProps> = ({ platform, value, onChange
           min="0"
           value={value || ''}
           onChange={(e) => onChange(Number(e.target.value))}
-          className="bg-secondary border-white/10 focus:border-yeon-purple"
+          className="bg-[#181818] border-white/10 focus:border-[#FF3C27]"
           placeholder="0"
         />
       </div>

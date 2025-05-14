@@ -27,14 +27,14 @@ export default {
         border: "hsl(240 3.7% 15.9%)",
         input: "hsl(240 3.7% 15.9%)",
         ring: "hsl(240 4.9% 83.9%)",
-        background: "hsl(222.2 84% 4.9%)",
+        background: "#181818",
         foreground: "hsl(210 40% 98%)",
         primary: {
-          DEFAULT: "hsl(250 70% 75%)",
+          DEFAULT: "#FF3C27",
           foreground: "hsl(240 10% 3.9%)",
         },
         secondary: {
-          DEFAULT: "hsl(240 5.9% 10%)",
+          DEFAULT: "#3D3D3D",
           foreground: "hsl(210 40% 98%)",
         },
         destructive: {
@@ -46,23 +46,23 @@ export default {
           foreground: "hsl(240 5% 64.9%)",
         },
         accent: {
-          DEFAULT: "hsl(240 3.7% 15.9%)",
+          DEFAULT: "#FF3C27",
           foreground: "hsl(0 0% 98%)",
         },
         popover: {
-          DEFAULT: "hsl(240 10% 3.9%)",
+          DEFAULT: "#181818",
           foreground: "hsl(0 0% 98%)",
         },
         card: {
-          DEFAULT: "hsl(240 10% 3.9%)",
+          DEFAULT: "#181818",
           foreground: "hsl(0 0% 98%)",
         },
         yeon: {
-          purple: "#9b87f5",
-          "dark-purple": "#7E69AB",
-          "dark-bg": "#1A1F2C",
+          purple: "#FF3C27",
+          "dark-purple": "#c82b1b",
+          "dark-bg": "#181818",
           "darker-bg": "#121621",
-          "card-bg": "#221F26",
+          "card-bg": "#3D3D3D",
         },
       },
       borderRadius: {
