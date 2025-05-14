@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { platforms } from '@/data/platforms';
 import { distributors } from '@/data/distributors';
