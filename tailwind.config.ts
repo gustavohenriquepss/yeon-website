@@ -30,14 +30,14 @@ export default {
         border: "hsl(240 3.7% 15.9%)",
         input: "hsl(240 3.7% 15.9%)",
         ring: "hsl(240 4.9% 83.9%)",
-        background: "#181818",
+        background: "#121212", // Darker background
         foreground: "hsl(210 40% 98%)",
         primary: {
-          DEFAULT: "#FF3C27",
+          DEFAULT: "#FF3C27", // Keep accent color
           foreground: "hsl(240 10% 3.9%)",
         },
         secondary: {
-          DEFAULT: "#3D3D3D",
+          DEFAULT: "#2A2A2A", // Darker secondary
           foreground: "hsl(210 40% 98%)",
         },
         destructive: {
@@ -49,23 +49,23 @@ export default {
           foreground: "hsl(240 5% 64.9%)",
         },
         accent: {
-          DEFAULT: "#FF3C27",
+          DEFAULT: "#FF3C27", // Keep accent color
           foreground: "hsl(0 0% 98%)",
         },
         popover: {
-          DEFAULT: "#181818",
+          DEFAULT: "#121212", // Darker popover
           foreground: "hsl(0 0% 98%)",
         },
         card: {
-          DEFAULT: "#181818",
+          DEFAULT: "#1A1A1A", // Darker card
           foreground: "hsl(0 0% 98%)",
         },
         yeon: {
-          purple: "#FF3C27",
-          "dark-purple": "#c82b1b",
-          "dark-bg": "#181818",
-          "darker-bg": "#121621",
-          "card-bg": "#3D3D3D",
+          purple: "#FF3C27", // Keep accent color
+          "dark-purple": "#c82b1b", // Keep darker accent
+          "dark-bg": "#121212", // Darker background
+          "darker-bg": "#0A0A0A", // Even darker background
+          "card-bg": "#2A2A2A", // Darker card background
         },
       },
       borderRadius: {
