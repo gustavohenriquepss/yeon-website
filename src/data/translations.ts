@@ -12,63 +12,95 @@ export const translations: TranslationObject = {
     pt: "Yeon Music"
   },
   tagline: {
-    en: "Revenue Calculator for Independent Artists",
-    pt: "Calculadora de Receita para Artistas Independentes"
+    en: "Stream to Cash Calculator",
+    pt: "Calculadora de Streams em Dinheiro"
   },
   intro: {
-    en: "Calculate how much you earned from your streams across different music platforms",
-    pt: "Calcule quanto você ganhou com suas reproduções em diferentes plataformas de música"
+    en: "See exactly how your music plays translate to your pockets across streaming platforms",
+    pt: "Veja exatamente como suas reproduções se transformam em dinheiro nas plataformas de streaming"
   },
   calculateButton: {
-    en: "Calculate Revenue",
-    pt: "Calcular Receita"
+    en: "Show Me The Money",
+    pt: "Mostre-me o Dinheiro"
   },
   resetButton: {
-    en: "Reset",
-    pt: "Limpar"
+    en: "Start Fresh",
+    pt: "Recomeçar"
   },
   streamCount: {
-    en: "Number of Streams",
-    pt: "Número de Reproduções"
+    en: "Your Streams",
+    pt: "Suas Reproduções"
   },
   platformName: {
     en: "Platform",
     pt: "Plataforma"
   },
   streamRate: {
-    en: "Per Stream Rate",
-    pt: "Valor por Reprodução"
+    en: "Pays Per Stream",
+    pt: "Paga Por Stream"
   },
   estimatedRevenue: {
-    en: "Estimated Revenue",
-    pt: "Receita Estimada"
+    en: "Your Earnings Breakdown",
+    pt: "Detalhamento dos Seus Ganhos"
   },
   totalRevenue: {
-    en: "Total Revenue",
-    pt: "Receita Total"
+    en: "Total Earnings",
+    pt: "Ganhos Totais"
   },
   perStreamTooltip: {
-    en: "Average amount paid per stream",
-    pt: "Valor médio pago por reprodução"
+    en: "Industry average payout per stream (rates may vary)",
+    pt: "Pagamento médio por stream na indústria (taxas podem variar)"
   },
   ctaTitle: {
-    en: "Take your music career further with Yeon",
-    pt: "Leve sua carreira musical mais longe com a Yeon"
+    en: "Ready to Amplify Your Music Career?",
+    pt: "Pronto Para Amplificar Sua Carreira Musical?"
   },
   ctaDescription: {
-    en: "Our suite of tools helps independent artists analyze, grow, and monetize their audience.",
-    pt: "Nosso conjunto de ferramentas ajuda artistas independentes a analisar, crescer e monetizar seu público."
+    en: "Turn up the volume on your success with Yeon's complete toolkit for indie artists.",
+    pt: "Aumente o volume do seu sucesso com o kit completo da Yeon para artistas independentes."
   },
   ctaButton: {
-    en: "Explore More Tools",
-    pt: "Explorar Mais Ferramentas"
+    en: "Discover More Tools",
+    pt: "Descobrir Mais Ferramentas"
   },
   moreInfo: {
-    en: "More Info",
-    pt: "Mais Informações"
+    en: "Learn More",
+    pt: "Saiba Mais"
   },
   disclaimerText: {
-    en: "Rates are estimates based on industry averages and may vary.",
-    pt: "As taxas são estimativas baseadas em médias do setor e podem variar."
+    en: "These numbers are industry estimates. Actual earnings may vary based on your agreements.",
+    pt: "Estes números são estimativas da indústria. Os ganhos reais podem variar com base em seus contratos."
+  },
+  distributorFees: {
+    en: "Distribution Take",
+    pt: "Corte da Distribuição"
+  },
+  distributorFeesInfo: {
+    en: "See how different distributors impact your final payout after their cut",
+    pt: "Veja como diferentes distribuidores impactam seu pagamento final após a dedução deles"
+  },
+  distributor: {
+    en: "Distributor",
+    pt: "Distribuidor"
+  },
+  fee: {
+    en: "Their Cut",
+    pt: "Corte Deles"
+  },
+  netRevenue: {
+    en: "Your Take",
+    pt: "Seu Ganho"
+  },
+  breakdown: {
+    en: "Breakdown",
+    pt: "Detalhamento"
+  },
+  grossRevenue: {
+    en: "Total Generated",
+    pt: "Total Gerado"
+  },
+  feeAmount: {
+    en: "Platform Fee",
+    pt: "Taxa da Plataforma"
   }
 };
