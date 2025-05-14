@@ -52,16 +52,16 @@ export const translations: TranslationObject = {
     pt: "Pagamento médio por stream na indústria (taxas podem variar)"
   },
   ctaTitle: {
-    en: "Ready to Amplify Your Music Career?",
-    pt: "Pronto Para Amplificar Sua Carreira Musical?"
+    en: "Ready to unleash your potential",
+    pt: "Quer botar ritmo na sua carreira?"
   },
   ctaDescription: {
     en: "Turn up the volume on your success with Yeon's complete toolkit for indie artists.",
     pt: "Aumente o volume do seu sucesso com o kit completo da Yeon para artistas independentes."
   },
   ctaButton: {
-    en: "Discover More Tools",
-    pt: "Descobrir Mais Ferramentas"
+    en: "Join Waitlist",
+    pt: "Entrar na Lista de Espera"
   },
   moreInfo: {
     en: "Learn More",

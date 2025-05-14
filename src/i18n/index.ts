@@ -5,7 +5,7 @@ import { translations } from '@/data/translations';
 type Language = 'en' | 'pt';
 
 const i18n = {
-  language: 'en' as Language,
+  language: 'pt' as Language,
   
   setLanguage(lang: Language) {
     this.language = lang;
