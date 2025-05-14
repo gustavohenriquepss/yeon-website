@@ -63,7 +63,7 @@ const LanguageToggle: React.FC = () => {
 
   return (
     <Select value={language} onValueChange={handleLanguageChange}>
-      <SelectTrigger className="w-[100px] bg-yeon-card-bg/80 border-none focus:ring-gray-500">
+      <SelectTrigger className="w-[120px] bg-yeon-card-bg/80 border-none focus:ring-gray-500">
         <div className="flex items-center">
           {language === 'en' ? <USFlag /> : <BrazilFlag />}
           <span className="ml-1">{language === 'en' ? 'EN-US' : 'PT-BR'}</span>
