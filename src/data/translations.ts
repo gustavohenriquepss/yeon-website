@@ -1,3 +1,4 @@
+
 interface TranslationObject {
   [key: string]: {
     en: string;
@@ -20,11 +21,11 @@ export const translations: Record<string, Record<string, string>> = {
   },
   calculateButton: {
     en: "Show Me The Money",
-    pt: "Mostre-me o Dinheiro"
+    pt: "Calcular"
   },
   resetButton: {
     en: "Start Fresh",
-    pt: "Recomeçar"
+    pt: "Limpar"
   },
   streamCount: {
     en: "Your Streams",
@@ -52,7 +53,7 @@ export const translations: Record<string, Record<string, string>> = {
   },
   ctaTitle: {
     en: "Ready to unleash your potential",
-    pt: "Quer botar ritmo na sua carreira?"
+    pt: "Pronto pra botar ritmo na sua carreira"
   },
   ctaDescription: {
     en: "Turn up the volume on your success with Yeon's complete toolkit for indie artists.",
