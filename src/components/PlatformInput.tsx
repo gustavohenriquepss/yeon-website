@@ -33,7 +33,7 @@ const PlatformInput: React.FC<PlatformInputProps> = ({
         <div 
           className="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center p-1" 
           style={{
-            backgroundColor: `${platform.color}30`
+            backgroundColor: platform.id === "deezer" ? "#000000" + "30" : `${platform.color}30`
           }}
         >
           <img 
