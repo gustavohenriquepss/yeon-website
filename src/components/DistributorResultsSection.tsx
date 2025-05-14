@@ -3,7 +3,7 @@ import React from 'react';
 import { DistributorRevenue } from '@/hooks/useCalculator';
 import { Distributor } from '@/data/distributors';
 import { useLanguage } from '@/context/LanguageContext';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, InfoIcon } from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -59,6 +59,13 @@ const DistributorResultsSection: React.FC<DistributorResultsSectionProps> = ({
           <p className="text-sm text-muted-foreground mb-4">
             {t('distributorFeesInfo') || 'Compare how different distributors affect your revenue after taking their cut.'}
           </p>
+          
+          <div className="flex items-center gap-2 p-3 bg-white/5 rounded-lg mb-4 text-sm">
+            <InfoIcon size={16} className="text-yeon-purple" />
+            <p className="text-white/80">
+              {t('distributorFeesDisclaimer') || 'These fees reflect the starter/basic/free plans of these distributors.'}
+            </p>
+          </div>
           
           {/* Distributor Table */}
           <Table>

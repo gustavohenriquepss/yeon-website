@@ -79,6 +79,10 @@ export const translations: TranslationObject = {
     en: "See how different distributors impact your final payout after their cut",
     pt: "Veja como diferentes distribuidores impactam seu pagamento final após a dedução deles"
   },
+  distributorFeesDisclaimer: {
+    en: "These fees reflect the starter/basic/free plans of these distributors.",
+    pt: "Estas taxas refletem os planos iniciais/básicos/gratuitos destes distribuidores."
+  },
   distributor: {
     en: "Distributor",
     pt: "Distribuidor"

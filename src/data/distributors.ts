@@ -10,7 +10,7 @@ export const distributors: Distributor[] = [
   {
     id: "musicpro",
     name: "MusicPro",
-    feesPercentage: 15,
+    feesPercentage: 25,
     logo: "https://cdn-icons-png.flaticon.com/512/2829/2829076.png"
   },
   {
@@ -22,7 +22,7 @@ export const distributors: Distributor[] = [
   {
     id: "onerpm",
     name: "ONErpm",
-    feesPercentage: 30,
+    feesPercentage: 15,
     logo: "https://cdn-icons-png.flaticon.com/512/651/651780.png"
   },
   {
