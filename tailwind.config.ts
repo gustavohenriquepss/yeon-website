@@ -23,6 +23,9 @@ export default {
       }
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
       colors: {
         border: "hsl(240 3.7% 15.9%)",
         input: "hsl(240 3.7% 15.9%)",
