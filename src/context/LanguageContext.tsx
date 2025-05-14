@@ -6,7 +6,7 @@ import i18n from '@/i18n';
 interface LanguageContextProps {
   language: string;
   setLanguage: (language: string) => void;
-  t: (key: string, options?: object) => string;
+  t: (key: string, options?: any) => string; // Using 'any' for options to avoid type conflicts
 }
 
 const LanguageContext = createContext<LanguageContextProps>({
@@ -37,8 +37,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   // Use the t function from react-i18next directly
-  const translate = (key: string, options?: object) => {
-    return t(key, options || {});
+  const translate = (key: string, options?: any) => {
+    return t(key, options); // Pass options directly without wrapping in an array
   };
 
   return (
