@@ -33,14 +33,14 @@ export const platforms: Platform[] = [
     id: "deezer",
     name: "Deezer",
     rate: 0.004,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Deezer_Icon.svg/1200px-Deezer_Icon.svg.png",
+    logo: "https://companieslogo.com/img/orig/DEEZR.PA-dbdcf2cf.png?t=1721547851",
     color: "#00C7F2"
   },
   {
     id: "tidal",
     name: "Tidal",
     rate: 0.01,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Tidal_%28service%29_logo.svg/1200px-Tidal_%28service%29_logo.svg.png",
+    logo: "https://images.icon-icons.com/2429/PNG/512/tidal_logo_icon_147227.png",
     color: "#000000"
   },
   {
