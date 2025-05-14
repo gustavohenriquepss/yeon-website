@@ -45,7 +45,7 @@ const LanguageToggle: React.FC = () => {
       <path d="M1.2 4.15385L1.35294 4.61538H1.83529L1.44118 4.9L1.59412 5.36154L1.2 5.07692L0.805883 5.36154L0.958824 4.9L0.564706 4.61538H1.04706L1.2 4.15385Z" fill="#F0F0F0"/>
       <path d="M3.2 4.15385L3.35294 4.61538H3.83529L3.44118 4.9L3.59412 5.36154L3.2 5.07692L2.80588 5.36154L2.95882 4.9L2.56471 4.61538H3.04706L3.2 4.15385Z" fill="#F0F0F0"/>
       <path d="M5.2 4.15385L5.35294 4.61538H5.83529L5.44118 4.9L5.59412 5.36154L5.2 5.07692L4.80588 5.36154L4.95882 4.9L4.56471 4.61538H5.04706L5.2 4.15385Z" fill="#F0F0F0"/>
-      <path d="M7.2 4.15385L7.35294 4.61538H7.83529L7.44118 4.9L7.59412 5.36154L7.2 5.07692L6.80588 5.36154L6.95882 4.9L6.56471 4.61538H7.04706L7.2 4.15385Z" fill="#F0F0F0"/>
+      <path d="M7.2 4.15385L7.35294 4.61538H7.83529L7.44118 4.9L7.59412 5.36154L7.2 5.07692L6.80588 5.36154L6.95882 4.9L4.56471 4.61538H7.04706L7.2 4.15385Z" fill="#F0F0F0"/>
       <path d="M2.2 4.92308L2.35294 5.38462H2.83529L2.44118 5.66923L2.59412 6.13077L2.2 5.84615L1.80588 6.13077L1.95882 5.66923L1.56471 5.38462H2.04706L2.2 4.92308Z" fill="#F0F0F0"/>
       <path d="M4.2 4.92308L4.35294 5.38462H4.83529L4.44118 5.66923L4.59412 6.13077L4.2 5.84615L3.80588 6.13077L3.95882 5.66923L3.56471 5.38462H4.04706L4.2 4.92308Z" fill="#F0F0F0"/>
       <path d="M6.2 4.92308L6.35294 5.38462H6.83529L6.44118 5.66923L6.59412 6.13077L6.2 5.84615L5.80588 6.13077L5.95882 5.66923L5.56471 5.38462H6.04706L6.2 4.92308Z" fill="#F0F0F0"/>
@@ -64,22 +64,20 @@ const LanguageToggle: React.FC = () => {
   return (
     <Select value={language} onValueChange={handleLanguageChange}>
       <SelectTrigger className="w-[100px] bg-yeon-card-bg/80 border-none focus:ring-gray-500">
-        <div className="flex items-center gap-2">
-          {language === 'en' ? <USFlag /> : <BrazilFlag />}
-          <SelectValue placeholder="Language" />
-        </div>
+        {language === 'en' ? <USFlag /> : <BrazilFlag />}
+        <SelectValue />
       </SelectTrigger>
       <SelectContent className="bg-yeon-card-bg border-gray-500">
         <SelectItem value="en" className="text-white hover:text-white hover:bg-gray-700/40">
           <div className="flex items-center">
             <USFlag />
-            <span>English</span>
+            <span>EN-US</span>
           </div>
         </SelectItem>
         <SelectItem value="pt" className="text-white hover:text-white hover:bg-gray-700/40">
           <div className="flex items-center">
             <BrazilFlag />
-            <span>Português</span>
+            <span>PT-BR</span>
           </div>
         </SelectItem>
       </SelectContent>

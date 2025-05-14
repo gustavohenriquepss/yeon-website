@@ -1,3 +1,4 @@
+
 interface TranslationObject {
   [key: string]: {
     en: string;
@@ -109,5 +110,14 @@ export const translations: Record<string, Record<string, string>> = {
   menu: {
     en: 'Menu',
     pt: 'Menu'
+  },
+  languageEN: {
+    en: 'EN-US',
+    pt: 'EN-US'
+  },
+  languagePT: {
+    en: 'PT-BR',
+    pt: 'PT-BR'
   }
 };
+
