@@ -1,12 +1,16 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Revenue } from '@/hooks/useCalculator';
 import { Platform } from '@/data/platforms';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { ChevronRight, Lightbulb } from 'lucide-react';
+import { ChevronDown, Lightbulb } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
 interface RevenueBoostInsightsProps {
   results: Revenue[];
@@ -22,7 +26,6 @@ const RevenueBoostInsights: React.FC<RevenueBoostInsightsProps> = ({
   visible
 }) => {
   const { t } = useLanguage();
-  const [openInsightId, setOpenInsightId] = useState<string | null>(null);
 
   if (!visible || totalRevenue === 0) return null;
 
@@ -108,40 +111,31 @@ const RevenueBoostInsights: React.FC<RevenueBoostInsightsProps> = ({
             <CardTitle className="text-lg font-semibold">{t('boostRevenue')}</CardTitle>
           </div>
         </CardHeader>
-        <CardContent className="p-4 space-y-4">
-          {insights.map((insight) => (
-            <Collapsible
-              key={insight.id}
-              open={openInsightId === insight.id}
-              onOpenChange={(open) => setOpenInsightId(open ? insight.id : null)}
-              className="bg-secondary/30 rounded-lg border border-white/5 overflow-hidden"
-            >
-              <div className="p-4">
-                <div className="flex items-start justify-between">
+        <CardContent className="p-4">
+          <Accordion type="single" collapsible className="space-y-2">
+            {insights.map((insight, index) => (
+              <AccordionItem 
+                key={insight.id} 
+                value={insight.id}
+                className="bg-secondary/30 rounded-lg border border-white/5 overflow-hidden"
+              >
+                <AccordionTrigger className="px-4 py-3 hover:no-underline">
                   <div className="flex items-start gap-3">
-                    <Lightbulb className="h-5 w-5 text-yeon-purple mt-0.5" />
-                    <div>
+                    <Lightbulb className="h-5 w-5 text-yeon-purple mt-0.5 flex-shrink-0" />
+                    <div className="text-left">
                       <h4 className="font-medium">{insight.title}</h4>
                       <p className="text-sm text-muted-foreground">{insight.description}</p>
                     </div>
                   </div>
-                  <CollapsibleTrigger asChild>
-                    <Button variant="ghost" size="sm" className="p-1 h-auto">
-                      <ChevronRight 
-                        className={`h-4 w-4 transition-transform ${openInsightId === insight.id ? "rotate-90" : ""}`} 
-                      />
-                      <span className="sr-only">{t('moreInfo')}</span>
-                    </Button>
-                  </CollapsibleTrigger>
-                </div>
-              </div>
-              <CollapsibleContent>
-                <div className="px-4 pb-4 pt-0 border-t border-white/5">
-                  <p className="text-sm text-muted-foreground pl-8">{insight.expanded}</p>
-                </div>
-              </CollapsibleContent>
-            </Collapsible>
-          ))}
+                </AccordionTrigger>
+                <AccordionContent className="border-t border-white/5 px-4 pb-4">
+                  <div className="pl-8 pt-2">
+                    <p className="text-sm text-muted-foreground">{insight.expanded}</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </CardContent>
       </Card>
     </div>
