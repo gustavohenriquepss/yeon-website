@@ -6,7 +6,7 @@ import i18n from '@/i18n';
 interface LanguageContextProps {
   language: string;
   setLanguage: (language: string) => void;
-  t: (key: string, params?: object) => string;
+  t: (key: string, options?: object) => string;
 }
 
 const LanguageContext = createContext<LanguageContextProps>({
@@ -18,7 +18,7 @@ const LanguageContext = createContext<LanguageContextProps>({
 export const useLanguage = () => useContext(LanguageContext);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   // Initialize language from localStorage on mount
   useEffect(() => {
@@ -36,15 +36,14 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     window.location.reload(); // Simple solution for now
   };
 
-  const t = (key: string, params?: object) => {
-    return i18n.t(key, params);
+  // Use the t function from react-i18next directly
+  const translate = (key: string, options?: object) => {
+    return t(key, options || {});
   };
 
   return (
-    <LanguageContext.Provider value={{ language: i18n.language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language: i18n.language, setLanguage, t: translate }}>
       {children}
     </LanguageContext.Provider>
   );
 };
-
-// The translations have been moved to the i18n/index.ts file

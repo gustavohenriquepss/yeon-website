@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { platforms } from '@/data/platforms';
 import { distributors } from '@/data/distributors';
 import { useCalculator } from '@/hooks/useCalculator';
@@ -21,48 +22,41 @@ const StreamingCalculator: React.FC = () => {
     distributorResults,
     totalRevenue,
     hasCalculated,
-    selectedDistributor
+    selectedDistributor,
+    calculateDistributorFees
   } = useCalculator(platforms);
+
+  const [distributorResultsState, setDistributorResults] = useState<Array<{
+    distributorId: string;
+    fee: number;
+    netAmount: number;
+  }>>([]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     calculateRevenue();
+    
     // Calculate distributor fees after calculating revenue
     if (totalRevenue > 0) {
       calculateDistributorFees(totalRevenue, distributors);
     }
   };
 
-  // Add this function to properly call the existing function in the hook
-  const calculateDistributorFees = (totalAmount: number, distributors: typeof import('@/data/distributors').distributors) => {
-    // This just calls the function in the hook
-    if (totalAmount > 0) {
-      setDistributorResults(
-        distributors.map(distributor => {
-          const fee = totalAmount * (distributor.feesPercentage / 100);
-          const netAmount = totalAmount - fee;
-          
-          return {
-            distributorId: distributor.id,
-            fee,
-            netAmount
-          };
-        })
-      );
-    }
-  };
-
-  // Add state for distributor results
-  const [distributorResultsState, setDistributorResults] = React.useState<Array<{
-    distributorId: string;
-    fee: number;
-    netAmount: number;
-  }>>([]);
-
   // This effect recalculates distributor fees when totalRevenue changes
-  React.useEffect(() => {
+  useEffect(() => {
     if (totalRevenue > 0 && hasCalculated) {
-      calculateDistributorFees(totalRevenue, distributors);
+      const results = distributors.map(distributor => {
+        const fee = totalRevenue * (distributor.feesPercentage / 100);
+        const netAmount = totalRevenue - fee;
+        
+        return {
+          distributorId: distributor.id,
+          fee,
+          netAmount
+        };
+      });
+      
+      setDistributorResults(results);
     }
   }, [totalRevenue, hasCalculated]);
 
