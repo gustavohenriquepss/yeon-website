@@ -1,13 +1,54 @@
-// Update this page (the content is just a fallback if you fail to update the page)
 
-const Index = () => {
+import React from 'react';
+import { LanguageProvider } from '@/context/LanguageContext';
+import { useLanguage } from '@/context/LanguageContext';
+import LanguageToggle from '@/components/LanguageToggle';
+import StreamingCalculator from '@/components/StreamingCalculator';
+import CTASection from '@/components/CTASection';
+
+const IndexContent: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-yeon-dark-bg text-white">
+      <div className="container px-4 py-8">
+        <header className="flex justify-between items-center mb-12">
+          <div>
+            <h1 className="text-2xl md:text-3xl font-bold text-yeon-purple">
+              {t('appTitle')}
+            </h1>
+          </div>
+          <LanguageToggle />
+        </header>
+
+        <main className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">
+              {t('tagline')}
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              {t('intro')}
+            </p>
+          </div>
+
+          <StreamingCalculator />
+          
+          <CTASection />
+        </main>
+
+        <footer className="mt-16 text-center text-sm text-muted-foreground">
+          <p>© {new Date().getFullYear()} Yeon Music. All rights reserved.</p>
+        </footer>
       </div>
     </div>
+  );
+};
+
+const Index: React.FC = () => {
+  return (
+    <LanguageProvider>
+      <IndexContent />
+    </LanguageProvider>
   );
 };
 
