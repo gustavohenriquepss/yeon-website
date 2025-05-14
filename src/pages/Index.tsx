@@ -7,6 +7,7 @@ import StreamingCalculator from '@/components/StreamingCalculator';
 import CTASection from '@/components/CTASection';
 import Logo from '@/components/Logo';
 import SocialLinks from '@/components/SocialLinks';
+import MobileMenu from '@/components/MobileMenu';
 
 const IndexContent: React.FC = () => {
   const {
@@ -19,8 +20,13 @@ const IndexContent: React.FC = () => {
             <Logo />
           </div>
           <div className="flex items-center gap-6">
-            <SocialLinks />
-            <LanguageToggle />
+            {/* Show on desktop, hide on mobile */}
+            <div className="hidden md:flex items-center gap-6">
+              <SocialLinks />
+              <LanguageToggle />
+            </div>
+            {/* Show on mobile, hide on desktop */}
+            <MobileMenu />
           </div>
         </header>
 
