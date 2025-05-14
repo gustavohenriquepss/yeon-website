@@ -12,14 +12,14 @@ const LanguageToggle: React.FC = () => {
 
   return (
     <div className="flex items-center gap-2 p-1 rounded-lg">
-      <span className={`text-sm ${language === 'en' ? 'font-medium text-yeon-purple' : 'text-muted-foreground'}`}>EN</span>
+      <span className={`text-sm ${language === 'en' ? 'font-medium text-white' : 'text-muted-foreground'}`}>EN</span>
       <Switch 
         checked={language === 'pt'}
         onCheckedChange={toggleLanguage}
         className="data-[state=checked]:bg-yeon-purple"
         aria-label="Toggle language"
       />
-      <span className={`text-sm ${language === 'pt' ? 'font-medium text-yeon-purple' : 'text-muted-foreground'}`}>PT</span>
+      <span className={`text-sm ${language === 'pt' ? 'font-medium text-white' : 'text-muted-foreground'}`}>PT</span>
     </div>
   );
 };
