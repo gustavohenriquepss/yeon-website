@@ -33,21 +33,21 @@ export const platforms: Platform[] = [
     id: "deezer",
     name: "Deezer",
     rate: 0.004,
-    logo: "https://cdn-icons-png.flaticon.com/512/5968/5968704.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Deezer_logo.svg/1200px-Deezer_logo.svg.png",
     color: "#00C7F2"
   },
   {
     id: "tidal",
     name: "Tidal",
     rate: 0.01,
-    logo: "https://cdn-icons-png.flaticon.com/512/5969/5969006.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Tidal_%28service%29_logo.svg/1200px-Tidal_%28service%29_logo.svg.png",
     color: "#000000"
   },
   {
     id: "amazonmusic",
     name: "Amazon Music",
     rate: 0.004,
-    logo: "https://cdn-icons-png.flaticon.com/512/5968/5968201.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Amazon_Music_logo.svg/1200px-Amazon_Music_logo.svg.png",
     color: "#00A8E1"
   }
 ];
