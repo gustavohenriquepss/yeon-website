@@ -1,4 +1,3 @@
-
 interface TranslationObject {
   [key: string]: {
     en: string;
@@ -13,11 +12,11 @@ export const translations: Record<string, Record<string, string>> = {
   },
   tagline: {
     en: "Stream to Cash Calculator",
-    pt: "Calculadora de Streams em Dinheiro"
+    pt: "Calculadora de Streams"
   },
   intro: {
     en: "See exactly how your music plays translate to your pockets across streaming platforms",
-    pt: "Veja exatamente como suas reproduções se transformam em dinheiro nas plataformas de streaming"
+    pt: "Veja como seus streams se transformam em grana em cada plataforma"
   },
   calculateButton: {
     en: "Show Me The Money",
@@ -120,4 +119,3 @@ export const translations: Record<string, Record<string, string>> = {
     pt: 'PT-BR'
   }
 };
-
