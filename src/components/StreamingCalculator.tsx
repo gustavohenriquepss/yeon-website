@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import PlatformInput from './PlatformInput';
 import ResultsSection from './ResultsSection';
 import DistributorResultsSection from './DistributorResultsSection';
+import RevenueBoostInsights from './RevenueBoostInsights';
 
 const StreamingCalculator: React.FC = () => {
   const { t } = useLanguage();
@@ -102,14 +103,22 @@ const StreamingCalculator: React.FC = () => {
       />
       
       {hasCalculated && (
-        <DistributorResultsSection
-          distributorResults={distributorResultsState}
-          distributors={distributors}
-          totalRevenue={totalRevenue}
-          selectedDistributor={selectedDistributor}
-          onSelectDistributor={selectDistributor}
-          visible={hasCalculated}
-        />
+        <>
+          <RevenueBoostInsights
+            results={results}
+            platforms={platforms}
+            totalRevenue={totalRevenue}
+            visible={hasCalculated}
+          />
+          <DistributorResultsSection
+            distributorResults={distributorResultsState}
+            distributors={distributors}
+            totalRevenue={totalRevenue}
+            selectedDistributor={selectedDistributor}
+            onSelectDistributor={selectDistributor}
+            visible={hasCalculated}
+          />
+        </>
       )}
     </div>
   );
