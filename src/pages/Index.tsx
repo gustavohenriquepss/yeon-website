@@ -1,16 +1,14 @@
-
 import React from 'react';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { useLanguage } from '@/context/LanguageContext';
 import LanguageToggle from '@/components/LanguageToggle';
 import StreamingCalculator from '@/components/StreamingCalculator';
 import CTASection from '@/components/CTASection';
-
 const IndexContent: React.FC = () => {
-  const { t } = useLanguage();
-
-  return (
-    <div className="min-h-screen bg-yeon-dark-bg text-white">
+  const {
+    t
+  } = useLanguage();
+  return <div className="min-h-screen bg-yeon-dark-bg text-white">
       <div className="container px-4 py-8">
         <header className="flex justify-between items-center mb-12">
           <div>
@@ -40,16 +38,11 @@ const IndexContent: React.FC = () => {
           <p>© {new Date().getFullYear()} Yeon Music. All rights reserved.</p>
         </footer>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 const Index: React.FC = () => {
-  return (
-    <LanguageProvider>
+  return <LanguageProvider>
       <IndexContent />
-    </LanguageProvider>
-  );
+    </LanguageProvider>;
 };
-
 export default Index;
