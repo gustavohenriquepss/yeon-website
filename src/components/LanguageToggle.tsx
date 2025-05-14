@@ -1,26 +1,39 @@
 
 import React from 'react';
-import { Switch } from '@/components/ui/switch';
+import { Globe } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 const LanguageToggle: React.FC = () => {
   const { language, setLanguage } = useLanguage();
 
-  const toggleLanguage = (checked: boolean) => {
-    setLanguage(checked ? 'pt' : 'en');
+  const handleLanguageChange = (value: string) => {
+    setLanguage(value as 'en' | 'pt');
   };
 
   return (
-    <div className="flex items-center gap-2 px-2 py-1.5 rounded-full bg-yeon-card-bg/80">
-      <span className={`text-sm transition-colors ${language === 'en' ? 'font-medium text-white' : 'text-gray-400'}`}>EN</span>
-      <Switch 
-        checked={language === 'pt'}
-        onCheckedChange={toggleLanguage}
-        className="data-[state=checked]:bg-yeon-purple data-[state=unchecked]:bg-muted"
-        aria-label="Toggle language"
-      />
-      <span className={`text-sm transition-colors ${language === 'pt' ? 'font-medium text-white' : 'text-gray-400'}`}>PT</span>
-    </div>
+    <Select value={language} onValueChange={handleLanguageChange}>
+      <SelectTrigger className="w-[100px] bg-yeon-card-bg/80 border-none focus:ring-yeon-purple">
+        <div className="flex items-center gap-2">
+          <Globe className="h-4 w-4" />
+          <SelectValue placeholder="Language" />
+        </div>
+      </SelectTrigger>
+      <SelectContent className="bg-yeon-card-bg border-yeon-purple">
+        <SelectItem value="en" className="text-white hover:text-white hover:bg-yeon-purple/20">
+          English
+        </SelectItem>
+        <SelectItem value="pt" className="text-white hover:text-white hover:bg-yeon-purple/20">
+          Português
+        </SelectItem>
+      </SelectContent>
+    </Select>
   );
 };
 
