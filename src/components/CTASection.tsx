@@ -14,7 +14,7 @@ const CTASection: React.FC = () => {
         <p className="text-muted-foreground mb-6">
           {t('ctaDescription')}
         </p>
-        <Button className="bg-yeon-purple hover:bg-yeon-dark-purple text-secondary font-medium">
+        <Button className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium">
           {t('ctaButton')}
         </Button>
       </div>
