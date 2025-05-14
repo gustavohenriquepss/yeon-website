@@ -1,4 +1,3 @@
-
 interface TranslationObject {
   [key: string]: {
     en: string;
@@ -6,7 +5,7 @@ interface TranslationObject {
   };
 }
 
-export const translations: TranslationObject = {
+export const translations: Record<string, Record<string, string>> = {
   appTitle: {
     en: "Yeon Music",
     pt: "Yeon Music"
@@ -106,5 +105,9 @@ export const translations: TranslationObject = {
   feeAmount: {
     en: "Platform Fee",
     pt: "Taxa da Plataforma"
+  },
+  menu: {
+    en: 'Menu',
+    pt: 'Menu'
   }
 };

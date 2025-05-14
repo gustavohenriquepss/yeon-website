@@ -19,17 +19,17 @@ const LanguageToggle: React.FC = () => {
 
   return (
     <Select value={language} onValueChange={handleLanguageChange}>
-      <SelectTrigger className="w-[100px] bg-yeon-card-bg/80 border-none focus:ring-yeon-purple">
+      <SelectTrigger className="w-[100px] bg-yeon-card-bg/80 border-none focus:ring-gray-500">
         <div className="flex items-center gap-2">
           <Globe className="h-4 w-4" />
           <SelectValue placeholder="Language" />
         </div>
       </SelectTrigger>
-      <SelectContent className="bg-yeon-card-bg border-yeon-purple">
-        <SelectItem value="en" className="text-white hover:text-white hover:bg-yeon-purple/20">
+      <SelectContent className="bg-yeon-card-bg border-gray-500">
+        <SelectItem value="en" className="text-white hover:text-white hover:bg-gray-700/40">
           English
         </SelectItem>
-        <SelectItem value="pt" className="text-white hover:text-white hover:bg-yeon-purple/20">
+        <SelectItem value="pt" className="text-white hover:text-white hover:bg-gray-700/40">
           Português
         </SelectItem>
       </SelectContent>
