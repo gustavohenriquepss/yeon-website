@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/LanguageContext';
@@ -25,8 +26,8 @@ const CTASection: React.FC = () => {
     // Validate email before submission
     if (!isValidEmail(email)) {
       toast({
-        title: t('invalidEmailTitle') || 'Invalid Email',
-        description: t('invalidEmailDesc') || 'Please enter a valid email address.',
+        title: t('invalidEmailTitle'),
+        description: t('invalidEmailDesc'),
         variant: 'destructive',
       });
       return;
@@ -46,30 +47,30 @@ const CTASection: React.FC = () => {
         // Check if it's a duplicate email error
         if (error.code === '23505') {
           toast({
-            title: t('emailExistsTitle') || 'Email Already Registered',
-            description: t('emailExistsDesc') || 'This email is already in our newsletter list.',
+            title: t('emailExistsTitle'),
+            description: t('emailExistsDesc'),
             variant: 'destructive',
           });
         } else {
           toast({
-            title: t('errorTitle') || 'Error',
-            description: t('errorDesc') || 'Failed to register your email. Please try again later.',
+            title: t('errorTitle'),
+            description: t('errorDesc'),
             variant: 'destructive',
           });
         }
       } else {
         // Success - show success message and clear input
         toast({
-          title: t('successTitle') || 'Success!',
-          description: t('successDesc') || 'Thank you for subscribing to our newsletter!',
+          title: t('successTitle'),
+          description: t('successDesc'),
         });
         setEmail('');
       }
     } catch (err) {
       console.error('Unexpected error:', err);
       toast({
-        title: t('errorTitle') || 'Error',
-        description: t('errorDesc') || 'An unexpected error occurred. Please try again.',
+        title: t('errorTitle'),
+        description: t('errorDesc'),
         variant: 'destructive',
       });
     } finally {
@@ -80,7 +81,7 @@ const CTASection: React.FC = () => {
   return (
     <div className="mt-16 mb-8 rounded-xl bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] p-6 border border-white/5">
       <div className="max-w-2xl mx-auto text-center">
-        <h3 className="text-2xl font-bold mb-3">{t('ctaTitle')}?</h3>
+        <h3 className="text-2xl font-bold mb-3">{t('ctaTitle')}</h3>
         <p className="text-muted-foreground mb-6">
           {t('ctaNewDescription')}
         </p>
@@ -105,7 +106,7 @@ const CTASection: React.FC = () => {
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                {t('loadingButton') || 'Loading...'}
+                {t('loadingButton')}
               </span>
             ) : (
               t('ctaButton')

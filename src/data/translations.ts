@@ -1,4 +1,3 @@
-
 interface TranslationObject {
   [key: string]: {
     en: string;
@@ -179,5 +178,41 @@ export const translations: Record<string, Record<string, string>> = {
   and: {
     en: " and ",
     pt: " e "
+  },
+  successTitle: {
+    en: "Subscription Successful!",
+    pt: "Inscrição Confirmada!"
+  },
+  successDesc: {
+    en: "Thank you for subscribing to our newsletter! We'll keep you updated on the latest news and features.",
+    pt: "Obrigado por se inscrever na nossa newsletter! Manteremos você atualizado sobre as últimas novidades e recursos."
+  },
+  errorTitle: {
+    en: "Something Went Wrong",
+    pt: "Algo Deu Errado"
+  },
+  errorDesc: {
+    en: "We couldn't process your subscription. Please try again later.",
+    pt: "Não conseguimos processar sua inscrição. Tente novamente mais tarde."
+  },
+  invalidEmailTitle: {
+    en: "Invalid Email Format",
+    pt: "Formato de Email Inválido"
+  },
+  invalidEmailDesc: {
+    en: "Please enter a valid email address to subscribe to our newsletter.",
+    pt: "Por favor, insira um endereço de email válido para se inscrever na nossa newsletter."
+  },
+  emailExistsTitle: {
+    en: "Email Already Subscribed",
+    pt: "Email Já Inscrito"
+  },
+  emailExistsDesc: {
+    en: "This email is already subscribed to our newsletter. We appreciate your enthusiasm!",
+    pt: "Este email já está inscrito na nossa newsletter. Agradecemos seu entusiasmo!"
+  },
+  loadingButton: {
+    en: "Processing...",
+    pt: "Processando..."
   }
 };
