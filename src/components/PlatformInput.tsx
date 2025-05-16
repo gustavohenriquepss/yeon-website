@@ -64,6 +64,7 @@ const PlatformInput: React.FC<PlatformInputProps> = ({
         <Input 
           id={platform.id} 
           type="number" 
+          inputMode="numeric"
           min="0" 
           value={value || ''} 
           onChange={e => onChange(Number(e.target.value))} 
