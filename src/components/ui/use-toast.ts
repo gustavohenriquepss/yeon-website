@@ -3,8 +3,6 @@ import { useToast, toast } from "@/hooks/use-toast";
 
 // Enhanced toast for more engaging notifications
 const enhancedToast = {
-  ...toast,
-  
   success: (message: string, title?: string) => {
     return toast({
       title: title || "Success! 🎵",
