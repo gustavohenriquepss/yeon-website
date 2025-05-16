@@ -12,14 +12,17 @@ export type Database = {
       "Emails-Newsletter-Calc": {
         Row: {
           created_at: string
+          Email: string | null
           id: number
         }
         Insert: {
           created_at?: string
+          Email?: string | null
           id?: number
         }
         Update: {
           created_at?: string
+          Email?: string | null
           id?: number
         }
         Relationships: []
