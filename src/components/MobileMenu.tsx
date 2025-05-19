@@ -18,7 +18,6 @@ const MobileMenu: React.FC = () => {
   const navItems = [
     { name: t('nav.home'), href: '/' },
     { name: t('nav.about'), href: '/about' },
-    { name: t('nav.gallery'), href: '/gallery' },
     { name: t('nav.calculator'), href: '/calculator' },
     { name: t('nav.artists'), href: '/artists' },
   ];

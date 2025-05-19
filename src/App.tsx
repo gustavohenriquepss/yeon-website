@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from 'react'; // Make sure React is imported
 import Index from "./pages/Index";
 import About from "./pages/About";
-import Gallery from "./pages/Gallery";
 import Calculator from "./pages/Calculator";
 import Artists from "./pages/Artists";
 import NotFound from "./pages/NotFound";
@@ -27,7 +26,6 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
-              <Route path="/gallery" element={<Gallery />} />
               <Route path="/calculator" element={<Calculator />} />
               <Route path="/artists" element={<Artists />} />
               <Route path="*" element={<NotFound />} />
