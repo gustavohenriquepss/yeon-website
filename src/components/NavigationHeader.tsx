@@ -16,6 +16,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import LanguageToggle from '@/components/LanguageToggle';
 import MobileMenu from '@/components/MobileMenu';
 import Logo from '@/components/Logo';
+import SocialLinks from '@/components/SocialLinks';
 
 const NavigationHeader: React.FC = () => {
   const { t } = useLanguage();
@@ -62,6 +63,11 @@ const NavigationHeader: React.FC = () => {
         </div>
         
         <div className="flex items-center gap-4">
+          {/* Social media icons - visible on desktop */}
+          <div className="hidden md:block">
+            <SocialLinks className="mr-4" />
+          </div>
+          
           {/* Language toggle visible on desktop */}
           <div className="hidden md:block">
             <LanguageToggle />
