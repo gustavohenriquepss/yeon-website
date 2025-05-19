@@ -22,7 +22,7 @@ const AboutContent: React.FC = () => {
         <div className="container py-16 relative z-10 px-[64px] rounded-2xl">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white animate-fade-in">
-              <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">{t('about.whoWeAreTitle')}</span>
+              <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent text-4xl font-semibold">{t('about.whoWeAreTitle')}</span>
             </h1>
             <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/70 animate-fade-in" style={{
             animationDelay: '0.1s'
