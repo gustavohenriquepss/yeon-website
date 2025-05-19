@@ -1,16 +1,14 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useLanguage } from '@/context/LanguageContext';
 import PageLayout from '@/components/PageLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChevronRightIcon } from 'lucide-react';
-
 const AboutContent: React.FC = () => {
-  const { t } = useLanguage();
-
-  return (
-    <main className="max-w-full mx-auto">
+  const {
+    t
+  } = useLanguage();
+  return <main className="max-w-full mx-auto">
       {/* Hero Section - Quem Somos */}
       <section className="relative min-h-[60vh] flex items-center justify-center mb-16 bg-gradient-to-br from-[#1A1A1A] to-yeon-dark-bg overflow-hidden">
         {/* Background pattern */}
@@ -21,15 +19,19 @@ const AboutContent: React.FC = () => {
         <div className="absolute top-0 right-0 w-64 h-64 bg-yeon-purple/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-yeon-purple/5 rounded-full blur-3xl"></div>
         
-        <div className="container px-4 py-16 relative z-10">
+        <div className="container py-16 relative z-10 px-[64px] rounded-lg">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white animate-fade-in">
               <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">{t('about.whoWeAreTitle')}</span>
             </h1>
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/70 animate-fade-in" style={{animationDelay: '0.1s'}}>
+            <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/70 animate-fade-in" style={{
+            animationDelay: '0.1s'
+          }}>
               {t('about.whoWeAre1')}
             </p>
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/70 mt-4 animate-fade-in" style={{animationDelay: '0.2s'}}>
+            <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/70 mt-4 animate-fade-in" style={{
+            animationDelay: '0.2s'
+          }}>
               {t('about.whoWeAre2')}
             </p>
           </div>
@@ -37,7 +39,9 @@ const AboutContent: React.FC = () => {
           {/* Mission and Vision Cards */}
           <div className="grid md:grid-cols-2 gap-8 mt-12">
             {/* Mission Card */}
-            <Card className="bg-[#2A2A2A]/80 backdrop-blur-sm border border-white/10 hover:border-yeon-purple/50 hover:transform hover:scale-[1.02] transition-all duration-300 overflow-hidden shadow-lg animate-fade-in" style={{animationDelay: '0.3s'}}>
+            <Card className="bg-[#2A2A2A]/80 backdrop-blur-sm border border-white/10 hover:border-yeon-purple/50 hover:transform hover:scale-[1.02] transition-all duration-300 overflow-hidden shadow-lg animate-fade-in" style={{
+            animationDelay: '0.3s'
+          }}>
               <div className="absolute top-0 right-0 w-32 h-32 bg-yeon-purple/10 rounded-bl-full"></div>
               <CardHeader>
                 <CardTitle className="text-2xl text-yeon-purple flex items-center">
@@ -53,7 +57,9 @@ const AboutContent: React.FC = () => {
             </Card>
             
             {/* Vision Card */}
-            <Card className="bg-[#2A2A2A]/80 backdrop-blur-sm border border-white/10 hover:border-yeon-purple/50 hover:transform hover:scale-[1.02] transition-all duration-300 overflow-hidden shadow-lg animate-fade-in" style={{animationDelay: '0.4s'}}>
+            <Card className="bg-[#2A2A2A]/80 backdrop-blur-sm border border-white/10 hover:border-yeon-purple/50 hover:transform hover:scale-[1.02] transition-all duration-300 overflow-hidden shadow-lg animate-fade-in" style={{
+            animationDelay: '0.4s'
+          }}>
               <div className="absolute top-0 right-0 w-32 h-32 bg-yeon-purple/10 rounded-bl-full"></div>
               <CardHeader>
                 <CardTitle className="text-2xl text-yeon-purple flex items-center">
@@ -187,15 +193,13 @@ const AboutContent: React.FC = () => {
           </Card>
         </div>
       </section>
-    </main>
-  );
+    </main>;
 };
-
 const About: React.FC = () => {
-  const { t } = useLanguage();
-  
-  return (
-    <>
+  const {
+    t
+  } = useLanguage();
+  return <>
       <Helmet>
         <title>Sobre a Yeon Music | Plataforma para Artistas Independentes</title>
         <meta name="description" content="A Yeon Music é dedicada a ajudar artistas a entender e maximizar seu potencial de receita com streaming. Conheça nossa missão e visão." />
@@ -204,8 +208,6 @@ const About: React.FC = () => {
       <PageLayout>
         <AboutContent />
       </PageLayout>
-    </>
-  );
+    </>;
 };
-
 export default About;
