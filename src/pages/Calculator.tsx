@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import StreamingCalculator from '@/components/StreamingCalculator';
 import { useLanguage } from '@/context/LanguageContext';
 import PageLayout from '@/components/PageLayout';
@@ -27,10 +28,35 @@ const CalculatorContent: React.FC = () => {
 };
 
 const Calculator: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
-    <PageLayout>
-      <CalculatorContent />
-    </PageLayout>
+    <>
+      <Helmet>
+        <title>Calculadora de Ganhos de Streaming | Yeon Music</title>
+        <meta name="description" content="Calcule seus ganhos potenciais em todas as principais plataformas de streaming como Spotify, Apple Music, Deezer e mais. Entenda quanto vale cada reprodução." />
+        <link rel="canonical" href="https://yeon-music.com/calculator" />
+        <meta name="keywords" content="calculadora streaming, ganhos spotify, ganhos apple music, receita musical, streaming receita, artista independente" />
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Calculadora de Ganhos de Streaming",
+            "description": "${t('intro')}",
+            "url": "https://yeon-music.com/calculator",
+            "applicationCategory": "UtilityApplication",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "BRL"
+            }
+          }`}
+        </script>
+      </Helmet>
+      <PageLayout>
+        <CalculatorContent />
+      </PageLayout>
+    </>
   );
 };
 

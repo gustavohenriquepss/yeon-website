@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import PageLayout from '@/components/PageLayout';
 import { useLanguage } from '@/context/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -33,9 +34,16 @@ const IndexContent: React.FC = () => {
 
 const Index: React.FC = () => {
   return (
-    <PageLayout>
-      <IndexContent />
-    </PageLayout>
+    <>
+      <Helmet>
+        <title>Yeon Music - Nova Experiência Musical</title>
+        <meta name="description" content="Yeon Music está trazendo uma nova experiência musical. Calcule seus ganhos de streaming e maximize sua receita como artista." />
+        <link rel="canonical" href="https://yeon-music.com/" />
+      </Helmet>
+      <PageLayout>
+        <IndexContent />
+      </PageLayout>
+    </>
   );
 };
 

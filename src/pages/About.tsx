@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useLanguage } from '@/context/LanguageContext';
 import PageLayout from '@/components/PageLayout';
 
@@ -25,10 +26,19 @@ const AboutContent: React.FC = () => {
 };
 
 const About: React.FC = () => {
+  const { t } = useLanguage();
+  
   return (
-    <PageLayout>
-      <AboutContent />
-    </PageLayout>
+    <>
+      <Helmet>
+        <title>Sobre a Yeon Music | Plataforma para Artistas Independentes</title>
+        <meta name="description" content="A Yeon Music é dedicada a ajudar artistas a entender e maximizar seu potencial de receita com streaming. Conheça nossa missão e visão." />
+        <link rel="canonical" href="https://yeon-music.com/about" />
+      </Helmet>
+      <PageLayout>
+        <AboutContent />
+      </PageLayout>
+    </>
   );
 };
 

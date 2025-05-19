@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useLanguage } from '@/context/LanguageContext';
 import PageLayout from '@/components/PageLayout';
 
@@ -39,9 +40,16 @@ const GalleryContent: React.FC = () => {
 
 const Gallery: React.FC = () => {
   return (
-    <PageLayout>
-      <GalleryContent />
-    </PageLayout>
+    <>
+      <Helmet>
+        <title>Galeria | Yeon Music</title>
+        <meta name="description" content="Explore nossa galeria de imagens relacionadas à indústria musical e artistas independentes. Conheça o universo da Yeon Music." />
+        <link rel="canonical" href="https://yeon-music.com/gallery" />
+      </Helmet>
+      <PageLayout>
+        <GalleryContent />
+      </PageLayout>
+    </>
   );
 };
 

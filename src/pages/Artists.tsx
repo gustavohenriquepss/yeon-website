@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useLanguage } from '@/context/LanguageContext';
 import PageLayout from '@/components/PageLayout';
 
@@ -41,9 +42,16 @@ const ArtistsContent: React.FC = () => {
 
 const Artists: React.FC = () => {
   return (
-    <PageLayout>
-      <ArtistsContent />
-    </PageLayout>
+    <>
+      <Helmet>
+        <title>Artistas Destacados | Yeon Music</title>
+        <meta name="description" content="Conheça os artistas em destaque na Yeon Music. Artistas independentes que estão transformando a indústria musical." />
+        <link rel="canonical" href="https://yeon-music.com/artists" />
+      </Helmet>
+      <PageLayout>
+        <ArtistsContent />
+      </PageLayout>
+    </>
   );
 };
 
