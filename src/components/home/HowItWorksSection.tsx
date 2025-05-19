@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { Upload, BarChart, CreditCard } from 'lucide-react';
+import Icon from '@/components/Icon';
 
 interface StepItemProps {
   number: number;
@@ -33,19 +33,19 @@ const HowItWorksSection: React.FC = () => {
       number: 1,
       title: "Faça o Upload da Sua Música",
       description: "Envie suas faixas em alta qualidade diretamente pela nossa plataforma.",
-      icon: <Upload className="h-6 w-6 text-yeon-purple" />
+      icon: <Icon name="IconUpload" className="h-6 w-6 text-yeon-purple" />
     },
     {
       number: 2,
       title: "Acompanhe Seu Desempenho",
       description: "Monitore streams, receitas e crescimento de público em tempo real.",
-      icon: <BarChart className="h-6 w-6 text-yeon-purple" />
+      icon: <Icon name="IconChartBar" className="h-6 w-6 text-yeon-purple" />
     },
     {
       number: 3,
       title: "Receba Seus Ganhos",
       description: "Pagamentos regulares e transparentes diretamente na sua conta bancária.",
-      icon: <CreditCard className="h-6 w-6 text-yeon-purple" />
+      icon: <Icon name="IconCreditCard" className="h-6 w-6 text-yeon-purple" />
     }
   ];
 

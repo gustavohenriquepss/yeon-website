@@ -1,8 +1,7 @@
 
 import React from "react";
-import { Instagram, Twitter } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { LucideIcon } from "lucide-react";
+import Icon from "./Icon";
 
 interface SocialLinkProps {
   className?: string;
@@ -11,7 +10,7 @@ interface SocialLinkProps {
 type SocialLinkItem = {
   name: string;
   url: string;
-  icon: LucideIcon | React.FC;
+  icon: string;
 };
 
 const SocialLinks: React.FC<SocialLinkProps> = ({ className }) => {
@@ -19,52 +18,34 @@ const SocialLinks: React.FC<SocialLinkProps> = ({ className }) => {
     {
       name: "Instagram",
       url: "https://instagram.com/yeon.live",
-      icon: Instagram,
+      icon: "IconBrandInstagram",
     },
     {
       name: "TikTok",
       url: "https://tiktok.com/yeon.live",
-      // Creating a custom TikTok icon since it's not available in lucide-react
-      icon: () => (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
-        </svg>
-      ),
+      icon: "IconBrandTiktok",
     },
     {
       name: "Twitter",
       url: "https://twitter.com/yeon.live",
-      icon: Twitter,
+      icon: "IconBrandTwitter",
     },
   ];
 
   return (
     <div className={cn("flex items-center gap-3", className)}>
-      {socialLinks.map((link) => {
-        const IconComponent = link.icon;
-        return (
-          <a
-            key={link.name}
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-yeon-purple transition-colors"
-            aria-label={link.name}
-          >
-            <IconComponent className="w-5 h-5" />
-          </a>
-        );
-      })}
+      {socialLinks.map((link) => (
+        <a
+          key={link.name}
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-yeon-purple transition-colors"
+          aria-label={link.name}
+        >
+          <Icon name={link.icon as any} className="w-5 h-5" />
+        </a>
+      ))}
     </div>
   );
 };

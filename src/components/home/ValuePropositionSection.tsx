@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Globe, DollarSign, Settings } from 'lucide-react';
+import Icon from '@/components/Icon';
 import { useLanguage } from '@/context/LanguageContext';
 
 interface ValuePropItemProps {
@@ -26,17 +26,17 @@ const ValuePropositionSection: React.FC = () => {
   
   const valueProps = [
     {
-      icon: <Settings className="h-8 w-8 text-yeon-purple" />,
+      icon: <Icon name="IconSettings" className="h-8 w-8 text-yeon-purple" />,
       title: "Gestão Inteligente",
       description: "Ferramentas avançadas para gerenciar sua carreira musical de forma eficiente e profissional."
     },
     {
-      icon: <Globe className="h-8 w-8 text-yeon-purple" />,
+      icon: <Icon name="IconWorld" className="h-8 w-8 text-yeon-purple" />,
       title: "Alcance Global",
       description: "Distribua sua música em todas as plataformas principais de streaming ao redor do mundo."
     },
     {
-      icon: <DollarSign className="h-8 w-8 text-yeon-purple" />,
+      icon: <Icon name="IconCurrencyDollar" className="h-8 w-8 text-yeon-purple" />,
       title: "Monetização Direta",
       description: "Maximize seus ganhos com taxas transparentes e pagamentos diretos para sua conta."
     }
