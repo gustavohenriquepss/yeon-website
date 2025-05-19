@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Music, CornerDownLeft } from 'lucide-react';
+import { CornerDownLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
@@ -34,27 +34,27 @@ const SpotifyRoaster: React.FC = () => {
     try {
       // Simulate API call with mock responses (in a real implementation, this would call a backend)
       setTimeout(() => {
-        const mockRoasts = [
-          "Seu gosto musical é tão básico que o algoritmo do Spotify deve achar que você é um bot.",
-          "Aquela playlist de indie? Aposto que você só ouve as primeiras 30 segundos de cada música antes de pular.",
-          "Vejo que você curte rock alternativo. Muito alternativo mesmo, alternativo a ter bom gosto.",
-          "Seus artistas favoritos formam o Mount Rushmore da mediocridade musical.",
-          "Sua playlist de treino parece a trilha sonora de uma propaganda de shampoo dos anos 90.",
-          "Você ouviu tanto pop mainstream que o Spotify já deve estar tentando te vender ingressos para shows há 3 anos.",
-          "Sua 'descoberta da semana' é basicamente o que todo mundo já estava ouvindo há 6 meses.",
-          "Sua playlist lo-fi para estudar poderia ser usada como tratamento para insônia.",
-          "Seu top artistas são tão previsíveis que até minha avó conseguiria adivinhar.",
-          "Seu perfil musical grita 'personalidade de papelão' mais alto que os graves do seu rap favorito."
+        const artistRoasts = [
+          "Esse artista tem tantos ouvintes mensais quanto eu tenho vontade de acordar cedo na segunda-feira.",
+          "Olhando para essas músicas, dá para ver que o talento desse artista é tão raro quanto internet boa em festival.",
+          "Com esse branding, parece que o artista tirou todas as ideias de um tutorial do YouTube de 2015.",
+          "Se essa discografia fosse um prato, seria arroz branco sem sal. Básico demais.",
+          "A originalidade desse artista é tão impressionante quanto um filme da Netflix sobre adolescentes.",
+          "As letras são tão profundas que dá para ver o fundo da piscina de cima.",
+          "As transições entre as músicas são tão suaves quanto andar de patins numa estrada de terra.",
+          "Esse artista tem tanta personalidade musical quanto um robô tentando dançar forró.",
+          "A produção dessas músicas parece ter sido feita num iPhone 4 dentro de um banheiro.",
+          "Se esse álbum fosse uma cor, seria bege. O bege mais bege que já existiu."
         ];
         
-        const randomRoast = mockRoasts[Math.floor(Math.random() * mockRoasts.length)];
+        const randomRoast = artistRoasts[Math.floor(Math.random() * artistRoasts.length)];
         setRoast(randomRoast);
         setLoading(false);
-        toast.success("Seu perfil do Spotify foi fritado! 🔥");
+        toast.success("Perfil do artista foi fritado! 🔥");
       }, 2000);
     } catch (err) {
       console.error('Error roasting Spotify profile:', err);
-      setError('Ocorreu um erro ao fritar seu perfil. Tente novamente.');
+      setError('Ocorreu um erro ao fritar o perfil. Tente novamente.');
       setLoading(false);
     }
   };
@@ -63,21 +63,25 @@ const SpotifyRoaster: React.FC = () => {
     <div className="max-w-3xl mx-auto">
       <div className="space-y-6">
         <div className="flex flex-col items-center text-center">
-          <div className="h-16 w-16 rounded-full bg-green-600 flex items-center justify-center mb-4">
-            <Music className="h-8 w-8 text-white" />
+          <div className="h-16 w-16 rounded-full bg-black flex items-center justify-center mb-4">
+            <img 
+              src="/lovable-uploads/1fd42be2-1964-4cfd-b29b-946c4b596ef3.png" 
+              alt="Spotify Logo" 
+              className="h-10 w-10"
+            />
           </div>
           <h2 className="text-2xl font-bold">Frite meu Spotify</h2>
           <p className="text-muted-foreground max-w-md">
-            Compartilhe seu perfil do Spotify e nossa IA vai fritar seu gosto musical sem dó.
+            Compartilhe o perfil de um artista no Spotify e nossa IA vai fritar sem dó.
             É diversão garantida (ou pelo menos tentamos).
           </p>
         </div>
 
         <Card>
           <CardHeader>
-            <CardTitle>Cole o link do seu perfil</CardTitle>
+            <CardTitle>Cole o link do perfil do artista</CardTitle>
             <CardDescription>
-              Copie o link do seu perfil do Spotify e cole abaixo para receber uma análise nada amigável do seu gosto musical.
+              Copie o link de um perfil de artista do Spotify e cole abaixo para receber uma análise nada amigável.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -85,7 +89,7 @@ const SpotifyRoaster: React.FC = () => {
               <div className="flex gap-2">
                 <Input 
                   type="text" 
-                  placeholder="https://open.spotify.com/user/seu_usuario" 
+                  placeholder="https://open.spotify.com/artist/..." 
                   value={spotifyLink}
                   onChange={(e) => setSpotifyLink(e.target.value)}
                   className="flex-1"
@@ -109,7 +113,11 @@ const SpotifyRoaster: React.FC = () => {
           <Card className="border-green-600/30 bg-green-600/5">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Music className="h-5 w-5 text-green-500" />
+                <img 
+                  src="/lovable-uploads/1fd42be2-1964-4cfd-b29b-946c4b596ef3.png" 
+                  alt="Spotify Logo" 
+                  className="h-5 w-5"
+                />
                 Sua fritada está pronta
               </CardTitle>
             </CardHeader>
@@ -117,7 +125,7 @@ const SpotifyRoaster: React.FC = () => {
               <p className="text-lg font-medium italic">{roast}</p>
             </CardContent>
             <CardFooter className="text-sm text-muted-foreground">
-              É só uma brincadeira! Cada gosto musical é único e válido. 💚
+              É só uma brincadeira! Cada artista tem seu valor único. 💚
             </CardFooter>
           </Card>
         )}
