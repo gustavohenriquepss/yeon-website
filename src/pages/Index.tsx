@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import LanguageToggle from '@/components/LanguageToggle';
@@ -9,26 +8,12 @@ import SocialLinks from '@/components/SocialLinks';
 import MobileMenu from '@/components/MobileMenu';
 import NavigationHeader from '@/components/NavigationHeader';
 import PageLayout from '@/components/PageLayout';
-
 const IndexContent: React.FC = () => {
-  const { t } = useLanguage();
-  
-  return (
-    <>
-      <header className="flex justify-between items-center mb-12">
-        <div className="flex items-center">
-          <Logo />
-        </div>
-        <div className="flex items-center gap-6">
-          {/* Show on desktop, hide on mobile */}
-          <div className="hidden md:flex items-center gap-6">
-            <SocialLinks />
-            <LanguageToggle />
-          </div>
-          {/* Show on mobile, hide on desktop */}
-          <MobileMenu />
-        </div>
-      </header>
+  const {
+    t
+  } = useLanguage();
+  return <>
+      
 
       <main className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
@@ -44,16 +29,11 @@ const IndexContent: React.FC = () => {
         
         <CTASection />
       </main>
-    </>
-  );
+    </>;
 };
-
 const Index: React.FC = () => {
-  return (
-    <PageLayout>
+  return <PageLayout>
       <IndexContent />
-    </PageLayout>
-  );
+    </PageLayout>;
 };
-
 export default Index;
