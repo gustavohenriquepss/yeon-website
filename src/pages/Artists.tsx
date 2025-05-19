@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLanguage } from '@/context/LanguageContext';
@@ -6,7 +5,7 @@ import PageLayout from '@/components/PageLayout';
 import ArtistSearch from '@/components/artists/ArtistSearch';
 import ArtistFilters from '@/components/artists/ArtistFilters';
 import ArtistGrid from '@/components/artists/ArtistGrid';
-import { Instagram, Search, Filter } from 'lucide-react';
+import { Filter } from 'lucide-react';
 
 // Types
 export type Artist = {
@@ -25,7 +24,7 @@ const ArtistsContent: React.FC = () => {
   const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
-  const [selectedLocation, setSelectedLocation] = useState<string>('');
+  const [selectedLocation, setSelectedLocation] = useState<string>('all_cities');
   const [showFilters, setShowFilters] = useState(false);
   
   // Mock artist data with more realistic information
@@ -156,7 +155,7 @@ const ArtistsContent: React.FC = () => {
       const matchesGenres = selectedGenres.length === 0 || 
         selectedGenres.some(genre => artist.genres.includes(genre));
       
-      const matchesLocation = selectedLocation === '' ||
+      const matchesLocation = selectedLocation === 'all_cities' ||
         artist.location === selectedLocation;
       
       return matchesSearch && matchesGenres && matchesLocation;

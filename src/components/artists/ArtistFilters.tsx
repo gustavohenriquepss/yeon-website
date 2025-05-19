@@ -66,7 +66,7 @@ const ArtistFilters: React.FC<ArtistFiltersProps> = ({
             <SelectValue placeholder="Todas as cidades" />
           </SelectTrigger>
           <SelectContent className="bg-[#222] border-white/10">
-            <SelectItem value="">Todas as cidades</SelectItem>
+            <SelectItem value="all_cities">Todas as cidades</SelectItem>
             {locations.map((location) => (
               <SelectItem key={location} value={location}>
                 {location}
@@ -77,11 +77,11 @@ const ArtistFilters: React.FC<ArtistFiltersProps> = ({
       </div>
       
       {/* Clear filters button */}
-      {(selectedGenres.length > 0 || selectedLocation !== '') && (
+      {(selectedGenres.length > 0 || selectedLocation !== 'all_cities') && (
         <button
           onClick={() => {
             setSelectedGenres([]);
-            setSelectedLocation('');
+            setSelectedLocation('all_cities');
           }}
           className="text-sm text-yeon-purple hover:text-yeon-dark-purple underline"
         >
