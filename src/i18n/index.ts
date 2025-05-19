@@ -1,27 +1,23 @@
 
-// Enhanced i18n implementation
+// Simplified i18n implementation with fixed PT-BR language
 import { translations } from '@/data/translations';
 
-type Language = 'en' | 'pt';
-
 const i18n = {
-  language: 'pt' as Language,
-  
-  setLanguage(lang: Language) {
-    this.language = lang;
-  },
-  
   t(key: string): string {
-    if (!translations[key]) {
-      console.warn(`Translation key not found: ${key}`);
-      return key;
+    const parts = key.split('.');
+    let translation: any = translations.pt;
+    
+    // Navigate through nested keys (e.g., 'nav.home')
+    for (const part of parts) {
+      if (translation && translation[part]) {
+        translation = translation[part];
+      } else {
+        console.warn(`Translation key not found: ${key}`);
+        return key;
+      }
     }
     
-    return translations[key][this.language];
-  },
-  
-  getLanguage(): Language {
-    return this.language;
+    return typeof translation === 'string' ? translation : key;
   }
 };
 

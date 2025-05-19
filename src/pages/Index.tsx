@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import LanguageToggle from '@/components/LanguageToggle';
 import StreamingCalculator from '@/components/StreamingCalculator';
 import CTASection from '@/components/CTASection';
 import Logo from '@/components/Logo';

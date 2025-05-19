@@ -1,37 +1,38 @@
 
-import React, { createContext, useContext, useState } from 'react';
-import i18n from '@/i18n';
+import React, { createContext, useContext } from 'react';
+import { translations } from '@/data/translations';
 
 interface LanguageContextProps {
-  language: string;
   t: (key: string) => string;
-  setLanguage: (lang: 'en' | 'pt') => void;
 }
 
 const LanguageContext = createContext<LanguageContextProps>({
-  language: 'en',
   t: (key: string) => key,
-  setLanguage: () => {},
 });
 
 export const useLanguage = () => useContext(LanguageContext);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<'en' | 'pt'>(i18n.getLanguage());
-  
-  // Function to set language in both state and i18n instance
-  const setLanguage = (lang: 'en' | 'pt') => {
-    i18n.setLanguage(lang);
-    setLanguageState(lang);
-  };
-
-  // Use the i18n translation function
+  // Simple translation function that always returns PT-BR translations
   const t = (key: string): string => {
-    return i18n.t(key);
+    const parts = key.split('.');
+    let translation: any = translations.pt;
+    
+    // Navigate through nested keys (e.g., 'nav.home')
+    for (const part of parts) {
+      if (translation && translation[part]) {
+        translation = translation[part];
+      } else {
+        console.warn(`Translation key not found: ${key}`);
+        return key;
+      }
+    }
+    
+    return typeof translation === 'string' ? translation : key;
   };
 
   return (
-    <LanguageContext.Provider value={{ language, t, setLanguage }}>
+    <LanguageContext.Provider value={{ t }}>
       {children}
     </LanguageContext.Provider>
   );

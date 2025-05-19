@@ -4,16 +4,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { 
   NavigationMenu, 
-  NavigationMenuContent, 
   NavigationMenuItem, 
   NavigationMenuLink,
   NavigationMenuList, 
-  NavigationMenuTrigger, 
   navigationMenuTriggerStyle 
 } from '@/components/ui/navigation-menu';
 import { Home, Info, GalleryHorizontal, Calculator, Users } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
-import LanguageToggle from '@/components/LanguageToggle';
 import MobileMenu from '@/components/MobileMenu';
 import Logo from '@/components/Logo';
 import SocialLinks from '@/components/SocialLinks';
@@ -66,11 +63,6 @@ const NavigationHeader: React.FC = () => {
           {/* Social media icons - visible on desktop */}
           <div className="hidden md:block">
             <SocialLinks className="mr-4" />
-          </div>
-          
-          {/* Language toggle visible on desktop */}
-          <div className="hidden md:block">
-            <LanguageToggle />
           </div>
           
           {/* Mobile menu button */}

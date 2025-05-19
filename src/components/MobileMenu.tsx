@@ -10,7 +10,6 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Home, Info, GalleryHorizontal, Calculator, Users } from 'lucide-react';
-import LanguageToggle from '@/components/LanguageToggle';
 import SocialLinks from '@/components/SocialLinks';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -47,9 +46,6 @@ const MobileMenu: React.FC = () => {
               </Link>
             ))}
           </nav>
-          <div className="flex justify-center mt-4">
-            <LanguageToggle />
-          </div>
           <div className="flex justify-center">
             <SocialLinks />
           </div>
