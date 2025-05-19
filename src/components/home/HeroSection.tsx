@@ -16,23 +16,23 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background image with overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" 
         style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1603748150043-73c3bd0b9c3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
           backgroundPosition: '50% 30%'
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-yeon-dark-bg/80 via-yeon-dark-bg/80 to-yeon-dark-bg"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-yeon-dark-bg/80 to-yeon-dark-bg"></div>
       </div>
       
       {/* Content */}
       <div className="container relative z-10 px-4 flex flex-col items-center text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-4 animate-fade-in tracking-tight">
-          <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text">LIBERTE SEU </span>
-          <span className="text-yeon-purple">POTENCIAL DE ARTISTA</span>
+          <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text">Liberte seu </span>
+          <span className="text-yeon-purple">potencial de artista</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-8 animate-fade-in">
