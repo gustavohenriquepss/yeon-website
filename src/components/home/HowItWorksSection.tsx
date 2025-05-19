@@ -33,19 +33,19 @@ const HowItWorksSection: React.FC = () => {
       number: 1,
       title: "Faça o Upload da Sua Música",
       description: "Envie suas faixas em alta qualidade diretamente pela nossa plataforma.",
-      icon: <Icon name="IconUpload" className="h-6 w-6 text-yeon-purple" />
+      icon: <Icon name="Upload" className="h-6 w-6 text-yeon-purple" />
     },
     {
       number: 2,
       title: "Acompanhe Seu Desempenho",
       description: "Monitore streams, receitas e crescimento de público em tempo real.",
-      icon: <Icon name="IconChartBar" className="h-6 w-6 text-yeon-purple" />
+      icon: <Icon name="BarChart" className="h-6 w-6 text-yeon-purple" />
     },
     {
       number: 3,
       title: "Receba Seus Ganhos",
       description: "Pagamentos regulares e transparentes diretamente na sua conta bancária.",
-      icon: <Icon name="IconCreditCard" className="h-6 w-6 text-yeon-purple" />
+      icon: <Icon name="CreditCard" className="h-6 w-6 text-yeon-purple" />
     }
   ];
 

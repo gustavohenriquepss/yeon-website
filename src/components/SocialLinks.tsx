@@ -18,17 +18,17 @@ const SocialLinks: React.FC<SocialLinkProps> = ({ className }) => {
     {
       name: "Instagram",
       url: "https://instagram.com/yeon.live",
-      icon: "IconBrandInstagram",
+      icon: "Instagram",
     },
     {
       name: "TikTok",
       url: "https://tiktok.com/yeon.live",
-      icon: "IconBrandTiktok",
+      icon: "Music",  // Lucide doesn't have a TikTok icon, using Music as an alternative
     },
     {
       name: "Twitter",
       url: "https://twitter.com/yeon.live",
-      icon: "IconBrandTwitter",
+      icon: "Twitter",
     },
   ];
 

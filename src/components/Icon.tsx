@@ -1,27 +1,27 @@
 
 import React from 'react';
-import * as TablerIcons from '@tabler/icons-react';
+import * as LucideIcons from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-export type IconName = keyof typeof TablerIcons;
+export type IconName = keyof typeof LucideIcons;
 
 interface IconProps {
   name: IconName;
   className?: string;
   size?: number;
-  stroke?: number;
+  strokeWidth?: number;
 }
 
 const Icon: React.FC<IconProps> = ({ 
   name, 
   className, 
   size = 24, 
-  stroke = 2 
+  strokeWidth = 2 
 }) => {
-  const IconComponent = TablerIcons[name] as React.FC<{
+  const IconComponent = LucideIcons[name] as React.FC<{
     size?: number;
     className?: string;
-    stroke?: number;
+    strokeWidth?: number;
   }>;
 
   if (!IconComponent) {
@@ -33,7 +33,7 @@ const Icon: React.FC<IconProps> = ({
     <IconComponent 
       className={cn(className)} 
       size={size} 
-      stroke={stroke}
+      strokeWidth={strokeWidth}
     />
   );
 };
