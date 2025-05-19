@@ -21,7 +21,7 @@ const HeroSection: React.FC = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" 
         style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1603748150043-73c3bd0b9c3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+          backgroundImage: "url('/lovable-uploads/81539f4f-c548-4030-92a8-20349de875ba.png')",
           backgroundPosition: '50% 30%'
         }}
       >
@@ -58,6 +58,11 @@ const HeroSection: React.FC = () => {
           >
             Saiba Mais
           </Button>
+        </div>
+        
+        {/* Photo attribution */}
+        <div className="absolute bottom-3 right-3 text-xs text-white/40 z-10">
+          Foto de <a href="https://unsplash.com/pt-br/@harryswales?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" className="hover:text-white/60">Harry Swales</a> na <a href="https://unsplash.com/pt-br/fotografias/pessoa-negra-segurando-microfone-e-cantando-no-palco-0l0KjNoAfAk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" className="hover:text-white/60">Unsplash</a>
         </div>
       </div>
       
