@@ -9,8 +9,9 @@ const FinalCTASection: React.FC = () => {
 
   return (
     <section className="py-20 relative overflow-hidden">
-      {/* Background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-yeon-dark-purple via-yeon-dark-bg to-yeon-dark-bg z-0"></div>
+      {/* Background with minimal dark styling */}
+      <div className="absolute inset-0 bg-yeon-darker-bg z-0"></div>
+      <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00eiIvPjwvZz48L2c+PC9zdmc+')] z-0"></div>
       
       <div className="container relative z-10 px-4">
         <div className="max-w-3xl mx-auto text-center">
