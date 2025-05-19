@@ -18,6 +18,7 @@ import {
   Search,
   Users
 } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 interface FeatureItemProps {
   title: string;
@@ -181,39 +182,46 @@ const FeaturesSection: React.FC = () => {
           Tudo que você precisa para gerenciar sua carreira musical, maximizar seus ganhos e conectar-se com seu público.
         </p>
         
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-8 flex items-center">
-            <span className="bg-yeon-purple/20 p-2 rounded-full mr-3">
-              <Music className="h-5 w-5 text-yeon-purple" />
-            </span>
-            Para Artistas
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {artistFeatures.map((feature, index) => (
-              <FeatureItem
-                key={index}
-                {...feature}
-              />
-            ))}
+        <Tabs defaultValue="artists" className="w-full">
+          <div className="flex justify-center mb-12">
+            <TabsList className="bg-secondary/30 p-1 rounded-full">
+              <TabsTrigger 
+                value="artists" 
+                className="rounded-full px-6 py-2 data-[state=active]:bg-yeon-purple data-[state=active]:text-white"
+              >
+                Para Artistas
+              </TabsTrigger>
+              <TabsTrigger 
+                value="fans" 
+                className="rounded-full px-6 py-2 data-[state=active]:bg-yeon-purple data-[state=active]:text-white"
+              >
+                Para Fãs e Contratantes
+              </TabsTrigger>
+            </TabsList>
           </div>
-        </div>
-        
-        <div>
-          <h3 className="text-2xl font-semibold mb-8 flex items-center">
-            <span className="bg-yeon-purple/20 p-2 rounded-full mr-3">
-              <Users className="h-5 w-5 text-yeon-purple" />
-            </span>
-            Para Fãs e Contratantes
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {fanFeatures.map((feature, index) => (
-              <FeatureItem
-                key={index}
-                {...feature}
-              />
-            ))}
-          </div>
-        </div>
+          
+          <TabsContent value="artists" className="mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {artistFeatures.map((feature, index) => (
+                <FeatureItem
+                  key={index}
+                  {...feature}
+                />
+              ))}
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="fans" className="mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {fanFeatures.map((feature, index) => (
+                <FeatureItem
+                  key={index}
+                  {...feature}
+                />
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
     </section>
   );
