@@ -75,8 +75,29 @@ export const translations = {
     // About page
     about: {
       description: "Yeon Music is dedicated to helping artists understand and maximize their streaming revenue potential.",
-      mission: "Our mission is to provide clear, transparent information about the music streaming industry and help artists make informed decisions about their distribution strategy.",
-      vision: "We envision a future where artists are fairly compensated for their work and have full understanding of how the streaming economy works."
+      mission: "At Yeon, our mission is to revolutionize the music industry by building a digital ecosystem that empowers independent artists to thrive in their careers. We believe in a world where every artist has the power to make a living from their music while maintaining their authenticity and creative control.",
+      missionTitle: "Our Mission",
+      vision: "We are creating a future where technology and music come together to democratize success in the music industry. Yeon is not just a platform - we're a movement transforming the relationship between artists and fans, eliminating intermediaries and building genuine connections that generate real value.",
+      visionTitle: "Our Vision",
+      whoWeAreTitle: "Who We Are",
+      whoWeAre1: "Yeon was born from a passion for music and frustration with the limitations of the traditional market. We are a collective of musicians, developers, designers, and strategists united by a purpose: to create the most comprehensive and innovative platform for independent artists.",
+      whoWeAre2: "We combine cutting-edge technology with deep knowledge of the music industry to offer tools that really make a difference in artists' careers. Our approach integrates fan management, direct monetization, and data analysis in a smooth and intuitive experience.",
+      whatWeDoTitle: "What We Do",
+      whatWeDo: "We develop a complete digital ecosystem that allows artists to:",
+      whatWeDo1: "Capture and Engage Fans: Build your fan base independent of social media algorithms, with automation tools that keep your audience connected and engaged.",
+      whatWeDo2: "Monetize Directly: Transform followers into supporters through multiple revenue channels, from streaming and direct sales to exclusive experiences and premium content.",
+      whatWeDo3: "Analyze and Grow: Use data and insights to make strategic decisions, understand your audience, and expand your reach intelligently.",
+      whatWeDo4: "Connect to the Community: Be part of a vibrant network of artists, producers, and music professionals who share knowledge and opportunities.",
+      whyWeExistTitle: "Why We Exist",
+      whyWeExist1: "In a world where streaming platforms pay fractions of cents and social networks control access to fans through unpredictable algorithms, artists need an alternative that puts their future in their own hands.",
+      whyWeExist2: "Yeon exists to return power to creators. We believe that when artists have the right tools and direct control over their career, music becomes not just a passion, but a sustainable livelihood.",
+      communityTitle: "Our Community",
+      community1: "More than a technology company, we are a community. Yeon brings together independent artists, music producers, career managers, and music enthusiasts who share the vision of a fairer and more accessible music market.",
+      community2: "We promote collaboration, continuous learning, and collective growth. When a Yeon artist grows, the entire community is strengthened.",
+      joinTitle: "Join the Musical Revolution",
+      join1: "If you believe that music deserves a platform that understands our particularities and challenges, Yeon is your place.",
+      join2: "We are building the future of independent music. A future where artists live from their art, fans directly support their idols, and music flourishes in all its diversity and authenticity.",
+      join3: "Be part of this revolution. Be Yeon."
     },
     
     // Gallery page
@@ -165,8 +186,29 @@ export const translations = {
     // About page
     about: {
       description: "Yeon Music é dedicada a ajudar artistas a entender e maximizar seu potencial de receita com streaming.",
-      mission: "Nossa missão é fornecer informações claras e transparentes sobre a indústria de streaming de música e ajudar artistas a tomar decisões informadas sobre sua estratégia de distribuição.",
-      vision: "Visualizamos um futuro em que os artistas são compensados de forma justa por seu trabalho e têm total compreensão de como funciona a economia do streaming."
+      mission: "Na Yeon, nossa missão é revolucionar a indústria musical brasileira, construindo um ecossistema digital que capacita artistas independentes a prosperarem em suas carreiras. Acreditamos em um mundo onde cada artista tem o poder de viver de sua música, mantendo sua autenticidade e controle criativo.",
+      missionTitle: "Nossa Missão",
+      vision: "Estamos criando um futuro onde a tecnologia e a música se unem para democratizar o sucesso na indústria musical. A Yeon não é apenas uma plataforma - somos um movimento que transforma a relação entre artistas e fãs, eliminando intermediários e construindo conexões genuínas que geram valor real.",
+      visionTitle: "Nossa Visão",
+      whoWeAreTitle: "Quem Somos",
+      whoWeAre1: "A Yeon nasceu da paixão por música e da frustração com as limitações do mercado tradicional. Somos um coletivo de músicos, desenvolvedores, designers e estrategistas unidos por um propósito: criar a mais completa e inovadora plataforma para artistas independentes no Brasil.",
+      whoWeAre2: "Combinamos tecnologia de ponta com profundo conhecimento da indústria musical para oferecer ferramentas que realmente fazem a diferença na carreira dos artistas. Nossa abordagem integra gestão de fãs, monetização direta e análise de dados em uma experiência fluida e intuitiva.",
+      whatWeDoTitle: "O Que Fazemos",
+      whatWeDo: "Desenvolvemos um ecossistema digital completo que permite aos artistas:",
+      whatWeDo1: "Capturar e Engajar Fãs: Construa sua base de fãs independente de algoritmos de redes sociais, com ferramentas de automação que mantêm sua audiência conectada e engajada.",
+      whatWeDo2: "Monetizar Diretamente: Transforme seguidores em apoiadores através de múltiplos canais de receita, desde streaming e vendas diretas até experiências exclusivas e conteúdo premium.",
+      whatWeDo3: "Analisar e Crescer: Utilize dados e insights para tomar decisões estratégicas, entender seu público e expandir seu alcance de forma inteligente.",
+      whatWeDo4: "Conectar-se à Comunidade: Faça parte de uma rede vibrante de artistas, produtores e profissionais da música que compartilham conhecimento e oportunidades.",
+      whyWeExistTitle: "Por Que Existimos",
+      whyWeExist1: "Em um mundo onde plataformas de streaming pagam frações de centavos e redes sociais controlam o acesso aos fãs através de algoritmos imprevisíveis, os artistas precisam de uma alternativa que coloque seu futuro em suas próprias mãos.",
+      whyWeExist2: "A Yeon existe para devolver o poder aos criadores. Acreditamos que quando artistas têm as ferramentas certas e o controle direto sobre sua carreira, a música se torna não apenas uma paixão, mas um meio de vida sustentável.",
+      communityTitle: "Nossa Comunidade",
+      community1: "Mais do que uma empresa de tecnologia, somos uma comunidade. A Yeon reúne artistas independentes, produtores musicais, gestores de carreira e entusiastas da música que compartilham a visão de um mercado musical mais justo e acessível.",
+      community2: "Promovemos a colaboração, o aprendizado contínuo e o crescimento coletivo. Quando um artista da Yeon cresce, toda a comunidade se fortalece.",
+      joinTitle: "Junte-se à Revolução Musical",
+      join1: "Se você acredita que a música brasileira merece uma plataforma feita por brasileiros para brasileiros, que entende nossas particularidades e desafios, a Yeon é seu lugar.",
+      join2: "Estamos construindo o futuro da música independente no Brasil. Um futuro onde artistas vivem de sua arte, fãs apoiam diretamente seus ídolos, e a música floresce em toda sua diversidade e autenticidade.",
+      join3: "Seja parte dessa revolução. Seja Yeon."
     },
     
     // Gallery page
