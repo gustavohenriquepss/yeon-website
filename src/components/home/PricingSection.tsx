@@ -77,7 +77,7 @@ const PricingSection: React.FC = () => {
   return (
     <section className="py-20 bg-yeon-dark-bg">
       <div className="container px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-6">
           Planos que Crescem com Você
         </h2>
         <p className="text-white/70 text-center max-w-2xl mx-auto mb-10">
@@ -112,10 +112,10 @@ const PricingSection: React.FC = () => {
                 </div>
               )}
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-center">{plan.name}</CardTitle>
+                <CardTitle className="text-2xl font-semibold text-center">{plan.name}</CardTitle>
                 <div className="text-center mt-4">
                   <div className="flex items-center justify-center">
-                    <span className="text-3xl font-bold">
+                    <span className="text-3xl font-semibold">
                       R$ {billingAnnually ? plan.annualPrice : plan.monthlyPrice}
                     </span>
                     <span className="text-white/60 ml-1">/mês</span>

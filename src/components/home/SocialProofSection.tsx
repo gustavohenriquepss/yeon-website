@@ -18,7 +18,7 @@ interface TestimonialProps {
 const StatItem: React.FC<StatItemProps> = ({ value, label }) => {
   return (
     <div className="flex flex-col items-center text-center">
-      <span className="text-4xl md:text-5xl font-bold text-yeon-purple mb-2">{value}</span>
+      <span className="text-4xl md:text-5xl font-semibold text-yeon-purple mb-2">{value}</span>
       <span className="text-white/70">{label}</span>
     </div>
   );

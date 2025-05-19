@@ -30,7 +30,7 @@ const HeroSection: React.FC = () => {
       
       {/* Content */}
       <div className="container relative z-10 px-4 flex flex-col items-center text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 animate-fade-in tracking-tight">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-4 animate-fade-in tracking-tight">
           <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text">LIBERTE SEU </span>
           <span className="text-yeon-purple">POTENCIAL DE ARTISTA</span>
         </h1>

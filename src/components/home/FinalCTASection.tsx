@@ -14,7 +14,7 @@ const FinalCTASection: React.FC = () => {
       
       <div className="container relative z-10 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6">
             Pronto para Transformar sua Carreira Musical?
           </h2>
           <p className="text-xl text-white/80 mb-8">

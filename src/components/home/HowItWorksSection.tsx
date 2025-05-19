@@ -15,7 +15,7 @@ const StepItem: React.FC<StepItemProps> = ({ number, title, description, icon })
     <div className="flex flex-col items-center text-center">
       <div className="w-16 h-16 rounded-full bg-yeon-purple/20 flex items-center justify-center mb-4 relative">
         {icon}
-        <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-yeon-purple text-white text-sm flex items-center justify-center font-bold">
+        <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-yeon-purple text-white text-sm flex items-center justify-center font-semibold">
           {number}
         </span>
       </div>
@@ -52,7 +52,7 @@ const HowItWorksSection: React.FC = () => {
   return (
     <section className="py-20 bg-yeon-darker-bg">
       <div className="container px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-6">
           Como Funciona
         </h2>
         <p className="text-white/70 text-center max-w-2xl mx-auto mb-16">

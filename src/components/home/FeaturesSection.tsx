@@ -38,7 +38,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
       </div>
       
       <CardContent className="relative z-10 flex flex-col h-full p-6">
-        <h3 className="text-xl md:text-2xl font-bold mb-3">{title}</h3>
+        <h3 className="text-xl md:text-2xl font-semibold mb-3">{title}</h3>
         <p className="text-white/70 mb-auto text-sm md:text-base">{description}</p>
         <Button asChild variant="outline" className="mt-4 self-start border-yeon-purple text-yeon-purple hover:bg-yeon-purple hover:text-white">
           <Link to={ctaLink}>{ctaText}</Link>
@@ -89,7 +89,7 @@ const FeaturesSection: React.FC = () => {
   return (
     <section className="py-24">
       <div className="container px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-16">
           Ferramentas Poderosas para Artistas Ambiciosos
         </h2>
         
