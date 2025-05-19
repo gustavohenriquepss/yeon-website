@@ -7,9 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from 'react'; // Make sure React is imported
 import Index from "./pages/Index";
 import About from "./pages/About";
-import Calculator from "./pages/Calculator";
 import Artists from "./pages/Artists";
-import Contracts from "./pages/Contracts"; // Add import for the new Contracts page
+import Tools from "./pages/Tools"; // Import the new Tools page
 import NotFound from "./pages/NotFound";
 
 // Create a new QueryClient instance within the component to ensure proper React context
@@ -27,9 +26,8 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
-              <Route path="/calculator" element={<Calculator />} />
+              <Route path="/tools" element={<Tools />} /> {/* Add the new Tools route */}
               <Route path="/artists" element={<Artists />} />
-              <Route path="/contracts" element={<Contracts />} /> {/* Add the new route */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
