@@ -81,21 +81,51 @@ const AboutContent: React.FC = () => {
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 shadow-md">
-            <CardContent className="pt-6">
-              <ul className="list-disc pl-6 space-y-4">
-                <li className="animate-fade-in">{t('about.whatWeDo1')}</li>
-                <li className="animate-fade-in" style={{animationDelay: '0.1s'}}>{t('about.whatWeDo2')}</li>
-              </ul>
+          <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 hover:transform hover:scale-[1.01] shadow-md">
+            <CardHeader>
+              <CardTitle className="text-xl text-yeon-purple flex items-center">
+                <ChevronRightIcon className="mr-2 h-5 w-5" />
+                {t('about.whatWeDo1Title')}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-white/80">{t('about.whatWeDo1')}</p>
             </CardContent>
           </Card>
           
-          <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 shadow-md">
-            <CardContent className="pt-6">
-              <ul className="list-disc pl-6 space-y-4">
-                <li className="animate-fade-in" style={{animationDelay: '0.2s'}}>{t('about.whatWeDo3')}</li>
-                <li className="animate-fade-in" style={{animationDelay: '0.3s'}}>{t('about.whatWeDo4')}</li>
-              </ul>
+          <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 hover:transform hover:scale-[1.01] shadow-md">
+            <CardHeader>
+              <CardTitle className="text-xl text-yeon-purple flex items-center">
+                <ChevronRightIcon className="mr-2 h-5 w-5" />
+                {t('about.whatWeDo2Title')}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-white/80">{t('about.whatWeDo2')}</p>
+            </CardContent>
+          </Card>
+          
+          <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 hover:transform hover:scale-[1.01] shadow-md">
+            <CardHeader>
+              <CardTitle className="text-xl text-yeon-purple flex items-center">
+                <ChevronRightIcon className="mr-2 h-5 w-5" />
+                {t('about.whatWeDo3Title')}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-white/80">{t('about.whatWeDo3')}</p>
+            </CardContent>
+          </Card>
+          
+          <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 hover:transform hover:scale-[1.01] shadow-md">
+            <CardHeader>
+              <CardTitle className="text-xl text-yeon-purple flex items-center">
+                <ChevronRightIcon className="mr-2 h-5 w-5" />
+                {t('about.whatWeDo4Title')}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-white/80">{t('about.whatWeDo4')}</p>
             </CardContent>
           </Card>
         </div>
