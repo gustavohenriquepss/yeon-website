@@ -1,6 +1,7 @@
 
 import React from 'react';
 import NavigationHeader from './NavigationHeader';
+import Footer from './Footer';
 import { LanguageProvider } from '@/context/LanguageContext';
 
 interface PageLayoutProps {
@@ -9,14 +10,12 @@ interface PageLayoutProps {
 
 const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-yeon-dark-bg text-white">
+    <div className="min-h-screen bg-yeon-dark-bg text-white flex flex-col">
       <NavigationHeader />
-      <div className="container px-4 py-8 pt-20">
+      <div className="container px-4 py-8 pt-20 flex-grow">
         {children}
-        <footer className="mt-16 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Yeon Music. All rights reserved.</p>
-        </footer>
       </div>
+      <Footer />
     </div>
   );
 };

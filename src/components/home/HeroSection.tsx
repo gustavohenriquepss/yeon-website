@@ -50,11 +50,11 @@ const HeroSection: React.FC = () => {
             Saiba Mais
           </Button>
         </div>
-        
-        {/* Photo attribution */}
-        <div className="absolute bottom-3 right-3 text-xs text-white/40 z-10">
-          Foto de <a href="https://unsplash.com/pt-br/@harryswales?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" className="hover:text-white/60">Harry Swales</a> na <a href="https://unsplash.com/pt-br/fotografias/pessoa-negra-segurando-microfone-e-cantando-no-palco-0l0KjNoAfAk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" className="hover:text-white/60">Unsplash</a>
-        </div>
+      </div>
+      
+      {/* Photo attribution - Reposicionada para o canto direito inferior */}
+      <div className="absolute bottom-3 right-3 text-xs text-white/40 z-10 backdrop-blur-sm bg-black/30 px-2 py-1 rounded">
+        Foto de <a href="https://unsplash.com/pt-br/@harryswales?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" className="hover:text-white/60">Harry Swales</a> na <a href="https://unsplash.com/pt-br/fotografias/pessoa-negra-segurando-microfone-e-cantando-no-palco-0l0KjNoAfAk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" className="hover:text-white/60">Unsplash</a>
       </div>
       
       {/* Scroll indicator */}

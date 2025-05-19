@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLanguage } from '@/context/LanguageContext';
@@ -18,61 +19,61 @@ const AboutContent: React.FC = () => {
       name: "Carlos Silva",
       role: "Fundador & CEO",
       bio: "Músico e desenvolvedor com mais de 10 anos de experiência na indústria musical brasileira.",
-      imageUrl: "/placeholder.svg" // Replace with actual image paths
+      imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3" 
     },
     {
       name: "Ana Oliveira",
       role: "Diretora de Tecnologia",
       bio: "Especialista em desenvolvimento de produtos digitais para o mercado de entretenimento.",
-      imageUrl: "/placeholder.svg"
+      imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
     },
     {
       name: "Roberto Mendes",
       role: "Diretor de Parcerias",
       bio: "Ex-executivo de grandes gravadoras, especialista em negócios da indústria musical.",
-      imageUrl: "/placeholder.svg"
+      imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
     },
     {
       name: "Juliana Costa",
       role: "Designer de Produto",
       bio: "Especialista em UX/UI com foco em experiências digitais para músicos e fãs.",
-      imageUrl: "/placeholder.svg"
+      imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1588&auto=format&fit=crop&ixlib=rb-4.0.3"
     },
     {
       name: "Lucas Santos",
       role: "Desenvolvedor Full Stack",
       bio: "Engenheiro de software apaixonado por música e novas tecnologias.",
-      imageUrl: "/placeholder.svg"
+      imageUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
     },
     {
       name: "Mariana Alves",
       role: "Growth Specialist",
       bio: "Especialista em marketing digital para artistas independentes.",
-      imageUrl: "/placeholder.svg"
+      imageUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1588&auto=format&fit=crop&ixlib=rb-4.0.3"
     },
     {
       name: "Paulo Ferreira",
       role: "Analista de Dados",
       bio: "Especialista em análise de dados e métricas para a indústria musical.",
-      imageUrl: "/placeholder.svg"
+      imageUrl: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
     },
     {
       name: "Fernanda Lima",
       role: "Gestora de Comunidade",
       bio: "Responsável pelo relacionamento com artistas e fãs na plataforma.",
-      imageUrl: "/placeholder.svg"
+      imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1522&auto=format&fit=crop&ixlib=rb-4.0.3"
     },
     {
       name: "Ricardo Gomes",
       role: "Diretor Financeiro",
       bio: "Especialista em modelos de negócio e estratégias financeiras para startups.",
-      imageUrl: "/placeholder.svg"
+      imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3"
     },
     {
       name: "Camila Torres",
       role: "Especialista em Conteúdo",
       bio: "Jornalista especializada em música independente e novas tendências.",
-      imageUrl: "/placeholder.svg"
+      imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3"
     }
   ];
   
@@ -229,25 +230,9 @@ const AboutContent: React.FC = () => {
         </div>
       </section>
       
-      {/* Our Community Section */}
-      <section className="container px-4 py-16 bg-[#1A1A1A]">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-yeon-purple text-center">{t('about.communityTitle')}</h2>
-          
-          <Card className="bg-[#2A2A2A]/90 backdrop-blur-sm border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 shadow-lg mb-8">
-            <CardContent className="pt-6">
-              <p className="mb-6 text-lg">
-                {t('about.community1')}
-              </p>
-              <p className="text-lg">
-                {t('about.community2')}
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+      {/* Our Community Section - REMOVIDA */}
       
-      {/* Nosso Time Section - Redesigned with glassmorphic cards */}
+      {/* Nosso Time Section - Com imagens reais */}
       <section className="relative min-h-[60vh] flex items-center justify-center mb-16 bg-gradient-to-br from-yeon-dark-bg to-[#1A1A1A] overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-10">
@@ -267,7 +252,7 @@ const AboutContent: React.FC = () => {
             </p>
           </div>
           
-          {/* Team Members Grid - Redesigned with 3 columns, 2 rows and "See More" button */}
+          {/* Team Members Grid - Com imagens reais */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {displayedMembers.map((member, index) => (
               <div 

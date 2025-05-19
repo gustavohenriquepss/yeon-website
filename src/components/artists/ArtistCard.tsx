@@ -2,18 +2,31 @@
 import React from 'react';
 import { Artist } from '@/pages/Artists';
 import { Card, CardContent } from "@/components/ui/card";
-import { Instagram, } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 
 interface ArtistCardProps {
   artist: Artist;
 }
 
 const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
+  // Lista de imagens realistas para artistas
+  const artistImages = [
+    "https://images.unsplash.com/photo-1549213783-8284d0336c4f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3", // Cantor com microfone
+    "https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3", // DJ
+    "https://images.unsplash.com/photo-1517230878791-4d28214057c2?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3", // Banda tocando
+    "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3", // Vocalista com guitarra
+    "https://images.unsplash.com/photo-1619961602105-16fa2a5465c2?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3", // Mulher no microfone
+    "https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3"  // Cantor com chapéu
+  ];
+  
+  // Seleciona uma imagem baseada no id do artista para manter consistência
+  const artistImage = artistImages[artist.id % artistImages.length];
+  
   return (
     <Card className="bg-[#2A2A2A] rounded-lg overflow-hidden border border-white/10 hover:border-white/30 transition-all">
       <div className="relative h-48 overflow-hidden">
         <img 
-          src={artist.image} 
+          src={artistImage} 
           alt={artist.name} 
           className="w-full h-full object-cover" 
         />
