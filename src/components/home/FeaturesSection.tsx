@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import { Card, CardContent } from '@/components/ui/card';
 
 interface FeatureItemProps {
   title: string;
@@ -11,7 +12,7 @@ interface FeatureItemProps {
   image: string;
   ctaText: string;
   ctaLink: string;
-  imagePosition: 'left' | 'right';
+  size?: 'small' | 'large';
 }
 
 const FeatureItem: React.FC<FeatureItemProps> = ({
@@ -20,29 +21,30 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
   image,
   ctaText,
   ctaLink,
-  imagePosition
+  size = 'small'
 }) => {
   return (
-    <div className={cn(
-      "flex flex-col items-center gap-8 py-12",
-      imagePosition === 'right' ? 'md:flex-row' : 'md:flex-row-reverse'
+    <Card className={cn(
+      "overflow-hidden group relative h-full border-0 rounded-xl bg-secondary/50 transition-all duration-300 hover:bg-secondary/80",
+      size === 'large' ? 'md:col-span-2' : ''
     )}>
-      <div className="w-full md:w-1/2">
+      <div className="absolute inset-0 overflow-hidden">
         <img
           src={image}
           alt={title}
-          className="rounded-lg shadow-lg w-full object-cover max-h-[400px]"
+          className="w-full h-full object-cover opacity-30 transition-transform duration-500 group-hover:scale-105"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/90" />
       </div>
       
-      <div className="w-full md:w-1/2 flex flex-col items-start">
-        <h3 className="text-2xl md:text-3xl font-bold mb-4">{title}</h3>
-        <p className="text-white/70 mb-6 text-lg">{description}</p>
-        <Button asChild variant="outline" className="border-yeon-purple text-yeon-purple hover:bg-yeon-purple hover:text-white">
+      <CardContent className="relative z-10 flex flex-col h-full p-6">
+        <h3 className="text-xl md:text-2xl font-bold mb-3">{title}</h3>
+        <p className="text-white/70 mb-auto text-sm md:text-base">{description}</p>
+        <Button asChild variant="outline" className="mt-4 self-start border-yeon-purple text-yeon-purple hover:bg-yeon-purple hover:text-white">
           <Link to={ctaLink}>{ctaText}</Link>
         </Button>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 
@@ -56,7 +58,7 @@ const FeaturesSection: React.FC = () => {
       image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       ctaText: "Calcule Agora",
       ctaLink: "/calculator",
-      imagePosition: 'left' as const
+      size: 'large' as const
     },
     {
       title: "Distribuição Multi-Plataforma",
@@ -64,7 +66,7 @@ const FeaturesSection: React.FC = () => {
       image: "https://images.unsplash.com/photo-1516223725307-6f76b9ec8742?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       ctaText: "Saiba Mais",
       ctaLink: "/about",
-      imagePosition: 'right' as const
+      size: 'small' as const
     },
     {
       title: "Análise de Desempenho em Tempo Real",
@@ -72,18 +74,26 @@ const FeaturesSection: React.FC = () => {
       image: "https://images.unsplash.com/photo-1551135049-8a33b5883817?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       ctaText: "Experimente",
       ctaLink: "/calculator",
-      imagePosition: 'left' as const
+      size: 'small' as const
+    },
+    {
+      title: "Marketing Digital Integrado",
+      description: "Ferramentas para promover sua música nas redes sociais e plataformas digitais de forma estratégica e eficiente.",
+      image: "https://images.unsplash.com/photo-1516900557549-41557d405adf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      ctaText: "Explorar",
+      ctaLink: "/about",
+      size: 'small' as const
     }
   ];
 
   return (
-    <section className="py-20 bg-yeon-darker-bg">
+    <section className="py-24 bg-yeon-darker-bg">
       <div className="container px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
           Ferramentas Poderosas para Artistas Ambiciosos
         </h2>
         
-        <div className="flex flex-col gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <FeatureItem
               key={index}
