@@ -8,7 +8,7 @@ import ContractsSection from '@/components/ContractsSection';
 import SpotifyRoaster from '@/components/SpotifyRoaster';
 import { useLanguage } from '@/context/LanguageContext';
 
-const Tools: React.FC = () => {
+const MusicTools: React.FC = () => {
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<string>("calculator");
 
@@ -69,4 +69,4 @@ const Tools: React.FC = () => {
   );
 };
 
-export default Tools;
+export default MusicTools;

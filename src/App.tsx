@@ -8,7 +8,7 @@ import React from 'react'; // Make sure React is imported
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Artists from "./pages/Artists";
-import Tools from "./pages/Tools"; // Import the new Tools page
+import MusicTools from "./pages/Tools"; // Updated component name
 import NotFound from "./pages/NotFound";
 
 // Create a new QueryClient instance within the component to ensure proper React context
@@ -26,7 +26,7 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
-              <Route path="/tools" element={<Tools />} /> {/* Add the new Tools route */}
+              <Route path="/tools" element={<MusicTools />} /> {/* Updated component name */}
               <Route path="/artists" element={<Artists />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
