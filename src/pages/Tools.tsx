@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import PageLayout from '@/components/PageLayout';
 import StreamingCalculator from '@/components/StreamingCalculator';
 import ContractsSection from '@/components/ContractsSection';
+import SpotifyRoaster from '@/components/SpotifyRoaster';
 import { useLanguage } from '@/context/LanguageContext';
 
 const Tools: React.FC = () => {
@@ -17,12 +18,12 @@ const Tools: React.FC = () => {
         <title>Ferramentas para Músicos | Yeon Music</title>
         <meta 
           name="description" 
-          content="Ferramentas essenciais para artistas independentes: calculadora de royalties e modelos de contratos profissionais." 
+          content="Ferramentas essenciais para artistas independentes: calculadora de royalties, modelos de contratos profissionais e mais." 
         />
         <link rel="canonical" href="https://yeon-music.com/tools" />
         <meta 
           name="keywords" 
-          content="ferramentas musicais, calculadora royalties, contratos musicais, artista independente" 
+          content="ferramentas musicais, calculadora royalties, contratos musicais, artista independente, spotify analyzer" 
         />
       </Helmet>
       <PageLayout>
@@ -43,9 +44,10 @@ const Tools: React.FC = () => {
             className="w-full"
           >
             <div className="flex justify-center mb-6">
-              <TabsList className="grid grid-cols-2 w-full max-w-md">
+              <TabsList className="grid grid-cols-3 w-full max-w-2xl">
                 <TabsTrigger value="calculator">Calculadora de Royalties</TabsTrigger>
                 <TabsTrigger value="contracts">Modelos de Contratos</TabsTrigger>
+                <TabsTrigger value="spotify">Frite meu Spotify</TabsTrigger>
               </TabsList>
             </div>
             
@@ -55,6 +57,10 @@ const Tools: React.FC = () => {
             
             <TabsContent value="contracts" className="mt-4">
               <ContractsSection />
+            </TabsContent>
+            
+            <TabsContent value="spotify" className="mt-4">
+              <SpotifyRoaster />
             </TabsContent>
           </Tabs>
         </div>

@@ -22,7 +22,7 @@ const NavigationHeader: React.FC = () => {
   const navItems = [
     { name: t('nav.home'), href: '/' },
     { name: t('nav.about'), href: '/about' },
-    { name: t('nav.tools'), href: '/tools' }, // Changed from calculator and contracts to tools
+    { name: t('nav.musicTools'), href: '/tools' }, // Changed from 'tools' to 'musicTools'
     { name: t('nav.artists'), href: '/artists' },
   ];
 
