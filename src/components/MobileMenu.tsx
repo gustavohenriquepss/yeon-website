@@ -38,7 +38,7 @@ const MobileMenu: React.FC = () => {
               <Link 
                 key={item.href} 
                 to={item.href} 
-                className="text-white hover:text-yeon-purple transition-colors py-2"
+                className="text-white/70 hover:text-white transition-colors py-2 border-b border-transparent hover:border-white/20"
               >
                 <span>{item.name}</span>
               </Link>

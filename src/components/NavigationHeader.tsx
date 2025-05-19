@@ -6,8 +6,7 @@ import {
   NavigationMenu, 
   NavigationMenuItem, 
   NavigationMenuLink,
-  NavigationMenuList, 
-  navigationMenuTriggerStyle 
+  NavigationMenuList
 } from '@/components/ui/navigation-menu';
 import { useLanguage } from '@/context/LanguageContext';
 import MobileMenu from '@/components/MobileMenu';
@@ -43,8 +42,10 @@ const NavigationHeader: React.FC = () => {
                   <Link to={item.href}>
                     <NavigationMenuLink
                       className={cn(
-                        navigationMenuTriggerStyle(),
-                        isActive(item.href) && "bg-accent/50"
+                        "px-3 py-2 text-sm transition-colors",
+                        isActive(item.href)
+                          ? "text-white border-b-2 border-yeon-purple font-medium" 
+                          : "text-white/70 hover:text-white"
                       )}
                     >
                       {item.name}
