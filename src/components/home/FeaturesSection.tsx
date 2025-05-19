@@ -87,7 +87,7 @@ const FeaturesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-yeon-darker-bg">
+    <section className="py-24">
       <div className="container px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
           Ferramentas Poderosas para Artistas Ambiciosos
