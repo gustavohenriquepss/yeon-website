@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Menu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import {
   Sheet,
@@ -10,7 +11,6 @@ import {
 } from '@/components/ui/sheet';
 import SocialLinks from '@/components/SocialLinks';
 import { useLanguage } from '@/context/LanguageContext';
-import Icon from '@/components/Icon';
 
 const MobileMenu: React.FC = () => {
   const { t } = useLanguage();
@@ -26,7 +26,7 @@ const MobileMenu: React.FC = () => {
   return (
     <Sheet>
       <SheetTrigger className="md:hidden" aria-label="Menu">
-        <Icon name="Menu" className="h-5 w-5 text-white hover:text-yeon-purple transition-colors" />
+        <Menu className="h-5 w-5 text-white hover:text-yeon-purple transition-colors" />
       </SheetTrigger>
       <SheetContent side="right" className="bg-yeon-dark-bg border-yeon-dark-bg">
         <SheetHeader>
