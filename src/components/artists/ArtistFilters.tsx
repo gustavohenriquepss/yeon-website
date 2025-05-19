@@ -11,6 +11,7 @@ interface ArtistFiltersProps {
   setSelectedGenres: (genres: string[]) => void;
   selectedLocation: string;
   setSelectedLocation: (location: string) => void;
+  onClose?: () => void;
 }
 
 const ArtistFilters: React.FC<ArtistFiltersProps> = ({
@@ -19,7 +20,8 @@ const ArtistFilters: React.FC<ArtistFiltersProps> = ({
   selectedGenres,
   setSelectedGenres,
   selectedLocation,
-  setSelectedLocation
+  setSelectedLocation,
+  onClose
 }) => {
   const handleGenreChange = (genre: string, checked: boolean | string) => {
     if (checked) {
@@ -29,10 +31,16 @@ const ArtistFilters: React.FC<ArtistFiltersProps> = ({
     }
   };
 
+  const handleClearFilters = () => {
+    setSelectedGenres([]);
+    setSelectedLocation('all_cities');
+    if (onClose) {
+      onClose();
+    }
+  };
+
   return (
     <div className="space-y-6">
-      <h3 className="font-semibold text-lg text-white">Filtros</h3>
-      
       {/* Genres filter */}
       <div className="space-y-3">
         <h4 className="text-sm font-medium text-white">Gêneros Musicais</h4>
@@ -79,10 +87,7 @@ const ArtistFilters: React.FC<ArtistFiltersProps> = ({
       {/* Clear filters button */}
       {(selectedGenres.length > 0 || selectedLocation !== 'all_cities') && (
         <button
-          onClick={() => {
-            setSelectedGenres([]);
-            setSelectedLocation('all_cities');
-          }}
+          onClick={handleClearFilters}
           className="text-sm text-yeon-purple hover:text-yeon-dark-purple underline"
         >
           Limpar filtros

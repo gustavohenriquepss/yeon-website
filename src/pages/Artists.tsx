@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLanguage } from '@/context/LanguageContext';
@@ -6,6 +7,22 @@ import ArtistSearch from '@/components/artists/ArtistSearch';
 import ArtistFilters from '@/components/artists/ArtistFilters';
 import ArtistGrid from '@/components/artists/ArtistGrid';
 import { Filter } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { Button } from '@/components/ui/button';
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 // Types
 export type Artist = {
@@ -25,7 +42,8 @@ const ArtistsContent: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
   const [selectedLocation, setSelectedLocation] = useState<string>('all_cities');
-  const [showFilters, setShowFilters] = useState(false);
+  const [open, setOpen] = useState(false);
+  const isMobile = useIsMobile();
   
   // Mock artist data with more realistic information
   const artists: Artist[] = [
@@ -161,12 +179,30 @@ const ArtistsContent: React.FC = () => {
       return matchesSearch && matchesGenres && matchesLocation;
     });
   }, [artists, searchQuery, selectedGenres, selectedLocation]);
+
+  // Render filters in a drawer on mobile and a sheet on desktop
+  const FiltersContainer = () => {
+    return (
+      <ArtistFilters 
+        genres={allGenres}
+        locations={allLocations}
+        selectedGenres={selectedGenres}
+        setSelectedGenres={setSelectedGenres}
+        selectedLocation={selectedLocation}
+        setSelectedLocation={setSelectedLocation}
+        onClose={() => setOpen(false)}
+      />
+    );
+  };
+
+  // Calculate active filter count to show on the button
+  const activeFilterCount = selectedGenres.length + (selectedLocation !== 'all_cities' ? 1 : 0);
   
   return (
     <main className="max-w-7xl mx-auto">
       <h1 className="text-3xl font-bold mb-6 text-center">{t('nav.artists')}</h1>
       
-      {/* Search and filter controls for desktop */}
+      {/* Search and filter controls */}
       <div className="flex flex-col md:flex-row gap-4 mb-6">
         <div className="flex-grow">
           <ArtistSearch 
@@ -176,38 +212,62 @@ const ArtistsContent: React.FC = () => {
           />
         </div>
         
-        <div className="flex items-center gap-2 md:hidden">
-          <button 
-            onClick={() => setShowFilters(!showFilters)}
-            className="flex items-center gap-2 bg-yeon-dark-purple px-4 py-2 rounded-md text-white"
-          >
-            <Filter size={18} />
-            Filtros
-          </button>
+        <div className="flex items-center gap-2">
+          {isMobile ? (
+            <Drawer open={open} onOpenChange={setOpen}>
+              <DrawerTrigger asChild>
+                <Button variant="outline" className="flex items-center gap-2">
+                  <Filter size={16} />
+                  Filtros
+                  {activeFilterCount > 0 && (
+                    <span className="bg-yeon-purple text-white text-xs py-0.5 px-1.5 rounded-full">
+                      {activeFilterCount}
+                    </span>
+                  )}
+                </Button>
+              </DrawerTrigger>
+              <DrawerContent className="bg-[#1A1A1A] border-t border-white/10 text-white">
+                <DrawerHeader>
+                  <DrawerTitle>Filtros</DrawerTitle>
+                </DrawerHeader>
+                <div className="px-4 pb-6">
+                  <FiltersContainer />
+                </div>
+              </DrawerContent>
+            </Drawer>
+          ) : (
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger asChild>
+                <Button variant="outline" className="flex items-center gap-2">
+                  <Filter size={16} />
+                  Filtros
+                  {activeFilterCount > 0 && (
+                    <span className="bg-yeon-purple text-white text-xs py-0.5 px-1.5 rounded-full">
+                      {activeFilterCount}
+                    </span>
+                  )}
+                </Button>
+              </SheetTrigger>
+              <SheetContent className="bg-[#1A1A1A] border-l border-white/10 text-white">
+                <SheetHeader>
+                  <SheetTitle className="text-white">Filtros</SheetTitle>
+                </SheetHeader>
+                <div className="mt-6">
+                  <FiltersContainer />
+                </div>
+              </SheetContent>
+            </Sheet>
+          )}
         </div>
       </div>
       
-      <div className="flex flex-col md:flex-row gap-6">
-        {/* Filters sidebar - hidden on mobile unless toggled */}
-        <div className={`${showFilters ? 'block' : 'hidden'} md:block md:w-64 bg-[#2A2A2A] rounded-lg p-4`}>
-          <ArtistFilters 
-            genres={allGenres}
-            locations={allLocations}
-            selectedGenres={selectedGenres}
-            setSelectedGenres={setSelectedGenres}
-            selectedLocation={selectedLocation}
-            setSelectedLocation={setSelectedLocation}
-          />
+      {/* Results count and artist grid */}
+      <div className="flex-1">
+        <div className="mb-4 text-sm text-gray-400">
+          {filteredArtists.length} {filteredArtists.length === 1 ? 'artista encontrado' : 'artistas encontrados'}
         </div>
         
-        {/* Results count and artist grid */}
-        <div className="flex-1">
-          <div className="mb-4 text-sm text-gray-400">
-            {filteredArtists.length} {filteredArtists.length === 1 ? 'artista encontrado' : 'artistas encontrados'}
-          </div>
-          
-          <ArtistGrid artists={filteredArtists} />
-        </div>
+        <ArtistGrid artists={filteredArtists} />
       </div>
     </main>
   );
