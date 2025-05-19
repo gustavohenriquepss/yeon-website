@@ -1,12 +1,15 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import { Link as RouterLink } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
+
 const HeroSection: React.FC = () => {
   const {
     t
   } = useLanguage();
+  
   const scrollToNextSection = () => {
     const nextSection = document.getElementById('value-proposition');
     if (nextSection) {
@@ -15,13 +18,14 @@ const HeroSection: React.FC = () => {
       });
     }
   };
-  return <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+  
+  return <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden rounded-xl">
       {/* Background image with overlay */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 rounded-xl" style={{
       backgroundImage: "url('/lovable-uploads/81539f4f-c548-4030-92a8-20349de875ba.png')",
       backgroundPosition: '50% 30%'
     }}>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-yeon-dark-bg/80 to-yeon-dark-bg rounded-md"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-yeon-dark-bg/80 to-yeon-dark-bg rounded-xl"></div>
       </div>
       
       {/* Content */}
@@ -59,4 +63,5 @@ const HeroSection: React.FC = () => {
       </div>
     </section>;
 };
+
 export default HeroSection;
