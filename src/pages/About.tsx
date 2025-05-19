@@ -4,6 +4,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import PageLayout from '@/components/PageLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChevronRightIcon } from 'lucide-react';
+
 const AboutContent: React.FC = () => {
   const {
     t
@@ -19,7 +20,7 @@ const AboutContent: React.FC = () => {
         <div className="absolute top-0 right-0 w-64 h-64 bg-yeon-purple/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-yeon-purple/5 rounded-full blur-3xl"></div>
         
-        <div className="container py-16 relative z-10 px-[64px] rounded-lg">
+        <div className="container py-16 relative z-10 px-[64px] rounded-2xl">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white animate-fade-in">
               <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">{t('about.whoWeAreTitle')}</span>
@@ -195,6 +196,7 @@ const AboutContent: React.FC = () => {
       </section>
     </main>;
 };
+
 const About: React.FC = () => {
   const {
     t
@@ -210,4 +212,5 @@ const About: React.FC = () => {
       </PageLayout>
     </>;
 };
+
 export default About;
