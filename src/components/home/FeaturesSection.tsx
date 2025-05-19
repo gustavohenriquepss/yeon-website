@@ -9,7 +9,7 @@ const FeaturesSection: React.FC = () => {
   const { t } = useLanguage();
   
   return (
-    <section className="py-24">
+    <section className="py-24 bg-yeon-dark-bg">
       <div className="container px-4">
         <h2 className="text-3xl md:text-4xl font-semibold text-center mb-6">
           Ferramentas Poderosas para Artistas Ambiciosos
