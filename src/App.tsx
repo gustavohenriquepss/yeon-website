@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Calculator from "./pages/Calculator";
 import Artists from "./pages/Artists";
+import Contracts from "./pages/Contracts"; // Add import for the new Contracts page
 import NotFound from "./pages/NotFound";
 
 // Create a new QueryClient instance within the component to ensure proper React context
@@ -28,6 +29,7 @@ const App: React.FC = () => {
               <Route path="/about" element={<About />} />
               <Route path="/calculator" element={<Calculator />} />
               <Route path="/artists" element={<Artists />} />
+              <Route path="/contracts" element={<Contracts />} /> {/* Add the new route */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

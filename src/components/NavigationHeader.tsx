@@ -24,6 +24,7 @@ const NavigationHeader: React.FC = () => {
     { name: t('nav.about'), href: '/about' },
     { name: t('nav.calculator'), href: '/calculator' },
     { name: t('nav.artists'), href: '/artists' },
+    { name: t('nav.contracts'), href: '/contracts' }, // Add new nav item for Contracts
   ];
 
   return (
