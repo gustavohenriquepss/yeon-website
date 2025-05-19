@@ -23,7 +23,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       if (translation && translation[part]) {
         translation = translation[part];
       } else {
-        console.warn(`Translation key not found: ${key}`);
+        console.warn(`Chave de tradução não encontrada: ${key}`);
         return key;
       }
     }
