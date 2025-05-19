@@ -24,12 +24,12 @@ const AboutContent: React.FC = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white animate-fade-in">
               <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent text-4xl font-semibold">{t('about.whoWeAreTitle')}</span>
             </h1>
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/70 animate-fade-in" style={{
+            <p className="w-full max-w-3xl mx-auto text-lg md:text-xl text-white/70 animate-fade-in" style={{
             animationDelay: '0.1s'
           }}>
               {t('about.whoWeAre1')}
             </p>
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/70 mt-4 animate-fade-in" style={{
+            <p className="w-full max-w-3xl mx-auto text-lg md:text-xl text-white/70 mt-4 animate-fade-in" style={{
             animationDelay: '0.2s'
           }}>
               {t('about.whoWeAre2')}
