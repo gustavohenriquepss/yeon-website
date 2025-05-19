@@ -6,8 +6,6 @@ import HeroSection from '@/components/home/HeroSection';
 import ValuePropositionSection from '@/components/home/ValuePropositionSection';
 import FeaturesSection from '@/components/home/FeaturesSection';
 import SocialProofSection from '@/components/home/SocialProofSection';
-import HowItWorksSection from '@/components/home/HowItWorksSection';
-import PricingSection from '@/components/home/PricingSection';
 import FAQSection from '@/components/home/FAQSection';
 import FinalCTASection from '@/components/home/FinalCTASection';
 import { useLanguage } from '@/context/LanguageContext';
@@ -21,8 +19,6 @@ const IndexContent: React.FC = () => {
       <ValuePropositionSection />
       <FeaturesSection />
       <SocialProofSection />
-      <HowItWorksSection />
-      <PricingSection />
       <FAQSection />
       <FinalCTASection />
     </main>
