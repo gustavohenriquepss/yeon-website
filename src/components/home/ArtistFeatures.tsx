@@ -3,7 +3,7 @@ import React from 'react';
 import FeatureItem, { FeatureItemProps } from './FeatureItem';
 
 const ArtistFeatures: React.FC = () => {
-  const artistFeatures: Omit<FeatureItemProps, 'size'>[] = [
+  const artistFeatures: (Omit<FeatureItemProps, 'size'> & { tag?: string })[] = [
     {
       title: "Ferramentas de Financiamento Coletivo",
       description: "Arrecade fundos para seus projetos musicais diretamente de seus fãs, oferecendo recompensas exclusivas e mantendo o controle criativo sobre sua música."
@@ -17,8 +17,9 @@ const ArtistFeatures: React.FC = () => {
       description: "Compare seus ganhos potenciais em todas as plataformas de streaming e descubra onde sua música gera mais receita."
     },
     {
-      title: "Planejador de Lançamentos (com IA)",
-      description: "Organize seus lançamentos musicais com nossa ferramenta de planejamento assistida por IA, otimizando datas e estratégias para máximo impacto."
+      title: "Planejador de lançamentos",
+      description: "Organize seus lançamentos musicais com nossa ferramenta de planejamento assistida por IA, otimizando datas e estratégias para máximo impacto.",
+      tag: "com IA"
     },
     {
       title: "Ferramentas de Marketing",
