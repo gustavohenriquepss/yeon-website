@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Menu } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import {
   Sheet,
   SheetContent,
@@ -8,6 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import { Home, Info, GalleryHorizontal, Calculator, Users } from 'lucide-react';
 import LanguageToggle from '@/components/LanguageToggle';
 import SocialLinks from '@/components/SocialLinks';
 import { useLanguage } from '@/context/LanguageContext';
@@ -15,6 +17,14 @@ import { useLanguage } from '@/context/LanguageContext';
 const MobileMenu: React.FC = () => {
   const { t } = useLanguage();
   
+  const navItems = [
+    { name: t('nav.home'), href: '/', icon: <Home className="h-5 w-5 mr-3" /> },
+    { name: t('nav.about'), href: '/about', icon: <Info className="h-5 w-5 mr-3" /> },
+    { name: t('nav.gallery'), href: '/gallery', icon: <GalleryHorizontal className="h-5 w-5 mr-3" /> },
+    { name: t('nav.calculator'), href: '/calculator', icon: <Calculator className="h-5 w-5 mr-3" /> },
+    { name: t('nav.artists'), href: '/artists', icon: <Users className="h-5 w-5 mr-3" /> },
+  ];
+
   return (
     <Sheet>
       <SheetTrigger className="md:hidden" aria-label="Menu">
@@ -25,10 +35,22 @@ const MobileMenu: React.FC = () => {
           <SheetTitle className="text-white">{t('menu')}</SheetTitle>
         </SheetHeader>
         <div className="flex flex-col gap-6 mt-6">
-          <div className="flex justify-center">
+          <nav className="flex flex-col space-y-4">
+            {navItems.map((item) => (
+              <Link 
+                key={item.href} 
+                to={item.href} 
+                className="flex items-center text-white hover:text-yeon-purple transition-colors py-2"
+              >
+                {item.icon}
+                <span>{item.name}</span>
+              </Link>
+            ))}
+          </nav>
+          <div className="flex justify-center mt-4">
             <LanguageToggle />
           </div>
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center">
             <SocialLinks />
           </div>
         </div>
