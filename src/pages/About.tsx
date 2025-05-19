@@ -4,7 +4,6 @@ import { useLanguage } from '@/context/LanguageContext';
 import PageLayout from '@/components/PageLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChevronRightIcon } from 'lucide-react';
-
 const AboutContent: React.FC = () => {
   const {
     t
@@ -43,10 +42,10 @@ const AboutContent: React.FC = () => {
             <Card className="bg-[#2A2A2A]/80 backdrop-blur-sm border border-white/10 hover:border-yeon-purple/50 hover:transform hover:scale-[1.02] transition-all duration-300 overflow-hidden shadow-lg animate-fade-in" style={{
             animationDelay: '0.3s'
           }}>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-yeon-purple/10 rounded-bl-full"></div>
+              
               <CardHeader>
                 <CardTitle className="text-2xl text-yeon-purple flex items-center">
-                  <ChevronRightIcon className="mr-2 h-5 w-5" />
+                  
                   {t('about.missionTitle')}
                 </CardTitle>
               </CardHeader>
@@ -61,10 +60,10 @@ const AboutContent: React.FC = () => {
             <Card className="bg-[#2A2A2A]/80 backdrop-blur-sm border border-white/10 hover:border-yeon-purple/50 hover:transform hover:scale-[1.02] transition-all duration-300 overflow-hidden shadow-lg animate-fade-in" style={{
             animationDelay: '0.4s'
           }}>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-yeon-purple/10 rounded-bl-full"></div>
+              
               <CardHeader>
                 <CardTitle className="text-2xl text-yeon-purple flex items-center">
-                  <ChevronRightIcon className="mr-2 h-5 w-5" />
+                  
                   {t('about.visionTitle')}
                 </CardTitle>
               </CardHeader>
@@ -91,7 +90,7 @@ const AboutContent: React.FC = () => {
           <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 hover:transform hover:scale-[1.01] shadow-md">
             <CardHeader>
               <CardTitle className="text-xl text-yeon-purple flex items-center">
-                <ChevronRightIcon className="mr-2 h-5 w-5" />
+                
                 {t('about.whatWeDo1Title')}
               </CardTitle>
             </CardHeader>
@@ -103,7 +102,7 @@ const AboutContent: React.FC = () => {
           <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 hover:transform hover:scale-[1.01] shadow-md">
             <CardHeader>
               <CardTitle className="text-xl text-yeon-purple flex items-center">
-                <ChevronRightIcon className="mr-2 h-5 w-5" />
+                
                 {t('about.whatWeDo2Title')}
               </CardTitle>
             </CardHeader>
@@ -115,7 +114,7 @@ const AboutContent: React.FC = () => {
           <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 hover:transform hover:scale-[1.01] shadow-md">
             <CardHeader>
               <CardTitle className="text-xl text-yeon-purple flex items-center">
-                <ChevronRightIcon className="mr-2 h-5 w-5" />
+                
                 {t('about.whatWeDo3Title')}
               </CardTitle>
             </CardHeader>
@@ -127,7 +126,7 @@ const AboutContent: React.FC = () => {
           <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 hover:transform hover:scale-[1.01] shadow-md">
             <CardHeader>
               <CardTitle className="text-xl text-yeon-purple flex items-center">
-                <ChevronRightIcon className="mr-2 h-5 w-5" />
+                
                 {t('about.whatWeDo4Title')}
               </CardTitle>
             </CardHeader>
@@ -196,7 +195,6 @@ const AboutContent: React.FC = () => {
       </section>
     </main>;
 };
-
 const About: React.FC = () => {
   const {
     t
@@ -212,5 +210,4 @@ const About: React.FC = () => {
       </PageLayout>
     </>;
 };
-
 export default About;
