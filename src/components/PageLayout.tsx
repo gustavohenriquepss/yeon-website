@@ -3,7 +3,6 @@ import React from 'react';
 import NavigationHeader from './NavigationHeader';
 import Footer from './Footer';
 import { LanguageProvider } from '@/context/LanguageContext';
-import FloatingArtistImages from './FloatingArtistImages';
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -12,7 +11,6 @@ interface PageLayoutProps {
 const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-yeon-dark-bg text-white flex flex-col">
-      <FloatingArtistImages />
       <NavigationHeader />
       <div className="container px-4 py-8 pt-20 flex-grow">
         {children}

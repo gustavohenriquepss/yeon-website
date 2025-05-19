@@ -47,9 +47,4 @@
   .glass-effect {
     @apply bg-black/20 backdrop-blur-sm border border-white/5;
   }
-  
-  .glass-effect-purple {
-    @apply bg-yeon-purple/10 backdrop-blur-sm border border-yeon-purple/20;
-  }
 }
-
