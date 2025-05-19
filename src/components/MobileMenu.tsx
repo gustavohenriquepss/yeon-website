@@ -9,7 +9,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { Home, Info, GalleryHorizontal, Calculator, Users } from 'lucide-react';
 import SocialLinks from '@/components/SocialLinks';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -17,11 +16,11 @@ const MobileMenu: React.FC = () => {
   const { t } = useLanguage();
   
   const navItems = [
-    { name: t('nav.home'), href: '/', icon: <Home className="h-5 w-5 mr-3" /> },
-    { name: t('nav.about'), href: '/about', icon: <Info className="h-5 w-5 mr-3" /> },
-    { name: t('nav.gallery'), href: '/gallery', icon: <GalleryHorizontal className="h-5 w-5 mr-3" /> },
-    { name: t('nav.calculator'), href: '/calculator', icon: <Calculator className="h-5 w-5 mr-3" /> },
-    { name: t('nav.artists'), href: '/artists', icon: <Users className="h-5 w-5 mr-3" /> },
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.about'), href: '/about' },
+    { name: t('nav.gallery'), href: '/gallery' },
+    { name: t('nav.calculator'), href: '/calculator' },
+    { name: t('nav.artists'), href: '/artists' },
   ];
 
   return (
@@ -39,9 +38,8 @@ const MobileMenu: React.FC = () => {
               <Link 
                 key={item.href} 
                 to={item.href} 
-                className="flex items-center text-white hover:text-yeon-purple transition-colors py-2"
+                className="text-white hover:text-yeon-purple transition-colors py-2"
               >
-                {item.icon}
                 <span>{item.name}</span>
               </Link>
             ))}

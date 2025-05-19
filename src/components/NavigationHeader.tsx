@@ -9,7 +9,6 @@ import {
   NavigationMenuList, 
   navigationMenuTriggerStyle 
 } from '@/components/ui/navigation-menu';
-import { Home, Info, GalleryHorizontal, Calculator, Users } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import MobileMenu from '@/components/MobileMenu';
 import Logo from '@/components/Logo';
@@ -22,11 +21,11 @@ const NavigationHeader: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
   
   const navItems = [
-    { name: t('nav.home'), href: '/', icon: <Home className="h-4 w-4 mr-2" /> },
-    { name: t('nav.about'), href: '/about', icon: <Info className="h-4 w-4 mr-2" /> },
-    { name: t('nav.gallery'), href: '/gallery', icon: <GalleryHorizontal className="h-4 w-4 mr-2" /> },
-    { name: t('nav.calculator'), href: '/calculator', icon: <Calculator className="h-4 w-4 mr-2" /> },
-    { name: t('nav.artists'), href: '/artists', icon: <Users className="h-4 w-4 mr-2" /> },
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.about'), href: '/about' },
+    { name: t('nav.gallery'), href: '/gallery' },
+    { name: t('nav.calculator'), href: '/calculator' },
+    { name: t('nav.artists'), href: '/artists' },
   ];
 
   return (
@@ -45,11 +44,9 @@ const NavigationHeader: React.FC = () => {
                     <NavigationMenuLink
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        "flex items-center",
                         isActive(item.href) && "bg-accent/50"
                       )}
                     >
-                      {item.icon}
                       {item.name}
                     </NavigationMenuLink>
                   </Link>
