@@ -4,6 +4,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import PageLayout from '@/components/PageLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChevronRightIcon } from 'lucide-react';
+
 const AboutContent: React.FC = () => {
   const {
     t
@@ -90,8 +91,7 @@ const AboutContent: React.FC = () => {
           <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 hover:transform hover:scale-[1.01] shadow-md">
             <CardHeader>
               <CardTitle className="text-xl text-yeon-purple flex items-center">
-                
-                {t('about.whatWeDo1Title')}
+                Capturar e engajar fãs
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -102,8 +102,7 @@ const AboutContent: React.FC = () => {
           <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 hover:transform hover:scale-[1.01] shadow-md">
             <CardHeader>
               <CardTitle className="text-xl text-yeon-purple flex items-center">
-                
-                {t('about.whatWeDo2Title')}
+                Monetizar diretamente
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -114,8 +113,7 @@ const AboutContent: React.FC = () => {
           <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 hover:transform hover:scale-[1.01] shadow-md">
             <CardHeader>
               <CardTitle className="text-xl text-yeon-purple flex items-center">
-                
-                {t('about.whatWeDo3Title')}
+                Analisar e Crescer
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -126,8 +124,7 @@ const AboutContent: React.FC = () => {
           <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 hover:transform hover:scale-[1.01] shadow-md">
             <CardHeader>
               <CardTitle className="text-xl text-yeon-purple flex items-center">
-                
-                {t('about.whatWeDo4Title')}
+                Conectar-se a comunidade
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -195,6 +192,7 @@ const AboutContent: React.FC = () => {
       </section>
     </main>;
 };
+
 const About: React.FC = () => {
   const {
     t
@@ -210,4 +208,5 @@ const About: React.FC = () => {
       </PageLayout>
     </>;
 };
+
 export default About;
