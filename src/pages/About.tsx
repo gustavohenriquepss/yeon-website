@@ -10,25 +10,34 @@ const AboutContent: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <main className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6 text-center">{t('nav.about')}</h1>
-      
-      {/* Quem Somos Section */}
-      <section className="mb-12">
-        <div className="bg-gradient-to-r from-[#2A2A2A]/80 to-[#2A2A2A] p-8 rounded-xl border border-white/10 mb-8">
-          <h2 className="text-3xl font-semibold mb-6 text-yeon-purple">{t('about.whoWeAreTitle')}</h2>
-          
-          <p className="mb-6 text-lg">
-            {t('about.whoWeAre1')}
-          </p>
-          <p className="mb-8 text-lg">
-            {t('about.whoWeAre2')}
-          </p>
+    <main className="max-w-full mx-auto">
+      {/* Hero Section - Quem Somos */}
+      <section className="relative min-h-[60vh] flex items-center justify-center mb-16 bg-gradient-to-br from-[#1A1A1A] to-yeon-dark-bg overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#FF3C27_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        </div>
+        
+        <div className="absolute top-0 right-0 w-64 h-64 bg-yeon-purple/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-yeon-purple/5 rounded-full blur-3xl"></div>
+        
+        <div className="container px-4 py-16 relative z-10">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white animate-fade-in">
+              <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">{t('about.whoWeAreTitle')}</span>
+            </h1>
+            <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/70 animate-fade-in" style={{animationDelay: '0.1s'}}>
+              {t('about.whoWeAre1')}
+            </p>
+            <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/70 mt-4 animate-fade-in" style={{animationDelay: '0.2s'}}>
+              {t('about.whoWeAre2')}
+            </p>
+          </div>
           
           {/* Mission and Vision Cards */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
             {/* Mission Card */}
-            <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple transition-all duration-300 overflow-hidden">
+            <Card className="bg-[#2A2A2A]/80 backdrop-blur-sm border border-white/10 hover:border-yeon-purple/50 hover:transform hover:scale-[1.02] transition-all duration-300 overflow-hidden shadow-lg animate-fade-in" style={{animationDelay: '0.3s'}}>
               <div className="absolute top-0 right-0 w-32 h-32 bg-yeon-purple/10 rounded-bl-full"></div>
               <CardHeader>
                 <CardTitle className="text-2xl text-yeon-purple flex items-center">
@@ -37,14 +46,14 @@ const AboutContent: React.FC = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="mb-4 relative z-10">
+                <p className="mb-4 relative z-10 text-white/90">
                   {t('about.mission')}
                 </p>
               </CardContent>
             </Card>
             
             {/* Vision Card */}
-            <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple transition-all duration-300 overflow-hidden">
+            <Card className="bg-[#2A2A2A]/80 backdrop-blur-sm border border-white/10 hover:border-yeon-purple/50 hover:transform hover:scale-[1.02] transition-all duration-300 overflow-hidden shadow-lg animate-fade-in" style={{animationDelay: '0.4s'}}>
               <div className="absolute top-0 right-0 w-32 h-32 bg-yeon-purple/10 rounded-bl-full"></div>
               <CardHeader>
                 <CardTitle className="text-2xl text-yeon-purple flex items-center">
@@ -53,7 +62,7 @@ const AboutContent: React.FC = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="mb-4 relative z-10">
+                <p className="mb-4 relative z-10 text-white/90">
                   {t('about.vision')}
                 </p>
               </CardContent>
@@ -62,65 +71,92 @@ const AboutContent: React.FC = () => {
         </div>
       </section>
       
-      <div className="space-y-8">
-        {/* What We Do */}
-        <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/50 transition-all duration-300">
-          <CardContent className="pt-6">
-            <h2 className="text-2xl font-semibold mb-4 text-yeon-purple">{t('about.whatWeDoTitle')}</h2>
-            <p className="mb-4">
-              {t('about.whatWeDo')}
-            </p>
-            <ul className="list-disc pl-6 space-y-3 mb-4">
-              <li className="animate-fade-in">{t('about.whatWeDo1')}</li>
-              <li className="animate-fade-in" style={{animationDelay: '0.1s'}}>{t('about.whatWeDo2')}</li>
-              <li className="animate-fade-in" style={{animationDelay: '0.2s'}}>{t('about.whatWeDo3')}</li>
-              <li className="animate-fade-in" style={{animationDelay: '0.3s'}}>{t('about.whatWeDo4')}</li>
-            </ul>
-          </CardContent>
-        </Card>
+      {/* What We Do Section */}
+      <section className="container px-4 py-16 bg-yeon-dark-bg">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-6 text-yeon-purple">{t('about.whatWeDoTitle')}</h2>
+          <p className="max-w-3xl mx-auto text-lg text-white/70">
+            {t('about.whatWeDo')}
+          </p>
+        </div>
         
-        {/* Why We Exist */}
-        <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/50 transition-all duration-300">
-          <CardContent className="pt-6">
-            <h2 className="text-2xl font-semibold mb-4 text-yeon-purple">{t('about.whyWeExistTitle')}</h2>
-            <p className="mb-4">
-              {t('about.whyWeExist1')}
-            </p>
-            <p className="mb-4">
-              {t('about.whyWeExist2')}
-            </p>
-          </CardContent>
-        </Card>
-        
-        {/* Our Community */}
-        <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/50 transition-all duration-300">
-          <CardContent className="pt-6">
-            <h2 className="text-2xl font-semibold mb-4 text-yeon-purple">{t('about.communityTitle')}</h2>
-            <p className="mb-4">
-              {t('about.community1')}
-            </p>
-            <p className="mb-4">
-              {t('about.community2')}
-            </p>
-          </CardContent>
-        </Card>
-        
-        {/* Join Us */}
-        <Card className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] border border-white/10 hover:border-yeon-purple/50 transition-all duration-300">
-          <CardContent className="pt-6">
-            <h2 className="text-2xl font-semibold mb-4 text-yeon-purple">{t('about.joinTitle')}</h2>
-            <p className="mb-4">
-              {t('about.join1')}
-            </p>
-            <p className="mb-4">
-              {t('about.join2')}
-            </p>
-            <p className="text-center font-semibold text-yeon-purple text-lg mt-6">
-              {t('about.join3')}
-            </p>
-          </CardContent>
-        </Card>
-      </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 shadow-md">
+            <CardContent className="pt-6">
+              <ul className="list-disc pl-6 space-y-4">
+                <li className="animate-fade-in">{t('about.whatWeDo1')}</li>
+                <li className="animate-fade-in" style={{animationDelay: '0.1s'}}>{t('about.whatWeDo2')}</li>
+              </ul>
+            </CardContent>
+          </Card>
+          
+          <Card className="bg-[#2A2A2A] border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 shadow-md">
+            <CardContent className="pt-6">
+              <ul className="list-disc pl-6 space-y-4">
+                <li className="animate-fade-in" style={{animationDelay: '0.2s'}}>{t('about.whatWeDo3')}</li>
+                <li className="animate-fade-in" style={{animationDelay: '0.3s'}}>{t('about.whatWeDo4')}</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+      
+      {/* Why We Exist Section */}
+      <section className="container px-4 py-16 bg-gradient-to-b from-yeon-dark-bg to-[#1A1A1A]">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-yeon-purple text-center">{t('about.whyWeExistTitle')}</h2>
+          
+          <Card className="bg-[#2A2A2A]/90 backdrop-blur-sm border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 shadow-lg mb-8">
+            <CardContent className="pt-6">
+              <p className="mb-6 text-lg">
+                {t('about.whyWeExist1')}
+              </p>
+              <p className="text-lg">
+                {t('about.whyWeExist2')}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+      
+      {/* Our Community Section */}
+      <section className="container px-4 py-16 bg-[#1A1A1A]">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-yeon-purple text-center">{t('about.communityTitle')}</h2>
+          
+          <Card className="bg-[#2A2A2A]/90 backdrop-blur-sm border border-white/10 hover:border-yeon-purple/30 transition-all duration-300 shadow-lg mb-8">
+            <CardContent className="pt-6">
+              <p className="mb-6 text-lg">
+                {t('about.community1')}
+              </p>
+              <p className="text-lg">
+                {t('about.community2')}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+      
+      {/* Join Us Section - CTA */}
+      <section className="container px-4 py-16 bg-gradient-to-br from-[#1A1A1A] to-yeon-dark-bg">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8 text-yeon-purple">{t('about.joinTitle')}</h2>
+          
+          <Card className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] border border-white/10 hover:border-yeon-purple/50 transition-all duration-300 shadow-lg">
+            <CardContent className="pt-6">
+              <p className="mb-4 text-lg">
+                {t('about.join1')}
+              </p>
+              <p className="mb-8 text-lg">
+                {t('about.join2')}
+              </p>
+              <p className="text-center font-semibold text-yeon-purple text-xl mt-8">
+                {t('about.join3')}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
     </main>
   );
 };
