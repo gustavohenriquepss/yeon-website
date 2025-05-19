@@ -66,6 +66,12 @@ const SocialProofSection: React.FC = () => {
       author: "Rafael Costa",
       role: "Produtor Musical",
       image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&auto=format&fit=crop&w=120&q=80"
+    },
+    {
+      quote: "O suporte ao artista e as ferramentas de marketing me ajudaram a alcançar novos públicos que eu nunca teria descoberto sozinho.",
+      author: "Marina Silva",
+      role: "Cantora e Compositora",
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=120&q=80"
     }
   ];
   
@@ -94,7 +100,7 @@ const SocialProofSection: React.FC = () => {
         
         {/* Testimonials */}
         <h2 className="text-3xl font-semibold text-center mb-12">O Que Nossos Artistas Dizem</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {testimonials.map((testimonial, index) => (
             <Testimonial
               key={index}
