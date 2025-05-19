@@ -1,15 +1,84 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLanguage } from '@/context/LanguageContext';
 import PageLayout from '@/components/PageLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, Award, Rocket, Star } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const AboutContent: React.FC = () => {
   const {
     t
   } = useLanguage();
+  const [showAllTeam, setShowAllTeam] = useState(false);
+  
+  // Team members data - 10 members total
+  const teamMembers = [
+    {
+      name: "Carlos Silva",
+      role: "Fundador & CEO",
+      bio: "Músico e desenvolvedor com mais de 10 anos de experiência na indústria musical brasileira.",
+      imageUrl: "/placeholder.svg" // Replace with actual image paths
+    },
+    {
+      name: "Ana Oliveira",
+      role: "Diretora de Tecnologia",
+      bio: "Especialista em desenvolvimento de produtos digitais para o mercado de entretenimento.",
+      imageUrl: "/placeholder.svg"
+    },
+    {
+      name: "Roberto Mendes",
+      role: "Diretor de Parcerias",
+      bio: "Ex-executivo de grandes gravadoras, especialista em negócios da indústria musical.",
+      imageUrl: "/placeholder.svg"
+    },
+    {
+      name: "Juliana Costa",
+      role: "Designer de Produto",
+      bio: "Especialista em UX/UI com foco em experiências digitais para músicos e fãs.",
+      imageUrl: "/placeholder.svg"
+    },
+    {
+      name: "Lucas Santos",
+      role: "Desenvolvedor Full Stack",
+      bio: "Engenheiro de software apaixonado por música e novas tecnologias.",
+      imageUrl: "/placeholder.svg"
+    },
+    {
+      name: "Mariana Alves",
+      role: "Growth Specialist",
+      bio: "Especialista em marketing digital para artistas independentes.",
+      imageUrl: "/placeholder.svg"
+    },
+    {
+      name: "Paulo Ferreira",
+      role: "Analista de Dados",
+      bio: "Especialista em análise de dados e métricas para a indústria musical.",
+      imageUrl: "/placeholder.svg"
+    },
+    {
+      name: "Fernanda Lima",
+      role: "Gestora de Comunidade",
+      bio: "Responsável pelo relacionamento com artistas e fãs na plataforma.",
+      imageUrl: "/placeholder.svg"
+    },
+    {
+      name: "Ricardo Gomes",
+      role: "Diretor Financeiro",
+      bio: "Especialista em modelos de negócio e estratégias financeiras para startups.",
+      imageUrl: "/placeholder.svg"
+    },
+    {
+      name: "Camila Torres",
+      role: "Especialista em Conteúdo",
+      bio: "Jornalista especializada em música independente e novas tendências.",
+      imageUrl: "/placeholder.svg"
+    }
+  ];
+  
+  // Show only 6 members initially, all if showAllTeam is true
+  const displayedMembers = showAllTeam ? teamMembers : teamMembers.slice(0, 6);
+  
   return <main className="max-w-full mx-auto">
       {/* Hero Section - Quem Somos */}
       <section className="relative min-h-[60vh] flex items-center justify-center mb-16 bg-gradient-to-br from-[#1A1A1A] to-yeon-dark-bg overflow-hidden">
@@ -178,7 +247,7 @@ const AboutContent: React.FC = () => {
         </div>
       </section>
       
-      {/* Nosso Time Section - New Section */}
+      {/* Nosso Time Section - Redesigned with glassmorphic cards */}
       <section className="relative min-h-[60vh] flex items-center justify-center mb-16 bg-gradient-to-br from-yeon-dark-bg to-[#1A1A1A] overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-10">
@@ -198,62 +267,46 @@ const AboutContent: React.FC = () => {
             </p>
           </div>
           
-          {/* Team Members Grid */}
+          {/* Team Members Grid - Redesigned with 3 columns, 2 rows and "See More" button */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {/* Team Member 1 */}
-            <Card className="bg-[#2A2A2A]/80 backdrop-blur-sm border border-white/10 hover:border-yeon-purple/50 hover:transform hover:scale-[1.02] transition-all duration-300 overflow-hidden shadow-lg animate-fade-in" style={{animationDelay: '0.1s'}}>
-              <div className="pt-6 px-6">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-yeon-purple to-yeon-dark-purple mx-auto mb-4"></div>
+            {displayedMembers.map((member, index) => (
+              <div 
+                key={member.name}
+                className="relative h-[400px] rounded-xl overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300 animate-fade-in shadow-lg"
+                style={{animationDelay: `${0.1 * (index % 6)}s`}}
+              >
+                {/* Full size image background */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center w-full h-full"
+                  style={{backgroundImage: `url(${member.imageUrl})`}}
+                >
+                </div>
+                
+                {/* Gradient overlay for readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                
+                {/* Glassmorphic info box at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 backdrop-blur-md bg-black/30 border-t border-white/10">
+                  <h3 className="text-xl font-semibold text-white mb-1">{member.name}</h3>
+                  <p className="text-yeon-purple font-medium mb-2">{member.role}</p>
+                  <p className="text-white/80 text-sm">{member.bio}</p>
+                </div>
               </div>
-              <CardHeader>
-                <CardTitle className="text-xl text-center text-yeon-purple">
-                  Carlos Silva
-                </CardTitle>
-                <p className="text-center text-white/60 text-sm">Fundador & CEO</p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-center text-white/80">
-                  Músico e desenvolvedor com mais de 10 anos de experiência na indústria musical brasileira.
-                </p>
-              </CardContent>
-            </Card>
-            
-            {/* Team Member 2 */}
-            <Card className="bg-[#2A2A2A]/80 backdrop-blur-sm border border-white/10 hover:border-yeon-purple/50 hover:transform hover:scale-[1.02] transition-all duration-300 overflow-hidden shadow-lg animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <div className="pt-6 px-6">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-yeon-purple to-yeon-dark-purple mx-auto mb-4"></div>
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl text-center text-yeon-purple">
-                  Ana Oliveira
-                </CardTitle>
-                <p className="text-center text-white/60 text-sm">Diretora de Tecnologia</p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-center text-white/80">
-                  Especialista em desenvolvimento de produtos digitais para o mercado de entretenimento.
-                </p>
-              </CardContent>
-            </Card>
-            
-            {/* Team Member 3 */}
-            <Card className="bg-[#2A2A2A]/80 backdrop-blur-sm border border-white/10 hover:border-yeon-purple/50 hover:transform hover:scale-[1.02] transition-all duration-300 overflow-hidden shadow-lg animate-fade-in" style={{animationDelay: '0.3s'}}>
-              <div className="pt-6 px-6">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-yeon-purple to-yeon-dark-purple mx-auto mb-4"></div>
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl text-center text-yeon-purple">
-                  Roberto Mendes
-                </CardTitle>
-                <p className="text-center text-white/60 text-sm">Diretor de Parcerias</p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-center text-white/80">
-                  Ex-executivo de grandes gravadoras, especialista em negócios da indústria musical.
-                </p>
-              </CardContent>
-            </Card>
+            ))}
           </div>
+          
+          {/* See More / See Less Button */}
+          {teamMembers.length > 6 && (
+            <div className="flex justify-center mt-10">
+              <Button 
+                variant="outline" 
+                className="border-yeon-purple text-yeon-purple hover:bg-yeon-purple/10"
+                onClick={() => setShowAllTeam(!showAllTeam)}
+              >
+                {showAllTeam ? "Ver menos" : "Ver mais"}
+              </Button>
+            </div>
+          )}
         </div>
       </section>
       
