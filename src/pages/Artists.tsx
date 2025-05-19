@@ -1,40 +1,214 @@
 
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLanguage } from '@/context/LanguageContext';
 import PageLayout from '@/components/PageLayout';
+import ArtistSearch from '@/components/artists/ArtistSearch';
+import ArtistFilters from '@/components/artists/ArtistFilters';
+import ArtistGrid from '@/components/artists/ArtistGrid';
+import { Instagram, Search, Filter } from 'lucide-react';
+
+// Types
+export type Artist = {
+  id: number;
+  name: string;
+  location: string;
+  genres: string[];
+  bio: string;
+  image: string;
+  instagramUrl?: string;
+  spotifyUrl?: string;
+  followers?: number;
+};
 
 const ArtistsContent: React.FC = () => {
   const { t } = useLanguage();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
+  const [selectedLocation, setSelectedLocation] = useState<string>('');
+  const [showFilters, setShowFilters] = useState(false);
   
-  // Placeholder artist data
-  const artists = Array.from({ length: 4 }, (_, i) => ({
-    id: i + 1,
-    name: `${t('artists.artist')} ${i + 1}`,
-    genre: t('artists.genre'),
-    image: `/placeholder.svg`,
-  }));
+  // Mock artist data with more realistic information
+  const artists: Artist[] = [
+    {
+      id: 1,
+      name: "Luiza Sonza",
+      location: "São Paulo, SP",
+      genres: ["Pop", "Dance"],
+      bio: "Cantora e compositora com hits que dominam as paradas brasileiras",
+      image: "/placeholder.svg",
+      instagramUrl: "https://instagram.com/luizasonza",
+      spotifyUrl: "https://open.spotify.com/artist/1vahqsiTMFPpnwQSed0KIR",
+      followers: 24300000
+    },
+    {
+      id: 2,
+      name: "Djonga",
+      location: "Belo Horizonte, MG",
+      genres: ["Rap", "Hip Hop"],
+      bio: "Um dos maiores nomes do rap nacional com letras impactantes",
+      image: "/placeholder.svg",
+      instagramUrl: "https://instagram.com/djongador",
+      spotifyUrl: "https://open.spotify.com/artist/5GqbOFyc4L0hTqAttmVu6m",
+      followers: 2000000
+    },
+    {
+      id: 3,
+      name: "Noreh",
+      location: "Rio de Janeiro, RJ",
+      genres: ["MPB", "R&B"],
+      bio: "Nova voz da MPB com influências contemporâneas e letras profundas",
+      image: "/placeholder.svg",
+      instagramUrl: "https://instagram.com/norehmusic",
+      spotifyUrl: "https://open.spotify.com/artist/noreh",
+      followers: 75000
+    },
+    {
+      id: 4,
+      name: "Matu Alem",
+      location: "Porto Alegre, RS",
+      genres: ["Rock", "Indie"],
+      bio: "Projeto independente que mistura rock alternativo e elementos regionais",
+      image: "/placeholder.svg",
+      instagramUrl: "https://instagram.com/matualem",
+      spotifyUrl: "https://open.spotify.com/artist/matualem",
+      followers: 45000
+    },
+    {
+      id: 5,
+      name: "Céu",
+      location: "São Paulo, SP",
+      genres: ["MPB", "Eletrônico"],
+      bio: "Mistura de sons brasileiros com elementos eletrônicos e experimentais",
+      image: "/placeholder.svg",
+      instagramUrl: "https://instagram.com/ceumusic",
+      spotifyUrl: "https://open.spotify.com/artist/3mQ124PN75zUTnxsmMRzwS",
+      followers: 320000
+    },
+    {
+      id: 6,
+      name: "Jovem Dionísio",
+      location: "Curitiba, PR",
+      genres: ["Indie", "Pop"],
+      bio: "Banda que conquistou o Brasil com seu som único e letras criativas",
+      image: "/placeholder.svg",
+      instagramUrl: "https://instagram.com/jovemdionisio",
+      spotifyUrl: "https://open.spotify.com/artist/27LqjHkZdRhWRJ0nhjoZN4",
+      followers: 180000
+    },
+    {
+      id: 7,
+      name: "Illusionize",
+      location: "Brasília, DF",
+      genres: ["House", "Eletrônico"],
+      bio: "DJ e produtor brasileiro referência na música eletrônica nacional",
+      image: "/placeholder.svg",
+      instagramUrl: "https://instagram.com/illusionize",
+      spotifyUrl: "https://open.spotify.com/artist/5nCJoPIRMZCB2IIxAXYWvF",
+      followers: 240000
+    },
+    {
+      id: 8,
+      name: "Sessa",
+      location: "São Paulo, SP",
+      genres: ["MPB", "Folk"],
+      bio: "Sonoridade minimalista que tem conquistado público no Brasil e exterior",
+      image: "/placeholder.svg",
+      instagramUrl: "https://instagram.com/sessaoficial",
+      spotifyUrl: "https://open.spotify.com/artist/7ezHxigaxzPzoHmnGYVYwb",
+      followers: 58000
+    }
+  ];
+
+  // Fill up to 64 artists by duplicating and changing some values
+  for (let i = 9; i <= 64; i++) {
+    const base = artists[i % 8];
+    artists.push({
+      ...base,
+      id: i,
+      name: `${base.name} ${Math.floor((i-1) / 8) + 1}`,
+      followers: Math.floor(base.followers! * (0.5 + Math.random() * 0.5))
+    });
+  }
+  
+  // All available genres from the artists
+  const allGenres = useMemo(() => {
+    const genres = new Set<string>();
+    artists.forEach(artist => artist.genres.forEach(genre => genres.add(genre)));
+    return Array.from(genres).sort();
+  }, []);
+
+  // All available locations from the artists
+  const allLocations = useMemo(() => {
+    const locations = new Set<string>();
+    artists.forEach(artist => locations.add(artist.location));
+    return Array.from(locations).sort();
+  }, []);
+
+  // Filter artists based on search and filters
+  const filteredArtists = useMemo(() => {
+    return artists.filter(artist => {
+      const matchesSearch = searchQuery === '' || 
+        artist.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        artist.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        artist.genres.some(genre => genre.toLowerCase().includes(searchQuery.toLowerCase()));
+      
+      const matchesGenres = selectedGenres.length === 0 || 
+        selectedGenres.some(genre => artist.genres.includes(genre));
+      
+      const matchesLocation = selectedLocation === '' ||
+        artist.location === selectedLocation;
+      
+      return matchesSearch && matchesGenres && matchesLocation;
+    });
+  }, [artists, searchQuery, selectedGenres, selectedLocation]);
   
   return (
-    <main className="max-w-5xl mx-auto">
+    <main className="max-w-7xl mx-auto">
       <h1 className="text-3xl font-bold mb-6 text-center">{t('nav.artists')}</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {artists.map((artist) => (
-          <div 
-            key={artist.id}
-            className="bg-[#2A2A2A] rounded-lg overflow-hidden border border-white/10 hover:border-white/30 transition-all"
+      
+      {/* Search and filter controls for desktop */}
+      <div className="flex flex-col md:flex-row gap-4 mb-6">
+        <div className="flex-grow">
+          <ArtistSearch 
+            searchQuery={searchQuery} 
+            setSearchQuery={setSearchQuery} 
+            artists={artists}
+          />
+        </div>
+        
+        <div className="flex items-center gap-2 md:hidden">
+          <button 
+            onClick={() => setShowFilters(!showFilters)}
+            className="flex items-center gap-2 bg-yeon-dark-purple px-4 py-2 rounded-md text-white"
           >
-            <img 
-              src={artist.image} 
-              alt={artist.name} 
-              className="w-full h-48 object-cover" 
-            />
-            <div className="p-4">
-              <h3 className="font-medium text-lg">{artist.name}</h3>
-              <p className="text-gray-400">{artist.genre}</p>
-            </div>
+            <Filter size={18} />
+            Filtros
+          </button>
+        </div>
+      </div>
+      
+      <div className="flex flex-col md:flex-row gap-6">
+        {/* Filters sidebar - hidden on mobile unless toggled */}
+        <div className={`${showFilters ? 'block' : 'hidden'} md:block md:w-64 bg-[#2A2A2A] rounded-lg p-4`}>
+          <ArtistFilters 
+            genres={allGenres}
+            locations={allLocations}
+            selectedGenres={selectedGenres}
+            setSelectedGenres={setSelectedGenres}
+            selectedLocation={selectedLocation}
+            setSelectedLocation={setSelectedLocation}
+          />
+        </div>
+        
+        {/* Results count and artist grid */}
+        <div className="flex-1">
+          <div className="mb-4 text-sm text-gray-400">
+            {filteredArtists.length} {filteredArtists.length === 1 ? 'artista encontrado' : 'artistas encontrados'}
           </div>
-        ))}
+          
+          <ArtistGrid artists={filteredArtists} />
+        </div>
       </div>
     </main>
   );
