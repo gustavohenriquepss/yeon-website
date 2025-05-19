@@ -16,7 +16,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
 }) => {
   return (
     <Card className={cn(
-      "h-full border-0 rounded-xl transition-all duration-300 hover:scale-105 bg-yeon-purple/90 hover:bg-yeon-purple",
+      "h-full border-0 rounded-xl transition-all duration-300 hover:scale-105 bg-[#222222] hover:bg-[#333333]",
       size === 'large' ? 'md:col-span-2' : ''
     )}>
       <CardContent className="flex flex-col h-full p-6">
