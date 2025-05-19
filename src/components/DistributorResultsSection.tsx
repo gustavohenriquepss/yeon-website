@@ -52,18 +52,18 @@ const DistributorResultsSection: React.FC<DistributorResultsSectionProps> = ({
     <div className={`mt-8 animate-fade-in`}>
       <div className="bg-yeon-darker-bg rounded-xl border border-white/5 overflow-hidden">
         <div className="p-4 bg-secondary/50">
-          <h3 className="text-lg font-semibold">{t('distributorFees') || 'Distributor Fees'}</h3>
+          <h3 className="text-lg font-semibold">{t('distributorFees')}</h3>
         </div>
 
         <div className="p-4">
           <p className="text-sm text-muted-foreground mb-4">
-            {t('distributorFeesInfo') || 'Compare how different distributors affect your revenue after taking their cut.'}
+            {t('distributorFeesInfo')}
           </p>
           
           <div className="flex items-center gap-2 p-3 bg-white/5 rounded-lg mb-4 text-sm">
             <InfoIcon size={16} className="text-yeon-purple" />
             <p className="text-white/80">
-              {t('distributorFeesDisclaimer') || 'These fees reflect the starter/basic/free plans of these distributors.'}
+              {t('distributorFeesDisclaimer')}
             </p>
           </div>
           
@@ -71,9 +71,9 @@ const DistributorResultsSection: React.FC<DistributorResultsSectionProps> = ({
           <Table>
             <TableHeader>
               <TableRow className="border-white/10 hover:bg-transparent">
-                <TableHead className="text-white/70">{t('distributor') || 'Distributor'}</TableHead>
-                <TableHead className="text-white/70 text-right">{t('fee') || 'Fee'}</TableHead>
-                <TableHead className="text-white/70 text-right">{t('netRevenue') || 'Net Revenue'}</TableHead>
+                <TableHead className="text-white/70">{t('distributor')}</TableHead>
+                <TableHead className="text-white/70 text-right">{t('fee')}</TableHead>
+                <TableHead className="text-white/70 text-right">{t('netRevenue')}</TableHead>
                 <TableHead className="w-10"></TableHead>
               </TableRow>
             </TableHeader>
@@ -135,24 +135,24 @@ const DistributorResultsSection: React.FC<DistributorResultsSectionProps> = ({
                       className="w-4 h-4 object-contain" 
                     />
                   </div>
-                  <span className="font-medium">{getDistributor(selectedDistributor)?.name} {t('breakdown') || 'Breakdown'}</span>
+                  <span className="font-medium">{getDistributor(selectedDistributor)?.name} {t('breakdown')}</span>
                 </div>
                 <span className="text-sm text-muted-foreground">
-                  {getDistributor(selectedDistributor)?.feesPercentage}% {t('fee') || 'fee'}
+                  {getDistributor(selectedDistributor)?.feesPercentage}% {t('fee')}
                 </span>
               </div>
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-3 rounded-lg bg-secondary/30">
-                  <p className="text-sm text-muted-foreground">{t('grossRevenue') || 'Gross Revenue'}</p>
+                  <p className="text-sm text-muted-foreground">{t('grossRevenue')}</p>
                   <p className="text-lg font-medium">{formatCurrency(totalRevenue)}</p>
                 </div>
                 <div className="p-3 rounded-lg bg-secondary/30">
-                  <p className="text-sm text-muted-foreground">{t('feeAmount') || 'Fee Amount'}</p>
+                  <p className="text-sm text-muted-foreground">{t('feeAmount')}</p>
                   <p className="text-lg font-medium">{formatCurrency(selectedDistributorData.fee)}</p>
                 </div>
                 <div className="col-span-2 p-3 rounded-lg bg-yeon-purple/10 border border-yeon-purple/20">
-                  <p className="text-sm text-muted-foreground">{t('netRevenue') || 'Net Revenue'}</p>
+                  <p className="text-sm text-muted-foreground">{t('netRevenue')}</p>
                   <p className="text-xl font-bold text-yeon-purple">{formatCurrency(selectedDistributorData.netAmount)}</p>
                 </div>
               </div>

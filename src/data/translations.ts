@@ -1,4 +1,3 @@
-
 export const translations = {
   en: {
     menu: "Menu",
@@ -51,6 +50,17 @@ export const translations = {
     invalidEmailDesc: "Please provide a valid email address to subscribe.",
     emailExistsTitle: "Already Subscribed",
     emailExistsDesc: "This email is already receiving our newsletter.",
+    
+    // Added and updated distributor-related translations
+    distributorFees: "Distributor Fees",
+    distributorFeesInfo: "Compare how different distributors affect your revenue after taking their cut.",
+    distributorFeesDisclaimer: "These fees reflect the starter/basic/free plans of these distributors.",
+    distributor: "Distributor",
+    fee: "Fee",
+    netRevenue: "Net Revenue",
+    breakdown: "Breakdown",
+    grossRevenue: "Gross Revenue",
+    feeAmount: "Fee Amount",
     
     // Navigation items
     nav: {
@@ -130,6 +140,17 @@ export const translations = {
     invalidEmailDesc: "Por favor, forneça um endereço de email válido para se inscrever.",
     emailExistsTitle: "Já Inscrito",
     emailExistsDesc: "Este email já está recebendo nossa newsletter.",
+    
+    // Added and updated distributor-related translations
+    distributorFees: "Taxas de Distribuidores",
+    distributorFeesInfo: "Compare como diferentes distribuidores afetam sua receita após cobrarem suas taxas.",
+    distributorFeesDisclaimer: "Estas taxas refletem os planos básicos/gratuitos desses distribuidores.",
+    distributor: "Distribuidor",
+    fee: "Taxa",
+    netRevenue: "Receita Líquida",
+    breakdown: "Detalhamento",
+    grossRevenue: "Receita Bruta",
+    feeAmount: "Valor da Taxa",
     
     // Navigation items
     nav: {
