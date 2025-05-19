@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Spotify, CornerDownLeft } from 'lucide-react';
+import { Music, CornerDownLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
@@ -64,7 +64,7 @@ const SpotifyRoaster: React.FC = () => {
       <div className="space-y-6">
         <div className="flex flex-col items-center text-center">
           <div className="h-16 w-16 rounded-full bg-green-600 flex items-center justify-center mb-4">
-            <Spotify className="h-8 w-8 text-white" />
+            <Music className="h-8 w-8 text-white" />
           </div>
           <h2 className="text-2xl font-bold">Frite meu Spotify</h2>
           <p className="text-muted-foreground max-w-md">
@@ -109,7 +109,7 @@ const SpotifyRoaster: React.FC = () => {
           <Card className="border-green-600/30 bg-green-600/5">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Spotify className="h-5 w-5 text-green-500" />
+                <Music className="h-5 w-5 text-green-500" />
                 Sua fritada está pronta
               </CardTitle>
             </CardHeader>
