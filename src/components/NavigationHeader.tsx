@@ -6,13 +6,14 @@ import {
   NavigationMenu, 
   NavigationMenuContent, 
   NavigationMenuItem, 
-  NavigationMenuLink, 
   NavigationMenuList, 
   NavigationMenuTrigger, 
   navigationMenuTriggerStyle 
 } from '@/components/ui/navigation-menu';
 import { Home, Info, GalleryHorizontal, Calculator, Users } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import LanguageToggle from '@/components/LanguageToggle';
+import MobileMenu from '@/components/MobileMenu';
 
 const NavigationHeader: React.FC = () => {
   const { t } = useLanguage();
@@ -54,6 +55,16 @@ const NavigationHeader: React.FC = () => {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
+        </div>
+        
+        <div className="flex items-center gap-4">
+          {/* Language toggle visible on desktop */}
+          <div className="hidden md:block">
+            <LanguageToggle />
+          </div>
+          
+          {/* Mobile menu button */}
+          <MobileMenu />
         </div>
       </div>
     </div>
