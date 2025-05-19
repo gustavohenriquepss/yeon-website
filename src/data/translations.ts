@@ -1,3 +1,4 @@
+
 export const translations = {
   en: {
     menu: "Menu",
@@ -67,7 +68,7 @@ export const translations = {
       home: "Home",
       about: "About",
       gallery: "Gallery",
-      calculator: "Streams Calculator",
+      calculator: "Royalty Calculator",
       artists: "Artists"
     },
     
@@ -157,7 +158,7 @@ export const translations = {
       home: "Início",
       about: "Sobre",
       gallery: "Galeria",
-      calculator: "Calculadora de Streams",
+      calculator: "Calculadora de Royalties",
       artists: "Artistas"
     },
     
