@@ -57,8 +57,8 @@ export const translations = {
       home: "Home",
       about: "About",
       gallery: "Gallery",
-      calculator: "Earnings Calculator",
-      artists: "Featured Artists"
+      calculator: "Streams Calculator",
+      artists: "Artists"
     },
     
     // About page
@@ -136,8 +136,8 @@ export const translations = {
       home: "Início",
       about: "Sobre",
       gallery: "Galeria",
-      calculator: "Calculadora de Ganhos",
-      artists: "Artistas Destacados"
+      calculator: "Calculadora de Streams",
+      artists: "Artistas"
     },
     
     // About page

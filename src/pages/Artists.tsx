@@ -44,7 +44,7 @@ const Artists: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Artistas Destacados | Yeon Music</title>
+        <title>Artistas | Yeon Music</title>
         <meta name="description" content="Conheça os artistas em destaque na Yeon Music. Artistas independentes que estão transformando a indústria musical." />
         <link rel="canonical" href="https://yeon-music.com/artists" />
       </Helmet>

@@ -33,7 +33,7 @@ const Calculator: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Calculadora de Ganhos de Streaming | Yeon Music</title>
+        <title>Calculadora de Streams | Yeon Music</title>
         <meta name="description" content="Calcule seus ganhos potenciais em todas as principais plataformas de streaming como Spotify, Apple Music, Deezer e mais. Entenda quanto vale cada reprodução." />
         <link rel="canonical" href="https://yeon-music.com/calculator" />
         <meta name="keywords" content="calculadora streaming, ganhos spotify, ganhos apple music, receita musical, streaming receita, artista independente" />
@@ -41,7 +41,7 @@ const Calculator: React.FC = () => {
           {`{
             "@context": "https://schema.org",
             "@type": "WebApplication",
-            "name": "Calculadora de Ganhos de Streaming",
+            "name": "Calculadora de Streams",
             "description": "${t('intro')}",
             "url": "https://yeon-music.com/calculator",
             "applicationCategory": "UtilityApplication",

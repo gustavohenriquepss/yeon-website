@@ -44,7 +44,7 @@ const NavigationHeader: React.FC = () => {
                       className={cn(
                         "px-3 py-2 text-sm transition-colors",
                         isActive(item.href)
-                          ? "text-white border-b-2 border-yeon-purple font-medium" 
+                          ? "text-white font-medium" 
                           : "text-white/70 hover:text-white"
                       )}
                     >
