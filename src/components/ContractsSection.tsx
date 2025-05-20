@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Download, File } from 'lucide-react';
+import { Download, File, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -187,22 +187,27 @@ const ContractsSection: React.FC = () => {
         ))}
       </div>
       
-      <div className="mt-8 bg-yeon-dark-purple/10 p-6 rounded-lg border border-yeon-purple/20">
+      <div className="mt-8 bg-yeon-purple/10 p-6 rounded-lg border border-yeon-purple/30">
         <div className="flex flex-col md:flex-row gap-6">
           <div className="md:w-2/3">
-            <h2 className="text-2xl font-semibold mb-4">Consultoria Jurídica Especializada</h2>
+            <h2 className="text-2xl font-semibold mb-4">Curso KSM Musical</h2>
             <p className="text-gray-300 mb-4">
-              Precisa de um contrato personalizado ou tem dúvidas sobre direitos autorais e propriedade intelectual na música?
+              Aprenda a sobreviver na indústria musical com o curso KSM Musical, criado pelo especialista em direitos musicais Gustavo Deppe.
             </p>
             <p className="text-gray-300">
-              Entre em contato com nossa equipe jurídica para uma consultoria especializada que atenda às suas necessidades específicas.
+              O curso oferece conhecimentos essenciais para artistas e profissionais da música navegarem com sucesso no mercado musical atual.
             </p>
-            <Button className="mt-4" variant="outline">
-              Solicitar Consultoria
+            <Button 
+              className="mt-4 bg-yeon-purple hover:bg-yeon-dark-purple" 
+              variant="default"
+              onClick={() => window.open('https://www.ksmmusical.com/', '_blank')}
+            >
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Conheça o KSM Musical
             </Button>
           </div>
           <div className="md:w-1/3 flex items-center justify-center">
-            <div className="bg-gradient-to-br from-yeon-purple/20 to-transparent p-6 rounded-full">
+            <div className="bg-gradient-to-br from-yeon-purple/30 to-transparent p-6 rounded-full">
               <File className="h-16 w-16 text-yeon-purple" />
             </div>
           </div>
