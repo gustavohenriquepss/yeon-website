@@ -1,18 +1,23 @@
 
 import React, { useState } from 'react';
-import { CornerDownLeft } from 'lucide-react';
+import { CornerDownLeft, Flame } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
 import { toast } from '@/components/ui/sonner';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+
+type RoastIntensity = 'leve' | 'media' | 'pesada' | 'infernal';
 
 const SpotifyRoaster: React.FC = () => {
   const [spotifyLink, setSpotifyLink] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [roast, setRoast] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [intensity, setIntensity] = useState<RoastIntensity>('media');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,22 +37,33 @@ const SpotifyRoaster: React.FC = () => {
     setLoading(true);
     
     try {
-      // Simulate API call with mock responses (in a real implementation, this would call a backend)
+      // Simulate API call with mock responses based on intensity
       setTimeout(() => {
-        const artistRoasts = [
-          "Esse artista tem tantos ouvintes mensais quanto eu tenho vontade de acordar cedo na segunda-feira.",
-          "Olhando para essas músicas, dá para ver que o talento desse artista é tão raro quanto internet boa em festival.",
-          "Com esse branding, parece que o artista tirou todas as ideias de um tutorial do YouTube de 2015.",
-          "Se essa discografia fosse um prato, seria arroz branco sem sal. Básico demais.",
-          "A originalidade desse artista é tão impressionante quanto um filme da Netflix sobre adolescentes.",
-          "As letras são tão profundas que dá para ver o fundo da piscina de cima.",
-          "As transições entre as músicas são tão suaves quanto andar de patins numa estrada de terra.",
-          "Esse artista tem tanta personalidade musical quanto um robô tentando dançar forró.",
-          "A produção dessas músicas parece ter sido feita num iPhone 4 dentro de um banheiro.",
-          "Se esse álbum fosse uma cor, seria bege. O bege mais bege que já existiu."
-        ];
+        const artistRoasts = {
+          leve: [
+            "Esse artista tem um potencial interessante... assim como eu tenho potencial para acordar cedo na segunda-feira.",
+            "As músicas são legais, mas não vão revolucionar nada além da playlist da sua tia.",
+            "O branding desse artista é quase tão original quanto pizza de calabresa."
+          ],
+          media: [
+            "Esse artista tem tantos ouvintes mensais quanto eu tenho vontade de acordar cedo na segunda-feira.",
+            "Olhando para essas músicas, dá para ver que o talento desse artista é tão raro quanto internet boa em festival.",
+            "Com esse branding, parece que o artista tirou todas as ideias de um tutorial do YouTube de 2015."
+          ],
+          pesada: [
+            "Se essa discografia fosse um prato, seria arroz branco sem sal. Básico demais.",
+            "A originalidade desse artista é tão impressionante quanto um filme da Netflix sobre adolescentes.",
+            "As letras são tão profundas que dá para ver o fundo da piscina de cima."
+          ],
+          infernal: [
+            "As transições entre as músicas são tão suaves quanto andar de patins numa estrada de terra.",
+            "Esse artista tem tanta personalidade musical quanto um robô tentando dançar forró.",
+            "A produção dessas músicas parece ter sido feita num iPhone 4 dentro de um banheiro."
+          ]
+        };
         
-        const randomRoast = artistRoasts[Math.floor(Math.random() * artistRoasts.length)];
+        const selectedRoasts = artistRoasts[intensity];
+        const randomRoast = selectedRoasts[Math.floor(Math.random() * selectedRoasts.length)];
         setRoast(randomRoast);
         setLoading(false);
         toast.success("Perfil do artista foi fritado! 🔥");
@@ -56,6 +72,16 @@ const SpotifyRoaster: React.FC = () => {
       console.error('Error roasting Spotify profile:', err);
       setError('Ocorreu um erro ao fritar o perfil. Tente novamente.');
       setLoading(false);
+    }
+  };
+
+  const getIntensityColor = (level: RoastIntensity): string => {
+    switch (level) {
+      case 'leve': return 'bg-green-500/80 hover:bg-green-600 data-[state=on]:bg-green-700';
+      case 'media': return 'bg-yellow-500/80 hover:bg-yellow-600 data-[state=on]:bg-yellow-700';
+      case 'pesada': return 'bg-orange-500/80 hover:bg-orange-600 data-[state=on]:bg-orange-700';
+      case 'infernal': return 'bg-red-500/80 hover:bg-red-600 data-[state=on]:bg-red-700';
+      default: return '';
     }
   };
 
@@ -98,6 +124,45 @@ const SpotifyRoaster: React.FC = () => {
                   {loading ? "Fritando..." : "Fritar"} 
                   {!loading && <CornerDownLeft className="ml-2 h-4 w-4" />}
                 </Button>
+              </div>
+              
+              <div className="mt-2">
+                <p className="text-sm font-medium mb-2">Escolha a intensidade da fritada:</p>
+                <ToggleGroup 
+                  type="single" 
+                  value={intensity} 
+                  onValueChange={(value) => value && setIntensity(value as RoastIntensity)}
+                  className="flex justify-between w-full flex-wrap gap-2"
+                >
+                  <ToggleGroupItem 
+                    value="leve" 
+                    className={`${intensity === 'leve' ? 'text-white' : ''} ${getIntensityColor('leve')}`}
+                  >
+                    <Flame className="mr-1 h-4 w-4" />
+                    Leve
+                  </ToggleGroupItem>
+                  <ToggleGroupItem 
+                    value="media" 
+                    className={`${intensity === 'media' ? 'text-white' : ''} ${getIntensityColor('media')}`}
+                  >
+                    <Flame className="mr-1 h-4 w-4" />
+                    Média
+                  </ToggleGroupItem>
+                  <ToggleGroupItem 
+                    value="pesada" 
+                    className={`${intensity === 'pesada' ? 'text-white' : ''} ${getIntensityColor('pesada')}`}
+                  >
+                    <Flame className="mr-1 h-4 w-4" />
+                    Pesada
+                  </ToggleGroupItem>
+                  <ToggleGroupItem 
+                    value="infernal" 
+                    className={`${intensity === 'infernal' ? 'text-white' : ''} ${getIntensityColor('infernal')}`}
+                  >
+                    <Flame className="mr-1 h-4 w-4" />
+                    Infernal
+                  </ToggleGroupItem>
+                </ToggleGroup>
               </div>
               
               {error && (
