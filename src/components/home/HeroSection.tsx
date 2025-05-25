@@ -31,23 +31,23 @@ const HeroSection: React.FC = () => {
       {/* Content */}
       <div className="container relative z-10 px-4 flex flex-col items-center text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-4 animate-fade-in tracking-tight">
-          <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text">Liberte seu </span>
-          <span className="text-yeon-purple">potencial de artista</span>
+          <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text">Transforme </span>
+          <span className="text-yeon-purple">talento em trajetória</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-8 animate-fade-in">
-          Gerencie sua carreira musical, distribua seu trabalho globalmente e maximize seus ganhos em uma única plataforma.
+          A plataforma que acelera carreiras musicais independentes. Financiamento, comunidade e curadoria — tudo em um só lugar.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 mt-4 animate-fade-in">
           <Button size="lg" className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium px-8 py-6 text-lg" asChild>
-            <RouterLink to="/calculator">
-              Comece Agora
+            <RouterLink to="/tools">
+              Acelere Sua Carreira
             </RouterLink>
           </Button>
           
           <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg" onClick={scrollToNextSection}>
-            Saiba Mais
+            Descubra Como
           </Button>
         </div>
       </div>

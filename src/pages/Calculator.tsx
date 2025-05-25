@@ -13,10 +13,10 @@ const CalculatorContent: React.FC = () => {
     <main className="max-w-5xl mx-auto">
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-medium mb-3">
-          {t('tagline')}
+          Descubra Quanto Vale Sua Música
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          {t('intro')}
+          Chega de mistério sobre seus ganhos. Calcule exatamente quanto cada stream vale e onde sua música rende mais.
         </p>
       </div>
       
@@ -34,7 +34,7 @@ const Calculator: React.FC = () => {
     <>
       <Helmet>
         <title>Calculadora de Royalties | Yeon Music</title>
-        <meta name="description" content="Calcule seus ganhos potenciais em todas as principais plataformas de streaming como Spotify, Apple Music, Deezer e mais. Entenda quanto vale cada reprodução." />
+        <meta name="description" content="Descubra quanto vale sua música em cada plataforma. Calcule seus ganhos reais no Spotify, Apple Music, Deezer e mais." />
         <link rel="canonical" href="https://yeon-music.com/calculator" />
         <meta name="keywords" content="calculadora royalties, ganhos spotify, ganhos apple music, receita musical, streaming receita, artista independente" />
         <script type="application/ld+json">
@@ -42,7 +42,7 @@ const Calculator: React.FC = () => {
             "@context": "https://schema.org",
             "@type": "WebApplication",
             "name": "Calculadora de Royalties",
-            "description": "${t('intro')}",
+            "description": "Descubra quanto vale sua música em cada plataforma de streaming",
             "url": "https://yeon-music.com/calculator",
             "applicationCategory": "UtilityApplication",
             "offers": {

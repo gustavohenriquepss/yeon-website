@@ -20,7 +20,7 @@ const MusicTools: React.FC = () => {
         <title>Ferramentas para Músicos | Yeon Music</title>
         <meta 
           name="description" 
-          content="Ferramentas essenciais para artistas independentes: calculadora de royalties, modelos de contratos profissionais e mais." 
+          content="Ferramentas que realmente fazem a diferença na carreira de artistas independentes. Calcule royalties, encontre contratos e muito mais." 
         />
         <link rel="canonical" href="https://yeon-music.com/tools" />
         <meta 
@@ -32,10 +32,10 @@ const MusicTools: React.FC = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <h1 className="text-3xl md:text-4xl font-medium mb-3">
-              Ferramentas para Músicos
+              Ferramentas que Fazem a Diferença
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Recursos essenciais para artistas independentes gerenciarem suas carreiras musicais
+              Chega de ferramentas espalhadas. Tudo que você precisa para acelerar sua carreira musical está aqui.
             </p>
           </div>
 
@@ -51,7 +51,7 @@ const MusicTools: React.FC = () => {
                   Calculadora de Royalties
                 </TabsTrigger>
                 <TabsTrigger value="contracts" className={`${isMobile ? 'flex-1 min-w-[120px]' : ''}`}>
-                  Modelos de Contratos
+                  Contratos Profissionais
                 </TabsTrigger>
                 <TabsTrigger value="spotify" className={`${isMobile ? 'flex-1 min-w-[120px]' : ''}`}>
                   Frite meu Spotify

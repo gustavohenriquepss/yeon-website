@@ -19,8 +19,8 @@ const Footer: React.FC = () => {
               <Logo />
             </div>
             <p className="text-white/70 text-sm mb-4">
-              Revolucionando a maneira como artistas independentes gerenciam suas carreiras e 
-              maximizam seus ganhos em streaming.
+              Acelerando carreiras de artistas independentes brasileiros. 
+              Onde talento encontra oportunidade e música vira sustento.
             </p>
             <div className="flex space-x-4">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
           
           {/* Links Úteis */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Links Úteis</h3>
+            <h3 className="text-white font-semibold mb-4">Navegação</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="text-white/70 hover:text-white transition-colors text-sm">
@@ -53,12 +53,12 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/about" className="text-white/70 hover:text-white transition-colors text-sm">
-                  Sobre Nós
+                  Nossa Missão
                 </Link>
               </li>
               <li>
-                <Link to="/calculator" className="text-white/70 hover:text-white transition-colors text-sm">
-                  Calculadora de Streaming
+                <Link to="/tools" className="text-white/70 hover:text-white transition-colors text-sm">
+                  Ferramentas
                 </Link>
               </li>
               <li>
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#" className="text-white/70 hover:text-white transition-colors text-sm">
-                  Guias e Tutoriais
+                  Guias Práticos
                 </a>
               </li>
               <li>
@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
           
           {/* Contato */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Entre em Contato</h3>
+            <h3 className="text-white font-semibold mb-4">Fale Conosco</h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-2">
                 <Mail size={16} className="text-yeon-purple mt-1" />

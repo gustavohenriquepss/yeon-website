@@ -129,14 +129,14 @@ const ContractsSection: React.FC = () => {
     <div className="space-y-6">
       <div className="space-y-4">
         <p className="text-lg text-gray-300">
-          Modelos de contratos revisados por Gustavo Deppe, especialista em direitos musicais.
-          Estes documentos ajudam artistas e produtores a estabelecer relações profissionais claras e proteger seus direitos.
+          Modelos profissionais revisados por especialistas em direito musical. 
+          Proteja seus direitos e estabeleça parcerias sem dor de cabeça.
         </p>
         
         <div className="bg-secondary/50 p-4 rounded-lg border border-white/10">
           <p className="text-sm text-gray-300">
-            <strong className="text-white">Nota importante:</strong> Estes são apenas modelos genéricos que devem ser adaptados à sua situação específica. 
-            Recomendamos sempre consultar um advogado especializado antes de assinar qualquer documento legal.
+            <strong className="text-white">Importante:</strong> Estes são modelos que devem ser adaptados à sua situação específica. 
+            Sempre consulte um advogado especializado antes de assinar qualquer documento legal.
           </p>
         </div>
       </div>
@@ -192,10 +192,10 @@ const ContractsSection: React.FC = () => {
           <div className="md:w-2/3">
             <h2 className="text-2xl font-semibold mb-4">Curso KSM Musical</h2>
             <p className="text-gray-300 mb-4">
-              Aprenda a sobreviver na indústria musical com o curso KSM Musical, criado pelo especialista em direitos musicais Gustavo Deppe.
+              Aprenda a sobreviver na indústria musical com quem realmente entende do assunto. Gustavo Deppe criou o KSM Musical para artistas que querem profissionalizar suas carreiras de verdade.
             </p>
             <p className="text-gray-300">
-              O curso oferece conhecimentos essenciais para artistas e profissionais da música navegarem com sucesso no mercado musical atual.
+              Chega de tentar decifrar o mercado musical sozinho. O curso oferece conhecimentos práticos para você navegar com sucesso na indústria.
             </p>
             <Button 
               className="mt-4 bg-yeon-purple hover:bg-yeon-dark-purple" 
