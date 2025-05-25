@@ -5,37 +5,37 @@ import FeatureItem, { FeatureItemProps } from './FeatureItem';
 const ArtistFeatures: React.FC = () => {
   const artistFeatures: (Omit<FeatureItemProps, 'size'> & { tag?: string })[] = [
     {
-      title: "Financiamento Direto",
-      description: "Arrecade fundos para seus projetos direto dos seus fãs. Sem burocracias, sem intermediários — só você e quem acredita no seu som."
+      title: "Ferramentas de Financiamento Coletivo",
+      description: "Arrecade fundos para seus projetos musicais diretamente de seus fãs, oferecendo recompensas exclusivas e mantendo o controle criativo sobre sua música."
     },
     {
-      title: "Dados que Importam",
-      description: "Entenda exatamente onde sua música está funcionando, quem está ouvindo e como otimizar seus lançamentos para máximo impacto."
+      title: "Painel Analítico",
+      description: "Acompanhe o desempenho da sua música com estatísticas detalhadas, insights sobre seu público e tendências de crescimento em tempo real."
     },
     {
-      title: "Calculadora Realista",
-      description: "Descubra quanto vale cada stream e onde sua música rende mais. Chega de mistério sobre seus ganhos."
+      title: "Calculadora de Royalties",
+      description: "Compare seus ganhos potenciais em todas as plataformas de streaming e descubra onde sua música gera mais receita."
     },
     {
-      title: "Estratégia Inteligente",
-      description: "Planeje lançamentos com IA que entende o mercado musical brasileiro e maximiza suas chances de sucesso.",
+      title: "Planejador de lançamentos",
+      description: "Organize seus lançamentos musicais com nossa ferramenta de planejamento assistida por IA, otimizando datas e estratégias para máximo impacto.",
       tag: "com IA"
     },
     {
-      title: "Marketing que Funciona",
-      description: "Ferramentas práticas para promover sua música sem precisar ser expert em marketing digital. Foco na música, não na burocracia."
+      title: "Ferramentas de Marketing",
+      description: "Promova sua música com ferramentas de marketing integradas para redes sociais e plataformas digitais de forma estratégica e eficiente."
     },
     {
-      title: "Seu Catálogo, Suas Regras",
-      description: "Gerencie toda sua música em um lugar só e venda direto para quem importa: seus fãs."
+      title: "Gestão de Catálogo e Marketplace",
+      description: "Gerencie seu catálogo musical com facilidade e venda diretamente aos seus fãs através do nosso marketplace integrado."
     },
     {
-      title: "Acesso a Playlists",
-      description: "Conecte-se diretamente com curadores que podem levar sua música para o próximo nível. Oportunidades reais, não só promessas."
+      title: "Pitching para Playlists",
+      description: "Aumente a visibilidade da sua música com ferramentas para submissão direta para curadores de playlists e oportunidades de exposição."
     },
     {
-      title: "Contratos Descomplicados",
-      description: "Colabore sem dor de cabeça. Dividir royalties e gerenciar parcerias nunca foi tão simples."
+      title: "Contratos e Divisão de Royalties",
+      description: "Gerencie contratos, colaborações e divisões de royalties sem complicações, garantindo transparência e precisão nos pagamentos."
     }
   ];
 

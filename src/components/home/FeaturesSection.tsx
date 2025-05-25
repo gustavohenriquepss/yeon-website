@@ -12,10 +12,10 @@ const FeaturesSection: React.FC = () => {
     <section className="py-24 bg-yeon-dark-bg">
       <div className="container px-4">
         <h2 className="text-3xl md:text-4xl font-semibold text-center mb-6">
-          Ferramentas que Fazem a Diferença
+          Ferramentas Poderosas para Artistas Ambiciosos
         </h2>
         <p className="text-white/70 text-center mb-16 max-w-2xl mx-auto">
-          Chega de ferramentas espalhadas e oportunidades perdidas. Tudo que você precisa para acelerar sua carreira está aqui.
+          Tudo que você precisa para gerenciar sua carreira musical, maximizar seus ganhos e conectar-se com seu público.
         </p>
         
         <Tabs defaultValue="artists" className="w-full">
@@ -31,7 +31,7 @@ const FeaturesSection: React.FC = () => {
                 value="fans" 
                 className="rounded-full px-6 py-2 data-[state=active]:bg-yeon-purple data-[state=active]:text-white"
               >
-                Para Fãs e Apoiadores
+                Para Fãs e Contratantes
               </TabsTrigger>
             </TabsList>
           </div>
