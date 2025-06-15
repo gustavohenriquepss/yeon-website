@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -6,6 +7,7 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ExternalLink, Play, Calendar, MapPin, Music } from 'lucide-react';
 import { useLinkInBioStore } from './useLinkInBioStore';
+import SubscribeForm from './SubscribeForm';
 
 const LinkInBioPreview: React.FC = () => {
   const { profile, socialLinks, musicReleases, media, events, customLinks, theme } = useLinkInBioStore();
@@ -266,7 +268,7 @@ const LinkInBioPreview: React.FC = () => {
 
           {/* Custom Links */}
           {customLinks.length > 0 && (
-            <div className="space-y-2">
+            <div className="mb-6 space-y-2">
               {customLinks.map((link, index) => (
                 <Button 
                   key={index} 
@@ -287,6 +289,13 @@ const LinkInBioPreview: React.FC = () => {
               ))}
             </div>
           )}
+
+          {/* Subscribe Form */}
+          <SubscribeForm
+            artistSlug={profile.slug}
+            primaryColor={theme.primaryColor}
+            textColor={theme.textColor}
+          />
         </CardContent>
       </Card>
     </div>
