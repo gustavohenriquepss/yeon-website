@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -11,6 +10,7 @@ import Artists from "./pages/Artists";
 import MusicTools from "./pages/Tools";
 import ReleasePlanner from "./pages/ReleasePlanner";
 import NotFound from "./pages/NotFound";
+import LinkInBio from "./pages/LinkInBio";
 
 // Create the QueryClient outside the component
 const queryClient = new QueryClient();
@@ -28,6 +28,7 @@ const App: React.FC = () => {
             <Route path="/tools" element={<MusicTools />} />
             <Route path="/artists" element={<Artists />} />
             <Route path="/release-planner" element={<ReleasePlanner />} />
+            <Route path="/link-in-bio" element={<LinkInBio />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

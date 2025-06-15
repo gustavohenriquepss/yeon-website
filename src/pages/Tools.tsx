@@ -8,6 +8,8 @@ import ContractsSection from '@/components/ContractsSection';
 import SpotifyRoaster from '@/components/SpotifyRoaster';
 import { useLanguage } from '@/context/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Button } from '@/components/ui/button';
+import { ExternalLink } from 'lucide-react';
 
 const MusicTools: React.FC = () => {
   const { t } = useLanguage();
@@ -34,9 +36,18 @@ const MusicTools: React.FC = () => {
             <h1 className="text-3xl md:text-4xl font-medium mb-3">
               Ferramentas para Músicos
             </h1>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-6">
               Recursos essenciais para artistas independentes gerenciarem suas carreiras musicais
             </p>
+            
+            <div className="flex justify-center">
+              <Button asChild className="mb-6">
+                <a href="/link-in-bio" className="flex items-center gap-2">
+                  Criar Link in Bio
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
           </div>
 
           <Tabs 
