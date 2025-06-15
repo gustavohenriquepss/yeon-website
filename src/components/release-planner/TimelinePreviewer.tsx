@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Progress } from '@/components/ui/progress';
-import { Edit, Share, Calendar, CheckSquare, Clock, Users } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Edit, Share, Calendar, CheckSquare, Clock, Users, User } from 'lucide-react';
 import { format, subWeeks, addDays } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
@@ -14,7 +15,7 @@ interface ProjectDetails {
   releaseType: string;
   releaseDate: string;
   genre: string;
-  goals: string;
+  goals: string[];
   teamMembers: Array<{
     name: string;
     email: string;
@@ -57,7 +58,8 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
         dueDate: format(subWeeks(releaseDate, 12), 'yyyy-MM-dd'),
         phase: 'pre-production',
         priority: 'high',
-        completed: false
+        completed: false,
+        assignedTo: ''
       },
       {
         id: '2',
@@ -66,7 +68,8 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
         dueDate: format(subWeeks(releaseDate, 10), 'yyyy-MM-dd'),
         phase: 'pre-production',
         priority: 'high',
-        completed: false
+        completed: false,
+        assignedTo: ''
       },
       {
         id: '3',
@@ -75,7 +78,8 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
         dueDate: format(subWeeks(releaseDate, 9), 'yyyy-MM-dd'),
         phase: 'pre-production',
         priority: 'medium',
-        completed: false
+        completed: false,
+        assignedTo: ''
       },
 
       // Production (8-6 weeks before)
@@ -86,7 +90,8 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
         dueDate: format(subWeeks(releaseDate, 8), 'yyyy-MM-dd'),
         phase: 'production',
         priority: 'high',
-        completed: false
+        completed: false,
+        assignedTo: ''
       },
       {
         id: '5',
@@ -95,7 +100,8 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
         dueDate: format(subWeeks(releaseDate, 7), 'yyyy-MM-dd'),
         phase: 'production',
         priority: 'high',
-        completed: false
+        completed: false,
+        assignedTo: ''
       },
       {
         id: '6',
@@ -104,7 +110,8 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
         dueDate: format(subWeeks(releaseDate, 6), 'yyyy-MM-dd'),
         phase: 'production',
         priority: 'high',
-        completed: false
+        completed: false,
+        assignedTo: ''
       },
 
       // Marketing (6-1 weeks before)
@@ -115,7 +122,8 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
         dueDate: format(subWeeks(releaseDate, 6), 'yyyy-MM-dd'),
         phase: 'marketing',
         priority: 'medium',
-        completed: false
+        completed: false,
+        assignedTo: ''
       },
       {
         id: '8',
@@ -124,7 +132,8 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
         dueDate: format(subWeeks(releaseDate, 5), 'yyyy-MM-dd'),
         phase: 'marketing',
         priority: 'medium',
-        completed: false
+        completed: false,
+        assignedTo: ''
       },
       {
         id: '9',
@@ -133,7 +142,8 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
         dueDate: format(subWeeks(releaseDate, 4), 'yyyy-MM-dd'),
         phase: 'marketing',
         priority: 'high',
-        completed: false
+        completed: false,
+        assignedTo: ''
       },
       {
         id: '10',
@@ -142,7 +152,8 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
         dueDate: format(subWeeks(releaseDate, 3), 'yyyy-MM-dd'),
         phase: 'marketing',
         priority: 'medium',
-        completed: false
+        completed: false,
+        assignedTo: ''
       },
       {
         id: '11',
@@ -151,7 +162,8 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
         dueDate: format(subWeeks(releaseDate, 2), 'yyyy-MM-dd'),
         phase: 'marketing',
         priority: 'medium',
-        completed: false
+        completed: false,
+        assignedTo: ''
       },
 
       // Release (week of release)
@@ -162,7 +174,8 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
         dueDate: projectDetails.releaseDate,
         phase: 'release',
         priority: 'high',
-        completed: false
+        completed: false,
+        assignedTo: ''
       },
       {
         id: '13',
@@ -171,7 +184,8 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
         dueDate: projectDetails.releaseDate,
         phase: 'release',
         priority: 'high',
-        completed: false
+        completed: false,
+        assignedTo: ''
       },
       {
         id: '14',
@@ -180,7 +194,8 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
         dueDate: format(addDays(releaseDate, 1), 'yyyy-MM-dd'),
         phase: 'release',
         priority: 'medium',
-        completed: false
+        completed: false,
+        assignedTo: ''
       }
     ];
 
@@ -192,6 +207,12 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
   const toggleTask = (taskId: string) => {
     setTasks(tasks.map(task => 
       task.id === taskId ? { ...task, completed: !task.completed } : task
+    ));
+  };
+
+  const assignMember = (taskId: string, memberName: string) => {
+    setTasks(tasks.map(task => 
+      task.id === taskId ? { ...task, assignedTo: memberName } : task
     ));
   };
 
@@ -239,6 +260,10 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
     }
   };
 
+  const getAssignedMember = (memberName: string) => {
+    return projectDetails.teamMembers.find(member => member.name === memberName);
+  };
+
   return (
     <div className="space-y-6">
       {/* Project Overview */}
@@ -273,7 +298,14 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
             
             <div>
               <h4 className="font-medium mb-2">Objetivos:</h4>
-              <p className="text-sm text-muted-foreground">{projectDetails.goals}</p>
+              <div className="space-y-1">
+                {projectDetails.goals.map((goal, index) => (
+                  <div key={index} className="flex items-center gap-2">
+                    <CheckSquare className="h-4 w-4 text-yeon-purple" />
+                    <span className="text-sm text-muted-foreground">{goal}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div>
@@ -329,7 +361,7 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
                         onCheckedChange={() => toggleTask(task.id)}
                         className="mt-1"
                       />
-                      <div className="flex-1 space-y-1">
+                      <div className="flex-1 space-y-2">
                         <div className="flex items-center justify-between">
                           <h4 className={`font-medium ${task.completed ? 'line-through text-muted-foreground' : ''}`}>
                             {task.title}
@@ -347,6 +379,32 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
                         <p className={`text-sm ${task.completed ? 'line-through text-muted-foreground' : 'text-muted-foreground'}`}>
                           {task.description}
                         </p>
+                        
+                        {/* Team Member Assignment */}
+                        <div className="flex items-center gap-2">
+                          <User className="h-4 w-4 text-muted-foreground" />
+                          <Select 
+                            value={task.assignedTo} 
+                            onValueChange={(value) => assignMember(task.id, value)}
+                          >
+                            <SelectTrigger className="w-48 h-8">
+                              <SelectValue placeholder="Atribuir membro" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="">Não atribuído</SelectItem>
+                              {projectDetails.teamMembers.map((member, index) => (
+                                <SelectItem key={index} value={member.name}>
+                                  {member.name} - {member.role}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          {task.assignedTo && getAssignedMember(task.assignedTo) && (
+                            <Badge variant="outline" className="text-xs">
+                              {getAssignedMember(task.assignedTo)?.role}
+                            </Badge>
+                          )}
+                        </div>
                       </div>
                     </div>
                   ))}

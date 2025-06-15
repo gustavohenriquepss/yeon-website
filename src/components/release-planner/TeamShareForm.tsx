@@ -20,7 +20,7 @@ interface ProjectDetails {
   releaseType: string;
   releaseDate: string;
   genre: string;
-  goals: string;
+  goals: string[];
   teamMembers: Array<{
     name: string;
     email: string;
@@ -45,6 +45,8 @@ const TeamShareForm: React.FC<TeamShareFormProps> = ({ projectDetails }) => {
   const [sharedSuccessfully, setSharedSuccessfully] = useState(false);
   const { toast } = useToast();
 
+  const goalsText = projectDetails.goals.map((goal, index) => `${index + 1}. ${goal}`).join('\n');
+
   const form = useForm<ShareFormData>({
     resolver: zodResolver(shareSchema),
     defaultValues: {
@@ -56,6 +58,9 @@ Criamos um plano estruturado para o lançamento do nosso projeto "${projectDetai
 📅 Data de Lançamento: ${format(new Date(projectDetails.releaseDate), 'dd/MM/yyyy', { locale: ptBR })}
 🎵 Tipo: ${projectDetails.releaseType}
 🎭 Gênero: ${projectDetails.genre}
+
+🎯 Objetivos:
+${goalsText}
 
 O plano inclui todas as tarefas organizadas por fases, com prazos e responsabilidades definidas. Vamos trabalhar juntos para fazer este lançamento ser um sucesso!
 
@@ -275,7 +280,7 @@ Vamos fazer acontecer! 🚀`,
             <CardTitle>Resumo do Projeto</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mb-4">
               <div>
                 <span className="font-medium">Projeto:</span> {projectDetails.projectName}
               </div>
@@ -288,6 +293,14 @@ Vamos fazer acontecer! 🚀`,
               <div>
                 <span className="font-medium">Lançamento:</span> {format(new Date(projectDetails.releaseDate), 'dd/MM/yyyy', { locale: ptBR })}
               </div>
+            </div>
+            <div>
+              <span className="font-medium">Objetivos:</span>
+              <ul className="list-disc list-inside mt-2 space-y-1">
+                {projectDetails.goals.map((goal, index) => (
+                  <li key={index} className="text-sm text-muted-foreground">{goal}</li>
+                ))}
+              </ul>
             </div>
           </CardContent>
         </Card>

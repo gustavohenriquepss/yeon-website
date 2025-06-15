@@ -23,7 +23,7 @@ const projectSchema = z.object({
   releaseType: z.string().min(1, "Tipo de lançamento é obrigatório"),
   releaseDate: z.string().min(1, "Data de lançamento é obrigatória"),
   genre: z.string().min(1, "Gênero é obrigatório"),
-  goals: z.string().min(10, "Descreva seus objetivos com pelo menos 10 caracteres"),
+  goals: z.array(z.string().min(1, "Objetivo não pode estar vazio")).min(1, "Adicione pelo menos um objetivo"),
   teamMembers: z.array(teamMemberSchema).min(1, "Adicione pelo menos um membro da equipe")
 });
 
@@ -42,12 +42,13 @@ const ProjectDetailsForm: React.FC<ProjectDetailsFormProps> = ({ onSubmit, initi
       releaseType: '',
       releaseDate: '',
       genre: '',
-      goals: '',
+      goals: [''],
       teamMembers: [{ name: '', email: '', role: '' }]
     }
   });
 
   const teamMembers = form.watch('teamMembers');
+  const goals = form.watch('goals');
 
   const addTeamMember = () => {
     const currentMembers = form.getValues('teamMembers');
@@ -58,6 +59,18 @@ const ProjectDetailsForm: React.FC<ProjectDetailsFormProps> = ({ onSubmit, initi
     const currentMembers = form.getValues('teamMembers');
     if (currentMembers.length > 1) {
       form.setValue('teamMembers', currentMembers.filter((_, i) => i !== index));
+    }
+  };
+
+  const addGoal = () => {
+    const currentGoals = form.getValues('goals');
+    form.setValue('goals', [...currentGoals, '']);
+  };
+
+  const removeGoal = (index: number) => {
+    const currentGoals = form.getValues('goals');
+    if (currentGoals.length > 1) {
+      form.setValue('goals', currentGoals.filter((_, i) => i !== index));
     }
   };
 
@@ -174,24 +187,61 @@ const ProjectDetailsForm: React.FC<ProjectDetailsFormProps> = ({ onSubmit, initi
                 )}
               />
             </div>
+          </CardContent>
+        </Card>
 
-            <FormField
-              control={form.control}
-              name="goals"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Objetivos do Lançamento</FormLabel>
-                  <FormControl>
-                    <Textarea 
-                      placeholder="Descreva o que você espera alcançar com este lançamento (ex: número de streams, shows, reconhecimento, etc.)"
-                      className="min-h-[100px]"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+        {/* Project Goals */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Target className="h-5 w-5" />
+              Objetivos do Projeto
+            </CardTitle>
+            <CardDescription>
+              Defina os objetivos específicos que você quer alcançar com este lançamento
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {goals.map((_, index) => (
+              <div key={index} className="flex gap-4 items-end">
+                <FormField
+                  control={form.control}
+                  name={`goals.${index}`}
+                  render={({ field }) => (
+                    <FormItem className="flex-1">
+                      <FormLabel>Objetivo {index + 1}</FormLabel>
+                      <FormControl>
+                        <Input 
+                          placeholder="Ex: Alcançar 10.000 streams no Spotify"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                {goals.length > 1 && (
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="icon"
+                    onClick={() => removeGoal(index)}
+                    className="text-red-600 hover:text-red-700"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                )}
+              </div>
+            ))}
+            <Button
+              type="button"
+              variant="outline"
+              onClick={addGoal}
+              className="w-full"
+            >
+              <Plus className="h-4 w-4 mr-2" />
+              Adicionar Objetivo
+            </Button>
           </CardContent>
         </Card>
 

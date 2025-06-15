@@ -15,7 +15,7 @@ interface ProjectDetails {
   releaseType: string;
   releaseDate: string;
   genre: string;
-  goals: string;
+  goals: string[];
   teamMembers: Array<{
     name: string;
     email: string;
@@ -64,13 +64,13 @@ const ReleasePlanner: React.FC = () => {
   ];
 
   const handleProjectSubmit = (details: any) => {
-    // Ensure all required fields are present
+    // Ensure all required fields are present with updated interface
     const completeDetails: ProjectDetails = {
       projectName: details.projectName || '',
       releaseType: details.releaseType || '',
       releaseDate: details.releaseDate || '',
       genre: details.genre || '',
-      goals: details.goals || '',
+      goals: details.goals || [],
       teamMembers: details.teamMembers || []
     };
     setProjectDetails(completeDetails);
