@@ -130,163 +130,169 @@ Vamos fazer acontecer! 🚀`,
   }
 
   return (
-    <div className="space-y-6">
-      {/* Team Members Selection */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Users className="h-5 w-5" />
-            Selecionar Membros da Equipe
-          </CardTitle>
-          <CardDescription>
-            Escolha quem receberá o plano de lançamento
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="grid gap-3">
-            {projectDetails.teamMembers.map((member, index) => (
-              <FormField
-                key={index}
-                control={form.control}
-                name="selectedMembers"
-                render={({ field }) => (
-                  <FormItem className="flex items-center space-x-3 space-y-0">
-                    <FormControl>
-                      <Checkbox
-                        checked={field.value?.includes(index.toString())}
-                        onCheckedChange={(checked) => {
-                          const updatedValue = checked
-                            ? [...(field.value || []), index.toString()]
-                            : (field.value || []).filter((value) => value !== index.toString());
-                          field.onChange(updatedValue);
-                        }}
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(handleShare)} className="space-y-6">
+        {/* Team Members Selection */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Users className="h-5 w-5" />
+              Selecionar Membros da Equipe
+            </CardTitle>
+            <CardDescription>
+              Escolha quem receberá o plano de lançamento
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <FormField
+              control={form.control}
+              name="selectedMembers"
+              render={() => (
+                <FormItem>
+                  <div className="grid gap-3">
+                    {projectDetails.teamMembers.map((member, index) => (
+                      <FormField
+                        key={index}
+                        control={form.control}
+                        name="selectedMembers"
+                        render={({ field }) => (
+                          <FormItem className="flex items-center space-x-3 space-y-0">
+                            <FormControl>
+                              <Checkbox
+                                checked={field.value?.includes(index.toString())}
+                                onCheckedChange={(checked) => {
+                                  const updatedValue = checked
+                                    ? [...(field.value || []), index.toString()]
+                                    : (field.value || []).filter((value) => value !== index.toString());
+                                  field.onChange(updatedValue);
+                                }}
+                              />
+                            </FormControl>
+                            <div className="flex-1 flex items-center justify-between">
+                              <div>
+                                <FormLabel className="font-medium">{member.name}</FormLabel>
+                                <p className="text-sm text-muted-foreground">{member.email}</p>
+                              </div>
+                              <Badge variant="outline">{member.role}</Badge>
+                            </div>
+                          </FormItem>
+                        )}
                       />
-                    </FormControl>
-                    <div className="flex-1 flex items-center justify-between">
-                      <div>
-                        <FormLabel className="font-medium">{member.name}</FormLabel>
-                        <p className="text-sm text-muted-foreground">{member.email}</p>
-                      </div>
-                      <Badge variant="outline">{member.role}</Badge>
-                    </div>
-                  </FormItem>
-                )}
-              />
-            ))}
-          </div>
-          <FormMessage />
-        </CardContent>
-      </Card>
+                    ))}
+                  </div>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </CardContent>
+        </Card>
 
-      {/* Email Customization */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Mail className="h-5 w-5" />
-            Personalizar Email
-          </CardTitle>
-          <CardDescription>
-            Customize a mensagem que será enviada para sua equipe
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(handleShare)} className="space-y-4">
-              <FormField
-                control={form.control}
-                name="subject"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Assunto</FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+        {/* Email Customization */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Mail className="h-5 w-5" />
+              Personalizar Email
+            </CardTitle>
+            <CardDescription>
+              Customize a mensagem que será enviada para sua equipe
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <FormField
+              control={form.control}
+              name="subject"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Assunto</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Mensagem</FormLabel>
-                    <FormControl>
-                      <Textarea 
-                        {...field}
-                        className="min-h-[200px]"
-                        placeholder="Escreva uma mensagem para sua equipe..."
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Mensagem</FormLabel>
+                  <FormControl>
+                    <Textarea 
+                      {...field}
+                      className="min-h-[200px]"
+                      placeholder="Escreva uma mensagem para sua equipe..."
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-              <div className="flex justify-between gap-4">
+            <div className="flex justify-between gap-4">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={copyPlanLink}
+              >
+                <Copy className="h-4 w-4 mr-2" />
+                Copiar Link
+              </Button>
+              
+              <div className="flex gap-2">
                 <Button
                   type="button"
                   variant="outline"
-                  onClick={copyPlanLink}
+                  onClick={() => window.open(generateEmailContent(), '_blank')}
                 >
-                  <Copy className="h-4 w-4 mr-2" />
-                  Copiar Link
+                  Abrir no Email
                 </Button>
                 
-                <div className="flex gap-2">
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={() => window.open(generateEmailContent(), '_blank')}
-                  >
-                    Abrir no Email
-                  </Button>
-                  
-                  <Button 
-                    type="submit" 
-                    disabled={isSharing || selectedMembers.length === 0}
-                    className="bg-yeon-purple hover:bg-yeon-dark-purple"
-                  >
-                    {isSharing ? (
-                      <>Enviando...</>
-                    ) : (
-                      <>
-                        <Send className="h-4 w-4 mr-2" />
-                        Enviar Plano ({selectedMembers.length})
-                      </>
-                    )}
-                  </Button>
-                </div>
+                <Button 
+                  type="submit" 
+                  disabled={isSharing || selectedMembers.length === 0}
+                  className="bg-yeon-purple hover:bg-yeon-dark-purple"
+                >
+                  {isSharing ? (
+                    <>Enviando...</>
+                  ) : (
+                    <>
+                      <Send className="h-4 w-4 mr-2" />
+                      Enviar Plano ({selectedMembers.length})
+                    </>
+                  )}
+                </Button>
               </div>
-            </form>
-          </Form>
-        </CardContent>
-      </Card>
+            </div>
+          </CardContent>
+        </Card>
 
-      {/* Project Summary */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Resumo do Projeto</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-            <div>
-              <span className="font-medium">Projeto:</span> {projectDetails.projectName}
+        {/* Project Summary */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Resumo do Projeto</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+              <div>
+                <span className="font-medium">Projeto:</span> {projectDetails.projectName}
+              </div>
+              <div>
+                <span className="font-medium">Tipo:</span> {projectDetails.releaseType}
+              </div>
+              <div>
+                <span className="font-medium">Gênero:</span> {projectDetails.genre}
+              </div>
+              <div>
+                <span className="font-medium">Lançamento:</span> {format(new Date(projectDetails.releaseDate), 'dd/MM/yyyy', { locale: ptBR })}
+              </div>
             </div>
-            <div>
-              <span className="font-medium">Tipo:</span> {projectDetails.releaseType}
-            </div>
-            <div>
-              <span className="font-medium">Gênero:</span> {projectDetails.genre}
-            </div>
-            <div>
-              <span className="font-medium">Lançamento:</span> {format(new Date(projectDetails.releaseDate), 'dd/MM/yyyy', { locale: ptBR })}
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+          </CardContent>
+        </Card>
+      </form>
+    </Form>
   );
 };
 
