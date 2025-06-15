@@ -6,7 +6,7 @@ import LinkInBioBuilder from '@/components/link-in-bio/LinkInBioBuilder';
 import LinkInBioPreview from '@/components/link-in-bio/LinkInBioPreview';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Eye, Edit, Save, Globe } from 'lucide-react';
+import { Eye, Edit, Globe } from 'lucide-react';
 import { useLinkInBioStore } from '@/components/link-in-bio/useLinkInBioStore';
 import { useToast } from '@/hooks/use-toast';
 
@@ -22,14 +22,6 @@ const LinkInBio: React.FC = () => {
       description: isPublished 
         ? "Sua página não está mais visível publicamente." 
         : "Sua página agora está disponível para compartilhar!",
-    });
-  };
-
-  const handleSave = () => {
-    // In a real app, this would save to a database
-    toast({
-      title: "Alterações salvas",
-      description: "Suas alterações foram salvas com sucesso.",
     });
   };
 
@@ -73,24 +65,14 @@ const LinkInBio: React.FC = () => {
                 </Button>
               </div>
               
-              <div className="flex gap-2">
-                <Button
-                  variant="secondary"
-                  onClick={handleSave}
-                  className="flex items-center gap-2"
-                >
-                  <Save className="h-4 w-4" />
-                  Salvar
-                </Button>
-                <Button
-                  variant={isPublished ? "destructive" : "default"}
-                  onClick={handlePublish}
-                  className="flex items-center gap-2"
-                >
-                  <Globe className="h-4 w-4" />
-                  {isPublished ? "Despublicar" : "Publicar"}
-                </Button>
-              </div>
+              <Button
+                variant={isPublished ? "destructive" : "default"}
+                onClick={handlePublish}
+                className="flex items-center gap-2"
+              >
+                <Globe className="h-4 w-4" />
+                {isPublished ? "Despublicar" : "Publicar"}
+              </Button>
               
               {isPublished && (
                 <Badge variant="secondary" className="bg-green-500/20 text-green-400">
