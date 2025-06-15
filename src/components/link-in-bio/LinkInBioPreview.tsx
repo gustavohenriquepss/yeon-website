@@ -4,11 +4,15 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ExternalLink, Play, Calendar, MapPin, Music } from 'lucide-react';
 import { useLinkInBioStore } from './useLinkInBioStore';
 
 const LinkInBioPreview: React.FC = () => {
   const { profile, socialLinks, musicReleases, media, events, customLinks } = useLinkInBioStore();
+
+  const photos = media.filter(item => item.type === 'image');
+  const videos = media.filter(item => item.type === 'video');
 
   return (
     <div className="max-w-md mx-auto">
@@ -83,66 +87,89 @@ const LinkInBioPreview: React.FC = () => {
             </div>
           )}
 
-          {/* Media Gallery */}
-          {media.length > 0 && (
+          {/* Tabs for Photos, Videos, and Events */}
+          {(photos.length > 0 || videos.length > 0 || events.length > 0) && (
             <div className="mb-6">
-              <h3 className="font-medium mb-3">Galeria</h3>
-              <div className="grid grid-cols-2 gap-2">
-                {media.slice(0, 4).map((item, index) => (
-                  <AspectRatio key={index} ratio={1}>
-                    <div className="w-full h-full bg-muted rounded-lg overflow-hidden">
-                      {item.type === 'image' ? (
-                        <img 
-                          src={item.url} 
-                          alt={item.title}
-                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-600 flex items-center justify-center relative group cursor-pointer">
-                          <div className="absolute inset-0 bg-black opacity-20"></div>
-                          <Play className="h-8 w-8 text-white z-10 group-hover:scale-110 transition-transform duration-200" />
-                          <div className="absolute bottom-2 left-2 right-2 z-10">
-                            <p className="text-white text-xs font-medium truncate">{item.title}</p>
+              <Tabs defaultValue="photos" className="w-full">
+                <TabsList className="grid w-full grid-cols-3">
+                  <TabsTrigger value="photos">Fotos</TabsTrigger>
+                  <TabsTrigger value="videos">Vídeos</TabsTrigger>
+                  <TabsTrigger value="events">Shows</TabsTrigger>
+                </TabsList>
+                
+                <TabsContent value="photos" className="mt-4">
+                  {photos.length > 0 ? (
+                    <div className="grid grid-cols-2 gap-2">
+                      {photos.slice(0, 4).map((photo, index) => (
+                        <AspectRatio key={index} ratio={1}>
+                          <div className="w-full h-full bg-muted rounded-lg overflow-hidden">
+                            <img 
+                              src={photo.url} 
+                              alt={photo.title}
+                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
+                            />
+                          </div>
+                        </AspectRatio>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-center text-muted-foreground text-sm py-8">Nenhuma foto adicionada</p>
+                  )}
+                </TabsContent>
+                
+                <TabsContent value="videos" className="mt-4">
+                  {videos.length > 0 ? (
+                    <div className="grid grid-cols-2 gap-2">
+                      {videos.slice(0, 4).map((video, index) => (
+                        <AspectRatio key={index} ratio={1}>
+                          <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-600 rounded-lg overflow-hidden flex items-center justify-center relative group cursor-pointer">
+                            <div className="absolute inset-0 bg-black opacity-20"></div>
+                            <Play className="h-8 w-8 text-white z-10 group-hover:scale-110 transition-transform duration-200" />
+                            <div className="absolute bottom-2 left-2 right-2 z-10">
+                              <p className="text-white text-xs font-medium truncate">{video.title}</p>
+                            </div>
+                          </div>
+                        </AspectRatio>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-center text-muted-foreground text-sm py-8">Nenhum vídeo adicionado</p>
+                  )}
+                </TabsContent>
+                
+                <TabsContent value="events" className="mt-4">
+                  {events.length > 0 ? (
+                    <div className="space-y-2">
+                      {events.map((event, index) => (
+                        <div key={index} className="p-3 rounded-lg border">
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <p className="font-medium text-sm">{event.name}</p>
+                              <div className="flex items-center gap-1 text-xs text-muted-foreground mt-1">
+                                <Calendar className="h-3 w-3" />
+                                {event.date}
+                              </div>
+                              <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                                <MapPin className="h-3 w-3" />
+                                {event.venue}
+                              </div>
+                            </div>
+                            {event.ticketUrl && (
+                              <Button size="sm" variant="outline" asChild>
+                                <a href={event.ticketUrl} target="_blank" rel="noopener noreferrer">
+                                  Ingressos
+                                </a>
+                              </Button>
+                            )}
                           </div>
                         </div>
-                      )}
+                      ))}
                     </div>
-                  </AspectRatio>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Upcoming Events */}
-          {events.length > 0 && (
-            <div className="mb-6">
-              <h3 className="font-medium mb-3">Próximos Shows</h3>
-              <div className="space-y-2">
-                {events.map((event, index) => (
-                  <div key={index} className="p-3 rounded-lg border">
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <p className="font-medium text-sm">{event.name}</p>
-                        <div className="flex items-center gap-1 text-xs text-muted-foreground mt-1">
-                          <Calendar className="h-3 w-3" />
-                          {event.date}
-                        </div>
-                        <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                          <MapPin className="h-3 w-3" />
-                          {event.venue}
-                        </div>
-                      </div>
-                      {event.ticketUrl && (
-                        <Button size="sm" variant="outline" asChild>
-                          <a href={event.ticketUrl} target="_blank" rel="noopener noreferrer">
-                            Ingressos
-                          </a>
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ) : (
+                    <p className="text-center text-muted-foreground text-sm py-8">Nenhum show agendado</p>
+                  )}
+                </TabsContent>
+              </Tabs>
             </div>
           )}
 
