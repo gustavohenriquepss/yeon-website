@@ -5,10 +5,33 @@ import PageLayout from '@/components/PageLayout';
 import LinkInBioBuilder from '@/components/link-in-bio/LinkInBioBuilder';
 import LinkInBioPreview from '@/components/link-in-bio/LinkInBioPreview';
 import { Button } from '@/components/ui/button';
-import { Eye, Edit } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Eye, Edit, Save, Globe } from 'lucide-react';
+import { useLinkInBioStore } from '@/components/link-in-bio/useLinkInBioStore';
+import { useToast } from '@/hooks/use-toast';
 
 const LinkInBio: React.FC = () => {
   const [isPreviewMode, setIsPreviewMode] = useState(false);
+  const { isPublished, togglePublish } = useLinkInBioStore();
+  const { toast } = useToast();
+
+  const handlePublish = () => {
+    togglePublish();
+    toast({
+      title: isPublished ? "Página despublicada" : "Página publicada!",
+      description: isPublished 
+        ? "Sua página não está mais visível publicamente." 
+        : "Sua página agora está disponível para compartilhar!",
+    });
+  };
+
+  const handleSave = () => {
+    // In a real app, this would save to a database
+    toast({
+      title: "Alterações salvas",
+      description: "Suas alterações foram salvas com sucesso.",
+    });
+  };
 
   return (
     <>
@@ -30,23 +53,50 @@ const LinkInBio: React.FC = () => {
               Crie sua página personalizada para centralizar todos seus links, músicas e conteúdo
             </p>
             
-            <div className="flex justify-center gap-2">
-              <Button
-                variant={!isPreviewMode ? "default" : "outline"}
-                onClick={() => setIsPreviewMode(false)}
-                className="flex items-center gap-2"
-              >
-                <Edit className="h-4 w-4" />
-                Editar
-              </Button>
-              <Button
-                variant={isPreviewMode ? "default" : "outline"}
-                onClick={() => setIsPreviewMode(true)}
-                className="flex items-center gap-2"
-              >
-                <Eye className="h-4 w-4" />
-                Visualizar
-              </Button>
+            <div className="flex justify-center items-center gap-3 flex-wrap">
+              <div className="flex gap-2">
+                <Button
+                  variant={!isPreviewMode ? "default" : "outline"}
+                  onClick={() => setIsPreviewMode(false)}
+                  className="flex items-center gap-2"
+                >
+                  <Edit className="h-4 w-4" />
+                  Editar
+                </Button>
+                <Button
+                  variant={isPreviewMode ? "default" : "outline"}
+                  onClick={() => setIsPreviewMode(true)}
+                  className="flex items-center gap-2"
+                >
+                  <Eye className="h-4 w-4" />
+                  Visualizar
+                </Button>
+              </div>
+              
+              <div className="flex gap-2">
+                <Button
+                  variant="secondary"
+                  onClick={handleSave}
+                  className="flex items-center gap-2"
+                >
+                  <Save className="h-4 w-4" />
+                  Salvar
+                </Button>
+                <Button
+                  variant={isPublished ? "destructive" : "default"}
+                  onClick={handlePublish}
+                  className="flex items-center gap-2"
+                >
+                  <Globe className="h-4 w-4" />
+                  {isPublished ? "Despublicar" : "Publicar"}
+                </Button>
+              </div>
+              
+              {isPublished && (
+                <Badge variant="secondary" className="bg-green-500/20 text-green-400">
+                  Publicado
+                </Badge>
+              )}
             </div>
           </div>
 

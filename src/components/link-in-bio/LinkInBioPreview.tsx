@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -9,18 +8,49 @@ import { ExternalLink, Play, Calendar, MapPin, Music } from 'lucide-react';
 import { useLinkInBioStore } from './useLinkInBioStore';
 
 const LinkInBioPreview: React.FC = () => {
-  const { profile, socialLinks, musicReleases, media, events, customLinks } = useLinkInBioStore();
+  const { profile, socialLinks, musicReleases, media, events, customLinks, theme } = useLinkInBioStore();
 
   const photos = media.filter(item => item.type === 'image');
   const videos = media.filter(item => item.type === 'video');
 
+  const getCardClassName = () => {
+    const baseClass = "overflow-hidden border-0";
+    switch (theme.cardStyle) {
+      case 'square':
+        return `${baseClass} rounded-none`;
+      case 'minimal':
+        return `${baseClass} rounded-sm shadow-sm`;
+      default:
+        return `${baseClass} rounded-xl`;
+    }
+  };
+
+  const getFontClassName = () => {
+    switch (theme.fontStyle) {
+      case 'classic':
+        return 'font-serif';
+      case 'bold':
+        return 'font-bold';
+      default:
+        return 'font-sans';
+    }
+  };
+
+  const containerStyle = {
+    background: theme.backgroundColor,
+    color: theme.textColor,
+  };
+
+  const layoutClass = theme.layout === 'left-aligned' ? 'text-left' : 'text-center';
+
   return (
     <div className="max-w-md mx-auto">
-      <Card className="overflow-hidden">
-        <CardContent className="p-6">
+      <Card className={getCardClassName()} style={containerStyle}>
+        <CardContent className={`p-6 ${getFontClassName()}`}>
           {/* Profile Section */}
-          <div className="text-center mb-6">
-            <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-yeon-purple to-purple-600 flex items-center justify-center">
+          <div className={`${layoutClass} mb-6`}>
+            <div className={`w-24 h-24 ${theme.layout === 'left-aligned' ? 'mr-auto' : 'mx-auto'} mb-4 rounded-full flex items-center justify-center`}
+                 style={{ background: `linear-gradient(135deg, ${theme.primaryColor}, ${theme.primaryColor}dd)` }}>
               {profile.avatar ? (
                 <img 
                   src={profile.avatar} 
@@ -33,17 +63,29 @@ const LinkInBioPreview: React.FC = () => {
                 </span>
               )}
             </div>
-            <h2 className="text-xl font-semibold mb-1">{profile.name}</h2>
-            <p className="text-muted-foreground mb-2">{profile.genre}</p>
-            <p className="text-sm text-muted-foreground">{profile.bio}</p>
+            <h2 className="text-xl font-semibold mb-1" style={{ color: theme.textColor }}>
+              {profile.name}
+            </h2>
+            <p className="mb-2 opacity-80">{profile.genre}</p>
+            <p className="text-sm opacity-70">{profile.bio}</p>
           </div>
 
           {/* Social Links */}
           {socialLinks.length > 0 && (
             <div className="mb-6">
-              <div className="flex flex-wrap gap-2 justify-center">
+              <div className={`flex flex-wrap gap-2 ${theme.layout === 'left-aligned' ? 'justify-start' : 'justify-center'}`}>
                 {socialLinks.map((link, index) => (
-                  <Button key={index} variant="outline" size="sm" asChild>
+                  <Button 
+                    key={index} 
+                    variant="outline" 
+                    size="sm" 
+                    asChild
+                    style={{ 
+                      borderColor: `${theme.primaryColor}50`,
+                      color: theme.textColor 
+                    }}
+                    className="hover:bg-opacity-10"
+                  >
                     <a href={link.url} target="_blank" rel="noopener noreferrer">
                       {link.platform}
                       <ExternalLink className="h-3 w-3 ml-1" />
@@ -57,11 +99,23 @@ const LinkInBioPreview: React.FC = () => {
           {/* Music Releases */}
           {musicReleases.length > 0 && (
             <div className="mb-6">
-              <h3 className="font-medium mb-3">Últimos Lançamentos</h3>
+              <h3 className="font-medium mb-3" style={{ color: theme.textColor }}>
+                Últimos Lançamentos
+              </h3>
               <div className="space-y-3">
                 {musicReleases.map((release, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 rounded-lg border">
-                    <div className="w-12 h-12 bg-gradient-to-br from-yeon-purple to-purple-600 rounded flex items-center justify-center">
+                  <div 
+                    key={index} 
+                    className="flex items-center gap-3 p-3 rounded-lg border"
+                    style={{ 
+                      borderColor: `${theme.primaryColor}30`,
+                      backgroundColor: `${theme.primaryColor}10` 
+                    }}
+                  >
+                    <div 
+                      className="w-12 h-12 rounded flex items-center justify-center"
+                      style={{ background: `linear-gradient(135deg, ${theme.primaryColor}, ${theme.primaryColor}dd)` }}
+                    >
                       {release.cover ? (
                         <img 
                           src={release.cover} 
@@ -73,12 +127,14 @@ const LinkInBioPreview: React.FC = () => {
                       )}
                     </div>
                     <div className="flex-1">
-                      <p className="font-medium text-sm">{release.title}</p>
-                      <p className="text-xs text-muted-foreground">{release.type}</p>
+                      <p className="font-medium text-sm" style={{ color: theme.textColor }}>
+                        {release.title}
+                      </p>
+                      <p className="text-xs opacity-70">{release.type}</p>
                     </div>
                     <Button size="sm" variant="ghost" asChild>
                       <a href={release.streamingUrl} target="_blank" rel="noopener noreferrer">
-                        <Play className="h-4 w-4" />
+                        <Play className="h-4 w-4" style={{ color: theme.primaryColor }} />
                       </a>
                     </Button>
                   </div>
@@ -91,10 +147,28 @@ const LinkInBioPreview: React.FC = () => {
           {(photos.length > 0 || videos.length > 0 || events.length > 0) && (
             <div className="mb-6">
               <Tabs defaultValue="photos" className="w-full">
-                <TabsList className="grid w-full grid-cols-3">
-                  <TabsTrigger value="photos">Fotos</TabsTrigger>
-                  <TabsTrigger value="videos">Vídeos</TabsTrigger>
-                  <TabsTrigger value="events">Shows</TabsTrigger>
+                <TabsList 
+                  className="grid w-full grid-cols-3"
+                  style={{ backgroundColor: `${theme.primaryColor}20` }}
+                >
+                  <TabsTrigger 
+                    value="photos"
+                    style={{ color: theme.textColor }}
+                  >
+                    Fotos
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="videos"
+                    style={{ color: theme.textColor }}
+                  >
+                    Vídeos
+                  </TabsTrigger>
+                  <TabsTrigger 
+                    value="events"
+                    style={{ color: theme.textColor }}
+                  >
+                    Shows
+                  </TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="photos" className="mt-4">
@@ -141,21 +215,38 @@ const LinkInBioPreview: React.FC = () => {
                   {events.length > 0 ? (
                     <div className="space-y-2">
                       {events.map((event, index) => (
-                        <div key={index} className="p-3 rounded-lg border">
+                        <div 
+                          key={index} 
+                          className="p-3 rounded-lg border"
+                          style={{ 
+                            borderColor: `${theme.primaryColor}30`,
+                            backgroundColor: `${theme.primaryColor}10` 
+                          }}
+                        >
                           <div className="flex items-start justify-between">
                             <div>
-                              <p className="font-medium text-sm">{event.name}</p>
-                              <div className="flex items-center gap-1 text-xs text-muted-foreground mt-1">
+                              <p className="font-medium text-sm" style={{ color: theme.textColor }}>
+                                {event.name}
+                              </p>
+                              <div className="flex items-center gap-1 text-xs opacity-70 mt-1">
                                 <Calendar className="h-3 w-3" />
                                 {event.date}
                               </div>
-                              <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                              <div className="flex items-center gap-1 text-xs opacity-70">
                                 <MapPin className="h-3 w-3" />
                                 {event.venue}
                               </div>
                             </div>
                             {event.ticketUrl && (
-                              <Button size="sm" variant="outline" asChild>
+                              <Button 
+                                size="sm" 
+                                variant="outline" 
+                                asChild
+                                style={{ 
+                                  borderColor: theme.primaryColor,
+                                  color: theme.primaryColor 
+                                }}
+                              >
                                 <a href={event.ticketUrl} target="_blank" rel="noopener noreferrer">
                                   Ingressos
                                 </a>
@@ -177,7 +268,17 @@ const LinkInBioPreview: React.FC = () => {
           {customLinks.length > 0 && (
             <div className="space-y-2">
               {customLinks.map((link, index) => (
-                <Button key={index} className="w-full" variant="outline" asChild>
+                <Button 
+                  key={index} 
+                  className="w-full" 
+                  variant="outline" 
+                  asChild
+                  style={{ 
+                    borderColor: `${theme.primaryColor}50`,
+                    color: theme.textColor,
+                    backgroundColor: `${theme.primaryColor}10`
+                  }}
+                >
                   <a href={link.url} target="_blank" rel="noopener noreferrer">
                     {link.title}
                     <ExternalLink className="h-4 w-4 ml-2" />

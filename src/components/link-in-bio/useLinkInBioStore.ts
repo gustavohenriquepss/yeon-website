@@ -36,6 +36,17 @@ export interface Profile {
   bio: string;
   genre: string;
   avatar?: string;
+  slug: string;
+}
+
+export interface ThemeSettings {
+  primaryColor: string;
+  backgroundColor: string;
+  backgroundImage?: string;
+  textColor: string;
+  cardStyle: 'rounded' | 'square' | 'minimal';
+  layout: 'centered' | 'left-aligned';
+  fontStyle: 'modern' | 'classic' | 'bold';
 }
 
 interface LinkInBioStore {
@@ -45,6 +56,8 @@ interface LinkInBioStore {
   media: MediaItem[];
   events: Event[];
   customLinks: CustomLink[];
+  theme: ThemeSettings;
+  isPublished: boolean;
   updateProfile: (profile: Partial<Profile>) => void;
   addSocialLink: (link: SocialLink) => void;
   removeSocialLink: (index: number) => void;
@@ -56,13 +69,19 @@ interface LinkInBioStore {
   removeEvent: (index: number) => void;
   addCustomLink: (link: CustomLink) => void;
   removeCustomLink: (index: number) => void;
+  updateTheme: (theme: Partial<ThemeSettings>) => void;
+  updateSlug: (slug: string) => void;
+  togglePublish: () => void;
+  generateSlug: (name: string) => string;
+  getPublicUrl: () => string;
 }
 
-export const useLinkInBioStore = create<LinkInBioStore>((set) => ({
+export const useLinkInBioStore = create<LinkInBioStore>((set, get) => ({
   profile: {
     name: 'Seu Nome Artístico',
     bio: 'Descreva quem você é e sua música aqui...',
     genre: 'Seu Gênero Musical',
+    slug: 'seu-nome-artistico',
   },
   socialLinks: [
     { platform: 'Instagram', url: 'https://instagram.com/seuusername' },
@@ -99,6 +118,15 @@ export const useLinkInBioStore = create<LinkInBioStore>((set) => ({
   ],
   events: [],
   customLinks: [],
+  theme: {
+    primaryColor: '#8B5CF6',
+    backgroundColor: '#1a1a1a',
+    textColor: '#ffffff',
+    cardStyle: 'rounded',
+    layout: 'centered',
+    fontStyle: 'modern',
+  },
+  isPublished: false,
   
   updateProfile: (newProfile) =>
     set((state) => ({ profile: { ...state.profile, ...newProfile } })),
@@ -132,4 +160,29 @@ export const useLinkInBioStore = create<LinkInBioStore>((set) => ({
   
   removeCustomLink: (index) =>
     set((state) => ({ customLinks: state.customLinks.filter((_, i) => i !== index) })),
+  
+  updateTheme: (newTheme) =>
+    set((state) => ({ theme: { ...state.theme, ...newTheme } })),
+  
+  updateSlug: (slug) =>
+    set((state) => ({ profile: { ...state.profile, slug } })),
+  
+  togglePublish: () =>
+    set((state) => ({ isPublished: !state.isPublished })),
+  
+  generateSlug: (name: string) => {
+    return name
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
+  },
+  
+  getPublicUrl: () => {
+    const { profile } = get();
+    return `${window.location.origin}/bio/${profile.slug}`;
+  },
 }));
