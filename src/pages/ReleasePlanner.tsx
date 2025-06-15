@@ -63,6 +63,20 @@ const ReleasePlanner: React.FC = () => {
     "Acompanhe o Progresso: Revise e atualize regularmente o status de conclusão das tarefas."
   ];
 
+  const handleProjectSubmit = (details: any) => {
+    // Ensure all required fields are present
+    const completeDetails: ProjectDetails = {
+      projectName: details.projectName || '',
+      releaseType: details.releaseType || '',
+      releaseDate: details.releaseDate || '',
+      genre: details.genre || '',
+      goals: details.goals || '',
+      teamMembers: details.teamMembers || []
+    };
+    setProjectDetails(completeDetails);
+    setActiveStep("preview");
+  };
+
   return (
     <>
       <Helmet>
@@ -134,10 +148,7 @@ const ReleasePlanner: React.FC = () => {
 
                 <TabsContent value="details" className="mt-6">
                   <ProjectDetailsForm 
-                    onSubmit={(details) => {
-                      setProjectDetails(details);
-                      setActiveStep("preview");
-                    }}
+                    onSubmit={handleProjectSubmit}
                     initialData={projectDetails}
                   />
                 </TabsContent>
