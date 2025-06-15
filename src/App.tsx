@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Artists from "./pages/Artists";
 import MusicTools from "./pages/Tools"; // Updated component name
+import ReleasePlanner from "./pages/ReleasePlanner";
 import NotFound from "./pages/NotFound";
 
 // Create a new QueryClient instance within the component to ensure proper React context
@@ -28,6 +29,7 @@ const App: React.FC = () => {
               <Route path="/about" element={<About />} />
               <Route path="/tools" element={<MusicTools />} /> {/* Updated component name */}
               <Route path="/artists" element={<Artists />} />
+              <Route path="/release-planner" element={<ReleasePlanner />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
