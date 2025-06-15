@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -211,8 +210,9 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
   };
 
   const assignMember = (taskId: string, memberName: string) => {
+    const assignedTo = memberName === "unassigned" ? "" : memberName;
     setTasks(tasks.map(task => 
-      task.id === taskId ? { ...task, assignedTo: memberName } : task
+      task.id === taskId ? { ...task, assignedTo } : task
     ));
   };
 
@@ -384,14 +384,14 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
                         <div className="flex items-center gap-2">
                           <User className="h-4 w-4 text-muted-foreground" />
                           <Select 
-                            value={task.assignedTo} 
+                            value={task.assignedTo || "unassigned"} 
                             onValueChange={(value) => assignMember(task.id, value)}
                           >
                             <SelectTrigger className="w-48 h-8">
                               <SelectValue placeholder="Atribuir membro" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="">Não atribuído</SelectItem>
+                              <SelectItem value="unassigned">Não atribuído</SelectItem>
                               {projectDetails.teamMembers.map((member, index) => (
                                 <SelectItem key={index} value={member.name}>
                                   {member.name} - {member.role}
