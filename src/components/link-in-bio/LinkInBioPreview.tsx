@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-import { ExternalLink, Play, Calendar, MapPin } from 'lucide-react';
+import { ExternalLink, Play, Calendar, MapPin, Music } from 'lucide-react';
 import { useLinkInBioStore } from './useLinkInBioStore';
 
 const LinkInBioPreview: React.FC = () => {
