@@ -75,7 +75,28 @@ export const useLinkInBioStore = create<LinkInBioStore>((set) => ({
       streamingUrl: 'https://open.spotify.com/track/...' 
     },
   ],
-  media: [],
+  media: [
+    { 
+      title: 'Foto do Show', 
+      type: 'image', 
+      url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=400&fit=crop' 
+    },
+    { 
+      title: 'Bastidores do Estúdio', 
+      type: 'video', 
+      url: '#' 
+    },
+    { 
+      title: 'Sessão de Fotos', 
+      type: 'image', 
+      url: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop' 
+    },
+    { 
+      title: 'Clipe Oficial', 
+      type: 'video', 
+      url: '#' 
+    },
+  ],
   events: [],
   customLinks: [],
   

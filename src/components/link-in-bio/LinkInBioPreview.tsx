@@ -95,11 +95,15 @@ const LinkInBioPreview: React.FC = () => {
                         <img 
                           src={item.url} 
                           alt={item.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
                         />
                       ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-yeon-purple to-purple-600 flex items-center justify-center">
-                          <Play className="h-8 w-8 text-white" />
+                        <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-600 flex items-center justify-center relative group cursor-pointer">
+                          <div className="absolute inset-0 bg-black opacity-20"></div>
+                          <Play className="h-8 w-8 text-white z-10 group-hover:scale-110 transition-transform duration-200" />
+                          <div className="absolute bottom-2 left-2 right-2 z-10">
+                            <p className="text-white text-xs font-medium truncate">{item.title}</p>
+                          </div>
                         </div>
                       )}
                     </div>
