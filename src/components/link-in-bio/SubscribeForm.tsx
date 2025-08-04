@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { mockEmailService } from '@/services/mockEmailService';
 import { useToast } from '@/hooks/use-toast';
 
@@ -61,7 +61,7 @@ const SubscribeForm: React.FC<SubscribeFormProps> = ({ artistSlug, primaryColor,
   return (
     <div className="mt-6 p-4 rounded-lg border" style={{ borderColor: `${primaryColor}30`, backgroundColor: `${primaryColor}10` }}>
       <div className="text-center mb-3">
-        <mail className="h-5 w-5 mx-auto mb-2" style={{ color: primaryColor }} />
+        <Mail className="h-5 w-5 mx-auto mb-2" style={{ color: primaryColor }} />
         <h3 className="font-medium text-sm" style={{ color: textColor }}>
           Receba Atualizações
         </h3>

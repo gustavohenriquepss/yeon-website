@@ -5,9 +5,11 @@ import PageLayout from '@/components/PageLayout';
 import HeroSection from '@/components/home/HeroSection';
 import ValuePropositionSection from '@/components/home/ValuePropositionSection';
 import FeaturesSection from '@/components/home/FeaturesSection';
-import SocialProofSection from '@/components/home/SocialProofSection';
-import FAQSection from '@/components/home/FAQSection';
-import FinalCTASection from '@/components/home/FinalCTASection';
+import WhoUsesSection from '@/components/home/WhoUsesSection';
+import TestimonialsSection from '@/components/home/TestimonialsSection';
+import TrustedBySection from '@/components/home/TrustedBySection';
+import SecondaryCTASection from '@/components/home/SecondaryCTASection';
+import NewsletterSection from '@/components/home/NewsletterSection';
 import { useLanguage } from '@/context/LanguageContext';
 
 const IndexContent: React.FC = () => {
@@ -18,9 +20,11 @@ const IndexContent: React.FC = () => {
       <HeroSection />
       <ValuePropositionSection />
       <FeaturesSection />
-      <SocialProofSection />
-      <FAQSection />
-      <FinalCTASection />
+      <WhoUsesSection />
+      <TestimonialsSection />
+      <TrustedBySection />
+      <SecondaryCTASection />
+      <NewsletterSection />
     </main>
   );
 };
@@ -29,8 +33,8 @@ const Index: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Yeon Music - Nova Experiência Musical</title>
-        <meta name="description" content="Yeon Music está trazendo uma nova experiência musical. Calcule seus ganhos de streaming e maximize sua receita como artista." />
+        <title>Yeon - Planeje Seus Lançamentos Musicais com Precisão</title>
+        <meta name="description" content="O único planner que combina checklist, kanban e roadmap para seu release musical. Organize, acompanhe e lance no tempo certo." />
         <link rel="canonical" href="https://yeon-music.com/" />
       </Helmet>
       <PageLayout>

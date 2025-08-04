@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Trash2, mail, Download } from 'lucide-react';
+import { Trash2, Mail, Download } from 'lucide-react';
 import { mockEmailService, EmailSubscription } from '@/services/mockEmailService';
 import { useLinkInBioStore } from './useLinkInBioStore';
 import { useToast } from '@/hooks/use-toast';
@@ -81,7 +81,7 @@ const SubscribersSection: React.FC = () => {
         
         <div className="flex items-center gap-2">
           <Badge variant="secondary" className="flex items-center gap-1">
-            <mail className="h-3 w-3" />
+            <Mail className="h-3 w-3" />
             {subscribers.length} inscritos
           </Badge>
           
@@ -102,7 +102,7 @@ const SubscribersSection: React.FC = () => {
       {subscribers.length === 0 ? (
         <Card>
           <CardContent className="py-8 text-center">
-            <mail className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
+            <Mail className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
             <h3 className="font-medium mb-2">Nenhum inscrito ainda</h3>
             <p className="text-sm text-muted-foreground">
               Quando os fãs se inscreverem em sua página, eles aparecerão aqui.
@@ -113,7 +113,7 @@ const SubscribersSection: React.FC = () => {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <mail className="h-5 w-5" />
+              <Mail className="h-5 w-5" />
               Lista de Inscritos
             </CardTitle>
           </CardHeader>

@@ -19,8 +19,7 @@ const Footer: React.FC = () => {
               <Logo />
             </div>
             <p className="text-white/70 text-sm mb-4">
-              Revolucionando a maneira como artistas independentes gerenciam suas carreiras e 
-              maximizam seus ganhos em streaming.
+              A plataforma completa para planejar e executar lançamentos musicais com precisão e organização.
             </p>
             <div className="flex space-x-4">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
@@ -57,13 +56,8 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/calculator" className="text-white/70 hover:text-white transition-colors text-sm">
-                  Calculadora de Streaming
-                </Link>
-              </li>
-              <li>
-                <Link to="/artists" className="text-white/70 hover:text-white transition-colors text-sm">
-                  Artistas
+                <Link to="/release-planner" className="text-white/70 hover:text-white transition-colors text-sm">
+                  Planner de Lançamentos
                 </Link>
               </li>
             </ul>
@@ -75,17 +69,17 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-white/70 hover:text-white transition-colors text-sm">
+                  Funcionalidades
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-white/70 hover:text-white transition-colors text-sm">
+                  Preços
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-white/70 hover:text-white transition-colors text-sm">
                   Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white/70 hover:text-white transition-colors text-sm">
-                  Guias e Tutoriais
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white/70 hover:text-white transition-colors text-sm">
-                  FAQ
                 </a>
               </li>
               <li>

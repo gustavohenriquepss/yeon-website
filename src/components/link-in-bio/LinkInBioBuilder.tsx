@@ -11,7 +11,7 @@ import CustomLinksSection from './CustomLinksSection';
 import ThemeSection from './ThemeSection';
 import SubscribersSection from './SubscribersSection';
 import SharePanel from './SharePanel';
-import { User, Music, Image, Calendar, Link, Instagram, Palette, Share, mail } from 'lucide-react';
+import { User, Music, Image, Calendar, Link, Instagram, Palette, Share, Mail } from 'lucide-react';
 
 const LinkInBioBuilder: React.FC = () => {
   return (
@@ -49,7 +49,7 @@ const LinkInBioBuilder: React.FC = () => {
                 <Palette className="h-4 w-4" />
               </TabsTrigger>
               <TabsTrigger value="subscribers">
-                <mail className="h-4 w-4" />
+                <Mail className="h-4 w-4" />
               </TabsTrigger>
             </TabsList>
             

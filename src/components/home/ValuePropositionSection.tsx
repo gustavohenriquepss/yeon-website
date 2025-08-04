@@ -1,59 +1,50 @@
-
 import React from 'react';
-import { Globe, DollarSign, Settings } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
-
-interface ValuePropItemProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-const ValuePropItem: React.FC<ValuePropItemProps> = ({ icon, title, description }) => {
-  return (
-    <div className="flex flex-col items-center text-center p-6 bg-yeon-card-bg rounded-lg border border-white/5 hover:border-yeon-purple/30 transition-all duration-300 hover:-translate-y-1">
-      <div className="p-4 bg-yeon-purple/10 rounded-full mb-4">
-        {icon}
-      </div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-white/70">{description}</p>
-    </div>
-  );
-};
+import { Clock, Target, CheckCircle } from 'lucide-react';
 
 const ValuePropositionSection: React.FC = () => {
-  const { t } = useLanguage();
-  
-  const valueProps = [
-    {
-      icon: <Settings className="h-8 w-8 text-yeon-purple" />,
-      title: "Gestão Inteligente",
-      description: "Ferramentas avançadas para gerenciar sua carreira musical de forma eficiente e profissional."
-    },
-    {
-      icon: <Globe className="h-8 w-8 text-yeon-purple" />,
-      title: "Alcance Global",
-      description: "Distribua sua música em todas as plataformas principais de streaming ao redor do mundo."
-    },
-    {
-      icon: <DollarSign className="h-8 w-8 text-yeon-purple" />,
-      title: "Monetização Direta",
-      description: "Maximize seus ganhos com taxas transparentes e pagamentos diretos para sua conta."
-    }
-  ];
-
   return (
-    <section id="value-proposition" className="py-20 bg-yeon-dark-bg">
+    <section id="value-proposition" className="py-20 bg-yeon-darker-bg">
       <div className="container px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {valueProps.map((prop, index) => (
-            <ValuePropItem
-              key={index}
-              icon={prop.icon}
-              title={prop.title}
-              description={prop.description}
-            />
-          ))}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+            Por que Yeon?
+          </h2>
+          <p className="text-white/70 text-lg max-w-3xl mx-auto mb-8">
+            Centralize todo o workflow do seu lançamento musical em uma única plataforma. 
+            Fácil de usar, resultados previsíveis.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-yeon-purple/20 flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-8 w-8 text-yeon-purple" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Otimização de Tempo</h3>
+              <p className="text-white/70">
+                Elimine retrabalho e organize todas as tarefas em um só lugar
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-yeon-purple/20 flex items-center justify-center mx-auto mb-4">
+                <Target className="h-8 w-8 text-yeon-purple" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Visibilidade Completa</h3>
+              <p className="text-white/70">
+                Acompanhe o progresso em tempo real com roadmap integrado
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-yeon-purple/20 flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="h-8 w-8 text-yeon-purple" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Redução de Erros</h3>
+              <p className="text-white/70">
+                Nunca perca um prazo com notificações automáticas
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
