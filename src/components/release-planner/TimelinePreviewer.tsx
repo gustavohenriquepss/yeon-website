@@ -1,10 +1,13 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Edit, Share, Calendar } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Edit, Share, Calendar, Kanban, Clock } from 'lucide-react';
 import { format, subWeeks, addDays } from 'date-fns';
 import ProjectOverview from './ProjectOverview';
 import PhaseCard from './PhaseCard';
+import KanbanBoard from './KanbanBoard';
+import TimelineView from './TimelineView';
 import { generateTimelineTasks } from './timelineUtils';
 
 interface ProjectDetails {
@@ -42,7 +45,8 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
   onEdit, 
   onNext 
 }) => {
-  const [tasks, setTasks] = useState<Task[]>(generateTimelineTasks(projectDetails.releaseDate));
+  const [tasks, setTasks] = useState<Task[]>(generateTimelineTasks(projectDetails.releaseDate, projectDetails.teamMembers));
+  const [activeView, setActiveView] = useState<string>("kanban");
 
   const toggleTask = (taskId: string) => {
     setTasks(tasks.map(task => 
@@ -101,23 +105,36 @@ const TimelinePreviewer: React.FC<TimelinePreviewerProps> = ({
         onEdit={onEdit}
       />
 
-      {/* Timeline by Phases */}
-      <div className="grid gap-6">
-        {phases.map((phase) => {
-          const phaseTasks = getTasksByPhase(phase.id);
-          
-          return (
-            <PhaseCard
-              key={phase.id}
-              phase={phase}
-              tasks={phaseTasks}
-              teamMembers={projectDetails.teamMembers}
-              onToggleTask={toggleTask}
-              onAssignMember={assignMember}
-            />
-          );
-        })}
-      </div>
+      {/* Views Tabs */}
+      <Tabs value={activeView} onValueChange={setActiveView} className="w-full">
+        <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto">
+          <TabsTrigger value="kanban" className="flex items-center gap-2">
+            <Kanban className="h-4 w-4" />
+            Kanban
+          </TabsTrigger>
+          <TabsTrigger value="timeline" className="flex items-center gap-2">
+            <Clock className="h-4 w-4" />
+            Cronograma
+          </TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="kanban" className="mt-6">
+          <KanbanBoard
+            tasks={tasks}
+            teamMembers={projectDetails.teamMembers}
+            onToggleTask={toggleTask}
+          />
+        </TabsContent>
+
+        <TabsContent value="timeline" className="mt-6">
+          <TimelineView
+            tasks={tasks}
+            teamMembers={projectDetails.teamMembers}
+            onToggleTask={toggleTask}
+            releaseDate={projectDetails.releaseDate}
+          />
+        </TabsContent>
+      </Tabs>
 
       {/* Action Buttons */}
       <div className="flex justify-between">

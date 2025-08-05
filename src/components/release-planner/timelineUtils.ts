@@ -12,7 +12,31 @@ interface Task {
   completed: boolean;
 }
 
-export const generateTimelineTasks = (releaseDate: string): Task[] => {
+// Auto-assign tasks based on team member roles
+export const autoAssignTasks = (tasks: Task[], teamMembers: Array<{name: string; email: string; role: string}>): Task[] => {
+  const roleTaskMapping: { [key: string]: string[] } = {
+    'Produtor': ['Finalizar composições', 'Criar pré-produção', 'Gravação', 'Mixagem', 'Masterização'],
+    'Artista': ['Finalizar composições', 'Criar pré-produção', 'Gravação', 'Fotografias promocionais', 'Divulgação intensiva'],
+    'Marketing': ['Criar arte visual', 'Fotografias promocionais', 'Campanha de pré-save', 'Contato com imprensa', 'Divulgação intensiva'],
+    'Manager': ['Contratar equipe', 'Enviar para distribuição', 'Contato com imprensa', 'Acompanhar métricas'],
+    'Designer': ['Criar arte visual', 'Fotografias promocionais'],
+    'Social Media': ['Campanha de pré-save', 'Divulgação intensiva', 'Acompanhar métricas']
+  };
+
+  return tasks.map(task => {
+    // Find team member whose role matches this task
+    const assignedMember = teamMembers.find(member => 
+      roleTaskMapping[member.role]?.includes(task.title)
+    );
+    
+    return {
+      ...task,
+      assignedTo: assignedMember?.name || ''
+    };
+  });
+};
+
+export const generateTimelineTasks = (releaseDate: string, teamMembers: Array<{name: string; email: string; role: string}> = []): Task[] => {
   const release = new Date(releaseDate);
   
   const tasks: Task[] = [
@@ -165,5 +189,6 @@ export const generateTimelineTasks = (releaseDate: string): Task[] => {
     }
   ];
 
-  return tasks;
+  // Auto-assign tasks based on team member roles
+  return autoAssignTasks(tasks, teamMembers);
 };
