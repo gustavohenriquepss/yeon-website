@@ -20,9 +20,8 @@ const HeroSection: React.FC = () => {
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
       {/* Content */}
       <div className="container relative z-10 px-4 flex flex-col items-center text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-6 animate-fade-in tracking-tight max-w-5xl">
-          <span className="text-foreground">Planeje seus lançamentos </span>
-          <span className="text-yeon-purple">com precisão e sem estresse</span>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-6 animate-fade-in tracking-tight max-w-5xl text-white">
+          Planeje seus lançamentos com precisão e sem estresse
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 animate-fade-in">
