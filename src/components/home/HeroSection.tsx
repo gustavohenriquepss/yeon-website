@@ -31,13 +31,15 @@ const HeroSection: React.FC = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in">
           <Button size="lg" className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium px-8 py-6 text-lg" asChild>
-            <RouterLink to="/release-planner">
-              Comece Grátis
+            <RouterLink to="/auth">
+              Cadastre-se
             </RouterLink>
           </Button>
           
-          <Button variant="outline" size="lg" className="border-border hover:bg-accent px-8 py-6 text-lg" onClick={scrollToNextSection}>
-            Veja Como Funciona
+          <Button variant="outline" size="lg" className="border-border hover:text-primary px-8 py-6 text-lg" asChild>
+            <RouterLink to="/auth">
+              Entrar
+            </RouterLink>
           </Button>
         </div>
 
