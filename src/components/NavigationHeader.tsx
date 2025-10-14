@@ -43,13 +43,13 @@ const NavigationHeader: React.FC = () => {
           {/* Auth buttons - visible on desktop */}
           <div className="hidden md:flex items-center gap-3">
             <Link to="/auth">
-              <button className="px-4 py-2 text-sm text-foreground hover:text-primary transition-colors">
-                Entrar
+              <button className="px-6 py-2 bg-primary hover:bg-primary/90 transition-colors font-medium text-zinc-50 rounded-md text-sm">
+                Cadastre-se
               </button>
             </Link>
             <Link to="/auth">
-              <button className="px-6 py-2 bg-primary hover:bg-primary/90 transition-colors font-medium text-zinc-50 rounded-md text-sm">
-                Cadastre-se
+              <button className="px-4 py-2 text-sm text-foreground hover:text-primary transition-colors">
+                Entrar
               </button>
             </Link>
           </div>
