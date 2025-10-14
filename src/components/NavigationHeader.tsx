@@ -55,9 +55,18 @@ const NavigationHeader: React.FC = () => {
         </div>
         
         <div className="flex items-center gap-4">
-          {/* Social media icons - visible on desktop */}
-          <div className="hidden md:block">
-            <SocialLinks className="mr-4" />
+          {/* Auth buttons - visible on desktop */}
+          <div className="hidden md:flex items-center gap-3">
+            <Link to="/auth">
+              <button className="px-4 py-2 text-sm text-foreground hover:text-primary transition-colors">
+                Entrar
+              </button>
+            </Link>
+            <Link to="/auth">
+              <button className="px-6 py-2 text-sm bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-medium">
+                Cadastre-se
+              </button>
+            </Link>
           </div>
           
           {/* Mobile menu button */}

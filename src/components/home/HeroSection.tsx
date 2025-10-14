@@ -17,47 +17,43 @@ const HeroSection: React.FC = () => {
   };
   
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden rounded-xl">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 rounded-xl" style={{
-        backgroundImage: "url('/lovable-uploads/81539f4f-c548-4030-92a8-20349de875ba.png')",
-        backgroundPosition: '50% 30%'
-      }}>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-yeon-dark-bg/80 to-yeon-dark-bg rounded-xl"></div>
-      </div>
-      
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
       {/* Content */}
       <div className="container relative z-10 px-4 flex flex-col items-center text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-4 animate-fade-in tracking-tight">
-          <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text">Planeje seus lançamentos </span>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-6 animate-fade-in tracking-tight max-w-5xl">
+          <span className="text-foreground">Planeje seus lançamentos </span>
           <span className="text-yeon-purple">com precisão e sem estresse</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-8 animate-fade-in">
-          O único planner que combina checklist, kanban e roadmap para seu release musical
+        <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 animate-fade-in">
+          Yeon ajuda artistas independentes a botar ritmo nos seus lançamentos com cronogramas claros e metas inteligentes.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 mt-4 animate-fade-in">
+        <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in">
           <Button size="lg" className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium px-8 py-6 text-lg" asChild>
             <RouterLink to="/release-planner">
               Comece Grátis
             </RouterLink>
           </Button>
           
-          <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg" onClick={scrollToNextSection}>
+          <Button variant="outline" size="lg" className="border-border hover:bg-accent px-8 py-6 text-lg" onClick={scrollToNextSection}>
             Veja Como Funciona
           </Button>
         </div>
-      </div>
-      
-      {/* Photo attribution */}
-      <div className="absolute bottom-3 right-3 text-xs text-white/40 z-10 backdrop-blur-sm bg-black/30 px-2 py-1 rounded">
-        Foto de <a href="https://unsplash.com/pt-br/@harryswales?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" className="hover:text-white/60">Harry Swales</a> na <a href="https://unsplash.com/pt-br/fotografias/pessoa-negra-segurando-microfone-e-cantando-no-palco-0l0KjNoAfAk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" className="hover:text-white/60">Unsplash</a>
+
+        {/* Hero Image */}
+        <div className="w-full max-w-6xl mx-auto animate-fade-in rounded-2xl overflow-hidden shadow-2xl">
+          <img 
+            src="/lovable-uploads/81539f4f-c548-4030-92a8-20349de875ba.png" 
+            alt="Yeon Release Planner Interface"
+            className="w-full h-auto"
+          />
+        </div>
       </div>
       
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce cursor-pointer" onClick={scrollToNextSection}>
-        <ChevronDown className="h-8 w-8 text-white/70" />
+        <ChevronDown className="h-8 w-8 text-muted-foreground" />
       </div>
     </section>
   );
