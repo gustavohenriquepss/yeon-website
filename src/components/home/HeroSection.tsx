@@ -36,7 +36,7 @@ const HeroSection: React.FC = () => {
             </RouterLink>
           </Button>
           
-          <Button variant="outline" size="lg" className="border-border hover:text-primary px-8 py-6 text-lg" asChild>
+          <Button variant="outline" size="lg" className="border-border hover:bg-white/10 px-8 py-6 text-lg" asChild>
             <RouterLink to="/auth">
               Entrar
             </RouterLink>
