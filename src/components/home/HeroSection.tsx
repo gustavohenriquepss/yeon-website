@@ -29,15 +29,15 @@ const HeroSection: React.FC = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in">
-          <Button size="lg" className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium px-8 py-6 text-lg" asChild>
-            <RouterLink to="/auth">
-              Cadastre-se
-            </RouterLink>
-          </Button>
-          
           <Button variant="outline" size="lg" className="border-border hover:bg-white/10 px-8 py-6 text-lg" asChild>
             <RouterLink to="/auth">
               Entrar
+            </RouterLink>
+          </Button>
+          
+          <Button size="lg" className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium px-8 py-6 text-lg" asChild>
+            <RouterLink to="/auth">
+              Cadastre-se
             </RouterLink>
           </Button>
         </div>
