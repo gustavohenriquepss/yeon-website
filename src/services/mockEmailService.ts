@@ -75,3 +75,13 @@ class MockEmailService {
 }
 
 export const mockEmailService = new MockEmailService();
+
+// Newsletter email function for general newsletter subscriptions
+export const sendNewsletterEmail = (email: string): Promise<void> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(`Newsletter subscription for: ${email}`);
+      resolve();
+    }, 500);
+  });
+};

@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/LanguageContext';
 import { Input } from '@/components/ui/input';
-import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
+import { sendNewsletterEmail } from '@/services/mockEmailService';
 
 const CTASection: React.FC = () => {
   const { t } = useLanguage();
@@ -36,38 +36,17 @@ const CTASection: React.FC = () => {
     setIsLoading(true);
     
     try {
-      // Insert email into the Supabase table
-      const { error } = await supabase
-        .from('Emails-Newsletter-Calc')
-        .insert([{ Email: email }]);
+      // Send email using mock service
+      await sendNewsletterEmail(email);
       
-      if (error) {
-        console.error('Error saving email:', error);
-        
-        // Check if it's a duplicate email error
-        if (error.code === '23505') {
-          toast({
-            title: t('emailExistsTitle'),
-            description: t('emailExistsDesc'),
-            variant: 'destructive',
-          });
-        } else {
-          toast({
-            title: t('errorTitle'),
-            description: t('errorDesc'),
-            variant: 'destructive',
-          });
-        }
-      } else {
-        // Success - show success message and clear input
-        toast({
-          title: t('successTitle'),
-          description: t('successDesc'),
-        });
-        setEmail('');
-      }
+      // Success - show success message and clear input
+      toast({
+        title: t('successTitle'),
+        description: t('successDesc'),
+      });
+      setEmail('');
     } catch (err) {
-      console.error('Unexpected error:', err);
+      console.error('Error sending newsletter email:', err);
       toast({
         title: t('errorTitle'),
         description: t('errorDesc'),
