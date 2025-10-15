@@ -31,7 +31,7 @@ const ValuePropositionSection: React.FC = () => {
             Yeon é a ferramenta definitiva para planejar e lançar músicas. Mais que um checklist, é um guia prático com estratégias testadas para campanhas eficazes, crescimento de fãs e lançamentos de sucesso.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-7xl mx-auto">
             {benefits.map((benefit, index) => (
               <Card key={index} className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
                 <CardContent className="p-0">
