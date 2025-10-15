@@ -9,7 +9,7 @@ const FeaturesSection: React.FC = () => {
   const features = [
     {
       image: setupIntegradoImg,
-      title: "Setup de Projetos Integrado",
+      title: "Setup Automático",
       description: "Comece um novo lançamento em segundos com cronogramas e marcos já estruturados para projetos musicais."
     },
     {
