@@ -28,7 +28,7 @@ const PricingSection: React.FC = () => {
         { text: "Participe de projetos ilimitados" },
         { text: "Suporte ao Cliente" },
       ],
-      ctaText: "Começar Grátis"
+      ctaText: "Criar Conta"
     },
     {
       name: "Pro",
@@ -61,11 +61,11 @@ const PricingSection: React.FC = () => {
           {plans.map((plan, index) => (
             <Card 
               key={index} 
-              className={`bg-yeon-card-bg border-white/5 relative ${plan.popular ? 'md:scale-105 shadow-lg shadow-yeon-purple/10 border-yeon-purple/20 z-10' : ''}`}
+              className={`bg-yeon-card-bg border-white/5 relative ${plan.popular ? 'md:scale-105 shadow-lg shadow-yeon-purple/10 z-10' : ''}`}
             >
               {plan.popular && (
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-yeon-purple text-white px-4 py-1 rounded-full text-sm font-medium">
-                  Mais Popular
+                  30 dias grátis
                 </div>
               )}
               <CardHeader className="text-center">
@@ -94,7 +94,7 @@ const PricingSection: React.FC = () => {
               </CardContent>
               <CardFooter className="pt-6">
                 <Button 
-                  className={`w-full py-6 text-base ${plan.popular ? 'bg-yeon-purple hover:bg-yeon-dark-purple' : 'bg-white/10 hover:bg-white/20'}`}
+                  className={`w-full py-6 text-base text-white ${plan.popular ? 'bg-yeon-purple hover:bg-yeon-dark-purple' : 'bg-white/10 hover:bg-white/20'}`}
                 >
                   {plan.ctaText}
                 </Button>
