@@ -1,6 +1,6 @@
 import React from 'react';
 import FeatureItem from './FeatureItem';
-import projectSetupImg from '@/assets/feature-project-setup.jpg';
+import setupIntegradoImg from '@/assets/setup-integrado.png';
 import collaborationImg from '@/assets/feature-collaboration.jpg';
 import aiAssistantImg from '@/assets/feature-ai-assistant.jpg';
 import resourceLibraryImg from '@/assets/feature-resource-library.jpg';
@@ -8,7 +8,7 @@ import resourceLibraryImg from '@/assets/feature-resource-library.jpg';
 const FeaturesSection: React.FC = () => {
   const features = [
     {
-      image: projectSetupImg,
+      image: setupIntegradoImg,
       title: "Setup de Projetos Integrado",
       description: "Comece um novo lançamento em segundos com cronogramas e marcos já estruturados para projetos musicais."
     },
