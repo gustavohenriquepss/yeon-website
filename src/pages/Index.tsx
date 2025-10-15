@@ -5,11 +5,7 @@ import PageLayout from '@/components/PageLayout';
 import HeroSection from '@/components/home/HeroSection';
 import ValuePropositionSection from '@/components/home/ValuePropositionSection';
 import FeaturesSection from '@/components/home/FeaturesSection';
-import WhoUsesSection from '@/components/home/WhoUsesSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
-import TrustedBySection from '@/components/home/TrustedBySection';
-import SecondaryCTASection from '@/components/home/SecondaryCTASection';
-import NewsletterSection from '@/components/home/NewsletterSection';
 import { useLanguage } from '@/context/LanguageContext';
 
 const IndexContent: React.FC = () => {
@@ -20,11 +16,7 @@ const IndexContent: React.FC = () => {
       <HeroSection />
       <ValuePropositionSection />
       <FeaturesSection />
-      <WhoUsesSection />
       <TestimonialsSection />
-      <TrustedBySection />
-      <SecondaryCTASection />
-      <NewsletterSection />
     </main>
   );
 };
