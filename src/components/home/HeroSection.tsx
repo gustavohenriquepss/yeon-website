@@ -44,7 +44,7 @@ const HeroSection: React.FC = () => {
         </div>
 
         {/* Hero Image */}
-        <div className="w-full max-w-6xl mx-auto animate-fade-in rounded-2xl overflow-hidden shadow-2xl">
+        <div className="w-full max-w-6xl mx-auto animate-fade-in">
           <img 
             src={heroDashboard} 
             alt="Yeon Dashboard - Gerencie seus lançamentos musicais"
