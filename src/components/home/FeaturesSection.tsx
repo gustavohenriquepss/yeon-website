@@ -20,7 +20,8 @@ const FeaturesSection: React.FC = () => {
     {
       image: aiAssistantImg,
       title: "Planejador com IA",
-      description: "Faça perguntas, consiga orientação e deixe a IA ajudar você a continuar no caminho certo para terminar no ritmo."
+      description: "Faça perguntas, consiga orientação e deixe a IA ajudar você a continuar no caminho certo para terminar no ritmo.",
+      tag: "Em Breve"
     },
     {
       image: resourceLibraryImg,
@@ -48,6 +49,7 @@ const FeaturesSection: React.FC = () => {
               image={feature.image}
               title={feature.title}
               description={feature.description}
+              tag={feature.tag}
             />
           ))}
         </div>
