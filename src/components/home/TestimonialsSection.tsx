@@ -41,7 +41,7 @@ const TestimonialsSection: React.FC = () => {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className="p-6 rounded-lg bg-white/5 backdrop-blur-sm"
+              className="p-6 rounded-lg"
             >
               <p className="text-white/90 text-base md:text-lg mb-4 italic">
                 "{testimonial.quote}"
