@@ -5,47 +5,43 @@ const TestimonialsSection: React.FC = () => {
     {
       quote: "Yeon mudou completamente minha organização. Agora não perco mais nenhum prazo e meus lançamentos saem no tempo certo.",
       name: "Marina Silva",
-      role: "Artista Independente",
-      size: "large"
+      role: "Artista Independente"
     },
     {
       quote: "Consigo gerenciar 5 artistas simultaneamente sem perder o controle. A visibilidade do roadmap é perfeita.",
       name: "Carlos Mendes",
-      role: "Manager Musical",
-      size: "small"
+      role: "Manager Musical"
     },
     {
       quote: "A melhor ferramenta para planejar releases. Simples, intuitiva e completa.",
       name: "Juliana Costa",
-      role: "Produtora Musical",
-      size: "small"
+      role: "Produtora Musical"
     },
     {
       quote: "Desde que comecei a usar Yeon, meus lançamentos ficaram muito mais profissionais e organizados.",
       name: "Rafael Santos",
-      role: "Artista Independente",
-      size: "medium"
+      role: "Artista Independente"
     },
     {
       quote: "O kanban integrado facilitou demais a comunicação com minha equipe. Todos sabem exatamente o que fazer.",
       name: "Beatriz Lima",
-      role: "Manager de Selo",
-      size: "medium"
+      role: "Manager de Selo"
+    },
+    {
+      quote: "Finalmente uma ferramenta que entende o processo criativo e os prazos da indústria musical.",
+      name: "Pedro Oliveira",
+      role: "Produtor Executivo"
     }
   ];
 
   return (
     <section className="py-20 bg-yeon-dark-bg">
       <div className="container px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto auto-rows-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className={`
-                p-6 rounded-lg bg-white/5 backdrop-blur-sm
-                ${testimonial.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''}
-                ${testimonial.size === 'medium' ? 'md:col-span-2' : ''}
-              `}
+              className="p-6 rounded-lg bg-white/5 backdrop-blur-sm"
             >
               <p className="text-white/90 text-base md:text-lg mb-4 italic">
                 "{testimonial.quote}"
