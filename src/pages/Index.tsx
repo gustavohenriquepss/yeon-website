@@ -6,6 +6,7 @@ import HeroSection from '@/components/home/HeroSection';
 import ValuePropositionSection from '@/components/home/ValuePropositionSection';
 import FeaturesSection from '@/components/home/FeaturesSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
+import PricingSection from '@/components/home/PricingSection';
 import { useLanguage } from '@/context/LanguageContext';
 
 const IndexContent: React.FC = () => {
@@ -17,6 +18,7 @@ const IndexContent: React.FC = () => {
       <ValuePropositionSection />
       <FeaturesSection />
       <TestimonialsSection />
+      <PricingSection />
     </main>
   );
 };
