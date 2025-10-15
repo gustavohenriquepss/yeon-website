@@ -58,8 +58,7 @@ const Contact: React.FC = () => {
             <div className="bg-card/50 backdrop-blur-sm border border-white/10 rounded-lg p-8 md:p-12">
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="space-y-2">
-                  <Label htmlFor="name" className="flex items-center gap-2 text-white">
-                    <User className="h-4 w-4" />
+                  <Label htmlFor="name" className="text-white">
                     Nome
                   </Label>
                   <Input
@@ -74,8 +73,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="flex items-center gap-2 text-white">
-                    <Mail className="h-4 w-4" />
+                  <Label htmlFor="email" className="text-white">
                     Email
                   </Label>
                   <Input
@@ -91,8 +89,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="phone" className="flex items-center gap-2 text-white">
-                    <Phone className="h-4 w-4" />
+                  <Label htmlFor="phone" className="text-white">
                     Telefone
                   </Label>
                   <Input
@@ -108,8 +105,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="flex items-center gap-2 text-white">
-                    <MessageSquare className="h-4 w-4" />
+                  <Label htmlFor="message" className="text-white">
                     Mensagem
                   </Label>
                   <Textarea
