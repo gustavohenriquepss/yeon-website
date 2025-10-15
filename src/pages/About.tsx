@@ -89,10 +89,7 @@ const AboutContent: React.FC = () => {
               {t('about.whoWeAreTitle')}
             </h1>
             <p className="max-w-3xl mx-auto text-lg text-white/70 mb-4">
-              {t('about.whoWeAre1')}
-            </p>
-            <p className="max-w-3xl mx-auto text-lg text-white/70">
-              {t('about.whoWeAre2')}
+              Somos uma equipe de artistas independentes apaixonados que entendem bem as dificuldades da jornada artística. Ajudamos outros artistas a se organizarem e lançarem faixas de sucesso que façam sua música ser ouvida e expandam seus negócios e realizem seus sonhos.
             </p>
           </div>
         </div>
