@@ -17,74 +17,25 @@ const AboutContent: React.FC = () => {
   const {
     t
   } = useLanguage();
-  const [showAllTeam, setShowAllTeam] = useState(false);
   
-  // Team members data - 10 members total
+  // Team members data
   const teamMembers = [
     {
-      name: "Carlos Silva",
-      role: "Fundador & CEO",
-      bio: "Músico e desenvolvedor com mais de 10 anos de experiência na indústria musical brasileira.",
+      name: "Arthur Sena",
+      role: "Engenheiro de Software",
       imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3" 
     },
     {
-      name: "Ana Oliveira",
-      role: "Diretora de Tecnologia",
-      bio: "Especialista em desenvolvimento de produtos digitais para o mercado de entretenimento.",
-      imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
-    },
-    {
-      name: "Roberto Mendes",
-      role: "Diretor de Parcerias",
-      bio: "Ex-executivo de grandes gravadoras, especialista em negócios da indústria musical.",
+      name: "Gustavo Padeiro",
+      role: "Designer de Produto",
       imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
     },
     {
-      name: "Juliana Costa",
-      role: "Designer de Produto",
-      bio: "Especialista em UX/UI com foco em experiências digitais para músicos e fãs.",
-      imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1588&auto=format&fit=crop&ixlib=rb-4.0.3"
-    },
-    {
-      name: "Lucas Santos",
-      role: "Desenvolvedor Full Stack",
-      bio: "Engenheiro de software apaixonado por música e novas tecnologias.",
+      name: "Lucas Andrade",
+      role: "Engenheiro de Software",
       imageUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
-    },
-    {
-      name: "Mariana Alves",
-      role: "Growth Specialist",
-      bio: "Especialista em marketing digital para artistas independentes.",
-      imageUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1588&auto=format&fit=crop&ixlib=rb-4.0.3"
-    },
-    {
-      name: "Paulo Ferreira",
-      role: "Analista de Dados",
-      bio: "Especialista em análise de dados e métricas para a indústria musical.",
-      imageUrl: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
-    },
-    {
-      name: "Fernanda Lima",
-      role: "Gestora de Comunidade",
-      bio: "Responsável pelo relacionamento com artistas e fãs na plataforma.",
-      imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1522&auto=format&fit=crop&ixlib=rb-4.0.3"
-    },
-    {
-      name: "Ricardo Gomes",
-      role: "Diretor Financeiro",
-      bio: "Especialista em modelos de negócio e estratégias financeiras para startups.",
-      imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3"
-    },
-    {
-      name: "Camila Torres",
-      role: "Especialista em Conteúdo",
-      bio: "Jornalista especializada em música independente e novas tendências.",
-      imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3"
     }
   ];
-  
-  // Show only 6 members initially, all if showAllTeam is true
-  const displayedMembers = showAllTeam ? teamMembers : teamMembers.slice(0, 6);
   
   return <main className="bg-yeon-dark-bg">
       {/* Hero Section - Quem Somos */}
@@ -387,7 +338,7 @@ const AboutContent: React.FC = () => {
           
           {/* Team Members Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {displayedMembers.map((member, index) => (
+            {teamMembers.map((member, index) => (
               <Card 
                 key={member.name}
                 className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300"
@@ -401,25 +352,11 @@ const AboutContent: React.FC = () => {
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                  <p className="text-yeon-purple font-medium mb-3">{member.role}</p>
-                  <p className="text-muted-foreground text-sm">{member.bio}</p>
+                  <p className="text-yeon-purple font-medium">{member.role}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
-          
-          {/* See More / See Less Button */}
-          {teamMembers.length > 6 && (
-            <div className="flex justify-center mt-10">
-              <Button 
-                variant="outline" 
-                className="border-yeon-purple text-yeon-purple hover:bg-yeon-purple/10"
-                onClick={() => setShowAllTeam(!showAllTeam)}
-              >
-                {showAllTeam ? "Ver menos" : "Ver mais"}
-              </Button>
-            </div>
-          )}
         </div>
       </section>
       
