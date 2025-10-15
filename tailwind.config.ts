@@ -30,7 +30,7 @@ export default {
         border: "hsl(240 3.7% 15.9%)",
         input: "hsl(240 3.7% 15.9%)",
         ring: "hsl(240 4.9% 83.9%)",
-        background: "#121212", // Darker background
+        background: "#0A0A0A", // Darker background
         foreground: "hsl(210 40% 98%)",
         primary: {
           DEFAULT: "#FF3C27", // Keep accent color
@@ -53,7 +53,7 @@ export default {
           foreground: "hsl(0 0% 98%)",
         },
         popover: {
-          DEFAULT: "#121212", // Darker popover
+          DEFAULT: "#0A0A0A", // Darker popover
           foreground: "hsl(0 0% 98%)",
         },
         card: {
@@ -63,8 +63,8 @@ export default {
         yeon: {
           purple: "#FF3C27", // Keep accent color
           "dark-purple": "#c82b1b", // Keep darker accent
-          "dark-bg": "#121212", // Darker background
-          "darker-bg": "#0A0A0A", // Even darker background
+          "dark-bg": "#0A0A0A", // Darker background
+          "darker-bg": "#000000", // Even darker background
           "card-bg": "#2A2A2A", // Darker card background
         },
       },
