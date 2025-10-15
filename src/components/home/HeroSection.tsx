@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import { Link as RouterLink } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
+import heroDashboard from '@/assets/hero-dashboard.png';
 
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
@@ -45,8 +46,8 @@ const HeroSection: React.FC = () => {
         {/* Hero Image */}
         <div className="w-full max-w-6xl mx-auto animate-fade-in rounded-2xl overflow-hidden shadow-2xl">
           <img 
-            src="/lovable-uploads/81539f4f-c548-4030-92a8-20349de875ba.png" 
-            alt="Yeon Release Planner Interface"
+            src={heroDashboard} 
+            alt="Yeon Dashboard - Gerencie seus lançamentos musicais"
             className="w-full h-auto"
           />
         </div>
