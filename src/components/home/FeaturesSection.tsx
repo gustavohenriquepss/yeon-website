@@ -48,10 +48,10 @@ const FeaturesSection: React.FC = () => {
       <div className="container px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-            Funcionalidades que Fazem a Diferença
+            Todos os seus lançamentos, um workspace
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Tudo que você precisa para planejar e executar lançamentos musicais de sucesso
+            Planeje projetos, reúna sua equipe e mantenha todos os registros, ativos, metadados e prazos em um só lugar.
           </p>
         </div>
         
