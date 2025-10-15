@@ -135,7 +135,7 @@ const TermsOfService: React.FC = () => {
                   <h2 className="text-2xl font-semibold text-white mb-4">Legislação Aplicável e Foro</h2>
                   <p>
                     Estes Termos são regidos pelas leis do Brasil.
-                    Quaisquer disputas decorrentes ou relacionadas a este documento deverão ser resolvidas no foro da cidade do Rio de Janeiro, RJ, com renúncia a qualquer outro, por mais privilegiado que seja.
+                    Quaisquer disputas decorrentes ou relacionadas a este documento deverão ser resolvidas no foro da cidade de Niterói, RJ, com renúncia a qualquer outro, por mais privilegiado que seja.
                   </p>
                 </section>
 
