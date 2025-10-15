@@ -61,7 +61,7 @@ const PricingSection: React.FC = () => {
           {plans.map((plan, index) => (
             <Card 
               key={index} 
-              className={`bg-yeon-card-bg border-white/5 relative ${plan.popular ? 'md:scale-105 shadow-lg shadow-yeon-purple/10 z-10' : ''}`}
+              className={`bg-yeon-card-bg border-white/5 relative flex flex-col ${plan.popular ? 'md:scale-105 shadow-lg shadow-yeon-purple/10 z-10' : ''}`}
             >
               {plan.popular && (
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-yeon-purple text-white px-4 py-1 rounded-full text-sm font-medium">
@@ -92,7 +92,7 @@ const PricingSection: React.FC = () => {
                   </div>
                 ))}
               </CardContent>
-              <CardFooter className="pt-6">
+              <CardFooter className="pt-6 mt-auto">
                 <Button 
                   className={`w-full py-6 text-base text-white ${plan.popular ? 'bg-yeon-purple hover:bg-yeon-dark-purple' : 'bg-white/10 hover:bg-white/20'}`}
                 >
