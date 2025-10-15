@@ -1,15 +1,18 @@
 import React from 'react';
-import { CheckSquare, Calendar, Map, Bell } from 'lucide-react';
+import projectSetupImg from '@/assets/feature-project-setup.jpg';
+import collaborationImg from '@/assets/feature-collaboration.jpg';
+import aiAssistantImg from '@/assets/feature-ai-assistant.jpg';
+import resourceLibraryImg from '@/assets/feature-resource-library.jpg';
 
 const FeatureItem: React.FC<{
-  icon: React.ReactNode;
+  image: string;
   title: string;
   description: string;
-}> = ({ icon, title, description }) => {
+}> = ({ image, title, description }) => {
   return (
-    <div className="flex items-start space-x-4 p-6 rounded-lg bg-white/5 backdrop-blur-sm">
-      <div className="w-12 h-12 rounded-lg bg-yeon-purple/20 flex items-center justify-center flex-shrink-0">
-        {icon}
+    <div className="flex flex-col space-y-4 p-6 rounded-lg bg-white/5 backdrop-blur-sm">
+      <div className="w-full h-40 rounded-lg overflow-hidden">
+        <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
       <div>
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
@@ -22,24 +25,24 @@ const FeatureItem: React.FC<{
 const FeaturesSection: React.FC = () => {
   const features = [
     {
-      icon: <CheckSquare className="h-6 w-6 text-yeon-purple" />,
-      title: "Checklist Personalizável",
-      description: "Passo a passo completo do seu release, customizado para seu estilo musical"
+      image: projectSetupImg,
+      title: "Setup de Projetos Integrado",
+      description: "Comece um novo lançamento em segundos com cronogramas e marcos já estruturados para projetos musicais."
     },
     {
-      icon: <Calendar className="h-6 w-6 text-yeon-purple" />,
-      title: "Quadro Kanban",
-      description: "Visualize todas as tarefas e prazos em cards organizados por etapa"
+      image: collaborationImg,
+      title: "Acesso de Colaborador",
+      description: "Convide seu produtor, gerente, A&R ou designer — todos ficam sincronizados sem tanto vai e volta."
     },
     {
-      icon: <Map className="h-6 w-6 text-yeon-purple" />,
-      title: "Roadmap Integrado",
-      description: "Cronograma visual de todas as etapas do lançamento em uma linha do tempo"
+      image: aiAssistantImg,
+      title: "Assistente de IA",
+      description: "Faça perguntas, consiga orientação e deixe a IA ajudar você a continuar no caminho certo para terminar no ritmo."
     },
     {
-      icon: <Bell className="h-6 w-6 text-yeon-purple" />,
-      title: "Notificações em Tempo Real",
-      description: "Alertas automáticos para que você nunca perca um prazo importante"
+      image: resourceLibraryImg,
+      title: "Biblioteca de Recursos",
+      description: "Faça upload de capas, mixes e recursos promocionais diretamente, sem precisar vasculhar e-mails, drives ou grupos no Whatsapp."
     }
   ];
 
@@ -59,7 +62,7 @@ const FeaturesSection: React.FC = () => {
           {features.map((feature, index) => (
             <FeatureItem
               key={index}
-              icon={feature.icon}
+              image={feature.image}
               title={feature.title}
               description={feature.description}
             />
