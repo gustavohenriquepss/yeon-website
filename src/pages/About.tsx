@@ -95,33 +95,167 @@ const AboutContent: React.FC = () => {
               {t('about.whoWeAre2')}
             </p>
           </div>
+        </div>
+      </section>
+      
+      {/* Princípios Section */}
+      <section className="py-20 bg-yeon-dark-bg">
+        <div className="container px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+              Princípios
+            </h2>
+          </div>
           
-          {/* Mission and Vision Cards */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {/* Mission Card */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {/* Soberania do Artista */}
             <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl md:text-2xl font-semibold">
-                  {t('about.missionTitle')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm md:text-base">
-                  {t('about.mission')}
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4">Soberania do Artista</h3>
+                <p className="text-muted-foreground text-sm mb-3">
+                  Soberania é o poder do artista de moldar o seu mundo e os sistemas ao seu redor como achar melhor. Um estado de autodeterminação.
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  Independência de verdade não é só assinar contrato sozinho — é montar sua própria estrutura, fazer do seu jeito, sem ter que sacrificar visão ou saúde no processo. Esse princípio vale pro estúdio, palco, financeiro e pra vida. Entender contratos, cuidar da mente e ter clareza sobre o que se quer: isso é soberania. Tamo aqui pra garantir isso com ferramenta, conteúdo e suporte.
                 </p>
               </CardContent>
             </Card>
-            
-            {/* Vision Card */}
+
+            {/* Livre Conhecimento */}
             <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl md:text-2xl font-semibold">
-                  {t('about.visionTitle')}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm md:text-base">
-                  {t('about.vision')}
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4">Livre Conhecimento</h3>
+                <p className="text-muted-foreground text-sm mb-3">
+                  O compartilhamento aberto de informações e conhecimento promove um ecossistema mais saudável e inovador para os artistas.
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  A cultura open source provou isso há anos. Se você aprendeu uma parada, compartilha. Alguém vai devolver na mesma moeda, com outra chave. Conhecimento livre cria uma cena forte. Quanto mais você ensina, mais você aprende. Quanto mais você doa, mais você inspira.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Gestão de Projeto */}
+            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4">Gestão de Projeto</h3>
+                <p className="text-muted-foreground text-sm mb-3">
+                  Organizar é tão importante quanto criar. Pra transformar ideia em lançamento, a caminhada precisa de clareza.
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  Hoje tudo ainda tá espalhado: Drive, WhatsApp, planilha, e-mail… O artista vira malabarista e ainda falta visibilidade real do projeto. A gente acredita que gestão de projeto no mundo da música precisa ser visual, prática e integrada com a criação. Sem isso, o risco de travar lá na frente é alto.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Educação */}
+            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4">Educação</h3>
+                <p className="text-muted-foreground text-sm mb-3">
+                  O fato é que mercado da música é um jogo mal explicado. Tem livro, podcast, mas e o mentor? E o espaço seguro pra errar e aprender?
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  Alguns setores da indústria evitam ativamente fazer perguntas. Essa atmosfera promove principalmente o aprendizado na raça e na osmose. Aqui a gente nada contra a maré e credita que educação prática é o que muda o jogo. A gente não quer manter ninguém no escuro — queremos formar artistas e gestores preparados pra ritmar com consciência e estratégia.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Insights Acionáveis */}
+            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4">Insights Acionáveis</h3>
+                <p className="text-muted-foreground text-sm mb-3">
+                  Maximizar o alcance artístico e construir negócios em torno de um artista requer as melhores ferramentas.
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  Hoje, o que se chama de "insight" no mercado é só uma tabelinha rasa. nome, idade, cidade e acabou. A gente quer mais: entender comportamento real, identificar oportunidades e agir com base em dados. Não dá mais pra seguir só o que "sempre funcionou". A nova música exige inteligência de verdade na tomada de decisão.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Gestão de Colaboração */}
+            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4">Gestão de Colaboração</h3>
+                <p className="text-muted-foreground text-sm mb-3">
+                  Criação boa é criação bem documentada porque muita coisa se perde no corre da criação: quem fez o quê, quem tava na sala, quem deu ideia e não foi creditado.
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  Essa bagunça vira disputa, dor de cabeça e confusão nos lançamentos. Na YEON MUSIC, a gente trata colaboração como algo sagrado. Botar ordem no processo criativo desde a primeira ideia é cuidar da galera e evitar crise lá na frente. Não adianta só organizar depois — o cuidado começa na fonte.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+      
+      {/* Pilares Section */}
+      <section className="py-20 bg-yeon-dark-bg">
+        <div className="container px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+              Pilares
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {/* Ouvir os artistas */}
+            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4">Ouvir os artistas</h3>
+                <p className="text-sm font-medium mb-3">Artistas importam</p>
+                <p className="text-muted-foreground text-sm">
+                  Artista não é só "criador de conteúdo". Artista é mente criativa, é força estratégica, é o centro do movimento. São cantores, produtores, dançarinos, empresários, advogados, designers, A&Rs... Tudo ao mesmo tempo. Eles pensam, executam, decidem, inspiram. Incluir eles no processo. Criar junto. E, acima de tudo, aprender com quem vive isso na pele é fundamental.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Conhecimento possibilita a responsabilização */}
+            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4">Conhecimento possibilita a responsabilização</h3>
+                <p className="text-sm font-medium mb-3">Responsabilidade importa</p>
+                <p className="text-muted-foreground text-sm">
+                  Quando a gente entende o que precisa e tem espaço pra pedir, cria uma base sólida pra qualquer parceria dar certo. Essa clareza vira combustível pra relações mais honestas, acessíveis e transparentes. Ninguém fica no escuro. Ninguém entra no jogo sem saber as regras. Porque quando a gente sabe no que tá se metendo, pode assumir o que vem em troca.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Artistas estão no comando */}
+            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4">Artistas estão no comando</h3>
+                <p className="text-sm font-medium mb-3">Tudo se resume a isso</p>
+                <p className="text-muted-foreground text-sm">
+                  Na YEON, somos uma equipe de artistas que decidiu empreender sem deixar a criatividade de lado. Pelo contrário: foi ouvindo a nossa própria voz criativa que entendemos o poder de reconhecer a dos outros. Quanto mais a gente valoriza nossa própria visão, mais enxerga a dos parceiros, dos amigos, da comunidade. Honramos essa troca ouvindo de verdade, com presença, respeito e afeto. Nossos produtos seguem a mesma lógica: não é sobre impor soluções, é sobre cocriar com quem tá do outro lado.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Comunidade = Harmonia */}
+            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4">Comunidade = Harmonia</h3>
+                <p className="text-sm font-medium mb-3">Comunidade importa</p>
+                <p className="text-muted-foreground text-sm mb-3">
+                  Acreditamos que toda expressão artística é um ato de coragem. Valorizar a arte é reconhecer o esforço humano de abrir o coração e criar pontes com o outro, com empatia, verdade e respeito.
+                </p>
+                <p className="text-muted-foreground text-sm mb-3">
+                  Por isso, usar nossa plataforma pra jogar luz em questões sistêmicas não é um gesto extra é parte do nosso compromisso.
+                </p>
+                <p className="text-muted-foreground text-sm mb-3">
+                  A arte tem o poder de mover estruturas. E a gente quer estar do lado certo da mudança.
+                </p>
+                <p className="text-muted-foreground text-sm mb-2">
+                  Nos comprometemos a agir de forma intencional e responsável para:
+                </p>
+                <ul className="list-disc pl-6 space-y-1 text-muted-foreground text-sm">
+                  <li>Identificar e investir em iniciativas que redirecionem capital público e privado para organizações focadas em arte, cultura, educação e saúde mental</li>
+                  <li>Apoiar negócios liderados por pessoas pretas, mulheres, LGBTQIAPN+ e outros grupos historicamente marginalizados</li>
+                  <li>Fortalecer projetos cívicos e políticos locais que atuem na reforma da justiça social e criminal</li>
+                </ul>
+                <p className="text-muted-foreground text-sm mt-3">
+                  Esse compromisso é vivo. Ele exige presença, escuta e ação constante. Estamos aqui pra aprender, colaborar e fazer parte da mudança com arte, com voz e com atitude.
                 </p>
               </CardContent>
             </Card>
