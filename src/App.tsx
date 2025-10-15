@@ -11,6 +11,7 @@ import MusicTools from "./pages/Tools";
 import ReleasePlanner from "./pages/ReleasePlanner";
 import NotFound from "./pages/NotFound";
 import LinkInBio from "./pages/LinkInBio";
+import TermsOfService from "./pages/TermsOfService";
 
 // Create the QueryClient outside the component
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App: React.FC = () => {
             <Route path="/artists" element={<Artists />} />
             <Route path="/release-planner" element={<ReleasePlanner />} />
             <Route path="/link-in-bio" element={<LinkInBio />} />
+            <Route path="/termos-de-uso" element={<TermsOfService />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

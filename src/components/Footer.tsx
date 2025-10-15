@@ -16,10 +16,10 @@ const Footer: React.FC = () => {
           
           {/* Links */}
           <div className="flex space-x-6 text-sm">
-            <a href="#" className="text-white/70 hover:text-white transition-colors">
+            <a href="/termos-de-uso" className="text-white/70 hover:text-white transition-colors">
               Termos de Uso
             </a>
-            <a href="#" className="text-white/70 hover:text-white transition-colors">
+            <a href="mailto:contato@yeon.live" className="text-white/70 hover:text-white transition-colors">
               Contato
             </a>
           </div>
