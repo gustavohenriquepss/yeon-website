@@ -48,7 +48,7 @@ const HeroSection: React.FC = () => {
           <img 
             src={heroDashboard} 
             alt="Yeon Dashboard - Gerencie seus lançamentos musicais"
-            className="w-full h-auto"
+            className="w-full h-auto rounded-lg"
           />
         </div>
       </div>
