@@ -21,7 +21,7 @@ const WhoUsesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-yeon-darker-bg">
+    <section className="py-20 bg-yeon-darker-bg rounded-lg">
       <div className="container px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">
