@@ -5,7 +5,7 @@ const ValuePropositionSection: React.FC = () => {
   const benefits = [
     {
       title: "Gerencie",
-      description: "Acompanhe todas as etapas do seu lançamento e o progresso das tarefas",
+      description: "Acompanhe todas as etapas e o progresso das tarefas de todos os seus lançamentos",
       image: "/placeholder.svg" // Substitua pela imagem desejada
     },
     {
