@@ -10,7 +10,7 @@ const ValuePropositionSection: React.FC = () => {
     },
     {
       title: "Personalize",
-      description: "Comece com o nosso template testado por 40+ artistas e profissionais da música e customize pra cada lançamento",
+      description: "Comece com o nosso template testado por 40+ profissionais da música e customize pra cada lançamento",
       image: "/placeholder.svg" // Substitua pela imagem desejada
     },
     {
