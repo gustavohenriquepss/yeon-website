@@ -112,7 +112,7 @@ const AboutContent: React.FC = () => {
           
           <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {/* Princípios */}
-            <div>
+            <div className="bg-card p-8 rounded-xl">
               <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Princípios</h3>
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="soberania" className="border-b border-white/10">
@@ -202,7 +202,7 @@ const AboutContent: React.FC = () => {
             </div>
             
             {/* Pilares */}
-            <div>
+            <div className="bg-card p-8 rounded-xl">
               <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Pilares</h3>
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="ouvir" className="border-b border-white/10">
