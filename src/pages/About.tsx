@@ -381,7 +381,7 @@ const AboutContent: React.FC = () => {
               Nosso Time
             </h2>
             <p className="max-w-3xl mx-auto text-lg text-white/70">
-              Conheça as pessoas apaixonadas que estão construindo o futuro da música independente no Brasil
+              Somos artistas e amantes da música especialistas em produto e tecnologia construíndo o futuro da indústria musical no Brasil
             </p>
           </div>
           
