@@ -1,22 +1,27 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { LayoutDashboard, Users, BarChart3, LucideIcon } from 'lucide-react';
 
 const ValuePropositionSection: React.FC = () => {
-  const benefits = [
+  const benefits: Array<{
+    title: string;
+    description: string;
+    icon: LucideIcon;
+  }> = [
     {
-      title: "Gerencie",
+      title: "Gestão",
       description: "Acompanhe todas as etapas e o progresso das tarefas de todos os seus lançamentos",
-      image: "/placeholder.svg" // Substitua pela imagem desejada
+      icon: LayoutDashboard
     },
     {
-      title: "Personalize",
-      description: "Comece com um template testado por +40 profissionais e customize pra cada lançamento",
-      image: "/placeholder.svg" // Substitua pela imagem desejada
+      title: "Insights",
+      description: "Veja exatamente como seu trabalho flui para que você possa se concentrar no que importa e obter mais resultados.",
+      icon: BarChart3
     },
     {
-      title: "Colabore",
+      title: "Colaboração",
       description: "Mantenha toda a sua equipe alinhada em cada etapa de todos os projetos",
-      image: "/placeholder.svg" // Substitua pela imagem desejada
+      icon: Users
     }
   ];
 
@@ -32,23 +37,20 @@ const ValuePropositionSection: React.FC = () => {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-7xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
-                <CardContent className="p-0">
-                  <div className="aspect-video w-full overflow-hidden bg-muted">
-                    <img 
-                      src={benefit.image} 
-                      alt={benefit.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-6">
+            {benefits.map((benefit, index) => {
+              const IconComponent = benefit.icon;
+              return (
+                <Card key={index} className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
+                  <CardContent className="p-8">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                      <IconComponent className="w-6 h-6 text-primary" />
+                    </div>
                     <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
                     <p className="text-muted-foreground">{benefit.description}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </div>
