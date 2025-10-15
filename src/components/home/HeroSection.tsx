@@ -4,6 +4,7 @@ import { ChevronDown } from 'lucide-react';
 import { Link as RouterLink } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import heroDashboard from '@/assets/hero-dashboard.png';
+import heroDashboardMobile from '@/assets/hero-dashboard-mobile.png';
 
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
@@ -48,7 +49,12 @@ const HeroSection: React.FC = () => {
           <img 
             src={heroDashboard} 
             alt="Yeon Dashboard - Gerencie seus lançamentos musicais"
-            className="w-full h-auto rounded-lg"
+            className="w-full h-auto rounded-lg hidden md:block"
+          />
+          <img 
+            src={heroDashboardMobile} 
+            alt="Yeon Dashboard Mobile - Gerencie seus lançamentos musicais"
+            className="w-full h-auto rounded-lg md:hidden"
           />
         </div>
       </div>
