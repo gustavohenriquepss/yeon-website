@@ -95,20 +95,22 @@ const AboutContent: React.FC = () => {
         </div>
       </section>
       
-      {/* Princípios Section */}
+      {/* Manifesto Section */}
       <section className="py-20 bg-yeon-dark-bg">
         <div className="container px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-              Princípios
+              Manifesto
             </h2>
           </div>
-          
-          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          {/* Princípios */}
+          <div className="mb-16">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Princípios</h3>
+            <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {/* Soberania do Artista */}
             <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Soberania do Artista</h3>
+                <h4 className="text-xl font-semibold mb-4">Soberania do Artista</h4>
                 <p className="text-muted-foreground text-sm mb-3">
                   Soberania é o poder do artista de moldar o seu mundo e os sistemas ao seu redor como achar melhor. Um estado de autodeterminação.
                 </p>
@@ -121,7 +123,7 @@ const AboutContent: React.FC = () => {
             {/* Livre Conhecimento */}
             <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Livre Conhecimento</h3>
+                <h4 className="text-xl font-semibold mb-4">Livre Conhecimento</h4>
                 <p className="text-muted-foreground text-sm mb-3">
                   O compartilhamento aberto de informações e conhecimento promove um ecossistema mais saudável e inovador para os artistas.
                 </p>
@@ -134,7 +136,7 @@ const AboutContent: React.FC = () => {
             {/* Gestão de Projeto */}
             <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Gestão de Projeto</h3>
+                <h4 className="text-xl font-semibold mb-4">Gestão de Projeto</h4>
                 <p className="text-muted-foreground text-sm mb-3">
                   Organizar é tão importante quanto criar. Pra transformar ideia em lançamento, a caminhada precisa de clareza.
                 </p>
@@ -147,7 +149,7 @@ const AboutContent: React.FC = () => {
             {/* Educação */}
             <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Educação</h3>
+                <h4 className="text-xl font-semibold mb-4">Educação</h4>
                 <p className="text-muted-foreground text-sm mb-3">
                   O fato é que mercado da música é um jogo mal explicado. Tem livro, podcast, mas e o mentor? E o espaço seguro pra errar e aprender?
                 </p>
@@ -160,7 +162,7 @@ const AboutContent: React.FC = () => {
             {/* Insights Acionáveis */}
             <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Insights Acionáveis</h3>
+                <h4 className="text-xl font-semibold mb-4">Insights Acionáveis</h4>
                 <p className="text-muted-foreground text-sm mb-3">
                   Maximizar o alcance artístico e construir negócios em torno de um artista requer as melhores ferramentas.
                 </p>
@@ -173,7 +175,7 @@ const AboutContent: React.FC = () => {
             {/* Gestão de Colaboração */}
             <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Gestão de Colaboração</h3>
+                <h4 className="text-xl font-semibold mb-4">Gestão de Colaboração</h4>
                 <p className="text-muted-foreground text-sm mb-3">
                   Criação boa é criação bem documentada porque muita coisa se perde no corre da criação: quem fez o quê, quem tava na sala, quem deu ideia e não foi creditado.
                 </p>
@@ -182,24 +184,17 @@ const AboutContent: React.FC = () => {
                 </p>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-      
-      {/* Pilares Section */}
-      <section className="py-20 bg-yeon-dark-bg">
-        <div className="container px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-              Pilares
-            </h2>
+            </div>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          {/* Pilares */}
+          <div>
+            <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Pilares</h3>
+            <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {/* Ouvir os artistas */}
             <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Ouvir os artistas</h3>
+                <h4 className="text-xl font-semibold mb-4">Ouvir os artistas</h4>
                 <p className="text-sm font-medium mb-3">Artistas importam</p>
                 <p className="text-muted-foreground text-sm">
                   Artista não é só "criador de conteúdo". Artista é mente criativa, é força estratégica, é o centro do movimento. São cantores, produtores, dançarinos, empresários, advogados, designers, A&Rs... Tudo ao mesmo tempo. Eles pensam, executam, decidem, inspiram. Incluir eles no processo. Criar junto. E, acima de tudo, aprender com quem vive isso na pele é fundamental.
@@ -210,7 +205,7 @@ const AboutContent: React.FC = () => {
             {/* Conhecimento possibilita a responsabilização */}
             <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Conhecimento possibilita a responsabilização</h3>
+                <h4 className="text-xl font-semibold mb-4">Conhecimento possibilita a responsabilização</h4>
                 <p className="text-sm font-medium mb-3">Responsabilidade importa</p>
                 <p className="text-muted-foreground text-sm">
                   Quando a gente entende o que precisa e tem espaço pra pedir, cria uma base sólida pra qualquer parceria dar certo. Essa clareza vira combustível pra relações mais honestas, acessíveis e transparentes. Ninguém fica no escuro. Ninguém entra no jogo sem saber as regras. Porque quando a gente sabe no que tá se metendo, pode assumir o que vem em troca.
@@ -221,7 +216,7 @@ const AboutContent: React.FC = () => {
             {/* Artistas estão no comando */}
             <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Artistas estão no comando</h3>
+                <h4 className="text-xl font-semibold mb-4">Artistas estão no comando</h4>
                 <p className="text-sm font-medium mb-3">Tudo se resume a isso</p>
                 <p className="text-muted-foreground text-sm">
                   Na YEON, somos uma equipe de artistas que decidiu empreender sem deixar a criatividade de lado. Pelo contrário: foi ouvindo a nossa própria voz criativa que entendemos o poder de reconhecer a dos outros. Quanto mais a gente valoriza nossa própria visão, mais enxerga a dos parceiros, dos amigos, da comunidade. Honramos essa troca ouvindo de verdade, com presença, respeito e afeto. Nossos produtos seguem a mesma lógica: não é sobre impor soluções, é sobre cocriar com quem tá do outro lado.
@@ -232,7 +227,7 @@ const AboutContent: React.FC = () => {
             {/* Comunidade = Harmonia */}
             <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Comunidade = Harmonia</h3>
+                <h4 className="text-xl font-semibold mb-4">Comunidade = Harmonia</h4>
                 <p className="text-sm font-medium mb-3">Comunidade importa</p>
                 <p className="text-muted-foreground text-sm mb-3">
                   Acreditamos que toda expressão artística é um ato de coragem. Valorizar a arte é reconhecer o esforço humano de abrir o coração e criar pontes com o outro, com empatia, verdade e respeito.
@@ -255,7 +250,8 @@ const AboutContent: React.FC = () => {
                   Esse compromisso é vivo. Ele exige presença, escuta e ação constante. Estamos aqui pra aprender, colaborar e fazer parte da mudança com arte, com voz e com atitude.
                 </p>
               </CardContent>
-            </Card>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
