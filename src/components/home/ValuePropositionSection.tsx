@@ -1,18 +1,13 @@
 import React from 'react';
 import { Clock, Target, CheckCircle } from 'lucide-react';
-
 const ValuePropositionSection: React.FC = () => {
-  return (
-    <section id="value-proposition" className="py-20 bg-yeon-darker-bg">
+  return <section id="value-proposition" className="py-20 bg-yeon-darker-bg">
       <div className="container px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">
             Por que Yeon?
           </h2>
-          <p className="text-white/70 text-lg max-w-3xl mx-auto mb-8">
-            Centralize todo o workflow do seu lançamento musical em uma única plataforma. 
-            Fácil de usar, resultados previsíveis.
-          </p>
+          <p className="text-white/70 text-lg max-w-3xl mx-auto mb-8">Yeon é a ferramenta definitiva para planejar e lançar músicas. Mais que um checklist, é um guia prático com estratégias testadas para campanhas eficazes, crescimento de fãs e lançamentos de sucesso.</p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             <div className="text-center">
@@ -47,8 +42,6 @@ const ValuePropositionSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ValuePropositionSection;
