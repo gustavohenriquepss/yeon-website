@@ -19,7 +19,7 @@ const FeaturesSection: React.FC = () => {
     },
     {
       image: aiAssistantImg,
-      title: "Assistente de IA",
+      title: "Planejador com IA",
       description: "Faça perguntas, consiga orientação e deixe a IA ajudar você a continuar no caminho certo para terminar no ritmo."
     },
     {
