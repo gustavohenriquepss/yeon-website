@@ -18,6 +18,7 @@ const MobileMenu: React.FC = () => {
   const navItems = [
     { name: t('nav.home'), href: '/' },
     { name: t('nav.about'), href: '/about' },
+    { name: 'Contato', href: '/contato' },
   ];
 
   return (
@@ -41,6 +42,21 @@ const MobileMenu: React.FC = () => {
               </Link>
             ))}
           </nav>
+          
+          {/* Auth buttons */}
+          <div className="flex flex-col gap-3 py-4 border-t border-white/10">
+            <Link to="/auth" className="w-full">
+              <button className="w-full px-4 py-2 text-sm text-foreground hover:text-primary transition-colors">
+                Entrar
+              </button>
+            </Link>
+            <Link to="/auth" className="w-full">
+              <button className="w-full px-6 py-2 bg-primary hover:bg-primary/90 transition-colors font-medium text-zinc-50 rounded-md text-sm">
+                Cadastre-se
+              </button>
+            </Link>
+          </div>
+          
           <div className="flex justify-center">
             <SocialLinks />
           </div>
