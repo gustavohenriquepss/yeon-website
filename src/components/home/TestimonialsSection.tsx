@@ -1,34 +1,53 @@
 import React from 'react';
-import { Quote } from 'lucide-react';
 
 const TestimonialsSection: React.FC = () => {
   const testimonials = [
     {
       quote: "Yeon mudou completamente minha organização. Agora não perco mais nenhum prazo e meus lançamentos saem no tempo certo.",
       name: "Marina Silva",
-      role: "Artista Independente"
+      role: "Artista Independente",
+      size: "large"
     },
     {
       quote: "Consigo gerenciar 5 artistas simultaneamente sem perder o controle. A visibilidade do roadmap é perfeita.",
       name: "Carlos Mendes",
-      role: "Manager Musical"
+      role: "Manager Musical",
+      size: "small"
+    },
+    {
+      quote: "A melhor ferramenta para planejar releases. Simples, intuitiva e completa.",
+      name: "Juliana Costa",
+      role: "Produtora Musical",
+      size: "small"
+    },
+    {
+      quote: "Desde que comecei a usar Yeon, meus lançamentos ficaram muito mais profissionais e organizados.",
+      name: "Rafael Santos",
+      role: "Artista Independente",
+      size: "medium"
+    },
+    {
+      quote: "O kanban integrado facilitou demais a comunicação com minha equipe. Todos sabem exatamente o que fazer.",
+      name: "Beatriz Lima",
+      role: "Manager de Selo",
+      size: "medium"
     }
   ];
 
   return (
     <section className="py-20 bg-yeon-dark-bg">
       <div className="container px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-            O Que Dizem Nossos Usuários
-          </h2>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto auto-rows-auto">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="p-8 rounded-lg bg-white/5 backdrop-blur-sm relative">
-              <Quote className="h-8 w-8 text-yeon-purple/50 mb-4" />
-              <p className="text-white/90 text-lg mb-6 italic">
+            <div 
+              key={index} 
+              className={`
+                p-6 rounded-lg bg-white/5 backdrop-blur-sm
+                ${testimonial.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''}
+                ${testimonial.size === 'medium' ? 'md:col-span-2' : ''}
+              `}
+            >
+              <p className="text-white/90 text-base md:text-lg mb-4 italic">
                 "{testimonial.quote}"
               </p>
               <div>
