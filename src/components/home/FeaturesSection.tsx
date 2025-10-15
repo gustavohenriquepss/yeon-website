@@ -1,7 +1,7 @@
 import React from 'react';
 import FeatureItem from './FeatureItem';
 import setupIntegradoImg from '@/assets/setup-integrado.png';
-import collaborationImg from '@/assets/feature-collaboration.jpg';
+import collaborationImg from '@/assets/feature-collaboration.png';
 import aiAssistantImg from '@/assets/feature-ai-assistant.jpg';
 import resourceLibraryImg from '@/assets/feature-resource-library.jpg';
 
