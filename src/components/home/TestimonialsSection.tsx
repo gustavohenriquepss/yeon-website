@@ -1,4 +1,10 @@
 import React from 'react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const TestimonialsSection: React.FC = () => {
   const testimonials = [
@@ -27,22 +33,34 @@ const TestimonialsSection: React.FC = () => {
   return (
     <section className="py-20 bg-yeon-dark-bg">
       <div className="container px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <div 
-              key={index} 
-              className="p-6 rounded-lg"
-            >
-              <p className="text-white/90 text-base md:text-lg mb-4 italic">
-                "{testimonial.quote}"
-              </p>
-              <div>
-                <p className="font-semibold text-white">{testimonial.name}</p>
-                <p className="text-white/70 text-sm">{testimonial.role}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 5000,
+            }),
+          ]}
+          className="w-full max-w-3xl mx-auto"
+        >
+          <CarouselContent>
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem key={index}>
+                <div className="p-8 rounded-lg text-center">
+                  <p className="text-white/90 text-lg md:text-xl mb-6 italic">
+                    "{testimonial.quote}"
+                  </p>
+                  <div>
+                    <p className="font-semibold text-white text-lg">{testimonial.name}</p>
+                    <p className="text-white/70">{testimonial.role}</p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
     </section>
   );
