@@ -32,7 +32,7 @@ const PricingSection: React.FC = () => {
     },
     {
       name: "Pro",
-      price: "R$ 60",
+      price: "R$60",
       description: "Tudo no plano Gratuito +",
       features: [
         { text: "Crie projetos ilimitados" },
