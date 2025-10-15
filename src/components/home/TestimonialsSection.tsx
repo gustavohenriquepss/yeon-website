@@ -21,23 +21,13 @@ const TestimonialsSection: React.FC = () => {
       quote: "Desde que comecei a usar Yeon, meus lançamentos ficaram muito mais profissionais e organizados.",
       name: "Rafael Santos",
       role: "Artista Independente"
-    },
-    {
-      quote: "O kanban integrado facilitou demais a comunicação com minha equipe. Todos sabem exatamente o que fazer.",
-      name: "Beatriz Lima",
-      role: "Manager de Selo"
-    },
-    {
-      quote: "Finalmente uma ferramenta que entende o processo criativo e os prazos da indústria musical.",
-      name: "Pedro Oliveira",
-      role: "Produtor Executivo"
     }
   ];
 
   return (
     <section className="py-20 bg-yeon-dark-bg">
       <div className="container px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
