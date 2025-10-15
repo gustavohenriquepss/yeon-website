@@ -24,8 +24,8 @@ const FeaturesSection: React.FC = () => {
     },
     {
       image: resourceLibraryImg,
-      title: "Biblioteca de Recursos",
-      description: "Faça upload de capas, mixes e recursos promocionais diretamente, sem precisar vasculhar e-mails, drives ou grupos no Whatsapp."
+      title: "Kanban Visual",
+      description: "Organize suas tarefas em colunas intuitivas: Não Iniciado, Em Progresso e Concluído. Acompanhe o status de cada etapa do projeto em tempo real."
     }
   ];
 
