@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { useLanguage } from '@/context/LanguageContext';
 import PageLayout from '@/components/PageLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, Award, Rocket, Star } from 'lucide-react';
+import { Users, LayoutDashboard, BarChart3, Lightbulb, UserPlus, Sparkles, Kanban } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Accordion,
@@ -257,67 +257,104 @@ const AboutContent: React.FC = () => {
               {t('about.whatWeDoTitle')}
             </h2>
             <p className="max-w-3xl mx-auto text-lg text-white/70">
-              {t('about.whatWeDo')}
+              Yeon é a ferramenta definitiva para planejar e lançar músicas. Mais que um checklist, é um guia prático com estratégias testadas para campanhas eficazes, crescimento de fãs e lançamentos de sucesso.
             </p>
           </div>
           
-          {/* What We Do Cards */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {/* Main Benefits */}
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
+              <CardHeader>
+                <CardTitle className="text-xl md:text-2xl font-semibold flex items-center gap-2">
+                  <LayoutDashboard className="h-5 w-5" />
+                  Gestão
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm md:text-base">
+                  Acompanhe todas as etapas e o progresso das tarefas de todos os seus lançamentos
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
+              <CardHeader>
+                <CardTitle className="text-xl md:text-2xl font-semibold flex items-center gap-2">
+                  <BarChart3 className="h-5 w-5" />
+                  Insights
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm md:text-base">
+                  Veja exatamente como seu trabalho flui para que você possa se concentrar no que importa e obter mais resultados.
+                </p>
+              </CardContent>
+            </Card>
+            
             <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
               <CardHeader>
                 <CardTitle className="text-xl md:text-2xl font-semibold flex items-center gap-2">
                   <Users className="h-5 w-5" />
-                  Capturar e engajar fãs
+                  Colaboração
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-sm md:text-base">
-                  {t('about.whatWeDo1')}
+                  Mantenha toda a sua equipe alinhada em cada etapa de todos os projetos
                 </p>
               </CardContent>
             </Card>
-            
-            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl md:text-2xl font-semibold flex items-center gap-2">
-                  <Star className="h-5 w-5" />
-                  Monetizar diretamente
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm md:text-base">
-                  {t('about.whatWeDo2')}
+          </div>
+
+          {/* Features Grid */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0">
+                <Lightbulb className="h-8 w-8 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Setup Automático</h3>
+                <p className="text-muted-foreground">
+                  Crie seu plano de lançamento em minutos: basta preencher informações básicas do projeto e nossa IA personaliza um roadmap completo pra você.
                 </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl md:text-2xl font-semibold flex items-center gap-2">
-                  <Rocket className="h-5 w-5" />
-                  Analisar e Crescer
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm md:text-base">
-                  {t('about.whatWeDo3')}
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex-shrink-0">
+                <UserPlus className="h-8 w-8 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Acesso de Colaborador</h3>
+                <p className="text-muted-foreground">
+                  Convide fotógrafos, produtores e equipe pro projeto, delegue tarefas e tenha tudo sincronizado em tempo real.
                 </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl md:text-2xl font-semibold flex items-center gap-2">
-                  <Award className="h-5 w-5" />
-                  Conectar-se a comunidade
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm md:text-base">
-                  {t('about.whatWeDo4')}
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex-shrink-0">
+                <Sparkles className="h-8 w-8 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Planejador com IA</h3>
+                <p className="text-muted-foreground">
+                  Dúvida sobre uma etapa? Converse direto com a IA pra ajustar prazos, sugerir ideias ou entender melhor cada tarefa.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex-shrink-0">
+                <Kanban className="h-8 w-8 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Kanban Visual</h3>
+                <p className="text-muted-foreground">
+                  Visualize o andamento de cada fase, mova tarefas entre colunas e saiba exatamente o que tá pendente, em andamento ou concluído.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
