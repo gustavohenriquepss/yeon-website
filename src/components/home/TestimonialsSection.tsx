@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 
 const TestimonialsSection: React.FC = () => {
   const testimonials = [
@@ -30,6 +29,20 @@ const TestimonialsSection: React.FC = () => {
     }
   ];
 
+  // Autoplay: advance every 5s, loop back to start
+  const [api, setApi] = React.useState<any>(null);
+  useEffect(() => {
+    if (!api) return;
+    const interval = setInterval(() => {
+      if (api.canScrollNext && api.canScrollNext()) {
+        api.scrollNext();
+      } else if (api.scrollTo) {
+        api.scrollTo(0);
+      }
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [api]);
+
   return (
     <section className="py-20 bg-yeon-dark-bg">
       <div className="container px-4">
@@ -38,16 +51,12 @@ const TestimonialsSection: React.FC = () => {
             align: "start",
             loop: true,
           }}
-          plugins={[
-            Autoplay({
-              delay: 5000,
-            }),
-          ]}
+          setApi={setApi}
           className="w-full max-w-3xl mx-auto"
         >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index}>
+              <CarouselItem key={index} className="basis-full">
                 <div className="p-8 rounded-lg text-center">
                   <p className="text-white/90 text-lg md:text-xl mb-6 italic">
                     "{testimonial.quote}"
