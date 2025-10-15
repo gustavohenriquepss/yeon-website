@@ -110,10 +110,10 @@ const AboutContent: React.FC = () => {
             </h2>
           </div>
           
-          {/* Princípios */}
-          <div className="mb-16">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Princípios</h3>
-            <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+            {/* Princípios */}
+            <div>
+              <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Princípios</h3>
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="soberania" className="border-b border-white/10">
                   <AccordionTrigger className="text-lg font-semibold hover:no-underline">
@@ -200,12 +200,10 @@ const AboutContent: React.FC = () => {
                 </AccordionItem>
               </Accordion>
             </div>
-          </div>
-          
-          {/* Pilares */}
-          <div>
-            <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Pilares</h3>
-            <div className="max-w-4xl mx-auto">
+            
+            {/* Pilares */}
+            <div>
+              <h3 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Pilares</h3>
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="ouvir" className="border-b border-white/10">
                   <AccordionTrigger className="text-lg font-semibold hover:no-underline">
