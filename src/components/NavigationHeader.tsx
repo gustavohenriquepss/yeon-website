@@ -18,6 +18,9 @@ const NavigationHeader: React.FC = () => {
   }, {
     name: t('nav.about'),
     href: '/about'
+  }, {
+    name: 'Contato',
+    href: '/contato'
   }];
   return <div className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-yeon-dark-bg/80 border-b border-white/10">
       <div className="container px-4 py-3 flex items-center justify-between">
