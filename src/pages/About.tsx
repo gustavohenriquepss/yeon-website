@@ -52,30 +52,6 @@ const AboutContent: React.FC = () => {
         </div>
       </section>
       
-
-      {/* Closing Statement */}
-      <section className="py-16 bg-yeon-dark-bg">
-        <div className="container px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <p className="text-lg md:text-xl font-semibold">
-              A indústria não foi feita para todos — então estamos construindo algo novo.
-            </p>
-            <p className="text-base md:text-lg text-white/80">
-              Acreditamos que acesso, propriedade e suporte não devem ser reservados para poucos.
-            </p>
-            <p className="text-base md:text-lg text-white/80">
-              Conhecemos a correria. Conhecemos a dor. E sabemos que, com a orientação, a tecnologia e a equipe certas por trás de você, esse sonho é possível.
-            </p>
-            <p className="text-base md:text-lg text-white/80">
-              Não estamos aqui para jogar.
-            </p>
-            <p className="text-lg md:text-xl font-semibold">
-              Estamos aqui para reescrever as regras.
-            </p>
-          </div>
-        </div>
-      </section>
-      
       {/* What We Do Section */}
       <section className="py-20 bg-yeon-dark-bg">
         <div className="container px-4">
@@ -220,6 +196,29 @@ const AboutContent: React.FC = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Manifesto Section */}
+      <section className="py-16 bg-yeon-dark-bg">
+        <div className="container px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <p className="text-lg md:text-xl font-semibold">
+              A indústria não foi feita para todos — então estamos construindo algo novo.
+            </p>
+            <p className="text-base md:text-lg text-white/80">
+              Acreditamos que acesso, propriedade e suporte não devem ser reservados para poucos.
+            </p>
+            <p className="text-base md:text-lg text-white/80">
+              Conhecemos a correria. Conhecemos a dor. E sabemos que, com a orientação, a tecnologia e a equipe certas por trás de você, esse sonho é possível.
+            </p>
+            <p className="text-base md:text-lg text-white/80">
+              Não estamos aqui para jogar.
+            </p>
+            <p className="text-lg md:text-xl font-semibold">
+              Estamos aqui para reescrever as regras.
+            </p>
           </div>
         </div>
       </section>
