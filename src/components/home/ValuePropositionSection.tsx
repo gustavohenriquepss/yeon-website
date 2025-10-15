@@ -17,11 +17,6 @@ const ValuePropositionSection: React.FC = () => {
       title: "Colabore",
       description: "Mantenha toda a sua equipe alinhada em cada etapa de todos os projetos",
       image: "/placeholder.svg" // Substitua pela imagem desejada
-    },
-    {
-      title: "Reduza Falhas",
-      description: "Nunca perca os prazos com notificações e lembretes automáticos",
-      image: "/placeholder.svg" // Substitua pela imagem desejada
     }
   ];
 
