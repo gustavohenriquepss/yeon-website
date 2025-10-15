@@ -36,7 +36,7 @@ const PricingSection: React.FC = () => {
       description: "Tudo no plano Gratuito +",
       features: [
         { text: "Crie projetos ilimitados" },
-        { text: "Membros e colaboradores ilimitados para sua equipe" },
+        { text: "Membros e colaboradores ilimitados" },
         { text: "Participe de projetos ilimitados" },
         { text: "Suporte dedicado 24h" },
         { text: "Converse com um especialista em IA" },
