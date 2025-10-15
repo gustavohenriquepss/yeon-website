@@ -21,24 +21,26 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
 }) => {
   return (
     <Card className={cn(
-      "h-full border-0 rounded-xl transition-all duration-300 hover:scale-105 bg-[#222222] hover:bg-[#333333]",
+      "border-0 bg-card hover:scale-105 transition-transform duration-300",
       size === 'large' ? 'md:col-span-2' : ''
     )}>
-      <CardContent className="flex flex-col h-full p-6">
+      <CardContent className="p-0">
         {image && (
-          <div className="w-full h-40 rounded-lg overflow-hidden mb-4">
+          <div className="aspect-video w-full overflow-hidden">
             <img src={image} alt={title} className="w-full h-full object-cover" />
           </div>
         )}
-        <div className="flex items-center gap-2 mb-3">
-          <h3 className="text-xl md:text-2xl font-semibold">{title}</h3>
-          {tag && (
-            <Badge className="bg-yeon-purple hover:bg-yeon-purple text-xs">
-              {tag}
-            </Badge>
-          )}
+        <div className="p-6">
+          <div className="flex items-center gap-2 mb-3">
+            <h3 className="text-xl md:text-2xl font-semibold">{title}</h3>
+            {tag && (
+              <Badge className="bg-yeon-purple hover:bg-yeon-purple text-xs">
+                {tag}
+              </Badge>
+            )}
+          </div>
+          <p className="text-muted-foreground text-sm md:text-base">{description}</p>
         </div>
-        <p className="text-white/80 mb-auto text-sm md:text-base">{description}</p>
       </CardContent>
     </Card>
   );
