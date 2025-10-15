@@ -1,26 +1,9 @@
 import React from 'react';
+import FeatureItem from './FeatureItem';
 import projectSetupImg from '@/assets/feature-project-setup.jpg';
 import collaborationImg from '@/assets/feature-collaboration.jpg';
 import aiAssistantImg from '@/assets/feature-ai-assistant.jpg';
 import resourceLibraryImg from '@/assets/feature-resource-library.jpg';
-
-const FeatureItem: React.FC<{
-  image: string;
-  title: string;
-  description: string;
-}> = ({ image, title, description }) => {
-  return (
-    <div className="flex flex-col space-y-4 p-6 rounded-lg bg-white/5 backdrop-blur-sm">
-      <div className="w-full h-40 rounded-lg overflow-hidden">
-        <img src={image} alt={title} className="w-full h-full object-cover" />
-      </div>
-      <div>
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-white/70">{description}</p>
-      </div>
-    </div>
-  );
-};
 
 const FeaturesSection: React.FC = () => {
   const features = [

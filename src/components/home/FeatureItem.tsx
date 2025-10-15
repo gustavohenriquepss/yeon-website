@@ -9,13 +9,15 @@ export interface FeatureItemProps {
   description: string;
   size?: 'small' | 'large';
   tag?: string;
+  image?: string;
 }
 
 const FeatureItem: React.FC<FeatureItemProps> = ({
   title,
   description,
   size = 'small',
-  tag
+  tag,
+  image
 }) => {
   return (
     <Card className={cn(
@@ -23,6 +25,11 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
       size === 'large' ? 'md:col-span-2' : ''
     )}>
       <CardContent className="flex flex-col h-full p-6">
+        {image && (
+          <div className="w-full h-40 rounded-lg overflow-hidden mb-4">
+            <img src={image} alt={title} className="w-full h-full object-cover" />
+          </div>
+        )}
         <div className="flex items-center gap-2 mb-3">
           <h3 className="text-xl md:text-2xl font-semibold">{title}</h3>
           {tag && (
