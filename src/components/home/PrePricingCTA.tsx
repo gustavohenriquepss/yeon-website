@@ -6,7 +6,7 @@ import ctaTools from '@/assets/cta-tools.png';
 const PrePricingCTA: React.FC = () => {
   return <section className="py-16 px-4">
       <div className="container mx-auto">
-        <div className="max-w-5xl mx-auto text-center bg-card rounded-2xl p-8 md:p-12 border border-border relative overflow-hidden">
+        <div className="max-w-6xl mx-auto text-center bg-card rounded-2xl p-8 md:p-12 border border-border relative overflow-hidden">
           <img 
             src={ctaTools} 
             alt="Tools" 
