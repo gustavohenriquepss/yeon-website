@@ -21,7 +21,7 @@ const PrePricingCTA: React.FC = () => {
             asChild
           >
             <Link to="/release-planner">
-              Criar Conta
+              Comece Agora
             </Link>
           </Button>
         </div>
