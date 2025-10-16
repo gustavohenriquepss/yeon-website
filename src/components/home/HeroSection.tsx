@@ -28,7 +28,7 @@ const HeroSection: React.FC = () => {
         </Badge>
         
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-6 animate-fade-in tracking-tight max-w-5xl text-white">
-          Planeje seus lançamentos sem estresse com um clique
+          Planeje seus lançamentos sem estresse com <span className="text-yeon-purple">apenas um clique</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 animate-fade-in">
