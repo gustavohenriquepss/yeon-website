@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check } from 'lucide-react';
@@ -17,6 +17,8 @@ interface PricingPlan {
 }
 
 const PricingSection: React.FC = () => {
+  const [isAnnual, setIsAnnual] = useState(false);
+
   const plans: PricingPlan[] = [
     {
       name: "Grátis",
@@ -32,7 +34,7 @@ const PricingSection: React.FC = () => {
     },
     {
       name: "Pro",
-      price: "R$30",
+      price: isAnnual ? "R$300" : "R$30",
       description: "Tudo no plano Gratuito +",
       features: [
         { text: "Crie projetos ilimitados" },
@@ -52,9 +54,32 @@ const PricingSection: React.FC = () => {
         <h2 className="text-3xl md:text-4xl font-semibold text-center mb-6">
           Planos que Crescem com Você
         </h2>
-        <p className="text-white/70 text-center max-w-2xl mx-auto mb-10">
+        <p className="text-white/70 text-center max-w-2xl mx-auto mb-8">
           Escolha o plano ideal para o seu momento atual. Mude a qualquer momento conforme sua carreira evolui.
         </p>
+        
+        {/* Billing toggle */}
+        <div className="flex items-center justify-center gap-4 mb-10">
+          <span className={`text-sm font-medium transition-colors ${!isAnnual ? 'text-white' : 'text-white/50'}`}>
+            Mensal
+          </span>
+          <button
+            onClick={() => setIsAnnual(!isAnnual)}
+            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${isAnnual ? 'bg-yeon-purple' : 'bg-white/20'}`}
+          >
+            <span
+              className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${isAnnual ? 'translate-x-6' : 'translate-x-1'}`}
+            />
+          </button>
+          <span className={`text-sm font-medium transition-colors ${isAnnual ? 'text-white' : 'text-white/50'}`}>
+            Anual
+          </span>
+          {isAnnual && (
+            <span className="text-xs bg-yeon-purple/20 text-yeon-purple px-2 py-1 rounded-full font-medium">
+              Economize R$60
+            </span>
+          )}
+        </div>
         
         {/* Pricing cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12">
@@ -75,8 +100,13 @@ const PricingSection: React.FC = () => {
                     <span className="text-4xl md:text-5xl font-bold">
                       {plan.price}
                     </span>
-                    <span className="text-white/60 ml-1">/mês</span>
+                    <span className="text-white/60 ml-1">
+                      {plan.name === "Pro" && isAnnual ? "/ano" : "/mês"}
+                    </span>
                   </div>
+                  {plan.name === "Pro" && isAnnual && (
+                    <p className="text-sm text-yeon-purple mt-2">R$25/mês</p>
+                  )}
                   <p className="text-sm text-white/70 mt-3">{plan.description}</p>
                 </div>
               </CardHeader>
