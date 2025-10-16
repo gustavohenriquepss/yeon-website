@@ -16,7 +16,7 @@ const PrePricingCTA: React.FC = () => {
             Fazer um lançamento não precisa ser um caos
           </h2>
           <p className="text-lg leading-relaxed mb-8 text-zinc-50 relative z-10">
-            Seu projeto merece mais que planilhas, mensagens no Whatsapp e anotações soltas por aí. Com a Yeon, artistas e managers tem uma estrutura real pra planejar e executar lançamentos sem perder prazos, tarefas ou oportunidades.
+            Seu projeto merece mais que planilhas, mensagens no Whatsapp e anotações soltas por aí. Com a Yeon, você tem uma estrutura real pra planejar e executar lançamentos sem perder prazos, tarefas ou oportunidades.
           </p>
           <Button size="lg" className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium px-8 py-6 text-lg relative z-10" asChild>
             <Link to="/release-planner">
