@@ -32,7 +32,7 @@ const HeroSection: React.FC = () => {
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 animate-fade-in">
-          Yeon ajuda artistas independentes a botar ritmo nos seus lançamentos com cronogramas claros e metas inteligentes.
+          Centralize tarefas, prazos e entregas em um só lugar. A Yeon transforma o jeito de lançar músicae cada etapa do seu projeto ganha estrutura, visibilidade e ritmo.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in">
