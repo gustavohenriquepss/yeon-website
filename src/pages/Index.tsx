@@ -6,6 +6,7 @@ import HeroSection from '@/components/home/HeroSection';
 import ValuePropositionSection from '@/components/home/ValuePropositionSection';
 import FeaturesSection from '@/components/home/FeaturesSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
+import PrePricingCTA from '@/components/home/PrePricingCTA';
 import PricingSection from '@/components/home/PricingSection';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -18,6 +19,7 @@ const IndexContent: React.FC = () => {
       <ValuePropositionSection />
       <FeaturesSection />
       <TestimonialsSection />
+      <PrePricingCTA />
       <PricingSection />
     </main>
   );
