@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import ctaTools from '@/assets/cta-tools.png';
 
 const PrePricingCTA: React.FC = () => {
-  return <section className="py-16 px-4">
-      <div className="container mx-auto">
+  return <section className="py-16">
+      <div className="container mx-auto px-0">
         <div className="max-w-4xl mx-auto text-center bg-card rounded-2xl p-8 md:p-12 border border-border relative overflow-hidden">
           <img 
             src={ctaTools} 
