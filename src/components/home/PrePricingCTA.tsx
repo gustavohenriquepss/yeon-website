@@ -6,7 +6,7 @@ const PrePricingCTA: React.FC = () => {
   return (
     <section className="py-16 px-4">
       <div className="container mx-auto">
-        <div className="max-w-5xl mx-auto text-center bg-gradient-to-br from-yeon-purple/10 to-yeon-dark-purple/10 rounded-2xl p-8 md:p-12 border border-yeon-purple/20">
+        <div className="max-w-5xl mx-auto text-center bg-gradient-to-br from-yeon-purple/50 to-yeon-dark-purple/50 rounded-2xl p-8 md:p-12 border border-yeon-purple/20">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">
             Fazer um lançamento não precisa ser um caos
           </h2>
