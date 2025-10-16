@@ -6,11 +6,11 @@ import ctaTools from '@/assets/cta-tools.png';
 const PrePricingCTA: React.FC = () => {
   return <section className="py-16 px-4">
       <div className="container mx-auto">
-        <div className="max-w-5xl mx-auto text-center bg-gradient-to-br from-yeon-purple/50 to-yeon-dark-purple/50 rounded-2xl p-8 md:p-12 border border-yeon-purple/20 relative overflow-hidden">
+        <div className="max-w-5xl mx-auto text-center bg-card rounded-2xl p-8 md:p-12 border border-border relative overflow-hidden">
           <img 
             src={ctaTools} 
             alt="Tools" 
-            className="absolute bottom-0 left-0 w-64 md:w-80 opacity-30 pointer-events-none"
+            className="absolute bottom-0 left-0 w-80 md:w-96 opacity-30 pointer-events-none"
           />
           <h2 className="text-3xl md:text-4xl font-semibold mb-6 relative z-10">
             Fazer um lançamento não precisa ser um caos
