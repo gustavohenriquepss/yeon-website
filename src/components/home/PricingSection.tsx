@@ -74,11 +74,6 @@ const PricingSection: React.FC = () => {
           <span className={`text-sm font-medium transition-colors ${isAnnual ? 'text-white' : 'text-white/50'}`}>
             Anual
           </span>
-          {isAnnual && (
-            <span className="text-xs bg-yeon-purple/20 text-yeon-purple px-2 py-1 rounded-full font-medium">
-              Economize R$60
-            </span>
-          )}
         </div>
         
         {/* Pricing cards */}
