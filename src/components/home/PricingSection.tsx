@@ -34,7 +34,7 @@ const PricingSection: React.FC = () => {
     },
     {
       name: "Pro",
-      price: isAnnual ? "R$300" : "R$30",
+      price: isAnnual ? "R$25" : "R$30",
       description: "Tudo no plano Gratuito +",
       features: [
         { text: "Crie projetos ilimitados" },
@@ -96,13 +96,11 @@ const PricingSection: React.FC = () => {
                       {plan.price}
                     </span>
                     {plan.name === "Pro" && (
-                      <span className="text-white/60 ml-1">
-                        {isAnnual ? "/ano" : "/mês"}
-                      </span>
+                      <span className="text-white/60 ml-1">/mês</span>
                     )}
                   </div>
                   {plan.name === "Pro" && isAnnual && (
-                    <p className="text-sm text-yeon-purple mt-2">R$25/mês</p>
+                    <p className="text-sm text-white/70 mt-2">Cobrado anualmente (R$300)</p>
                   )}
                   <p className="text-sm text-white/70 mt-3">{plan.description}</p>
                 </div>
