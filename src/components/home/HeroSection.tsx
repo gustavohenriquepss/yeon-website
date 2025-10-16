@@ -6,10 +6,10 @@ import { Link as RouterLink } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import heroDashboard from '@/assets/hero-dashboard.png';
 import heroDashboardMobile from '@/assets/hero-dashboard-mobile.png';
-
 const HeroSection: React.FC = () => {
-  const { t } = useLanguage();
-  
+  const {
+    t
+  } = useLanguage();
   const scrollToNextSection = () => {
     const nextSection = document.getElementById('value-proposition');
     if (nextSection) {
@@ -18,9 +18,7 @@ const HeroSection: React.FC = () => {
       });
     }
   };
-  
-  return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
+  return <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
       {/* Content */}
       <div className="container relative z-10 px-4 flex flex-col items-center text-center">
         <Badge className="bg-white/10 text-white/70 hover:bg-white/15 border-white/20 text-sm mb-6 animate-fade-in">
@@ -31,9 +29,7 @@ const HeroSection: React.FC = () => {
           Planeje seus lançamentos sem estresse com <span className="text-yeon-purple">apenas um clique</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10 animate-fade-in">
-          Centralize tarefas, prazos e entregas em um só lugar. A Yeon transforma o jeito de lançar músicae cada etapa do seu projeto ganha estrutura, visibilidade e ritmo.
-        </p>
+        <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10 animate-fade-in">Centralize tarefas, prazos e entregas em um só lugar. A Yeon transforma o jeito de lançar música e cada etapa do seu projeto ganha estrutura, visibilidade e ritmo.</p>
         
         <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in">
           <Button variant="outline" size="lg" className="border-border hover:bg-white/10 px-8 py-6 text-lg" asChild>
@@ -51,16 +47,8 @@ const HeroSection: React.FC = () => {
 
         {/* Hero Image */}
         <div className="w-full max-w-6xl mx-auto animate-fade-in">
-          <img 
-            src={heroDashboard} 
-            alt="Yeon Dashboard - Gerencie seus lançamentos musicais"
-            className="w-full h-auto rounded-lg hidden md:block"
-          />
-          <img 
-            src={heroDashboardMobile} 
-            alt="Yeon Dashboard Mobile - Gerencie seus lançamentos musicais"
-            className="w-full h-auto rounded-lg md:hidden"
-          />
+          <img src={heroDashboard} alt="Yeon Dashboard - Gerencie seus lançamentos musicais" className="w-full h-auto rounded-lg hidden md:block" />
+          <img src={heroDashboardMobile} alt="Yeon Dashboard Mobile - Gerencie seus lançamentos musicais" className="w-full h-auto rounded-lg md:hidden" />
         </div>
       </div>
       
@@ -68,8 +56,6 @@ const HeroSection: React.FC = () => {
       <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce cursor-pointer" onClick={scrollToNextSection}>
         <ChevronDown className="h-8 w-8 text-muted-foreground" />
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
