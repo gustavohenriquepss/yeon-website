@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { ChevronDown } from 'lucide-react';
 import { Link as RouterLink } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
@@ -22,6 +23,10 @@ const HeroSection: React.FC = () => {
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
       {/* Content */}
       <div className="container relative z-10 px-4 flex flex-col items-center text-center">
+        <Badge className="bg-white/10 text-white/70 hover:bg-white/15 border-white/20 text-sm mb-6 animate-fade-in">
+          Aprovado por +50 artistas e profissionais da música
+        </Badge>
+        
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-6 animate-fade-in tracking-tight max-w-5xl text-white">
           Planeje seus lançamentos com precisão e sem estresse
         </h1>
