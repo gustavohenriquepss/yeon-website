@@ -31,7 +31,7 @@ const HeroSection: React.FC = () => {
           Planeje seus lançamentos sem estresse com <span className="text-yeon-purple">apenas um clique</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 animate-fade-in">
+        <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10 animate-fade-in">
           Centralize tarefas, prazos e entregas em um só lugar. A Yeon transforma o jeito de lançar músicae cada etapa do seu projeto ganha estrutura, visibilidade e ritmo.
         </p>
         
