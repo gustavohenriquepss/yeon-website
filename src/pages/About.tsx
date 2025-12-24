@@ -61,7 +61,7 @@ const AnimatedBenefitsCards: React.FC = () => {
             tabIndex={0}
           >
             <CardContent className="p-6 text-left">
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-muted">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                 <Icon 
                   ref={(el) => { iconRefs.current[index] = el; }} 
                   size={24} 
