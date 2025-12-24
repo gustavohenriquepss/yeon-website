@@ -28,7 +28,7 @@ const ValuePropositionSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
-            return <Card key={index} className="border-0 bg-card overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-card hover:to-primary/10">
+            return <Card key={index} className="border-0 bg-card overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-card hover:to-white/5">
                   <CardContent className="p-6 text-left">
                     <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-muted">
                       <IconComponent className="w-6 h-6 text-foreground" />

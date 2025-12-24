@@ -21,7 +21,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
 }) => {
   return (
     <Card className={cn(
-      "border-0 bg-card overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-card hover:to-primary/10",
+      "border-0 bg-card overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-card hover:to-white/5",
       size === 'large' ? 'md:col-span-2' : ''
     )}>
       <CardContent className="p-0">
