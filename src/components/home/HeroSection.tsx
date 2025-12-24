@@ -24,7 +24,7 @@ const HeroSection: React.FC = () => {
         <Badge className="bg-white/10 text-white/70 hover:bg-white/15 border-white/20 text-sm mb-6 animate-fade-in px-[16px] py-[8px]">Junte-se aos +100 artistas que já botaram ritmo nos seus lançamentos</Badge>
         
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-6 animate-fade-in tracking-tight max-w-6xl text-white">
-          Planeje seus lançamentos sem estresse com <span className="text-yeon-purple">apenas um clique</span>
+          Planeje seus lançamentos sem estresse
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10 animate-fade-in">Sem planilhas confusas. Use a inteligência da Yeon para automatizar seus prazos, alinhar sua equipe e garantir que cada música receba a estratégia que merece</p>
