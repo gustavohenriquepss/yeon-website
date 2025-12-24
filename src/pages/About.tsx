@@ -153,7 +153,7 @@ const AboutContent: React.FC = () => {
       {/* Our Community Section - REMOVIDA */}
       
       {/* Nosso Time Section - Redesigned */}
-      <section className="py-20 bg-muted/30">
+      <section className="bg-muted/30 py-[40px] px-[24px] rounded-md">
         <div className="container px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left Column - Text Content */}
