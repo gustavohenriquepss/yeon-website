@@ -33,7 +33,7 @@ const HeroSection: React.FC = () => {
               <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Artista" className="w-full h-full object-cover" />
             </div>
           </div>
-          Junte-se aos +100 artistas que já botaram ritmo nos seus lançamentos
+          +100 artistas pré-cadastrados
         </Badge>
         
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-6 animate-fade-in tracking-tight max-w-6xl text-white">
