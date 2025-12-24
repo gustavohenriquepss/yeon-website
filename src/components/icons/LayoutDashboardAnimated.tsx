@@ -19,20 +19,15 @@ const RECT_VARIANTS: Variants = {
   normal: {
     scale: 1,
     opacity: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 300,
-      damping: 15,
-    },
   },
   animate: (custom: number) => ({
-    scale: [0.8, 1.1, 1],
-    opacity: [0.5, 1],
+    scale: [1, 1.15, 1],
+    opacity: [0.7, 1],
     transition: {
-      delay: custom * 0.1,
+      delay: custom * 0.08,
       type: 'spring',
       stiffness: 300,
-      damping: 15,
+      damping: 12,
     },
   }),
 };
@@ -101,6 +96,7 @@ const LayoutDashboardAnimated = forwardRef<LayoutDashboardAnimatedHandle, Layout
             initial="normal"
             animate={controls}
             custom={0}
+            style={{ transformOrigin: '6.5px 7.5px' }}
           />
           <motion.rect
             width="7"
@@ -112,6 +108,7 @@ const LayoutDashboardAnimated = forwardRef<LayoutDashboardAnimatedHandle, Layout
             initial="normal"
             animate={controls}
             custom={1}
+            style={{ transformOrigin: '17.5px 5.5px' }}
           />
           <motion.rect
             width="7"
@@ -123,6 +120,7 @@ const LayoutDashboardAnimated = forwardRef<LayoutDashboardAnimatedHandle, Layout
             initial="normal"
             animate={controls}
             custom={2}
+            style={{ transformOrigin: '17.5px 16.5px' }}
           />
           <motion.rect
             width="7"
@@ -134,6 +132,7 @@ const LayoutDashboardAnimated = forwardRef<LayoutDashboardAnimatedHandle, Layout
             initial="normal"
             animate={controls}
             custom={3}
+            style={{ transformOrigin: '6.5px 18.5px' }}
           />
         </svg>
       </div>
