@@ -30,8 +30,8 @@ const ValuePropositionSection: React.FC = () => {
             const IconComponent = benefit.icon;
             return <Card key={index} className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
                   <CardContent className="p-6 text-left">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                      <IconComponent className="w-6 h-6 text-primary" />
+                    <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-zinc-800">
+                      <IconComponent className="w-6 h-6 text-zinc-50" />
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">{benefit.description}</p>
