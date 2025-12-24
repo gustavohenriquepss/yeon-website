@@ -92,45 +92,38 @@ const AboutContent: React.FC = () => {
             </p>
           </div>
           
-          {/* Main Benefits */}
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
-            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl md:text-2xl font-semibold flex items-center gap-2">
-                  <LayoutDashboard className="h-5 w-5" />
-                  Gestão
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm md:text-base">
+            <Card className="border-0 bg-card overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-card hover:to-white/5">
+              <CardContent className="p-6 text-left">
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-muted">
+                  <LayoutDashboard className="w-6 h-6 text-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Gestão</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   Acompanhe todas as etapas e o progresso das tarefas de todos os seus lançamentos
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl md:text-2xl font-semibold flex items-center gap-2">
-                  <BarChart3 className="h-5 w-5" />
-                  Insights
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm md:text-base">
-                  Veja exatamente como seu trabalho flui para que você possa se concentrar no que importa e obter mais resultados.
+            <Card className="border-0 bg-card overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-card hover:to-white/5">
+              <CardContent className="p-6 text-left">
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-muted">
+                  <BarChart3 className="w-6 h-6 text-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Insights</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Visualize o ritmo do seu trabalho e identifique gargalos antes que eles virem problemas.
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl md:text-2xl font-semibold flex items-center gap-2">
-                  <Users className="h-5 w-5" />
-                  Colaboração
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm md:text-base">
+            <Card className="border-0 bg-card overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-card hover:to-white/5">
+              <CardContent className="p-6 text-left">
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-muted">
+                  <Users className="w-6 h-6 text-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Colaboração</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   Mantenha toda a sua equipe alinhada em cada etapa de todos os projetos
                 </p>
               </CardContent>
