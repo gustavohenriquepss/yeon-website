@@ -1,83 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLanguage } from '@/context/LanguageContext';
 import PageLayout from '@/components/PageLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Lightbulb, UserPlus, Sparkles, Kanban } from 'lucide-react';
-import { LayoutDashboardAnimated, BarChart3Animated, UsersAnimated, type LayoutDashboardAnimatedHandle, type BarChart3AnimatedHandle, type UsersAnimatedHandle } from '@/components/icons';
+import { Users, LayoutDashboard, BarChart3, Lightbulb, UserPlus, Sparkles, Kanban } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import lucasAndrade from '@/assets/lucas-andrade.jpeg';
 import heroAbout from '@/assets/hero-about.jpg';
 import gustavoPadeiro from '@/assets/gustavo-padeiro.jpg';
 import arthurSena from '@/assets/arthur-sena.jpeg';
-
-type AnimatedIconHandle = LayoutDashboardAnimatedHandle | BarChart3AnimatedHandle | UsersAnimatedHandle;
-type AnimatedIconComponent = typeof LayoutDashboardAnimated | typeof BarChart3Animated | typeof UsersAnimated;
-
-const AnimatedBenefitsCards: React.FC = () => {
-  const iconRefs = useRef<(AnimatedIconHandle | null)[]>([]);
-  
-  const benefits: Array<{
-    title: string;
-    description: string;
-    Icon: AnimatedIconComponent;
-  }> = [{
-    title: "Gestão",
-    description: "Acompanhe todas as etapas e o progresso das tarefas de todos os seus lançamentos",
-    Icon: LayoutDashboardAnimated
-  }, {
-    title: "Insights",
-    description: "Visualize o ritmo do seu trabalho e identifique gargalos antes que eles virem problemas.",
-    Icon: BarChart3Animated
-  }, {
-    title: "Colaboração",
-    description: "Mantenha toda a sua equipe alinhada em cada etapa de todos os projetos",
-    Icon: UsersAnimated
-  }];
-
-  const handleInteractionStart = (index: number) => {
-    iconRefs.current[index]?.startAnimation();
-  };
-
-  const handleInteractionEnd = (index: number) => {
-    iconRefs.current[index]?.stopAnimation();
-  };
-
-  return (
-    <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
-      {benefits.map((benefit, index) => {
-        const { Icon } = benefit;
-        return (
-          <Card 
-            key={index} 
-            className="border-0 bg-card overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-card hover:to-white/5 cursor-pointer"
-            onMouseEnter={() => handleInteractionStart(index)}
-            onMouseLeave={() => handleInteractionEnd(index)}
-            onTouchStart={() => handleInteractionStart(index)}
-            onTouchEnd={() => handleInteractionEnd(index)}
-            onFocus={() => handleInteractionStart(index)}
-            onBlur={() => handleInteractionEnd(index)}
-            tabIndex={0}
-          >
-            <CardContent className="p-6 text-left">
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <Icon 
-                  ref={(el) => { iconRefs.current[index] = el; }} 
-                  size={24} 
-                  className="text-foreground" 
-                />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{benefit.description}</p>
-            </CardContent>
-          </Card>
-        );
-      })}
-    </div>
-  );
-};
-
 const AboutContent: React.FC = () => {
   const {
     t
@@ -140,11 +72,7 @@ const AboutContent: React.FC = () => {
       {/* Hero Image */}
       <section className="px-4 md:px-8 pb-16 md:pb-24">
         <div className="w-full overflow-hidden rounded-2xl">
-          <img 
-            src={heroAbout} 
-            alt="Artistas trabalhando em estúdio" 
-            className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-cover"
-          />
+          <img src={heroAbout} alt="Artistas trabalhando em estúdio" className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-cover" />
         </div>
       </section>
 
@@ -160,7 +88,50 @@ const AboutContent: React.FC = () => {
             </p>
           </div>
           
-          <AnimatedBenefitsCards />
+          {/* Main Benefits */}
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
+              <CardHeader>
+                <CardTitle className="text-xl md:text-2xl font-semibold flex items-center gap-2">
+                  <LayoutDashboard className="h-5 w-5" />
+                  Gestão
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm md:text-base">
+                  Acompanhe todas as etapas e o progresso das tarefas de todos os seus lançamentos
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
+              <CardHeader>
+                <CardTitle className="text-xl md:text-2xl font-semibold flex items-center gap-2">
+                  <BarChart3 className="h-5 w-5" />
+                  Insights
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm md:text-base">
+                  Veja exatamente como seu trabalho flui para que você possa se concentrar no que importa e obter mais resultados.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300">
+              <CardHeader>
+                <CardTitle className="text-xl md:text-2xl font-semibold flex items-center gap-2">
+                  <Users className="h-5 w-5" />
+                  Colaboração
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm md:text-base">
+                  Mantenha toda a sua equipe alinhada em cada etapa de todos os projetos
+                </p>
+              </CardContent>
+            </Card>
+          </div>
 
           {/* Features Grid */}
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -188,17 +159,7 @@ const AboutContent: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <Sparkles className="h-8 w-8 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Planejador com IA</h3>
-                <p className="text-muted-foreground">
-                  Dúvida sobre uma etapa? Converse direto com a IA pra ajustar prazos, sugerir ideias ou entender melhor cada tarefa.
-                </p>
-              </div>
-            </div>
+            
 
             <div className="flex gap-4">
               <div className="flex-shrink-0">
@@ -253,22 +214,13 @@ const AboutContent: React.FC = () => {
             
             {/* Right Column - Team Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {teamMembers.slice(0, 2).map(member => (
-                <div 
-                  key={member.name} 
-                  className="relative group overflow-hidden rounded-2xl cursor-pointer"
-                  onClick={(e) => {
-                    if (window.innerWidth < 640) {
-                      e.currentTarget.classList.toggle('active');
-                    }
-                  }}
-                >
+              {teamMembers.slice(0, 2).map(member => <div key={member.name} className="relative group overflow-hidden rounded-2xl cursor-pointer" onClick={e => {
+              if (window.innerWidth < 640) {
+                e.currentTarget.classList.toggle('active');
+              }
+            }}>
                   <div className="aspect-[3/4] w-full">
-                    <img 
-                      src={member.imageUrl} 
-                      alt={member.name} 
-                      className={`w-full h-full object-cover transition-all duration-500 ${member.name === 'Gustavo Padeiro' ? 'scale-150 object-[40%_top] group-hover:scale-150 group-hover:blur-sm group-[.active]:scale-150 group-[.active]:blur-sm' : 'group-hover:scale-105 group-hover:blur-sm group-[.active]:scale-105 group-[.active]:blur-sm'}`}
-                    />
+                    <img src={member.imageUrl} alt={member.name} className={`w-full h-full object-cover transition-all duration-500 ${member.name === 'Gustavo Padeiro' ? 'scale-150 object-[40%_top] group-hover:scale-150 group-hover:blur-sm group-[.active]:scale-150 group-[.active]:blur-sm' : 'group-hover:scale-105 group-hover:blur-sm group-[.active]:scale-105 group-[.active]:blur-sm'}`} />
                   </div>
                   
                   {/* Overlay with info - darker on hover/active */}
@@ -295,28 +247,19 @@ const AboutContent: React.FC = () => {
                       {member.bio}
                     </p>
                   </div>
-                </div>
-              ))}
+                </div>)}
               
               {/* Empty slot */}
               <div className="hidden sm:block aspect-[3/4]" />
               
               {/* Lucas Andrade - moved to 4th position */}
-              {teamMembers[2] && (
-                <div 
-                  className="relative group overflow-hidden rounded-2xl cursor-pointer"
-                  onClick={(e) => {
-                    if (window.innerWidth < 640) {
-                      e.currentTarget.classList.toggle('active');
-                    }
-                  }}
-                >
+              {teamMembers[2] && <div className="relative group overflow-hidden rounded-2xl cursor-pointer" onClick={e => {
+              if (window.innerWidth < 640) {
+                e.currentTarget.classList.toggle('active');
+              }
+            }}>
                   <div className="aspect-[3/4] w-full">
-                    <img 
-                      src={teamMembers[2].imageUrl} 
-                      alt={teamMembers[2].name} 
-                      className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm group-[.active]:scale-105 group-[.active]:blur-sm" 
-                    />
+                    <img src={teamMembers[2].imageUrl} alt={teamMembers[2].name} className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm group-[.active]:scale-105 group-[.active]:blur-sm" />
                   </div>
                   
                   {/* Overlay with info - darker on hover/active */}
@@ -343,8 +286,7 @@ const AboutContent: React.FC = () => {
                       {teamMembers[2].bio}
                     </p>
                   </div>
-                </div>
-              )}
+                </div>}
             </div>
           </div>
         </div>
