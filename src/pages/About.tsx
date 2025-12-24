@@ -229,7 +229,7 @@ const AboutContent: React.FC = () => {
                 </div>)}
               
               {/* Empty slot */}
-              <div className="relative overflow-hidden rounded-2xl bg-muted/20 aspect-[3/4]" />
+              <div className="aspect-[3/4]" />
               
               {/* Lucas Andrade - moved to 4th position */}
               {teamMembers[2] && (
