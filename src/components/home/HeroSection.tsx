@@ -40,7 +40,22 @@ const HeroSection: React.FC = () => {
           Planeje seus lançamentos sem estresse <span className="text-yeon-purple">em segundos</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10 animate-fade-in">Sem planilhas confusas. Use a inteligência da Yeon para automatizar seus prazos, alinhar sua equipe e garantir que cada música receba a estratégia que merece</p>
+        <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-6 animate-fade-in">Sem planilhas confusas. Use a inteligência da Yeon para automatizar seus prazos, alinhar sua equipe e garantir que cada música receba a estratégia que merece</p>
+        
+        <Badge className="bg-white/10 text-white/70 hover:bg-white/15 border-white/20 text-sm mb-10 animate-fade-in px-[16px] py-[8px] flex items-center gap-2">
+          <div className="flex -space-x-2">
+            <div className="w-6 h-6 rounded-full border-2 border-white/20 bg-muted overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face" alt="Artista" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-6 h-6 rounded-full border-2 border-white/20 bg-muted overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Artista" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-6 h-6 rounded-full border-2 border-white/20 bg-muted overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Artista" className="w-full h-full object-cover" />
+            </div>
+          </div>
+          +100 artistas pré-cadastrados
+        </Badge>
         
         <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in">
           <Button variant="outline" size="lg" className="border-border hover:bg-white/10 px-8 py-6 text-lg" asChild>
