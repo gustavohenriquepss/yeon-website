@@ -296,9 +296,9 @@ const AboutContent: React.FC = () => {
       <section className="py-16 bg-yeon-dark-bg">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <p className="text-lg md:text-xl font-semibold">
-              A indústria não foi feita para todos — então estamos construindo algo novo.
-            </p>
+                <p className="text-lg md:text-xl font-semibold">
+                  A indústria musical não foi feita pra todos, então vamos construir algo novo.
+                </p>
             <p className="text-base md:text-lg text-white/80">
               Acreditamos que acesso, propriedade e suporte não devem ser reservados para poucos.
             </p>
