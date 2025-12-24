@@ -6,6 +6,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { ScrollReveal } from '@/components/ui/scroll-reveal';
 
 import testimonialMarina from "@/assets/testimonial-marina.jpg";
 import testimonialCarlos from "@/assets/testimonial-carlos.jpg";
@@ -75,16 +76,21 @@ const TestimonialsSection: React.FC = () => {
       <div className="container px-4 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-            Quem usa a Yeon, não volta para as planilhas.
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground">
-            Junte-se a centenas de artistas e gestores que profissionalizaram suas carreiras e transformaram o caos em consistência.
-          </p>
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Quem usa a Yeon, não volta para as planilhas.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <p className="text-lg md:text-xl text-muted-foreground">
+              Junte-se a centenas de artistas e gestores que profissionalizaram suas carreiras e transformaram o caos em consistência.
+            </p>
+          </ScrollReveal>
         </div>
 
         {/* Carousel */}
-        <Carousel
+        <ScrollReveal delay={0.2}>
+          <Carousel
           opts={{
             align: "center",
             loop: true,
@@ -154,10 +160,11 @@ const TestimonialsSection: React.FC = () => {
             >
               <ChevronRight className="h-5 w-5 text-foreground" />
             </button>
-          </div>
-        </Carousel>
-      </div>
-    </section>
+            </div>
+          </Carousel>
+        </ScrollReveal>
+        </div>
+      </section>
   );
 };
 

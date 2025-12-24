@@ -1,6 +1,7 @@
 import React, { useState, useRef, useCallback, ComponentType, HTMLAttributes, forwardRef, useImperativeHandle } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { LayoutDashboardAnimated, BarChart3Animated, UsersAnimated, type LayoutDashboardAnimatedHandle, type BarChart3AnimatedHandle, type UsersAnimatedHandle } from '@/components/icons';
+import { ScrollReveal } from '@/components/ui/scroll-reveal';
 
 type AnimatedIconHandle = LayoutDashboardAnimatedHandle | BarChart3AnimatedHandle | UsersAnimatedHandle;
 type AnimatedIconComponent = typeof LayoutDashboardAnimated | typeof BarChart3Animated | typeof UsersAnimated;
@@ -35,14 +36,19 @@ const ValuePropositionSection: React.FC = () => {
   return <section id="value-proposition" className="py-20">
       <div className="container px-4">
         <div className="text-center mb-16 mx-0 px-[40px] bg-[yeon-dark-bg] bg-secondary py-[40px] rounded-lg">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6">A estrutura que seu lançamento merece</h2>
-          <p className="text-white/70 text-lg max-w-3xl mx-auto mb-8">Mais do que um gerenciador de tarefas, somos o seu parceiro estratégico. Criamos um ambiente onde a criatividade encontra a organização para gerar resultados reais.</p>
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6">A estrutura que seu lançamento merece</h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <p className="text-white/70 text-lg max-w-3xl mx-auto mb-8">Mais do que um gerenciador de tarefas, somos o seu parceiro estratégico. Criamos um ambiente onde a criatividade encontra a organização para gerar resultados reais.</p>
+          </ScrollReveal>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {benefits.map((benefit, index) => {
             const { Icon } = benefit;
             return (
-              <Card 
+              <ScrollReveal key={index} delay={0.2 + index * 0.1}>
+                <Card
                 key={index} 
                 className="border-0 bg-card overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-card hover:to-white/5 cursor-pointer"
                 onMouseEnter={() => handleInteractionStart(index)}
@@ -65,6 +71,7 @@ const ValuePropositionSection: React.FC = () => {
                   <p className="text-muted-foreground text-sm leading-relaxed">{benefit.description}</p>
                 </CardContent>
               </Card>
+              </ScrollReveal>
             );
           })}
           </div>
