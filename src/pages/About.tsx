@@ -7,6 +7,7 @@ import { Users, LayoutDashboard, BarChart3, Lightbulb, UserPlus, Sparkles, Kanba
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import lucasAndrade from '@/assets/lucas-andrade.jpeg';
+import heroAbout from '@/assets/hero-about.jpg';
 const AboutContent: React.FC = () => {
   const {
     t
@@ -70,8 +71,8 @@ const AboutContent: React.FC = () => {
       <section className="px-4 md:px-8 pb-16 md:pb-24">
         <div className="w-full overflow-hidden rounded-2xl">
           <img 
-            src={lucasAndrade} 
-            alt="Lucas Andrade" 
+            src={heroAbout} 
+            alt="Artistas trabalhando em estúdio" 
             className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-cover"
           />
         </div>
