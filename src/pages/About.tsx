@@ -241,7 +241,7 @@ const AboutContent: React.FC = () => {
                     <img 
                       src={member.imageUrl} 
                       alt={member.name} 
-                      className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm group-[.active]:scale-105 group-[.active]:blur-sm" 
+                      className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm group-[.active]:scale-105 group-[.active]:blur-sm ${member.name === 'Gustavo Padeiro' ? 'scale-125 object-top' : ''}`}
                     />
                   </div>
                   
