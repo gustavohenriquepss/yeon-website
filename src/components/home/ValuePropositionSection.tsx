@@ -1,9 +1,9 @@
 import React, { useState, useRef, useCallback, ComponentType, HTMLAttributes, forwardRef, useImperativeHandle } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { LayoutDashboardAnimated, BarChart3Animated, UsersAnimated, type LayoutDashboardAnimatedHandle, type BarChart3AnimatedHandle, type UsersAnimatedHandle } from '@/components/icons';
+import { LayoutDashboardAnimated, ChartColumnIncreasingIcon, UsersAnimated, type LayoutDashboardAnimatedHandle, type ChartColumnIncreasingIconHandle, type UsersAnimatedHandle } from '@/components/icons';
 
-type AnimatedIconHandle = LayoutDashboardAnimatedHandle | BarChart3AnimatedHandle | UsersAnimatedHandle;
-type AnimatedIconComponent = typeof LayoutDashboardAnimated | typeof BarChart3Animated | typeof UsersAnimated;
+type AnimatedIconHandle = LayoutDashboardAnimatedHandle | ChartColumnIncreasingIconHandle | UsersAnimatedHandle;
+type AnimatedIconComponent = typeof LayoutDashboardAnimated | typeof ChartColumnIncreasingIcon | typeof UsersAnimated;
 const ValuePropositionSection: React.FC = () => {
   const iconRefs = useRef<(AnimatedIconHandle | null)[]>([]);
   
@@ -18,7 +18,7 @@ const ValuePropositionSection: React.FC = () => {
   }, {
     title: "Insights",
     description: "Visualize o ritmo do seu trabalho e identifique gargalos antes que eles virem problemas.",
-    Icon: BarChart3Animated
+    Icon: ChartColumnIncreasingIcon
   }, {
     title: "Colaboração",
     description: "Mantenha toda a sua equipe alinhada em cada etapa de todos os projetos",
