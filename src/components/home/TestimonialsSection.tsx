@@ -7,10 +7,16 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
+import testimonialMarina from "@/assets/testimonial-marina.jpg";
+import testimonialCarlos from "@/assets/testimonial-carlos.jpg";
+import testimonialJuliana from "@/assets/testimonial-juliana.jpg";
+import testimonialRafael from "@/assets/testimonial-rafael.jpg";
+
 interface Testimonial {
   quote: string;
   name: string;
   role: string;
+  image: string;
 }
 
 const TestimonialsSection: React.FC = () => {
@@ -18,22 +24,26 @@ const TestimonialsSection: React.FC = () => {
     {
       quote: "Yeon mudou completamente minha organização. Agora não perco mais nenhum prazo e meus lançamentos saem no tempo certo.",
       name: "Marina Silva",
-      role: "Artista Independente"
+      role: "Artista Independente",
+      image: testimonialMarina
     },
     {
       quote: "Consigo gerenciar 5 artistas simultaneamente sem perder o controle. A visibilidade do roadmap é perfeita.",
       name: "Carlos Mendes",
-      role: "Manager Musical"
+      role: "Manager Musical",
+      image: testimonialCarlos
     },
     {
       quote: "A melhor ferramenta para planejar releases. Simples, intuitiva e completa.",
       name: "Juliana Costa",
-      role: "Produtora Musical"
+      role: "Produtora Musical",
+      image: testimonialJuliana
     },
     {
       quote: "Desde que comecei a usar Yeon, meus lançamentos ficaram muito mais profissionais e organizados.",
       name: "Rafael Santos",
-      role: "Artista Independente"
+      role: "Artista Independente",
+      image: testimonialRafael
     }
   ];
 
@@ -96,9 +106,11 @@ const TestimonialsSection: React.FC = () => {
 
                   {/* Author */}
                   <div className="flex flex-col items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg font-semibold">
-                      {testimonial.name.split(' ').map(n => n[0]).join('')}
-                    </div>
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name}
+                      className="w-14 h-14 rounded-full object-cover border-2 border-primary/20"
+                    />
                     <div className="text-center">
                       <p className="font-semibold text-foreground">{testimonial.name}</p>
                       <p className="text-muted-foreground text-sm">{testimonial.role}</p>
