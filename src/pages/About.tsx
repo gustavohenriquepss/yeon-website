@@ -192,10 +192,10 @@ const AboutContent: React.FC = () => {
               
               {/* Collaboration Quote */}
               <div className="pt-8 max-w-lg">
-                <p className="text-lg md:text-xl leading-relaxed">
-                  Acreditamos que <span className="font-semibold">grandes trabalhos vêm da colaboração.</span>{' '}
+              <p className="text-lg md:text-xl leading-relaxed">
+                  Somos <span className="font-semibold">artistas e amantes da música</span>{' '}
                   <span className="text-muted-foreground">
-                    Por isso trabalhamos juntos para garantir que cada projeto atinja seus objetivos e supere expectativas.
+                    especialistas em produto e tecnologia construindo o futuro da indústria musical no Brasil.
                   </span>
                 </p>
               </div>
