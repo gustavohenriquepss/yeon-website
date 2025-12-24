@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check } from 'lucide-react';
+import { ScrollReveal } from '@/components/ui/scroll-reveal';
 
 interface PlanFeature {
   text: string;
@@ -51,15 +52,20 @@ const PricingSection: React.FC = () => {
   return (
     <section className="py-20 bg-yeon-dark-bg">
       <div className="container px-4">
-        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-6">
-          Planos que Crescem com Você
-        </h2>
-        <p className="text-white/70 text-center max-w-2xl mx-auto mb-8">
-          Escolha o plano ideal para o seu momento atual. Mude a qualquer momento conforme sua carreira evolui.
-        </p>
+        <ScrollReveal>
+          <h2 className="text-3xl md:text-4xl font-semibold text-center mb-6">
+            Planos que Crescem com Você
+          </h2>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <p className="text-white/70 text-center max-w-2xl mx-auto mb-8">
+            Escolha o plano ideal para o seu momento atual. Mude a qualquer momento conforme sua carreira evolui.
+          </p>
+        </ScrollReveal>
         
         {/* Billing toggle */}
-        <div className="flex items-center justify-center gap-4 mb-10">
+        <ScrollReveal delay={0.2}>
+          <div className="flex items-center justify-center gap-4 mb-10">
           <span className={`text-sm font-medium transition-colors ${!isAnnual ? 'text-white' : 'text-white/50'}`}>
             Mensal
           </span>
@@ -75,11 +81,13 @@ const PricingSection: React.FC = () => {
             Anual
           </span>
         </div>
+        </ScrollReveal>
         
         {/* Pricing cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12">
           {plans.map((plan, index) => (
-            <Card 
+            <ScrollReveal key={index} delay={0.3 + index * 0.1}>
+              <Card
               key={index} 
               className={`bg-yeon-card-bg border-white/5 relative flex flex-col ${plan.popular ? 'md:scale-105 shadow-lg shadow-yeon-purple/10 z-10' : ''}`}
             >
@@ -125,6 +133,7 @@ const PricingSection: React.FC = () => {
                 </Button>
               </CardFooter>
             </Card>
+            </ScrollReveal>
           ))}
         </div>
       </div>

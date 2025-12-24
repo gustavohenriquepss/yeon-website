@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
+import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import heroDashboard from '@/assets/hero-dashboard.png';
 import heroDashboardMobile from '@/assets/hero-dashboard-mobile.png';
 const HeroSection: React.FC = () => {
@@ -21,42 +22,50 @@ const HeroSection: React.FC = () => {
   return <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
       {/* Content */}
       <div className="container relative z-10 flex flex-col items-center text-center px-[20px]">
-        <Badge className="bg-white/10 text-white/70 hover:bg-white/15 border-white/20 text-sm mb-6 animate-fade-in px-[16px] py-[8px] flex items-center gap-2">
-          <div className="flex -space-x-2">
-            <div className="w-6 h-6 rounded-full border-2 border-white/20 bg-muted overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face" alt="Artista" className="w-full h-full object-cover" />
+        <ScrollReveal delay={0}>
+          <Badge className="bg-white/10 text-white/70 hover:bg-white/15 border-white/20 text-sm mb-6 px-[16px] py-[8px] flex items-center gap-2">
+            <div className="flex -space-x-2">
+              <div className="w-6 h-6 rounded-full border-2 border-white/20 bg-muted overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face" alt="Artista" className="w-full h-full object-cover" />
+              </div>
+              <div className="w-6 h-6 rounded-full border-2 border-white/20 bg-muted overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Artista" className="w-full h-full object-cover" />
+              </div>
+              <div className="w-6 h-6 rounded-full border-2 border-white/20 bg-muted overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Artista" className="w-full h-full object-cover" />
+              </div>
             </div>
-            <div className="w-6 h-6 rounded-full border-2 border-white/20 bg-muted overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Artista" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-6 h-6 rounded-full border-2 border-white/20 bg-muted overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Artista" className="w-full h-full object-cover" />
-            </div>
+            +100 artistas pré-cadastrados
+          </Badge>
+        </ScrollReveal>
+        
+        <ScrollReveal delay={0.1}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-6 tracking-tight max-w-6xl text-white">
+            Planeje seus lançamentos sem estresse <span className="text-secondary-foreground">em segundos</span>
+          </h1>
+        </ScrollReveal>
+        
+        <ScrollReveal delay={0.2}>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10">Use a inteligência da Yeon para automatizar seus prazos, alinhar sua equipe e garantir que cada música seja estratégica</p>
+        </ScrollReveal>
+        
+        <ScrollReveal delay={0.3}>
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+            <Button variant="outline" size="lg" className="border-border hover:bg-white/10 px-8 py-6 text-lg" asChild>
+              <Link to="/auth">Entrar</Link>
+            </Button>
+            
+            <Button size="lg" className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium px-8 py-6 text-lg" asChild>
+              <Link to="/auth">Cadastre-se</Link>
+            </Button>
           </div>
-          +100 artistas pré-cadastrados
-        </Badge>
-        
-        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-6 animate-fade-in tracking-tight max-w-6xl text-white">
-          Planeje seus lançamentos sem estresse <span className="text-secondary-foreground">em segundos</span>
-        </h1>
-        
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10 animate-fade-in">Use a inteligência da Yeon para automatizar seus prazos, alinhar sua equipe e garantir que cada música seja estratégica</p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in">
-          <Button variant="outline" size="lg" className="border-border hover:bg-white/10 px-8 py-6 text-lg" asChild>
-            <Link to="/auth">Entrar</Link>
-          </Button>
-          
-          <Button size="lg" className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium px-8 py-6 text-lg" asChild>
-            <Link to="/auth">Cadastre-se</Link>
-          </Button>
-        </div>
+        </ScrollReveal>
 
         {/* Hero Image */}
-        <div className="w-full max-w-6xl mx-auto animate-fade-in">
+        <ScrollReveal delay={0.4} className="w-full max-w-6xl mx-auto">
           <img src={heroDashboard} alt="Yeon Dashboard - Gerencie seus lançamentos musicais" className="w-full h-auto rounded-lg hidden md:block" />
           <img src={heroDashboardMobile} alt="Yeon Dashboard Mobile - Gerencie seus lançamentos musicais" className="w-full h-auto rounded-lg md:hidden" />
-        </div>
+        </ScrollReveal>
       </div>
       
       {/* Scroll indicator */}

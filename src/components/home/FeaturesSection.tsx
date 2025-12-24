@@ -1,5 +1,6 @@
 import React from 'react';
 import FeatureItem from './FeatureItem';
+import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import setupIntegradoImg from '@/assets/feature-setup-automatico.png';
 import collaborationImg from '@/assets/feature-collaboration.png';
 import aiAssistantImg from '@/assets/feature-ai-assistant.jpg';
@@ -26,16 +27,24 @@ const FeaturesSection: React.FC = () => {
   return <section className="py-20 bg-yeon-dark-bg">
       <div className="container px-0">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-            Todos os seus lançamentos, um workspace
-          </h2>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Planeje projetos, reúna sua equipe e mantenha todos os registros, ativos, metadados e prazos em um só lugar.
-          </p>
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+              Todos os seus lançamentos, um workspace
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+              Planeje projetos, reúna sua equipe e mantenha todos os registros, ativos, metadados e prazos em um só lugar.
+            </p>
+          </ScrollReveal>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
-          {features.map((feature, index) => <FeatureItem key={index} image={feature.image} title={feature.title} description={feature.description} tag={feature.tag} />)}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {features.map((feature, index) => (
+            <ScrollReveal key={index} delay={0.1 + index * 0.1}>
+              <FeatureItem image={feature.image} title={feature.title} description={feature.description} tag={feature.tag} />
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </section>;
