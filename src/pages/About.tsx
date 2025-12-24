@@ -1,15 +1,78 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLanguage } from '@/context/LanguageContext';
 import PageLayout from '@/components/PageLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, LayoutDashboard, BarChart3, Lightbulb, UserPlus, Sparkles, Kanban } from 'lucide-react';
+import { Lightbulb, UserPlus, Sparkles, Kanban } from 'lucide-react';
+import { LayoutDashboardAnimated, BarChart3Animated, UsersAnimated, type LayoutDashboardAnimatedHandle, type BarChart3AnimatedHandle, type UsersAnimatedHandle } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import lucasAndrade from '@/assets/lucas-andrade.jpeg';
 import heroAbout from '@/assets/hero-about.jpg';
 import gustavoPadeiro from '@/assets/gustavo-padeiro.jpg';
 import arthurSena from '@/assets/arthur-sena.jpeg';
+
+type AnimatedIconHandle = LayoutDashboardAnimatedHandle | BarChart3AnimatedHandle | UsersAnimatedHandle;
+type AnimatedIconComponent = typeof LayoutDashboardAnimated | typeof BarChart3Animated | typeof UsersAnimated;
+
+const AnimatedBenefitsCards: React.FC = () => {
+  const iconRefs = useRef<(AnimatedIconHandle | null)[]>([]);
+  
+  const benefits: Array<{
+    title: string;
+    description: string;
+    Icon: AnimatedIconComponent;
+  }> = [{
+    title: "Gestão",
+    description: "Acompanhe todas as etapas e o progresso das tarefas de todos os seus lançamentos",
+    Icon: LayoutDashboardAnimated
+  }, {
+    title: "Insights",
+    description: "Visualize o ritmo do seu trabalho e identifique gargalos antes que eles virem problemas.",
+    Icon: BarChart3Animated
+  }, {
+    title: "Colaboração",
+    description: "Mantenha toda a sua equipe alinhada em cada etapa de todos os projetos",
+    Icon: UsersAnimated
+  }];
+
+  const handleMouseEnter = (index: number) => {
+    iconRefs.current[index]?.startAnimation();
+  };
+
+  const handleMouseLeave = (index: number) => {
+    iconRefs.current[index]?.stopAnimation();
+  };
+
+  return (
+    <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+      {benefits.map((benefit, index) => {
+        const { Icon } = benefit;
+        return (
+          <Card 
+            key={index} 
+            className="border-0 bg-card overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-card hover:to-white/5"
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={() => handleMouseLeave(index)}
+          >
+            <CardContent className="p-6 text-left">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-muted">
+                <Icon 
+                  ref={(el) => { iconRefs.current[index] = el; }} 
+                  size={24} 
+                  className="text-foreground" 
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{benefit.description}</p>
+            </CardContent>
+          </Card>
+        );
+      })}
+    </div>
+  );
+};
+
 const AboutContent: React.FC = () => {
   const {
     t
@@ -92,43 +155,7 @@ const AboutContent: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
-            <Card className="border-0 bg-card overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-card hover:to-white/5">
-              <CardContent className="p-6 text-left">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-muted">
-                  <LayoutDashboard className="w-6 h-6 text-foreground" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Gestão</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Acompanhe todas as etapas e o progresso das tarefas de todos os seus lançamentos
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-0 bg-card overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-card hover:to-white/5">
-              <CardContent className="p-6 text-left">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-muted">
-                  <BarChart3 className="w-6 h-6 text-foreground" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Insights</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Visualize o ritmo do seu trabalho e identifique gargalos antes que eles virem problemas.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-0 bg-card overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-card hover:to-white/5">
-              <CardContent className="p-6 text-left">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 bg-muted">
-                  <Users className="w-6 h-6 text-foreground" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Colaboração</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Mantenha toda a sua equipe alinhada em cada etapa de todos os projetos
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+          <AnimatedBenefitsCards />
 
           {/* Features Grid */}
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
