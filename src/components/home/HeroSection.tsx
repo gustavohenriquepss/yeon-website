@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import heroDashboard from '@/assets/hero-dashboard.png';
 import heroDashboardMobile from '@/assets/hero-dashboard-mobile.png';
-
 const HeroSection: React.FC = () => {
   const {
     t
@@ -38,7 +37,7 @@ const HeroSection: React.FC = () => {
         </Badge>
         
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-6 animate-fade-in tracking-tight max-w-6xl text-white">
-          Planeje seus lançamentos sem estresse <span className="text-yeon-purple">em segundos</span>
+          Planeje seus lançamentos sem estresse <span className="text-secondary-foreground">em segundos</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10 animate-fade-in">Sem planilhas confusas. Use a inteligência da Yeon para automatizar seus prazos, alinhar sua equipe e garantir que cada música receba a estratégia que merece</p>
