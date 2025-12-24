@@ -4,8 +4,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -113,7 +111,13 @@ const TestimonialsSection: React.FC = () => {
           
           {/* Navigation arrows */}
           <div className="flex items-center justify-center gap-4 mt-8">
-            <CarouselPrevious className="relative inset-0 translate-x-0 translate-y-0 h-10 w-10 border-border/50 bg-card/50 hover:bg-card hover:border-border" />
+            <button
+              onClick={() => api?.scrollPrev()}
+              className="h-10 w-10 rounded-full border border-border/50 bg-card/50 hover:bg-card hover:border-border flex items-center justify-center transition-colors"
+              aria-label="Slide anterior"
+            >
+              <ChevronLeft className="h-5 w-5 text-foreground" />
+            </button>
             
             {/* Dot indicators */}
             <div className="flex items-center gap-2">
@@ -131,7 +135,13 @@ const TestimonialsSection: React.FC = () => {
               ))}
             </div>
             
-            <CarouselNext className="relative inset-0 translate-x-0 translate-y-0 h-10 w-10 border-border/50 bg-card/50 hover:bg-card hover:border-border" />
+            <button
+              onClick={() => api?.scrollNext()}
+              className="h-10 w-10 rounded-full border border-border/50 bg-card/50 hover:bg-card hover:border-border flex items-center justify-center transition-colors"
+              aria-label="Próximo slide"
+            >
+              <ChevronRight className="h-5 w-5 text-foreground" />
+            </button>
           </div>
         </Carousel>
       </div>
