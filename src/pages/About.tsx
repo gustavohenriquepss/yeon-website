@@ -15,15 +15,18 @@ const AboutContent: React.FC = () => {
   const teamMembers = [{
     name: "Arthur Sena",
     role: "Engenheiro de Software",
-    imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
+    imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3",
+    bio: "Transforma ideias em código limpo e funcional. Apaixonado por criar experiências digitais que conectam artistas ao mundo."
   }, {
     name: "Gustavo Padeiro",
     role: "Designer de Produto",
-    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3",
+    bio: "Cria interfaces intuitivas e belas que fazem a diferença. Acredita que bom design é invisível, mas impactante."
   }, {
     name: "Lucas Andrade",
     role: "Engenheiro de Software",
-    imageUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
+    imageUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3",
+    bio: "Especialista em arquitetura de sistemas escaláveis. Músico nas horas vagas que entende a dor do artista independente."
   }];
   return <main className="bg-yeon-dark-bg">
       {/* Hero Section - Quem Somos */}
@@ -192,11 +195,15 @@ const AboutContent: React.FC = () => {
             <div className="grid grid-cols-2 gap-4">
               {teamMembers.map((member, index) => <div key={member.name} className={`relative group overflow-hidden rounded-2xl ${index === 0 ? 'row-span-1' : ''}`}>
                   <div className="aspect-[3/4] w-full">
-                    <img src={member.imageUrl} alt={member.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <img 
+                      src={member.imageUrl} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm" 
+                    />
                   </div>
                   
-                  {/* Overlay with info */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  {/* Overlay with info - darker on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-all duration-300 group-hover:from-black/90 group-hover:via-black/50 group-hover:to-black/30" />
                   
                   {/* Plus icon */}
                   <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center">
@@ -209,11 +216,15 @@ const AboutContent: React.FC = () => {
                     <p className="text-xs text-white/60">na yeon®</p>
                   </div>
                   
-                  {/* Name */}
+                  {/* Name and Bio */}
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight">
                       {member.name.split(' ').map((word, i) => <span key={i} className="block">{word}</span>)}
                     </h3>
+                    {/* Bio - appears on hover */}
+                    <p className="text-sm text-white/80 mt-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 line-clamp-3">
+                      {member.bio}
+                    </p>
                   </div>
                 </div>)}
               
