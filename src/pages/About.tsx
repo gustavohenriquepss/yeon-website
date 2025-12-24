@@ -181,10 +181,8 @@ const AboutContent: React.FC = () => {
               
               {/* Mission CTA */}
               <div className="space-y-4 pt-8 px-[85px] py-[33px]">
-                <h3 className="text-lg font-semibold">Quer lançar sua próxima música?</h3>
-                <p className="text-muted-foreground max-w-sm">
-                  Experimente a Yeon gratuitamente e organize seus lançamentos como nunca antes.
-                </p>
+                <h3 className="text-lg font-semibold">Vamo botar ritmo?</h3>
+                <p className="text-muted-foreground max-w-sm">Organize seus lançamentos como nunca antes.</p>
                 <Button variant="secondary" size="lg">
                   Começar agora
                 </Button>
