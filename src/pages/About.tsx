@@ -160,7 +160,7 @@ const AboutContent: React.FC = () => {
         <div className="container px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left Column - Text Content */}
-            <div className="space-y-12">
+            <div className="flex flex-col justify-between h-full min-h-[500px]">
               <div>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
                   Feita por artistas,{' '}
