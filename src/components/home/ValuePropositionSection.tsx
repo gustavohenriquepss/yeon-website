@@ -12,7 +12,7 @@ const ValuePropositionSection: React.FC = () => {
     icon: LayoutDashboard
   }, {
     title: "Insights",
-    description: "Veja exatamente como seu trabalho flui para que você possa se concentrar no que importa e obter mais resultados.",
+    description: "Visualize o ritmo do seu trabalho e identifique gargalos antes que eles virem problemas.",
     icon: BarChart3
   }, {
     title: "Colaboração",
