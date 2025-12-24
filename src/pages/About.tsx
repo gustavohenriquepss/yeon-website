@@ -178,6 +178,18 @@ const AboutContent: React.FC = () => {
                 </h2>
               </div>
               
+              {/* Mission CTA */}
+              <div className="space-y-4 pt-8">
+                <h3 className="text-lg font-semibold">Faça parte da nossa missão</h3>
+                <p className="text-muted-foreground max-w-sm">
+                  Se você quer criar e colaborar, adoraríamos ouvir de você.
+                </p>
+                <Button variant="outline" className="rounded-full px-6 group">
+                  Entre em contato
+                  <span className="ml-2 inline-block w-2 h-2 rounded-full bg-foreground group-hover:bg-primary transition-colors" />
+                </Button>
+              </div>
+              
               {/* Collaboration Quote */}
               <div className="pt-8 max-w-lg">
               <p className="text-lg md:text-xl leading-relaxed">
