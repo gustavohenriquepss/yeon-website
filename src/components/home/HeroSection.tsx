@@ -2,13 +2,12 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ChevronDown } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import heroDashboard from '@/assets/hero-dashboard.png';
 import heroDashboardMobile from '@/assets/hero-dashboard-mobile.png';
 
 const HeroSection: React.FC = () => {
-  const navigate = useNavigate();
   const {
     t
   } = useLanguage();
@@ -45,21 +44,12 @@ const HeroSection: React.FC = () => {
         <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10 animate-fade-in">Sem planilhas confusas. Use a inteligência da Yeon para automatizar seus prazos, alinhar sua equipe e garantir que cada música receba a estratégia que merece</p>
         
         <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in">
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="border-border hover:bg-white/10 px-8 py-6 text-lg"
-            onClick={() => navigate('/auth')}
-          >
-            Entrar
+          <Button variant="outline" size="lg" className="border-border hover:bg-white/10 px-8 py-6 text-lg" asChild>
+            <Link to="/auth">Entrar</Link>
           </Button>
           
-          <Button 
-            size="lg" 
-            className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium px-8 py-6 text-lg"
-            onClick={() => navigate('/auth')}
-          >
-            Cadastre-se
+          <Button size="lg" className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium px-8 py-6 text-lg" asChild>
+            <Link to="/auth">Cadastre-se</Link>
           </Button>
         </div>
 
