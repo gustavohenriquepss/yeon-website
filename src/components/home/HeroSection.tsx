@@ -27,7 +27,7 @@ const HeroSection: React.FC = () => {
           Planeje seus lançamentos sem estresse com <span className="text-yeon-purple">apenas um clique</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10 animate-fade-in">Centralize tarefas, prazos e entregas em um só lugar. A Yeon transforma o jeito de lançar música e cada etapa do seu projeto ganha estrutura, visibilidade e ritmo.</p>
+        <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10 animate-fade-in">A primeira plataforma de gestão feita por quem entende o caos de um lançamento musical.</p>
         
         <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in">
           <Button variant="outline" size="lg" className="border-border hover:bg-white/10 px-8 py-6 text-lg" asChild>
