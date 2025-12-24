@@ -190,14 +190,27 @@ const AboutContent: React.FC = () => {
             </div>
             
             {/* Right Column - Team Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {teamMembers.slice(0, 2).map(member => <div key={member.name} className="relative group overflow-hidden rounded-2xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {teamMembers.slice(0, 2).map(member => (
+                <div 
+                  key={member.name} 
+                  className="relative group overflow-hidden rounded-2xl cursor-pointer"
+                  onClick={(e) => {
+                    if (window.innerWidth < 640) {
+                      e.currentTarget.classList.toggle('active');
+                    }
+                  }}
+                >
                   <div className="aspect-[3/4] w-full">
-                    <img src={member.imageUrl} alt={member.name} className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm" />
+                    <img 
+                      src={member.imageUrl} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm group-[.active]:scale-105 group-[.active]:blur-sm" 
+                    />
                   </div>
                   
-                  {/* Overlay with info - darker on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-all duration-300 group-hover:from-black/90 group-hover:via-black/50 group-hover:to-black/30" />
+                  {/* Overlay with info - darker on hover/active */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-all duration-300 group-hover:from-black/90 group-hover:via-black/50 group-hover:to-black/30 group-[.active]:from-black/90 group-[.active]:via-black/50 group-[.active]:to-black/30" />
                   
                   {/* Plus icon */}
                   <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center">
@@ -212,27 +225,40 @@ const AboutContent: React.FC = () => {
                   
                   {/* Name and Bio */}
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight transition-transform duration-300 group-hover:-translate-y-2">
+                    <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight transition-transform duration-300 group-hover:-translate-y-2 group-[.active]:-translate-y-2">
                       {member.name.split(' ').map((word, i) => <span key={i} className="block">{word}</span>)}
                     </h3>
-                    {/* Bio - appears on hover */}
-                    <p className="text-sm text-white/80 mt-2 max-h-0 opacity-0 overflow-hidden group-hover:max-h-20 group-hover:opacity-100 transition-all duration-300 line-clamp-3">
+                    {/* Bio - appears on hover/tap */}
+                    <p className="text-sm text-white/80 mt-2 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100 group-[.active]:max-h-20 group-[.active]:opacity-100 line-clamp-3">
                       {member.bio}
                     </p>
                   </div>
-                </div>)}
+                </div>
+              ))}
               
               {/* Empty slot */}
-              <div className="aspect-[3/4]" />
+              <div className="hidden sm:block aspect-[3/4]" />
               
               {/* Lucas Andrade - moved to 4th position */}
-              {teamMembers[2] && <div className="relative group overflow-hidden rounded-2xl">
+              {teamMembers[2] && (
+                <div 
+                  className="relative group overflow-hidden rounded-2xl cursor-pointer"
+                  onClick={(e) => {
+                    if (window.innerWidth < 640) {
+                      e.currentTarget.classList.toggle('active');
+                    }
+                  }}
+                >
                   <div className="aspect-[3/4] w-full">
-                    <img src={teamMembers[2].imageUrl} alt={teamMembers[2].name} className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm" />
+                    <img 
+                      src={teamMembers[2].imageUrl} 
+                      alt={teamMembers[2].name} 
+                      className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm group-[.active]:scale-105 group-[.active]:blur-sm" 
+                    />
                   </div>
                   
-                  {/* Overlay with info - darker on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-all duration-300 group-hover:from-black/90 group-hover:via-black/50 group-hover:to-black/30" />
+                  {/* Overlay with info - darker on hover/active */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-all duration-300 group-hover:from-black/90 group-hover:via-black/50 group-hover:to-black/30 group-[.active]:from-black/90 group-[.active]:via-black/50 group-[.active]:to-black/30" />
                   
                   {/* Plus icon */}
                   <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center">
@@ -247,15 +273,16 @@ const AboutContent: React.FC = () => {
                   
                   {/* Name and Bio */}
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight transition-transform duration-300 group-hover:-translate-y-2">
+                    <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight transition-transform duration-300 group-hover:-translate-y-2 group-[.active]:-translate-y-2">
                       {teamMembers[2].name.split(' ').map((word, i) => <span key={i} className="block">{word}</span>)}
                     </h3>
-                    {/* Bio - appears on hover */}
-                    <p className="text-sm text-white/80 mt-2 max-h-0 opacity-0 overflow-hidden group-hover:max-h-20 group-hover:opacity-100 transition-all duration-300 line-clamp-3">
+                    {/* Bio - appears on hover/tap */}
+                    <p className="text-sm text-white/80 mt-2 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100 group-[.active]:max-h-20 group-[.active]:opacity-100 line-clamp-3">
                       {teamMembers[2].bio}
                     </p>
                   </div>
-                </div>}
+                </div>
+              )}
             </div>
           </div>
         </div>
