@@ -98,6 +98,7 @@ const LayoutDashboardAnimated = forwardRef<LayoutDashboardAnimatedHandle, Layout
             y="3"
             rx="1"
             variants={RECT_VARIANTS}
+            initial="normal"
             animate={controls}
             custom={0}
           />
@@ -108,6 +109,7 @@ const LayoutDashboardAnimated = forwardRef<LayoutDashboardAnimatedHandle, Layout
             y="3"
             rx="1"
             variants={RECT_VARIANTS}
+            initial="normal"
             animate={controls}
             custom={1}
           />
@@ -118,6 +120,7 @@ const LayoutDashboardAnimated = forwardRef<LayoutDashboardAnimatedHandle, Layout
             y="12"
             rx="1"
             variants={RECT_VARIANTS}
+            initial="normal"
             animate={controls}
             custom={2}
           />
@@ -128,6 +131,7 @@ const LayoutDashboardAnimated = forwardRef<LayoutDashboardAnimatedHandle, Layout
             y="16"
             rx="1"
             variants={RECT_VARIANTS}
+            initial="normal"
             animate={controls}
             custom={3}
           />
