@@ -9,6 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import lucasAndrade from '@/assets/lucas-andrade.jpeg';
 import heroAbout from '@/assets/hero-about.jpg';
 import gustavoPadeiro from '@/assets/gustavo-padeiro.jpg';
+import arthurSena from '@/assets/arthur-sena.jpeg';
 const AboutContent: React.FC = () => {
   const {
     t
@@ -18,7 +19,7 @@ const AboutContent: React.FC = () => {
   const teamMembers = [{
     name: "Arthur Sena",
     role: "Engenheiro de Software",
-    imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl: arthurSena,
     bio: "Transforma ideias em código limpo e funcional. Apaixonado por criar experiências digitais que conectam artistas ao mundo."
   }, {
     name: "Gustavo Padeiro",
