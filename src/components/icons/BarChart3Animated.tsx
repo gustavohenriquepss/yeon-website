@@ -19,15 +19,10 @@ const BAR_VARIANTS: Variants = {
   normal: {
     scaleY: 1,
     opacity: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 300,
-      damping: 15,
-    },
   },
   animate: (custom: number) => ({
-    scaleY: [0, 1.2, 1],
-    opacity: [0.3, 1],
+    scaleY: [0.3, 1.1, 1],
+    opacity: [0.5, 1],
     transition: {
       delay: custom * 0.1,
       type: 'spring',
@@ -98,7 +93,7 @@ const BarChart3Animated = forwardRef<BarChart3AnimatedHandle, BarChart3AnimatedP
             initial="normal"
             animate={controls}
             custom={0}
-            style={{ originY: 1 }}
+            style={{ transformOrigin: '18px 17px' }}
           />
           <motion.path
             d="M13 17V5"
@@ -106,7 +101,7 @@ const BarChart3Animated = forwardRef<BarChart3AnimatedHandle, BarChart3AnimatedP
             initial="normal"
             animate={controls}
             custom={1}
-            style={{ originY: 1 }}
+            style={{ transformOrigin: '13px 17px' }}
           />
           <motion.path
             d="M8 17v-3"
@@ -114,7 +109,7 @@ const BarChart3Animated = forwardRef<BarChart3AnimatedHandle, BarChart3AnimatedP
             initial="normal"
             animate={controls}
             custom={2}
-            style={{ originY: 1 }}
+            style={{ transformOrigin: '8px 17px' }}
           />
         </svg>
       </div>

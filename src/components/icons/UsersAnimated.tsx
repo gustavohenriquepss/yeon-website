@@ -17,15 +17,12 @@ interface UsersAnimatedProps extends HTMLAttributes<HTMLDivElement> {
 
 const PATH_VARIANTS: Variants = {
   normal: {
-    translateX: 0,
-    transition: {
-      type: 'spring',
-      stiffness: 200,
-      damping: 13,
-    },
+    x: 0,
+    opacity: 1,
   },
   animate: {
-    translateX: [-6, 0],
+    x: [-8, 2, 0],
+    opacity: [0.5, 1],
     transition: {
       delay: 0.1,
       type: 'spring',
