@@ -23,7 +23,7 @@ const ValuePropositionSection: React.FC = () => {
       <div className="container px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">A estrutura que seu lançamento merece</h2>
-          <p className="text-white/70 text-lg max-w-3xl mx-auto mb-8">Somos a ferramenta definitiva para planejar e lançar músicas. Um guia prático com estratégias eficazes para campanhas, crescimento e lançamentos de sucesso.</p>
+          <p className="text-white/70 text-lg max-w-3xl mx-auto mb-8">Mais do que um gerenciador de tarefas, somos o seu parceiro estratégico. Criamos um ambiente onde a criatividade encontra a organização para gerar resultados reais.</p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-7xl mx-auto">
             {benefits.map((benefit, index) => {
