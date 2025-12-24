@@ -20,8 +20,8 @@ const HeroSection: React.FC = () => {
   };
   return <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
       {/* Content */}
-      <div className="container relative z-10 px-4 flex flex-col items-center text-center">
-        <Badge className="bg-white/10 text-white/70 hover:bg-white/15 border-white/20 text-sm mb-6 animate-fade-in">O Sistema Operacional da Música</Badge>
+      <div className="container relative z-10 flex flex-col items-center text-center px-[20px]">
+        <Badge className="bg-white/10 text-white/70 hover:bg-white/15 border-white/20 text-sm mb-6 animate-fade-in px-[16px] py-[8px]">Junte-se aos +100 artistas que já botaram ritmo nos seus lançamentos</Badge>
         
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-6 animate-fade-in tracking-tight max-w-6xl text-white">
           Planeje seus lançamentos sem estresse com <span className="text-yeon-purple">apenas um clique</span>
