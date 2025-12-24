@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import lucasAndrade from '@/assets/lucas-andrade.jpeg';
 import heroAbout from '@/assets/hero-about.jpg';
+import gustavoPadeiro from '@/assets/gustavo-padeiro.jpg';
 const AboutContent: React.FC = () => {
   const {
     t
@@ -22,7 +23,7 @@ const AboutContent: React.FC = () => {
   }, {
     name: "Gustavo Padeiro",
     role: "Designer de Produto",
-    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl: gustavoPadeiro,
     bio: "Cria interfaces intuitivas e belas que fazem a diferença. Acredita que bom design é invisível, mas impactante."
   }, {
     name: "Lucas Andrade",
