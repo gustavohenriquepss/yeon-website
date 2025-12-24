@@ -148,50 +148,6 @@ const AboutContent: React.FC = () => {
             </ScrollReveal>
           </div>
 
-          {/* Features Grid */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <ScrollReveal delay={0.2}>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <Lightbulb className="h-8 w-8 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Setup Automático</h3>
-                  <p className="text-muted-foreground">
-                    Crie seu plano de lançamento em minutos: basta preencher informações básicas do projeto e nossa IA personaliza um roadmap completo pra você.
-                  </p>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.3}>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <UserPlus className="h-8 w-8 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Acesso de Colaborador</h3>
-                  <p className="text-muted-foreground">
-                    Convide fotógrafos, produtores e equipe pro projeto, delegue tarefas e tenha tudo sincronizado em tempo real.
-                  </p>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.4}>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <Kanban className="h-8 w-8 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Kanban Visual</h3>
-                  <p className="text-muted-foreground">
-                    Visualize o andamento de cada fase, mova tarefas entre colunas e saiba exatamente o que tá pendente, em andamento ou concluído.
-                  </p>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
         </div>
       </section>
       
