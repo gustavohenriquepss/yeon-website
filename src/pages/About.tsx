@@ -180,7 +180,7 @@ const AboutContent: React.FC = () => {
               </div>
               
               {/* Mission CTA */}
-              <div className="space-y-2 pt-8 px-[85px] py-[33px]">
+              <div className="space-y-4 pt-8 px-[85px] py-[33px]">
                 <h3 className="text-lg font-semibold">Vamo botar ritmo?</h3>
                 <p className="text-muted-foreground max-w-sm">Comece a usar a plataforma, é de graça, pra sempre.</p>
                 <Button variant="secondary" size="lg">
