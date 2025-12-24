@@ -20,14 +20,13 @@ const HeroSection: React.FC = () => {
   };
   return <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
       {/* Content */}
-      <div className="container relative z-10 flex flex-col items-center text-center px-[20px]">
-        <Badge className="bg-white/10 text-white/70 hover:bg-white/15 border-white/20 text-sm mb-6 animate-fade-in px-[16px] py-[8px]">Junte-se aos +100 artistas que já botaram ritmo nos seus lançamentos</Badge>
+      <div className="container relative z-10 px-4 flex flex-col items-center text-center">
+        <Badge className="bg-white/10 text-white/70 hover:bg-white/15 border-white/20 text-sm mb-6 animate-fade-in">O Sistema Operacional da Música</Badge>
         
-        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-6 animate-fade-in tracking-tight max-w-6xl text-white">
-          Planeje seus lançamentos sem estresse
+        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold mb-6 animate-fade-in tracking-tight max-w-6xl text-white">Planeje seus lançamentos sem estresse em minutos<span className="text-yeon-purple">apenas um clique</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10 animate-fade-in">Sem planilhas confusas. Use a inteligência da Yeon para automatizar seus prazos, alinhar sua equipe e garantir que cada música receba a estratégia que merece</p>
+        <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10 animate-fade-in">Centralize tarefas, prazos e entregas em um só lugar. A Yeon transforma o jeito de lançar música e cada etapa do seu projeto ganha estrutura, visibilidade e ritmo.</p>
         
         <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in">
           <Button variant="outline" size="lg" className="border-border hover:bg-white/10 px-8 py-6 text-lg" asChild>
@@ -37,7 +36,9 @@ const HeroSection: React.FC = () => {
           </Button>
           
           <Button size="lg" className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium px-8 py-6 text-lg" asChild>
-            <RouterLink to="/auth">em minutos</RouterLink>
+            <RouterLink to="/auth">
+              Cadastre-se
+            </RouterLink>
           </Button>
         </div>
 
