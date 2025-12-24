@@ -30,15 +30,37 @@ const AboutContent: React.FC = () => {
   }];
   return <main className="bg-yeon-dark-bg">
       {/* Hero Section - Quem Somos */}
-      <section className="py-20">
+      <section className="py-16 md:py-24">
         <div className="container px-4">
-          <div className="text-center mb-16">
-            <h1 className="text-3xl md:text-4xl font-semibold mb-6">
-              {t('about.whoWeAreTitle')}
-            </h1>
-            <p className="max-w-3xl mx-auto text-lg text-white/70 mb-4">
-              Somos uma equipe de artistas independentes apaixonados que entendem bem as dificuldades da jornada artística. Ajudamos outros artistas a se organizarem e lançarem faixas de sucesso que façam sua música ser ouvida e expandam seus negócios e realizem seus sonhos.
-            </p>
+          {/* Large Title */}
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-16 md:mb-24">
+            Bota Ritmo<span className="text-primary">.</span>
+          </h1>
+          
+          {/* Three Column Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6 items-start">
+            {/* Left - Label */}
+            <div className="md:col-span-2 flex items-center gap-2">
+              <span className="w-5 h-5 rounded-full border border-foreground/30 flex items-center justify-center text-xs">+</span>
+              <span className="text-sm font-medium">Sobre nós</span>
+            </div>
+            
+            {/* Center - Main Paragraph */}
+            <div className="md:col-span-6">
+              <p className="text-xl md:text-2xl leading-relaxed">
+                <span className="font-semibold">Somos um time de artistas independentes apaixonados que entendem bem a correria artística.</span>{' '}
+                <span className="text-muted-foreground">
+                  Ajudamos outros artistas a se organizarem, fazerem sua música ser ouvida e realizarem seus sonhos.
+                </span>
+              </p>
+            </div>
+            
+            {/* Right - Supporting Text */}
+            <div className="md:col-span-4 md:text-right">
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-xs md:ml-auto">
+                Ajudamos outros artistas a se organizarem, fazerem sua música ser ouvida e realizarem seus sonhos.
+              </p>
+            </div>
           </div>
         </div>
       </section>
