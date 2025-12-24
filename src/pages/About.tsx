@@ -34,7 +34,7 @@ const AboutContent: React.FC = () => {
         <div className="container px-4">
           {/* Large Title */}
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-16 md:mb-24">
-            Bota Ritmo<span className="text-primary">.</span>
+            Botamos Ritmo<span className="text-primary">.</span>
           </h1>
           
           {/* Three Column Layout */}
