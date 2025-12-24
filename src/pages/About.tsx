@@ -180,7 +180,7 @@ const AboutContent: React.FC = () => {
               </div>
               
               {/* Mission CTA */}
-              <div className="space-y-4 pt-8">
+              <div className="space-y-4 pt-8 px-[85px] py-[33px]">
                 <h3 className="text-lg font-semibold">Quer lançar sua próxima música?</h3>
                 <p className="text-muted-foreground max-w-sm">
                   Experimente a Yeon gratuitamente e organize seus lançamentos como nunca antes.
@@ -193,13 +193,9 @@ const AboutContent: React.FC = () => {
             
             {/* Right Column - Team Grid */}
             <div className="grid grid-cols-2 gap-4">
-              {teamMembers.slice(0, 2).map((member) => <div key={member.name} className="relative group overflow-hidden rounded-2xl">
+              {teamMembers.slice(0, 2).map(member => <div key={member.name} className="relative group overflow-hidden rounded-2xl">
                   <div className="aspect-[3/4] w-full">
-                    <img 
-                      src={member.imageUrl} 
-                      alt={member.name} 
-                      className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm" 
-                    />
+                    <img src={member.imageUrl} alt={member.name} className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm" />
                   </div>
                   
                   {/* Overlay with info - darker on hover */}
@@ -232,14 +228,9 @@ const AboutContent: React.FC = () => {
               <div className="aspect-[3/4]" />
               
               {/* Lucas Andrade - moved to 4th position */}
-              {teamMembers[2] && (
-                <div className="relative group overflow-hidden rounded-2xl">
+              {teamMembers[2] && <div className="relative group overflow-hidden rounded-2xl">
                   <div className="aspect-[3/4] w-full">
-                    <img 
-                      src={teamMembers[2].imageUrl} 
-                      alt={teamMembers[2].name} 
-                      className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm" 
-                    />
+                    <img src={teamMembers[2].imageUrl} alt={teamMembers[2].name} className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm" />
                   </div>
                   
                   {/* Overlay with info - darker on hover */}
@@ -266,8 +257,7 @@ const AboutContent: React.FC = () => {
                       {teamMembers[2].bio}
                     </p>
                   </div>
-                </div>
-              )}
+                </div>}
             </div>
           </div>
         </div>
