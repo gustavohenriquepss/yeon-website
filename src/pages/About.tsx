@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, LayoutDashboard, BarChart3, Lightbulb, UserPlus, Sparkles, Kanban } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import lucasAndrade from '@/assets/lucas-andrade.jpeg';
 const AboutContent: React.FC = () => {
   const {
     t
@@ -69,9 +70,9 @@ const AboutContent: React.FC = () => {
       <section className="px-4 md:px-8 pb-16 md:pb-24">
         <div className="w-full overflow-hidden rounded-2xl">
           <img 
-            src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop" 
-            alt="Artistas trabalhando em estúdio" 
-            className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-cover grayscale"
+            src={lucasAndrade} 
+            alt="Lucas Andrade" 
+            className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-cover"
           />
         </div>
       </section>
