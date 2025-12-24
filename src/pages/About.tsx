@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLanguage } from '@/context/LanguageContext';
@@ -6,37 +5,26 @@ import PageLayout from '@/components/PageLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, LayoutDashboard, BarChart3, Lightbulb, UserPlus, Sparkles, Kanban } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const AboutContent: React.FC = () => {
   const {
     t
   } = useLanguage();
-  
+
   // Team members data
-  const teamMembers = [
-    {
-      name: "Arthur Sena",
-      role: "Engenheiro de Software",
-      imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3" 
-    },
-    {
-      name: "Gustavo Padeiro",
-      role: "Designer de Produto",
-      imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
-    },
-    {
-      name: "Lucas Andrade",
-      role: "Engenheiro de Software",
-      imageUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
-    }
-  ];
-  
+  const teamMembers = [{
+    name: "Arthur Sena",
+    role: "Engenheiro de Software",
+    imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
+  }, {
+    name: "Gustavo Padeiro",
+    role: "Designer de Produto",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
+  }, {
+    name: "Lucas Andrade",
+    role: "Engenheiro de Software",
+    imageUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3"
+  }];
   return <main className="bg-yeon-dark-bg">
       {/* Hero Section - Quem Somos */}
       <section className="py-20">
@@ -179,7 +167,7 @@ const AboutContent: React.FC = () => {
               </div>
               
               {/* Mission CTA */}
-              <div className="space-y-4 pt-8">
+              <div className="space-y-4 pt-8 py-0">
                 <h3 className="text-lg font-semibold">Faça parte da nossa missão</h3>
                 <p className="text-muted-foreground max-w-sm">
                   Se você quer criar e colaborar, adoraríamos ouvir de você.
@@ -203,19 +191,9 @@ const AboutContent: React.FC = () => {
             
             {/* Right Column - Team Grid */}
             <div className="grid grid-cols-2 gap-4">
-              {teamMembers.map((member, index) => (
-                <div 
-                  key={member.name}
-                  className={`relative group overflow-hidden rounded-2xl ${
-                    index === 0 ? 'row-span-1' : ''
-                  }`}
-                >
+              {teamMembers.map((member, index) => <div key={member.name} className={`relative group overflow-hidden rounded-2xl ${index === 0 ? 'row-span-1' : ''}`}>
                   <div className="aspect-[3/4] w-full">
-                    <img 
-                      src={member.imageUrl} 
-                      alt={member.name} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    <img src={member.imageUrl} alt={member.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>
                   
                   {/* Overlay with info */}
@@ -235,13 +213,10 @@ const AboutContent: React.FC = () => {
                   {/* Name */}
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight">
-                      {member.name.split(' ').map((word, i) => (
-                        <span key={i} className="block">{word}</span>
-                      ))}
+                      {member.name.split(' ').map((word, i) => <span key={i} className="block">{word}</span>)}
                     </h3>
                   </div>
-                </div>
-              ))}
+                </div>)}
               
               {/* Empty placeholder card for visual balance */}
               <div className="relative overflow-hidden rounded-2xl bg-muted/50 aspect-[3/4] flex items-center justify-center">
@@ -282,7 +257,6 @@ const AboutContent: React.FC = () => {
       
     </main>;
 };
-
 const About: React.FC = () => {
   const {
     t
@@ -298,5 +272,4 @@ const About: React.FC = () => {
       </PageLayout>
     </>;
 };
-
 export default About;
