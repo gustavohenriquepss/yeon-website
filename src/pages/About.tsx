@@ -180,9 +180,9 @@ const AboutContent: React.FC = () => {
               {/* Collaboration Quote */}
               <div className="pt-8 max-w-lg">
               <p className="text-lg md:text-xl leading-relaxed">
-                  Somos <span className="font-semibold">artistas e amantes da música</span>{' '}
+                  <span className="font-semibold">3 jovens nerds e amantes da música</span>{' '}
                   <span className="text-muted-foreground">
-                    especialistas em produto e tecnologia construindo o futuro da indústria musical no Brasil.
+                    construindo o futuro da indústria musical no Brasil.
                   </span>
                 </p>
               </div>
