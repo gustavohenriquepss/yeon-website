@@ -164,38 +164,95 @@ const AboutContent: React.FC = () => {
       
       {/* Our Community Section - REMOVIDA */}
       
-      {/* Nosso Time Section */}
-      <section className="py-20 bg-yeon-dark-bg">
+      {/* Nosso Time Section - Redesigned */}
+      <section className="py-20 bg-muted/30">
         <div className="container px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-              Nosso Time
-            </h2>
-            <p className="max-w-3xl mx-auto text-lg text-white/70">
-              Somos artistas e amantes da música especialistas em produto e tecnologia construíndo o futuro da indústria musical no Brasil
-            </p>
-          </div>
-          
-          {/* Team Members Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {teamMembers.map((member, index) => (
-              <Card 
-                key={member.name}
-                className="border-0 bg-card overflow-hidden hover:scale-105 transition-transform duration-300"
-              >
-                <div className="aspect-video w-full overflow-hidden">
-                  <img 
-                    src={member.imageUrl} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover"
-                  />
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* Left Column - Text Content */}
+            <div className="space-y-12">
+              <div>
+                <p className="text-sm font-medium text-muted-foreground mb-4 tracking-wide">yeon®</p>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
+                  Os rostos por trás{' '}
+                  <span className="text-muted-foreground">dos projetos.</span>
+                </h2>
+              </div>
+              
+              {/* Mission CTA */}
+              <div className="space-y-4 pt-8">
+                <h3 className="text-lg font-semibold">Faça parte da nossa missão</h3>
+                <p className="text-muted-foreground max-w-sm">
+                  Se você quer criar e colaborar, adoraríamos ouvir de você.
+                </p>
+                <Button variant="outline" className="rounded-full px-6 group">
+                  Entre em contato
+                  <span className="ml-2 inline-block w-2 h-2 rounded-full bg-foreground group-hover:bg-primary transition-colors" />
+                </Button>
+              </div>
+              
+              {/* Collaboration Quote */}
+              <div className="pt-8 max-w-lg">
+                <p className="text-lg md:text-xl leading-relaxed">
+                  Acreditamos que <span className="font-semibold">grandes trabalhos vêm da colaboração.</span>{' '}
+                  <span className="text-muted-foreground">
+                    Por isso trabalhamos juntos para garantir que cada projeto atinja seus objetivos e supere expectativas.
+                  </span>
+                </p>
+              </div>
+            </div>
+            
+            {/* Right Column - Team Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {teamMembers.map((member, index) => (
+                <div 
+                  key={member.name}
+                  className={`relative group overflow-hidden rounded-2xl ${
+                    index === 0 ? 'row-span-1' : ''
+                  }`}
+                >
+                  <div className="aspect-[3/4] w-full">
+                    <img 
+                      src={member.imageUrl} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  
+                  {/* Overlay with info */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  
+                  {/* Plus icon */}
+                  <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center">
+                    <span className="text-white text-lg font-light">+</span>
+                  </div>
+                  
+                  {/* Role badge */}
+                  <div className="absolute top-4 right-4 text-right">
+                    <p className="text-xs font-medium text-white/90">{member.role}</p>
+                    <p className="text-xs text-white/60">na yeon®</p>
+                  </div>
+                  
+                  {/* Name */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight">
+                      {member.name.split(' ').map((word, i) => (
+                        <span key={i} className="block">{word}</span>
+                      ))}
+                    </h3>
+                  </div>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                  <p className="text-yeon-purple font-medium">{member.role}</p>
-                </CardContent>
-              </Card>
-            ))}
+              ))}
+              
+              {/* Empty placeholder card for visual balance */}
+              <div className="relative overflow-hidden rounded-2xl bg-muted/50 aspect-[3/4] flex items-center justify-center">
+                <div className="text-center p-6">
+                  <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-light text-muted-foreground">+</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Em breve</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
