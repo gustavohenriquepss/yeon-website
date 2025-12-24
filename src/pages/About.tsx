@@ -4,7 +4,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import PageLayout from '@/components/PageLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Lightbulb, UserPlus, Sparkles, Kanban } from 'lucide-react';
-import { LayoutDashboardAnimated, BarChart3Animated, UsersAnimated, type LayoutDashboardAnimatedHandle, type BarChart3AnimatedHandle, type UsersAnimatedHandle } from '@/components/icons';
+import { LayoutDashboardAnimated, ChartColumnIncreasingIcon, UsersAnimated, type LayoutDashboardAnimatedHandle, type ChartColumnIncreasingIconHandle, type UsersAnimatedHandle } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import lucasAndrade from '@/assets/lucas-andrade.jpeg';
@@ -12,8 +12,8 @@ import heroAbout from '@/assets/hero-about.jpg';
 import gustavoPadeiro from '@/assets/gustavo-padeiro.jpg';
 import arthurSena from '@/assets/arthur-sena.jpeg';
 
-type AnimatedIconHandle = LayoutDashboardAnimatedHandle | BarChart3AnimatedHandle | UsersAnimatedHandle;
-type AnimatedIconComponent = typeof LayoutDashboardAnimated | typeof BarChart3Animated | typeof UsersAnimated;
+type AnimatedIconHandle = LayoutDashboardAnimatedHandle | ChartColumnIncreasingIconHandle | UsersAnimatedHandle;
+type AnimatedIconComponent = typeof LayoutDashboardAnimated | typeof ChartColumnIncreasingIcon | typeof UsersAnimated;
 
 const AnimatedBenefitsCards: React.FC = () => {
   const iconRefs = useRef<(AnimatedIconHandle | null)[]>([]);
@@ -29,7 +29,7 @@ const AnimatedBenefitsCards: React.FC = () => {
   }, {
     title: "Insights",
     description: "Visualize o ritmo do seu trabalho e identifique gargalos antes que eles virem problemas.",
-    Icon: BarChart3Animated
+    Icon: ChartColumnIncreasingIcon
   }, {
     title: "Colaboração",
     description: "Mantenha toda a sua equipe alinhada em cada etapa de todos os projetos",
