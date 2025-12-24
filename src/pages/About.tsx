@@ -58,7 +58,7 @@ const AboutContent: React.FC = () => {
             {/* Right - Supporting Text */}
             <div className="md:col-span-4 md:text-right">
               <p className="text-sm text-muted-foreground leading-relaxed max-w-xs md:ml-auto">
-                Ajudamos outros artistas a se organizarem, fazerem sua música ser ouvida e realizarem seus sonhos.
+                Somos a ferramenta definitiva para planejar e lançar seus projetos. O Sistema Operacional da Música.
               </p>
             </div>
           </div>
