@@ -26,7 +26,7 @@ const AboutContent: React.FC = () => {
   }, {
     name: "Lucas Andrade",
     role: "Engenheiro de Software",
-    imageUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3",
+    imageUrl: lucasAndrade,
     bio: "Especialista em arquitetura de sistemas escaláveis. Músico nas horas vagas que entende a dor do artista independente."
   }];
   return <main className="bg-yeon-dark-bg">
