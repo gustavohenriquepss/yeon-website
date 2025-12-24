@@ -179,10 +179,11 @@ const AboutContent: React.FC = () => {
               
               {/* Collaboration Quote */}
               <div className="pt-8 max-w-lg">
-              <p className="text-lg md:text-xl leading-relaxed">
-                  <span className="font-semibold">3 jovens nerds e amantes da música</span>{' '}
+                <p className="text-sm font-medium text-muted-foreground mb-2 tracking-wide">Young Entrepreneurs of Noise</p>
+                <p className="text-lg md:text-xl leading-relaxed">
+                  <span className="font-semibold">Somos artistas e amantes da música</span>{' '}
                   <span className="text-muted-foreground">
-                    construindo o futuro da indústria musical no Brasil.
+                    construindo o futuro do Music Marketing no Brasil.
                   </span>
                 </p>
               </div>
