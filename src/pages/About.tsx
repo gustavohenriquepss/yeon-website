@@ -165,18 +165,6 @@ const AboutContent: React.FC = () => {
                 </h2>
               </div>
               
-              {/* Mission CTA */}
-              <div className="space-y-4 pt-8 py-0">
-                <h3 className="text-lg font-semibold">Faça parte da nossa missão</h3>
-                <p className="text-muted-foreground max-w-sm">
-                  Se você quer criar e colaborar, adoraríamos ouvir de você.
-                </p>
-                <Button variant="outline" className="rounded-full px-6 group">
-                  Entre em contato
-                  <span className="ml-2 inline-block w-2 h-2 rounded-full bg-foreground group-hover:bg-primary transition-colors" />
-                </Button>
-              </div>
-              
               {/* Collaboration Quote */}
               <div className="pt-8 max-w-lg">
                 <p className="text-sm font-medium text-muted-foreground mb-2 tracking-wide">Young Entrepreneurs of Noise</p>
@@ -186,6 +174,17 @@ const AboutContent: React.FC = () => {
                     construindo o futuro do Music Marketing no Brasil.
                   </span>
                 </p>
+              </div>
+              
+              {/* Mission CTA */}
+              <div className="space-y-4 pt-8">
+                <h3 className="text-lg font-semibold">Quer lançar sua próxima música?</h3>
+                <p className="text-muted-foreground max-w-sm">
+                  Experimente a Yeon gratuitamente e organize seus lançamentos como nunca antes.
+                </p>
+                <Button variant="secondary" size="lg">
+                  Começar agora
+                </Button>
               </div>
             </div>
             
