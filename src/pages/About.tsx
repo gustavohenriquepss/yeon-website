@@ -160,8 +160,8 @@ const AboutContent: React.FC = () => {
             <div className="space-y-12">
               <div>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
-                  Os rostos por trás{' '}
-                  <span className="text-muted-foreground">dos projetos.</span>
+                  Feita por artistas,{' '}
+                  <span className="text-muted-foreground">para artistas.</span>
                 </h2>
               </div>
               
