@@ -95,6 +95,7 @@ const BarChart3Animated = forwardRef<BarChart3AnimatedHandle, BarChart3AnimatedP
           <motion.path
             d="M18 17V9"
             variants={BAR_VARIANTS}
+            initial="normal"
             animate={controls}
             custom={0}
             style={{ originY: 1 }}
@@ -102,6 +103,7 @@ const BarChart3Animated = forwardRef<BarChart3AnimatedHandle, BarChart3AnimatedP
           <motion.path
             d="M13 17V5"
             variants={BAR_VARIANTS}
+            initial="normal"
             animate={controls}
             custom={1}
             style={{ originY: 1 }}
@@ -109,6 +111,7 @@ const BarChart3Animated = forwardRef<BarChart3AnimatedHandle, BarChart3AnimatedP
           <motion.path
             d="M8 17v-3"
             variants={BAR_VARIANTS}
+            initial="normal"
             animate={controls}
             custom={2}
             style={{ originY: 1 }}
