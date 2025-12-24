@@ -1,11 +1,18 @@
-import React, { useEffect } from 'react';
-import { Quote } from 'lucide-react';
+import React, { useEffect, useCallback } from 'react';
+import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 interface Testimonial {
   quote: string;
   name: string;
   role: string;
-  highlight?: string;
 }
 
 const TestimonialsSection: React.FC = () => {
@@ -13,37 +20,28 @@ const TestimonialsSection: React.FC = () => {
     {
       quote: "Yeon mudou completamente minha organização. Agora não perco mais nenhum prazo e meus lançamentos saem no tempo certo.",
       name: "Marina Silva",
-      role: "Artista Independente",
-      highlight: "não perco mais nenhum prazo"
+      role: "Artista Independente"
     },
     {
       quote: "Consigo gerenciar 5 artistas simultaneamente sem perder o controle. A visibilidade do roadmap é perfeita.",
       name: "Carlos Mendes",
-      role: "Manager Musical",
-      highlight: "5 artistas simultaneamente"
+      role: "Manager Musical"
     },
     {
       quote: "A melhor ferramenta para planejar releases. Simples, intuitiva e completa.",
       name: "Juliana Costa",
-      role: "Produtora Musical",
-      highlight: "Simples, intuitiva e completa"
+      role: "Produtora Musical"
     },
     {
       quote: "Desde que comecei a usar Yeon, meus lançamentos ficaram muito mais profissionais e organizados.",
       name: "Rafael Santos",
-      role: "Artista Independente",
-      highlight: "muito mais profissionais"
+      role: "Artista Independente"
     }
   ];
 
-  const [activeIndex, setActiveIndex] = React.useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [testimonials.length]);
+  const plugin = React.useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: true })
+  );
 
   return (
     <section className="py-24 md:py-32 bg-gradient-to-b from-yeon-dark-bg to-background relative overflow-hidden">
@@ -64,102 +62,54 @@ const TestimonialsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Testimonials Grid - Desktop */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className={`group relative p-6 rounded-2xl border transition-all duration-500 ${
-                index === activeIndex
-                  ? 'bg-primary/10 border-primary/30 scale-[1.02] shadow-lg shadow-primary/10'
-                  : 'bg-card/50 border-border/50 hover:bg-card/80 hover:border-border'
-              }`}
-            >
-              {/* Quote icon */}
-              <div className={`mb-4 transition-colors duration-300 ${
-                index === activeIndex ? 'text-primary' : 'text-muted-foreground/30'
-              }`}>
-                <Quote className="w-8 h-8" />
-              </div>
-
-              {/* Quote text */}
-              <p className="text-foreground/90 text-sm leading-relaxed mb-6">
-                "{testimonial.quote}"
-              </p>
-
-              {/* Author */}
-              <div className="mt-auto">
-                <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-colors duration-300 ${
-                    index === activeIndex
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted text-muted-foreground'
-                  }`}>
-                    {testimonial.name.split(' ').map(n => n[0]).join('')}
+        {/* Carousel */}
+        <Carousel
+          opts={{
+            align: "center",
+            loop: true,
+          }}
+          plugins={[plugin.current]}
+          className="w-full max-w-4xl mx-auto"
+        >
+          <CarouselContent className="-ml-4">
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem key={index} className="pl-4 md:basis-1/1">
+                <div className="p-8 md:p-12 rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm">
+                  {/* Quote icon */}
+                  <div className="flex justify-center mb-6">
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Quote className="w-7 h-7 text-primary" />
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-medium text-foreground text-sm">{testimonial.name}</p>
-                    <p className="text-muted-foreground text-xs">{testimonial.role}</p>
-                  </div>
-                </div>
-              </div>
 
-              {/* Active indicator */}
-              {index === activeIndex && (
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-primary rounded-full -mb-0.5" />
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* Testimonials Carousel - Mobile */}
-        <div className="md:hidden">
-          <div className="relative overflow-hidden">
-            <div
-              className="flex transition-transform duration-500 ease-out"
-              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-            >
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="w-full flex-shrink-0 px-2"
-                >
-                  <div className="p-6 rounded-2xl bg-card/50 border border-border/50">
-                    <Quote className="w-8 h-8 text-primary mb-4" />
-                    <p className="text-foreground/90 text-base leading-relaxed mb-6">
+                  {/* Quote text */}
+                  <blockquote className="text-center mb-8">
+                    <p className="text-foreground text-xl md:text-2xl leading-relaxed font-medium">
                       "{testimonial.quote}"
                     </p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">
-                        {testimonial.name.split(' ').map(n => n[0]).join('')}
-                      </div>
-                      <div>
-                        <p className="font-medium text-foreground text-sm">{testimonial.name}</p>
-                        <p className="text-muted-foreground text-xs">{testimonial.role}</p>
-                      </div>
+                  </blockquote>
+
+                  {/* Author */}
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg font-semibold">
+                      {testimonial.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                    <div className="text-center">
+                      <p className="font-semibold text-foreground">{testimonial.name}</p>
+                      <p className="text-muted-foreground text-sm">{testimonial.role}</p>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile dots */}
-          <div className="flex justify-center gap-2 mt-6">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === activeIndex
-                    ? 'w-6 bg-primary'
-                    : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                }`}
-                aria-label={`Ver depoimento ${index + 1}`}
-              />
+              </CarouselItem>
             ))}
+          </CarouselContent>
+          
+          {/* Navigation */}
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <CarouselPrevious className="relative inset-0 translate-x-0 translate-y-0 h-10 w-10 border-border/50 bg-card/50 hover:bg-card hover:border-border" />
+            <CarouselNext className="relative inset-0 translate-x-0 translate-y-0 h-10 w-10 border-border/50 bg-card/50 hover:bg-card hover:border-border" />
           </div>
-        </div>
+        </Carousel>
       </div>
     </section>
   );
