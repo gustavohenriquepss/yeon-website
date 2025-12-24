@@ -218,11 +218,11 @@ const AboutContent: React.FC = () => {
                   
                   {/* Name and Bio */}
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight transition-transform duration-300 group-hover:-translate-y-2">
+                    <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight">
                       {member.name.split(' ').map((word, i) => <span key={i} className="block">{word}</span>)}
                     </h3>
                     {/* Bio - appears on hover */}
-                    <p className="text-sm text-white/80 mt-2 max-h-0 opacity-0 overflow-hidden group-hover:max-h-20 group-hover:opacity-100 transition-all duration-300 line-clamp-3">
+                    <p className="text-sm text-white/80 mt-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 line-clamp-3">
                       {member.bio}
                     </p>
                   </div>
