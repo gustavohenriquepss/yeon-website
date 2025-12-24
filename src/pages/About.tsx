@@ -182,7 +182,7 @@ const AboutContent: React.FC = () => {
               {/* Mission CTA */}
               <div className="space-y-4 pt-8 px-[85px] py-[33px]">
                 <h3 className="text-lg font-semibold">Vamo botar ritmo?</h3>
-                <p className="text-muted-foreground max-w-sm">Organize seus lançamentos como nunca antes.</p>
+                <p className="text-muted-foreground max-w-sm">Comece a usar a plataforma, é de graça, pra sempre.</p>
                 <Button variant="secondary" size="lg">
                   Começar agora
                 </Button>
