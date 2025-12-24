@@ -40,7 +40,7 @@ const HeroSection: React.FC = () => {
           Planeje seus lançamentos sem estresse <span className="text-secondary-foreground">em segundos</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10 animate-fade-in">Sem planilhas confusas. Use a inteligência da Yeon para automatizar seus prazos, alinhar sua equipe e garantir que cada música receba a estratégia que merece</p>
+        <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10 animate-fade-in">Use a inteligência da Yeon para automatizar seus prazos, alinhar sua equipe e garantir que cada música seja estratégica</p>
         
         <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-in">
           <Button variant="outline" size="lg" className="border-border hover:bg-white/10 px-8 py-6 text-lg" asChild>
