@@ -23,25 +23,25 @@ const TestimonialsSection: React.FC = () => {
   const testimonials: Testimonial[] = [
     {
       quote: "Yeon mudou completamente minha organização. Agora não perco mais nenhum prazo e meus lançamentos saem no tempo certo.",
-      name: "Marina Silva",
+      name: "Mtzyn",
       role: "Artista Independente",
       image: testimonialMarina
     },
     {
-      quote: "Consigo gerenciar 5 artistas simultaneamente sem perder o controle. A visibilidade do roadmap é perfeita.",
-      name: "Carlos Mendes",
-      role: "Manager Musical",
+      quote: "Consigo gerenciar meus artistas simultaneamente sem perder o controle. A visibilidade do roadmap é perfeita.",
+      name: "Isaac Tomé",
+      role: "Label Manager",
       image: testimonialCarlos
     },
     {
       quote: "A melhor ferramenta para planejar releases. Simples, intuitiva e completa.",
-      name: "Juliana Costa",
-      role: "Produtora Musical",
+      name: "Maui",
+      role: "Artista Independente",
       image: testimonialJuliana
     },
     {
       quote: "Desde que comecei a usar Yeon, meus lançamentos ficaram muito mais profissionais e organizados.",
-      name: "Rafael Santos",
+      name: "Joazz",
       role: "Artista Independente",
       image: testimonialRafael
     }
