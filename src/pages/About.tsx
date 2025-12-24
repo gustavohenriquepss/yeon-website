@@ -65,6 +65,17 @@ const AboutContent: React.FC = () => {
         </div>
       </section>
       
+      {/* Hero Image */}
+      <section className="px-4 md:px-8 pb-16 md:pb-24">
+        <div className="w-full overflow-hidden rounded-2xl">
+          <img 
+            src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop" 
+            alt="Artistas trabalhando em estúdio" 
+            className="w-full h-[300px] md:h-[500px] lg:h-[600px] object-cover grayscale"
+          />
+        </div>
+      </section>
+
       {/* What We Do Section */}
       <section className="py-20 bg-yeon-dark-bg">
         <div className="container px-4">
