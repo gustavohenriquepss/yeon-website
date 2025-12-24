@@ -159,7 +159,6 @@ const AboutContent: React.FC = () => {
             {/* Left Column - Text Content */}
             <div className="space-y-12">
               <div>
-                <p className="text-sm font-medium text-muted-foreground mb-4 tracking-wide">yeon®</p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
                   Os rostos por trás{' '}
                   <span className="text-muted-foreground">dos projetos.</span>
