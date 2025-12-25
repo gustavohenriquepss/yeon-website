@@ -168,7 +168,7 @@ const PricingSection: React.FC = () => {
               <div className="relative h-full rounded-3xl overflow-hidden">
                 {/* Gradient border effect */}
                 <div className="absolute inset-0 bg-gradient-to-b from-yeon-purple via-yeon-purple/30 to-transparent opacity-50" />
-                <div className="absolute inset-[1px] rounded-3xl bg-gradient-to-b from-[#1a1625] to-yeon-dark-bg" />
+                <div className="absolute inset-[1px] rounded-3xl bg-gradient-to-b from-white/[0.06] to-yeon-dark-bg" />
                 
                 {/* Content */}
                 <div className="relative p-8 lg:p-10 flex flex-col h-full">
