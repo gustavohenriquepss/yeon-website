@@ -3,12 +3,10 @@ import { Button } from '@/components/ui/button';
 import { Check, Sparkles, Zap, ArrowRight } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { motion } from 'framer-motion';
-
 interface PlanFeature {
   text: string;
   highlight?: boolean;
 }
-
 interface PricingPlan {
   name: string;
   price: string;
@@ -18,42 +16,45 @@ interface PricingPlan {
   ctaText: string;
   popular?: boolean;
 }
-
 const PricingSection: React.FC = () => {
   const [isAnnual, setIsAnnual] = useState(false);
-
-  const plans: PricingPlan[] = [
-    {
-      name: "Starter",
-      price: "Grátis",
-      description: "Comece sua jornada na música independente",
-      features: [
-        { text: "3 projetos ativos" },
-        { text: "Até 3 colaboradores por projeto" },
-        { text: "Participe de projetos ilimitados" },
-        { text: "Suporte por email" },
-      ],
-      ctaText: "Começar Grátis"
-    },
-    {
-      name: "Pro",
-      price: isAnnual ? "R$25" : "R$30",
-      period: "/mês",
-      description: "Para artistas que levam a sério",
-      features: [
-        { text: "Projetos ilimitados", highlight: true },
-        { text: "Colaboradores ilimitados", highlight: true },
-        { text: "Assistente IA dedicado", highlight: true },
-        { text: "Suporte prioritário 24h" },
-        { text: "Acesso antecipado a novidades" },
-      ],
-      ctaText: "Começar Trial Grátis",
-      popular: true
-    }
-  ];
-
-  return (
-    <section className="py-24 bg-yeon-dark-bg relative overflow-hidden">
+  const plans: PricingPlan[] = [{
+    name: "Starter",
+    price: "Grátis",
+    description: "Comece sua jornada na música independente",
+    features: [{
+      text: "3 projetos ativos"
+    }, {
+      text: "Até 3 colaboradores por projeto"
+    }, {
+      text: "Participe de projetos ilimitados"
+    }, {
+      text: "Suporte por email"
+    }],
+    ctaText: "Começar Grátis"
+  }, {
+    name: "Pro",
+    price: isAnnual ? "R$25" : "R$30",
+    period: "/mês",
+    description: "Para artistas que levam a sério",
+    features: [{
+      text: "Projetos ilimitados",
+      highlight: true
+    }, {
+      text: "Colaboradores ilimitados",
+      highlight: true
+    }, {
+      text: "Assistente IA dedicado",
+      highlight: true
+    }, {
+      text: "Suporte prioritário 24h"
+    }, {
+      text: "Acesso antecipado a novidades"
+    }],
+    ctaText: "Começar Trial Grátis",
+    popular: true
+  }];
+  return <section className="py-24 bg-yeon-dark-bg relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-yeon-purple/5 rounded-full blur-[120px]" />
@@ -87,15 +88,12 @@ const PricingSection: React.FC = () => {
             <span className={`text-sm font-medium transition-all duration-300 ${!isAnnual ? 'text-white' : 'text-white/40'}`}>
               Mensal
             </span>
-            <button
-              onClick={() => setIsAnnual(!isAnnual)}
-              className="relative inline-flex h-7 w-14 items-center rounded-full bg-white/10 border border-white/10 transition-all duration-300 hover:border-white/20"
-            >
-              <motion.span
-                layout
-                transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                className={`inline-block h-5 w-5 rounded-full transition-colors ${isAnnual ? 'bg-yeon-purple ml-8' : 'bg-white/60 ml-1'}`}
-              />
+            <button onClick={() => setIsAnnual(!isAnnual)} className="relative inline-flex h-7 w-14 items-center rounded-full bg-white/10 border border-white/10 transition-all duration-300 hover:border-white/20">
+              <motion.span layout transition={{
+              type: "spring",
+              stiffness: 500,
+              damping: 30
+            }} className={`inline-block h-5 w-5 rounded-full transition-colors ${isAnnual ? 'bg-yeon-purple ml-8' : 'bg-white/60 ml-1'}`} />
             </button>
             <div className="flex items-center gap-2">
               <span className={`text-sm font-medium transition-all duration-300 ${isAnnual ? 'text-white' : 'text-white/40'}`}>
@@ -112,11 +110,11 @@ const PricingSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Starter Card */}
           <ScrollReveal delay={0.2}>
-            <motion.div
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.2 }}
-              className="h-full"
-            >
+            <motion.div whileHover={{
+            y: -4
+          }} transition={{
+            duration: 0.2
+          }} className="h-full">
               <div className="relative h-full rounded-3xl bg-white/[0.03] border border-white/[0.06] p-8 lg:p-10 flex flex-col backdrop-blur-sm">
                 {/* Header */}
                 <div className="mb-8">
@@ -137,21 +135,16 @@ const PricingSection: React.FC = () => {
                 
                 {/* Features */}
                 <div className="space-y-4 mb-10 flex-1">
-                  {plans[0].features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-3">
+                  {plans[0].features.map((feature, idx) => <div key={idx} className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                         <Check className="h-3 w-3 text-white/50" strokeWidth={3} />
                       </div>
                       <span className="text-sm text-white/60">{feature.text}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
                 
                 {/* CTA */}
-                <Button 
-                  variant="outline"
-                  className="w-full py-6 text-sm font-medium bg-transparent border-white/10 text-white/80 hover:bg-white/5 hover:border-white/20 hover:text-white transition-all duration-300"
-                >
+                <Button variant="outline" className="w-full py-6 text-sm font-medium bg-transparent border-white/10 text-white/80 hover:bg-white/5 hover:border-white/20 hover:text-white transition-all duration-300">
                   {plans[0].ctaText}
                 </Button>
               </div>
@@ -160,11 +153,11 @@ const PricingSection: React.FC = () => {
 
           {/* Pro Card */}
           <ScrollReveal delay={0.3}>
-            <motion.div
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.2 }}
-              className="h-full"
-            >
+            <motion.div whileHover={{
+            y: -4
+          }} transition={{
+            duration: 0.2
+          }} className="h-full">
               <div className="relative h-full rounded-3xl overflow-hidden">
                 {/* Gradient border effect */}
                 <div className="absolute inset-0 bg-gradient-to-b from-yeon-purple via-yeon-purple/30 to-transparent opacity-50" />
@@ -174,7 +167,7 @@ const PricingSection: React.FC = () => {
                 <div className="relative p-8 lg:p-10 flex flex-col h-full">
                   {/* Popular badge */}
                   <div className="absolute top-6 right-6">
-                    <div className="flex items-center gap-1.5 bg-yeon-purple/20 text-yeon-purple px-3 py-1.5 rounded-full text-xs font-medium">
+                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/[0.34] text-white">
                       <Sparkles className="h-3 w-3" />
                       30 dias grátis
                     </div>
@@ -195,30 +188,24 @@ const PricingSection: React.FC = () => {
                       </span>
                       <span className="text-white/40 text-lg">{plans[1].period}</span>
                     </div>
-                    {isAnnual && (
-                      <p className="text-white/40 text-sm mb-1">Cobrado anualmente (R$300/ano)</p>
-                    )}
+                    {isAnnual && <p className="text-white/40 text-sm mb-1">Cobrado anualmente (R$300/ano)</p>}
                     <p className="text-white/50 text-sm">{plans[1].description}</p>
                   </div>
                   
                   {/* Features */}
                   <div className="space-y-4 mb-10 flex-1">
-                    {plans[1].features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-3">
+                    {plans[1].features.map((feature, idx) => <div key={idx} className="flex items-center gap-3">
                         <div className="w-5 h-5 rounded-full bg-yeon-purple/20 flex items-center justify-center flex-shrink-0">
                           <Check className="h-3 w-3 text-yeon-purple" strokeWidth={3} />
                         </div>
                         <span className={`text-sm ${feature.highlight ? 'text-white font-medium' : 'text-white/70'}`}>
                           {feature.text}
                         </span>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                   
                   {/* CTA */}
-                  <Button 
-                    className="w-full py-6 text-sm font-semibold bg-yeon-purple hover:bg-yeon-dark-purple text-white shadow-lg shadow-yeon-purple/20 hover:shadow-yeon-purple/30 transition-all duration-300 group"
-                  >
+                  <Button className="w-full py-6 text-sm font-semibold bg-yeon-purple hover:bg-yeon-dark-purple text-white shadow-lg shadow-yeon-purple/20 hover:shadow-yeon-purple/30 transition-all duration-300 group">
                     {plans[1].ctaText}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                   </Button>
@@ -235,8 +222,6 @@ const PricingSection: React.FC = () => {
           </p>
         </ScrollReveal>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default PricingSection;
