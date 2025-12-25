@@ -131,6 +131,7 @@ const Contact: React.FC = () => {
                       <Button
                         type="submit"
                         disabled={isSubmitting}
+                        variant="secondary"
                         size="lg"
                       >
                         {isSubmitting ? 'Enviando...' : 'Enviar'}
