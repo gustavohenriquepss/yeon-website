@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
                     </Avatar>
                     <div>
                       <p className="font-medium text-foreground">Gustavo Padeiro</p>
-                      <p className="text-sm text-muted-foreground">Líder do time</p>
+                      <p className="text-sm text-muted-foreground">Head de Produto</p>
                     </div>
                   </div>
                 </ScrollReveal>
