@@ -23,7 +23,7 @@ const plans: PricingPlan[] = [{
     price: "Grátis",
     description: "Grátis para sempre. Sem pegadinhas.",
     features: [{
-      text: "3 projetos ativos"
+      text: "Crie até 3 projetos"
     }, {
       text: "Até 3 colaboradores por projeto"
     }, {
