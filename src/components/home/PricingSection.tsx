@@ -18,7 +18,7 @@ interface PricingPlan {
 }
 const PricingSection: React.FC = () => {
   const [isAnnual, setIsAnnual] = useState(false);
-const plans: PricingPlan[] = [{
+  const plans: PricingPlan[] = [{
     name: "Starter",
     price: "Grátis",
     description: "Grátis para sempre. Sem pegadinhas.",
@@ -167,7 +167,7 @@ const plans: PricingPlan[] = [{
                 <div className="relative p-8 lg:p-10 flex flex-col h-full">
                   {/* Popular badge */}
                   <div className="absolute top-6 right-6">
-                    <div className="px-3 py-1.5 rounded-full text-xs font-medium bg-white/[0.34] text-white">
+                    <div className="px-3 py-1.5 rounded-full text-xs font-medium text-white bg-black/[0.29]">
                       15 dias grátis
                     </div>
                   </div>
