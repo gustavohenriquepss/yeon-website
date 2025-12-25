@@ -18,10 +18,10 @@ interface PricingPlan {
 }
 const PricingSection: React.FC = () => {
   const [isAnnual, setIsAnnual] = useState(false);
-  const plans: PricingPlan[] = [{
+const plans: PricingPlan[] = [{
     name: "Starter",
     price: "Grátis",
-    description: "Comece sua jornada na música independente",
+    description: "Grátis para sempre. Sem pegadinhas.",
     features: [{
       text: "3 projetos ativos"
     }, {
@@ -31,9 +31,9 @@ const PricingSection: React.FC = () => {
     }, {
       text: "Suporte por email"
     }],
-    ctaText: "Começar Grátis"
+    ctaText: "Criar conta"
   }, {
-    name: "Pro",
+    name: "Premium",
     price: isAnnual ? "R$25" : "R$30",
     period: "/mês",
     description: "Para artistas que levam a sério",
@@ -51,7 +51,7 @@ const PricingSection: React.FC = () => {
     }, {
       text: "Acesso antecipado a novidades"
     }],
-    ctaText: "Começar Trial Grátis",
+    ctaText: "Testar Premium grátis",
     popular: true
   }];
   return <section className="py-24 bg-yeon-dark-bg relative overflow-hidden">
@@ -167,9 +167,8 @@ const PricingSection: React.FC = () => {
                 <div className="relative p-8 lg:p-10 flex flex-col h-full">
                   {/* Popular badge */}
                   <div className="absolute top-6 right-6">
-                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/[0.34] text-white">
-                      <Sparkles className="h-3 w-3" />
-                      30 dias grátis
+                    <div className="px-3 py-1.5 rounded-full text-xs font-medium bg-white/[0.34] text-white">
+                      15 dias grátis
                     </div>
                   </div>
                   
@@ -205,9 +204,8 @@ const PricingSection: React.FC = () => {
                   </div>
                   
                   {/* CTA */}
-                  <Button className="w-full py-6 text-sm font-semibold bg-yeon-purple hover:bg-yeon-dark-purple text-white shadow-lg shadow-yeon-purple/20 hover:shadow-yeon-purple/30 transition-all duration-300 group">
+                  <Button className="w-full py-6 text-sm font-semibold bg-yeon-purple hover:bg-yeon-dark-purple text-white shadow-lg shadow-yeon-purple/20 hover:shadow-yeon-purple/30 transition-all duration-300">
                     {plans[1].ctaText}
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                   </Button>
                 </div>
               </div>
