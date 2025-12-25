@@ -131,10 +131,9 @@ const Contact: React.FC = () => {
                       <Button
                         type="submit"
                         disabled={isSubmitting}
-                        className="bg-foreground hover:bg-foreground/90 text-background rounded-full px-6 py-5 text-sm font-medium inline-flex items-center gap-3"
+                        size="lg"
                       >
                         {isSubmitting ? 'Enviando...' : 'Enviar'}
-                        <span className="w-2 h-2 rounded-full bg-background" />
                       </Button>
                     </div>
                   </ScrollReveal>
