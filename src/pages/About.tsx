@@ -203,7 +203,7 @@ const AboutContent: React.FC = () => {
                     }
                   }}>
                     <div className="aspect-[3/4] w-full">
-                      <img src={member.imageUrl} alt={member.name} className={`w-full h-full object-cover transition-all duration-500 ${member.name === 'Gustavo Padeiro' ? 'scale-150 object-[40%_top] group-hover:scale-150 group-hover:blur-sm group-[.active]:scale-150 group-[.active]:blur-sm' : 'group-hover:scale-105 group-hover:blur-sm group-[.active]:scale-105 group-[.active]:blur-sm'}`} />
+                      <img src={member.imageUrl} alt={member.name} className={`w-full h-full object-cover transition-all duration-500 grayscale ${member.name === 'Gustavo Padeiro' ? 'scale-150 object-[40%_top] group-hover:scale-150 group-hover:blur-sm group-[.active]:scale-150 group-[.active]:blur-sm' : 'group-hover:scale-105 group-hover:blur-sm group-[.active]:scale-105 group-[.active]:blur-sm'}`} />
                     </div>
                     
                     {/* Overlay with info - darker on hover/active */}
@@ -246,7 +246,7 @@ const AboutContent: React.FC = () => {
                     }
                   }}>
                     <div className="aspect-[3/4] w-full">
-                      <img src={teamMembers[2].imageUrl} alt={teamMembers[2].name} className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm group-[.active]:scale-105 group-[.active]:blur-sm" />
+                      <img src={teamMembers[2].imageUrl} alt={teamMembers[2].name} className="w-full h-full object-cover transition-all duration-500 grayscale group-hover:scale-105 group-hover:blur-sm group-[.active]:scale-105 group-[.active]:blur-sm" />
                     </div>
                     
                     {/* Overlay with info - darker on hover/active */}
