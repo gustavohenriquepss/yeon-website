@@ -13,20 +13,36 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Plus } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import gustavoPadeiro from '@/assets/gustavo-padeiro.jpg';
-
 const contactSchema = z.object({
-  name: z.string().trim().min(1, { message: "Nome é obrigatório" }).max(100, { message: "Nome deve ter menos de 100 caracteres" }),
-  email: z.string().trim().email({ message: "Email inválido" }).max(255, { message: "Email deve ter menos de 255 caracteres" }),
-  message: z.string().trim().min(1, { message: "Mensagem é obrigatória" }).max(1000, { message: "Mensagem deve ter menos de 1000 caracteres" })
+  name: z.string().trim().min(1, {
+    message: "Nome é obrigatório"
+  }).max(100, {
+    message: "Nome deve ter menos de 100 caracteres"
+  }),
+  email: z.string().trim().email({
+    message: "Email inválido"
+  }).max(255, {
+    message: "Email deve ter menos de 255 caracteres"
+  }),
+  message: z.string().trim().min(1, {
+    message: "Mensagem é obrigatória"
+  }).max(1000, {
+    message: "Mensagem deve ter menos de 1000 caracteres"
+  })
 });
-
 type ContactFormData = z.infer<typeof contactSchema>;
-
 const Contact: React.FC = () => {
-  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<ContactFormData>({
+  const {
+    register,
+    handleSubmit,
+    formState: {
+      errors,
+      isSubmitting
+    },
+    reset
+  } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema)
   });
-
   const onSubmit = async (data: ContactFormData) => {
     try {
       console.log('Form data:', data);
@@ -36,9 +52,7 @@ const Contact: React.FC = () => {
       toast.error('Erro ao enviar mensagem. Tente novamente.');
     }
   };
-
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Contato - Yeon Music</title>
         <meta name="description" content="Entre em contato com a Yeon. Estamos aqui para ajudar artistas independentes a planejar seus lançamentos musicais." />
@@ -59,7 +73,7 @@ const Contact: React.FC = () => {
               <div className="space-y-12">
                 <ScrollReveal delay={0.1}>
                   <p className="text-xl md:text-2xl text-muted-foreground max-w-md">
-                    <span className="text-foreground font-medium">Artistas, labels, investidores ou parceiros?</span>{' '}
+                    <span className="text-foreground font-medium">É artistas, label, investidor ou quer ser parceiro?</span>{' '}
                     Queremos ouvir você. Vamos construir o futuro da música independente juntos.
                   </p>
                 </ScrollReveal>
@@ -84,56 +98,28 @@ const Contact: React.FC = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <ScrollReveal delay={0.15}>
                     <div className="space-y-1">
-                      <Input
-                        id="name"
-                        {...register('name')}
-                        placeholder="Seu nome *"
-                        className="bg-transparent border-0 border-b border-border rounded-none px-0 py-4 text-lg placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:border-foreground transition-colors"
-                      />
-                      {errors.name && (
-                        <p className="text-sm text-destructive">{errors.name.message}</p>
-                      )}
+                      <Input id="name" {...register('name')} placeholder="Seu nome *" className="bg-transparent border-0 border-b border-border rounded-none px-0 py-4 text-lg placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:border-foreground transition-colors" />
+                      {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
                     </div>
                   </ScrollReveal>
 
                   <ScrollReveal delay={0.2}>
                     <div className="space-y-1">
-                      <Input
-                        id="email"
-                        type="email"
-                        {...register('email')}
-                        placeholder="Email *"
-                        className="bg-transparent border-0 border-b border-border rounded-none px-0 py-4 text-lg placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:border-foreground transition-colors"
-                      />
-                      {errors.email && (
-                        <p className="text-sm text-destructive">{errors.email.message}</p>
-                      )}
+                      <Input id="email" type="email" {...register('email')} placeholder="Email *" className="bg-transparent border-0 border-b border-border rounded-none px-0 py-4 text-lg placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:border-foreground transition-colors" />
+                      {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
                     </div>
                   </ScrollReveal>
 
                   <ScrollReveal delay={0.25}>
                     <div className="space-y-1">
-                      <Textarea
-                        id="message"
-                        {...register('message')}
-                        placeholder="Sua mensagem"
-                        rows={4}
-                        className="bg-transparent border-0 border-b border-border rounded-none px-0 py-4 text-lg placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:border-foreground transition-colors resize-none min-h-[120px]"
-                      />
-                      {errors.message && (
-                        <p className="text-sm text-destructive">{errors.message.message}</p>
-                      )}
+                      <Textarea id="message" {...register('message')} placeholder="Sua mensagem" rows={4} className="bg-transparent border-0 border-b border-border rounded-none px-0 py-4 text-lg placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:border-foreground transition-colors resize-none min-h-[120px]" />
+                      {errors.message && <p className="text-sm text-destructive">{errors.message.message}</p>}
                     </div>
                   </ScrollReveal>
 
                   <ScrollReveal delay={0.3}>
                     <div className="pt-4">
-                      <Button
-                        type="submit"
-                        disabled={isSubmitting}
-                        variant="secondary"
-                        size="lg"
-                      >
+                      <Button type="submit" disabled={isSubmitting} variant="secondary" size="lg">
                         {isSubmitting ? 'Enviando...' : 'Enviar'}
                       </Button>
                     </div>
@@ -164,10 +150,7 @@ const Contact: React.FC = () => {
                 <ScrollReveal delay={0.45}>
                   <div className="space-y-2">
                     <p className="text-muted-foreground">(11) 99999-9999</p>
-                    <a 
-                      href="mailto:contato@yeon.live" 
-                      className="text-foreground text-2xl md:text-3xl font-medium underline underline-offset-4 hover:no-underline inline-flex items-center gap-2"
-                    >
+                    <a href="mailto:contato@yeon.live" className="text-foreground text-2xl md:text-3xl font-medium underline underline-offset-4 hover:no-underline inline-flex items-center gap-2">
                       <Plus className="w-4 h-4" />
                       contato@yeon.live
                     </a>
@@ -178,8 +161,6 @@ const Contact: React.FC = () => {
           </div>
         </main>
       </PageLayout>
-    </>
-  );
+    </>;
 };
-
 export default Contact;
