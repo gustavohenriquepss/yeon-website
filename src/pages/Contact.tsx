@@ -59,8 +59,8 @@ const Contact: React.FC = () => {
               <div className="space-y-12">
                 <ScrollReveal delay={0.1}>
                   <p className="text-xl md:text-2xl text-muted-foreground max-w-md">
-                    <span className="text-foreground font-medium">Tem um projeto em mente?</span>{' '}
-                    Entre em contato e vamos discutir a melhor forma de seguir em frente.
+                    <span className="text-foreground font-medium">Artistas, labels, investidores ou parceiros?</span>{' '}
+                    Queremos ouvir você. Vamos construir o futuro da música independente juntos.
                   </p>
                 </ScrollReveal>
 
