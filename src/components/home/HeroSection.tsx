@@ -46,7 +46,7 @@ const HeroSection: React.FC = () => {
         </ScrollReveal>
         
         <ScrollReveal delay={0.2}>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10">Use a inteligência da Yeon para automatizar seus prazos, alinhar sua equipe e garantir que cada música seja estratégica</p>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10">A plataforma de gestão musical que automatiza prazos, alinha sua equipe e garante que cada música chegue ao topo</p>
         </ScrollReveal>
         
         <ScrollReveal delay={0.3}>
