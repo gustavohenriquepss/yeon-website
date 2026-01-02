@@ -213,9 +213,7 @@ const PricingSection: React.FC = () => {
         
         {/* Trust badge */}
         <ScrollReveal delay={0.4}>
-          <p className="text-center text-white/30 text-sm mt-12">
-            Pagamento seguro via Stripe • Cancele a qualquer momento
-          </p>
+          <p className="text-center text-white/30 text-sm mt-12">Pagamento seguro via Creem • Cancele a qualquer momento</p>
         </ScrollReveal>
       </div>
     </section>;
