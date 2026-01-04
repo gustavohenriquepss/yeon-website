@@ -3,11 +3,14 @@ import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { motion } from 'framer-motion';
+import { useWaitlist } from '@/context/WaitlistContext';
 import { ZapAnimated, SparklesAnimated, type ZapAnimatedHandle, type SparklesAnimatedHandle } from '@/components/icons';
+
 interface PlanFeature {
   text: string;
   highlight?: boolean;
 }
+
 interface PricingPlan {
   name: string;
   price: string;
@@ -17,10 +20,13 @@ interface PricingPlan {
   ctaText: string;
   popular?: boolean;
 }
+
 const PricingSection: React.FC = () => {
   const starterIconRef = useRef<ZapAnimatedHandle>(null);
   const premiumIconRef = useRef<SparklesAnimatedHandle>(null);
   const [isAnnual, setIsAnnual] = useState(false);
+  const { openWaitlist } = useWaitlist();
+  
   const plans: PricingPlan[] = [{
     name: "Starter",
     price: "Grátis",
@@ -34,7 +40,7 @@ const PricingSection: React.FC = () => {
     }, {
       text: "Suporte por email"
     }],
-    ctaText: "Criar conta"
+    ctaText: "Entrar na Lista VIP"
   }, {
     name: "Premium",
     price: isAnnual ? "R$25" : "R$30",
@@ -54,10 +60,12 @@ const PricingSection: React.FC = () => {
     }, {
       text: "Acesso antecipado a novidades"
     }],
-    ctaText: "Testar Premium grátis",
+    ctaText: "Entrar na Lista VIP",
     popular: true
   }];
-  return <section className="py-24 bg-yeon-dark-bg relative overflow-hidden">
+  
+  return (
+    <section className="py-24 bg-yeon-dark-bg relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-yeon-purple/5 rounded-full blur-[120px]" />
@@ -85,10 +93,10 @@ const PricingSection: React.FC = () => {
             </span>
             <button onClick={() => setIsAnnual(!isAnnual)} className="relative inline-flex h-7 w-14 items-center rounded-full bg-white/10 border border-white/10 transition-all duration-300 hover:border-white/20">
               <motion.span layout transition={{
-              type: "spring",
-              stiffness: 500,
-              damping: 30
-            }} className={`inline-block h-5 w-5 rounded-full transition-colors ${isAnnual ? 'bg-yeon-purple ml-8' : 'bg-white/60 ml-1'}`} />
+                type: "spring",
+                stiffness: 500,
+                damping: 30
+              }} className={`inline-block h-5 w-5 rounded-full transition-colors ${isAnnual ? 'bg-yeon-purple ml-8' : 'bg-white/60 ml-1'}`} />
             </button>
             <div className="flex items-center gap-2">
               <span className={`text-sm font-medium transition-all duration-300 ${isAnnual ? 'text-white' : 'text-white/40'}`}>
@@ -130,16 +138,22 @@ const PricingSection: React.FC = () => {
                 
                 {/* Features */}
                 <div className="space-y-4 mb-10 flex-1">
-                  {plans[0].features.map((feature, idx) => <div key={idx} className="flex items-center gap-3">
+                  {plans[0].features.map((feature, idx) => (
+                    <div key={idx} className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                         <Check className="h-3 w-3 text-white/50" strokeWidth={3} />
                       </div>
                       <span className="text-sm text-white/60">{feature.text}</span>
-                    </div>)}
+                    </div>
+                  ))}
                 </div>
                 
                 {/* CTA */}
-                <Button variant="outline" className="w-full py-6 text-sm font-medium bg-transparent border-white/10 text-white/80 hover:bg-white/5 hover:border-white/20 hover:text-white transition-all duration-300">
+                <Button 
+                  variant="outline" 
+                  className="w-full py-6 text-sm font-medium bg-transparent border-white/10 text-white/80 hover:bg-white/5 hover:border-white/20 hover:text-white transition-all duration-300"
+                  onClick={openWaitlist}
+                >
                   {plans[0].ctaText}
                 </Button>
               </div>
@@ -190,18 +204,23 @@ const PricingSection: React.FC = () => {
                   
                   {/* Features */}
                   <div className="space-y-4 mb-10 flex-1">
-                    {plans[1].features.map((feature, idx) => <div key={idx} className="flex items-center gap-3">
+                    {plans[1].features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-3">
                         <div className="w-5 h-5 rounded-full bg-yeon-purple/20 flex items-center justify-center flex-shrink-0">
                           <Check className="h-3 w-3 text-yeon-purple" strokeWidth={3} />
                         </div>
                         <span className={`text-sm ${feature.highlight ? 'text-white font-medium' : 'text-white/70'}`}>
                           {feature.text}
                         </span>
-                      </div>)}
+                      </div>
+                    ))}
                   </div>
                   
                   {/* CTA */}
-                  <Button className="w-full py-6 text-sm font-semibold bg-yeon-purple hover:bg-yeon-dark-purple text-white transition-all duration-300">
+                  <Button 
+                    className="w-full py-6 text-sm font-semibold bg-yeon-purple hover:bg-yeon-dark-purple text-white transition-all duration-300"
+                    onClick={openWaitlist}
+                  >
                     {plans[1].ctaText}
                   </Button>
                 </div>
@@ -215,6 +234,8 @@ const PricingSection: React.FC = () => {
           <p className="text-center text-white/30 text-sm mt-12">Pagamento seguro via Creem • Cancele a qualquer momento</p>
         </ScrollReveal>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default PricingSection;

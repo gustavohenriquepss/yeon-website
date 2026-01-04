@@ -1,11 +1,14 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
+import { useWaitlist } from '@/context/WaitlistContext';
 import ctaTools from '@/assets/cta-tools.png';
 
 const PrePricingCTA: React.FC = () => {
-  return <section className="py-16">
+  const { openWaitlist } = useWaitlist();
+  
+  return (
+    <section className="py-16">
       <div className="container mx-auto px-0">
         <ScrollReveal>
           <div className="max-w-4xl mx-auto text-center bg-card rounded-2xl p-8 md:p-12 border border-border relative overflow-hidden">
@@ -20,14 +23,18 @@ const PrePricingCTA: React.FC = () => {
             <p className="text-lg leading-relaxed mb-8 text-zinc-50 relative z-10">
               Seu projeto merece mais que planilhas, mensagens no Whatsapp e anotações soltas por aí. Com a Yeon, você tem uma estrutura real pra planejar e executar lançamentos sem perder prazos, tarefas ou oportunidades.
             </p>
-            <Button size="lg" className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium px-8 py-6 text-lg relative z-10" asChild>
-              <Link to="/release-planner">
-                Comece Agora
-              </Link>
+            <Button 
+              size="lg" 
+              className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium px-8 py-6 text-lg relative z-10"
+              onClick={openWaitlist}
+            >
+              Entrar na Lista VIP
             </Button>
           </div>
         </ScrollReveal>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default PrePricingCTA;
