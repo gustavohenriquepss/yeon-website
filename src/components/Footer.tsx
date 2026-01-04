@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '@/components/Logo';
 import { Instagram } from 'lucide-react';
 
@@ -47,9 +48,9 @@ const Footer: React.FC = () => {
             <a href="/termos-de-uso" className="text-white/70 hover:text-white transition-colors">
               Termos de Uso
             </a>
-            <a href="mailto:contato@yeon.live" className="text-white/70 hover:text-white transition-colors">
+            <Link to="/contato" className="text-white/70 hover:text-white transition-colors">
               Contato
-            </a>
+            </Link>
           </div>
           
           {/* Direitos reservados */}
