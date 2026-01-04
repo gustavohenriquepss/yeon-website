@@ -99,7 +99,7 @@ const PricingSection: React.FC = () => {
               <span className={`text-sm font-medium transition-all duration-300 ${isAnnual ? 'text-white' : 'text-white/40'}`}>
                 Anual
               </span>
-              <span className="text-xs font-medium text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded-full">17% OFF</span>
+              <span className="text-xs font-medium text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded-full">Economize R$60</span>
             </div>
           </div>
         </ScrollReveal>
