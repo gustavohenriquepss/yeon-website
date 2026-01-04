@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '@/components/Logo';
-import { Linkedin, Instagram } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 
 const XIcon = () => (
   <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
@@ -22,15 +22,6 @@ const Footer: React.FC = () => {
           
           {/* Redes Sociais */}
           <div className="flex space-x-4">
-            <a 
-              href="https://www.linkedin.com/company/yeonmusic/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-white/50 hover:text-white transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
             <a 
               href="https://www.instagram.com/somosyeon/" 
               target="_blank" 
