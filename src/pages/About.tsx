@@ -278,7 +278,7 @@ const AboutContent: React.FC = () => {
       </section>
       
       {/* Manifesto Section */}
-      <section className="py-16 bg-yeon-dark-bg">
+      <section className="bg-yeon-dark-bg py-0">
         <div className="container my-0 py-[32px] px-px">
           <div className="max-w-4xl mx-auto text-center space-y-6 py-[32px] px-[32px] bg-[yeon-dark-purple] bg-card border-border border-solid rounded-md">
             <ScrollReveal>
