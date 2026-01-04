@@ -15,6 +15,9 @@ const PrePricingCTA: React.FC = () => {
             <img 
               src={ctaTools} 
               alt="Tools" 
+              width={384}
+              height={384}
+              loading="lazy"
               className="absolute bottom-0 left-0 w-80 md:w-96 opacity-30 pointer-events-none"
             />
             <h2 className="text-3xl md:text-4xl font-semibold mb-6 relative z-10">

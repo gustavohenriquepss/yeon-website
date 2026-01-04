@@ -32,13 +32,13 @@ const HeroSection: React.FC = () => {
           <Badge className="bg-white/10 text-white/70 hover:bg-white/15 border-white/20 text-sm mb-6 px-[16px] py-[8px] flex items-center gap-2">
             <div className="flex -space-x-2">
               <div className="w-6 h-6 rounded-full border-2 border-white/20 bg-muted overflow-hidden">
-                <img src={mtzyn} alt="Mtzyn" className="w-full h-full object-cover" />
+                <img src={mtzyn} alt="Mtzyn" width={24} height={24} className="w-full h-full object-cover" />
               </div>
               <div className="w-6 h-6 rounded-full border-2 border-white/20 bg-muted overflow-hidden">
-                <img src={maui} alt="Maui" className="w-full h-full object-cover" />
+                <img src={maui} alt="Maui" width={24} height={24} className="w-full h-full object-cover" />
               </div>
               <div className="w-6 h-6 rounded-full border-2 border-white/20 bg-muted overflow-hidden">
-                <img src={joazz} alt="Joazz" className="w-full h-full object-cover" />
+                <img src={joazz} alt="Joazz" width={24} height={24} className="w-full h-full object-cover" />
               </div>
             </div>
             +100 artistas pré-cadastrados
@@ -71,8 +71,8 @@ const HeroSection: React.FC = () => {
 
         {/* Hero Image */}
         <ScrollReveal delay={0.4} className="w-full max-w-6xl mx-auto">
-          <img src={heroDashboard} alt="Yeon Dashboard - Gerencie seus lançamentos musicais" className="w-full h-auto rounded-lg hidden md:block" />
-          <img src={heroDashboardMobile} alt="Yeon Dashboard Mobile - Gerencie seus lançamentos musicais" className="w-full h-auto rounded-lg md:hidden" />
+          <img src={heroDashboard} alt="Yeon Dashboard - Gerencie seus lançamentos musicais" width={1200} height={675} className="w-full h-auto rounded-lg hidden md:block" />
+          <img src={heroDashboardMobile} alt="Yeon Dashboard Mobile - Gerencie seus lançamentos musicais" width={600} height={800} loading="eager" className="w-full h-auto rounded-lg md:hidden" />
         </ScrollReveal>
       </div>
       

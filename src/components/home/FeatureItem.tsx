@@ -27,7 +27,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
       <CardContent className="p-0">
         {image && (
           <div className="aspect-video w-full overflow-hidden">
-            <img src={image} alt={title} className="w-full h-full object-cover" />
+            <img src={image} alt={title} width={800} height={450} loading="lazy" className="w-full h-full object-cover" />
           </div>
         )}
         <div className="p-6">
