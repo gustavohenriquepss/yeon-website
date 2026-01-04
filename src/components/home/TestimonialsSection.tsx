@@ -115,6 +115,9 @@ const TestimonialsSection: React.FC = () => {
                     <img 
                       src={testimonial.image} 
                       alt={testimonial.name}
+                      width={56}
+                      height={56}
+                      loading="lazy"
                       className="w-14 h-14 rounded-full object-cover border-2 border-primary/20"
                     />
                     <div className="text-center">
