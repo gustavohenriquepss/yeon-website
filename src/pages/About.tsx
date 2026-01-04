@@ -21,17 +21,17 @@ const AboutContent: React.FC = () => {
     name: "Arthur Sena",
     role: "Engenheiro de Software",
     imageUrl: arthurSena,
-    bio: "Transforma ideias em código limpo e funcional. Apaixonado por criar experiências digitais que conectam artistas ao mundo."
+    bio: "Engenheiro de Software pela UNB e guitarrista nas horas vagas, com vivência em startups como Geekie e Uber. É viciado em criar playlists no Spotify pra cada ocasião da vida."
   }, {
     name: "Gustavo Padeiro",
-    role: "Designer de Produto",
+    role: "Design Engineer",
     imageUrl: gustavoPadeiro,
-    bio: "Cria interfaces intuitivas e belas que fazem a diferença. Acredita que bom design é invisível, mas impactante."
+    bio: "Artista independente do underground carioca, empreendedor serial e design engineer com vasta experiência em startups e na indústria musical, buscando simplificar o music business para outros artistas."
   }, {
     name: "Lucas Andrade",
     role: "Engenheiro de Software",
     imageUrl: lucasAndrade,
-    bio: "Especialista em arquitetura de sistemas escaláveis. Músico nas horas vagas que entende a dor do artista independente."
+    bio: "Entusiasta da música e da tecnologia, engenheiro de software pela UFF e especialista em System Design. Nas horas vagas é educador tech."
   }];
   return <main className="bg-yeon-dark-bg">
       {/* Hero Section - Quem Somos */}
