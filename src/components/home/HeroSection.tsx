@@ -7,6 +7,10 @@ import { useLanguage } from '@/context/LanguageContext';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import heroDashboard from '@/assets/hero-dashboard.png';
 import heroDashboardMobile from '@/assets/hero-dashboard-mobile.png';
+import mtzyn from '@/assets/artists/mtzyn.png';
+import maui from '@/assets/artists/maui.jpg';
+import joazz from '@/assets/artists/joazz.jpg';
+
 const HeroSection: React.FC = () => {
   const {
     t
@@ -26,13 +30,13 @@ const HeroSection: React.FC = () => {
           <Badge className="bg-white/10 text-white/70 hover:bg-white/15 border-white/20 text-sm mb-6 px-[16px] py-[8px] flex items-center gap-2">
             <div className="flex -space-x-2">
               <div className="w-6 h-6 rounded-full border-2 border-white/20 bg-muted overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face" alt="Artista" className="w-full h-full object-cover" />
+                <img src={mtzyn} alt="Mtzyn" className="w-full h-full object-cover" />
               </div>
               <div className="w-6 h-6 rounded-full border-2 border-white/20 bg-muted overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Artista" className="w-full h-full object-cover" />
+                <img src={maui} alt="Maui" className="w-full h-full object-cover" />
               </div>
               <div className="w-6 h-6 rounded-full border-2 border-white/20 bg-muted overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Artista" className="w-full h-full object-cover" />
+                <img src={joazz} alt="Joazz" className="w-full h-full object-cover" />
               </div>
             </div>
             +100 artistas pré-cadastrados
