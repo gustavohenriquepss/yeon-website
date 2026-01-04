@@ -65,7 +65,7 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ open, onOpenChange }) => 
             Entre na Lista VIP
           </DialogTitle>
           <DialogDescription className="text-center text-muted-foreground">
-            Seja um dos primeiros a ter acesso à Yeon e receba benefícios exclusivos de early adopter.
+            Estamos liberando o acesso em ondas para garantir a melhor experiência. Deixe seu e-mail e nos diga qual é o seu papel na música para priorizarmos seu acesso.
           </DialogDescription>
         </DialogHeader>
         
