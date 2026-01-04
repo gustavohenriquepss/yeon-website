@@ -26,7 +26,7 @@ const AboutContent: React.FC = () => {
     name: "Gustavo Padeiro",
     role: "Design Engineer",
     imageUrl: gustavoPadeiro,
-    bio: "Artista independente do underground carioca, empreendedor serial e design engineer com vasta experiência em startups e na indústria musical, buscando simplificar o music business para outros artistas."
+    bio: "Artista independente, empreendedor serial e designer com experiência em startups e na indústria musical, buscando simplificar o music business para outros artistas."
   }, {
     name: "Lucas Andrade",
     role: "Engenheiro de Software",
