@@ -61,9 +61,6 @@ const PricingSection: React.FC = () => {
       </div>
       
       <div className="container px-4 relative z-10">
-        <ScrollReveal>
-          
-        </ScrollReveal>
         
         <ScrollReveal delay={0.05}>
           <h2 className="text-3xl md:text-5xl font-semibold text-center mb-4">
