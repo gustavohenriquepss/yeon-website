@@ -8,10 +8,10 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 
-import testimonialMarina from "@/assets/testimonial-marina.jpg";
-import testimonialCarlos from "@/assets/testimonial-carlos.jpg";
-import testimonialJuliana from "@/assets/testimonial-juliana.jpg";
-import testimonialRafael from "@/assets/testimonial-rafael.jpg";
+import mtzyn from "@/assets/artists/mtzyn.png";
+import isaacTome from "@/assets/artists/isaac-tome.jpg";
+import maui from "@/assets/artists/maui.jpg";
+import joazz from "@/assets/artists/joazz.jpg";
 
 interface Testimonial {
   quote: string;
@@ -26,25 +26,25 @@ const TestimonialsSection: React.FC = () => {
       quote: "Yeon mudou completamente minha organização. Agora não perco mais nenhum prazo e meus lançamentos saem no tempo certo.",
       name: "Mtzyn",
       role: "Artista Independente",
-      image: testimonialMarina
+      image: mtzyn
     },
     {
       quote: "Consigo gerenciar meus artistas simultaneamente sem perder o controle. A visibilidade do roadmap é perfeita.",
       name: "Isaac Tomé",
       role: "Label Manager",
-      image: testimonialCarlos
+      image: isaacTome
     },
     {
       quote: "A melhor ferramenta para planejar releases. Simples, intuitiva e completa.",
       name: "Maui",
       role: "Artista Independente",
-      image: testimonialJuliana
+      image: maui
     },
     {
       quote: "Desde que comecei a usar Yeon, meus lançamentos ficaram muito mais profissionais e organizados.",
       name: "Joazz",
       role: "Artista Independente",
-      image: testimonialRafael
+      image: joazz
     }
   ];
 
