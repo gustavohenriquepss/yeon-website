@@ -44,7 +44,7 @@ const PricingSection: React.FC = () => {
       text: "Colaboradores ilimitados",
       highlight: true
     }, {
-      text: "Assistente IA dedicado",
+      text: "Acesso a comunidade VIP",
       highlight: true
     }, {
       text: "Suporte prioritário 24h"
