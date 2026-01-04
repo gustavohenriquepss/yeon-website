@@ -214,8 +214,8 @@ const AboutContent: React.FC = () => {
                       <span className="text-white text-lg font-light">+</span>
                     </div>
                     
-                    {/* Role badge */}
-                    <div className="absolute top-4 right-4 text-right">
+                    {/* Role badge - hides on hover/active */}
+                    <div className="absolute top-4 right-4 text-right transition-opacity duration-300 group-hover:opacity-0 group-[.active]:opacity-0">
                       <p className="text-xs font-medium text-white/90">{member.role}</p>
                       <p className="text-xs text-white/60">na yeon®</p>
                     </div>
@@ -257,8 +257,8 @@ const AboutContent: React.FC = () => {
                       <span className="text-white text-lg font-light">+</span>
                     </div>
                     
-                    {/* Role badge */}
-                    <div className="absolute top-4 right-4 text-right">
+                    {/* Role badge - hides on hover/active */}
+                    <div className="absolute top-4 right-4 text-right transition-opacity duration-300 group-hover:opacity-0 group-[.active]:opacity-0">
                       <p className="text-xs font-medium text-white/90">{teamMembers[2].role}</p>
                       <p className="text-xs text-white/60">na yeon®</p>
                     </div>
