@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { Sparkles } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 interface WaitlistModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -76,17 +76,43 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({
     }
     setIsLoading(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    toast({
-      title: "Você está na lista! 🎉",
-      description: "Entraremos em contato em breve com novidades exclusivas."
-    });
-    setName('');
-    setEmail('');
-    setRole('');
-    setIsLoading(false);
-    onOpenChange(false);
+    try {
+      const { error } = await supabase
+        .from('waitlist')
+        .insert({ name: name.trim(), email: email.trim().toLowerCase(), role });
+
+      if (error) {
+        if (error.code === '23505') {
+          toast({
+            title: "Email já cadastrado",
+            description: "Este email já está na nossa lista VIP.",
+            variant: "destructive"
+          });
+        } else {
+          throw error;
+        }
+        setIsLoading(false);
+        return;
+      }
+
+      toast({
+        title: "Você está na lista! 🎉",
+        description: "Entraremos em contato em breve com novidades exclusivas."
+      });
+      setName('');
+      setEmail('');
+      setRole('');
+      onOpenChange(false);
+    } catch (error) {
+      console.error('Waitlist error:', error);
+      toast({
+        title: "Erro ao cadastrar",
+        description: "Tente novamente mais tarde.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
   return <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md bg-card border-border">
