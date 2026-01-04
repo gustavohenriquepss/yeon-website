@@ -226,7 +226,7 @@ const AboutContent: React.FC = () => {
                         {member.name.split(' ').map((word, i) => <span key={i} className="block">{word}</span>)}
                       </h3>
                       {/* Bio - appears on hover/tap */}
-                      <p className="text-sm text-white/80 mt-2 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100 group-[.active]:max-h-20 group-[.active]:opacity-100 line-clamp-3">
+                      <p className="text-sm text-white/80 mt-2 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:max-h-40 group-hover:opacity-100 group-[.active]:max-h-40 group-[.active]:opacity-100">
                         {member.bio}
                       </p>
                     </div>
@@ -269,7 +269,7 @@ const AboutContent: React.FC = () => {
                         {teamMembers[2].name.split(' ').map((word, i) => <span key={i} className="block">{word}</span>)}
                       </h3>
                       {/* Bio - appears on hover/tap */}
-                      <p className="text-sm text-white/80 mt-2 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100 group-[.active]:max-h-20 group-[.active]:opacity-100 line-clamp-3">
+                      <p className="text-sm text-white/80 mt-2 max-h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:max-h-40 group-hover:opacity-100 group-[.active]:max-h-40 group-[.active]:opacity-100">
                         {teamMembers[2].bio}
                       </p>
                     </div>
