@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
+import React, { forwardRef, useCallback, useImperativeHandle } from 'react';
 import { motion, useAnimation, type Variants } from 'motion/react';
 
 export interface ZapAnimatedHandle {
@@ -32,29 +32,22 @@ const pathVariants: Variants = {
 const ZapAnimated = forwardRef<ZapAnimatedHandle, ZapAnimatedProps>(
   ({ size = 24, className, ...props }, ref) => {
     const controls = useAnimation();
-    const isControlledRef = useRef(false);
 
     useImperativeHandle(ref, () => ({
       startAnimation: () => {
-        isControlledRef.current = true;
         controls.start('animate');
       },
       stopAnimation: () => {
-        isControlledRef.current = false;
         controls.start('normal');
       },
     }));
 
     const handleMouseEnter = useCallback(() => {
-      if (!isControlledRef.current) {
-        controls.start('animate');
-      }
+      controls.start('animate');
     }, [controls]);
 
     const handleMouseLeave = useCallback(() => {
-      if (!isControlledRef.current) {
-        controls.start('normal');
-      }
+      controls.start('normal');
     }, [controls]);
 
     return (
