@@ -149,7 +149,7 @@ const Contact: React.FC = () => {
                 {/* Contact Info */}
                 <ScrollReveal delay={0.45}>
                   <div className="space-y-2">
-                    <p className="text-muted-foreground">(11) 99999-9999</p>
+                    <p className="text-muted-foreground">+55 21 97617-3324</p>
                     <a href="mailto:contato@yeon.live" className="text-foreground text-2xl md:text-3xl font-medium underline underline-offset-4 hover:no-underline inline-flex items-center gap-2">contato@somosyeon.com<Plus className="w-4 h-4" />
                       contato@yeon.live
                     </a>
