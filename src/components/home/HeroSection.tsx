@@ -2,8 +2,8 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
+import { useWaitlist } from '@/context/WaitlistContext';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import heroDashboard from '@/assets/hero-dashboard.png';
 import heroDashboardMobile from '@/assets/hero-dashboard-mobile.png';
@@ -12,9 +12,9 @@ import maui from '@/assets/artists/maui.jpg';
 import joazz from '@/assets/artists/joazz.jpg';
 
 const HeroSection: React.FC = () => {
-  const {
-    t
-  } = useLanguage();
+  const { t } = useLanguage();
+  const { openWaitlist } = useWaitlist();
+  
   const scrollToNextSection = () => {
     const nextSection = document.getElementById('value-proposition');
     if (nextSection) {
@@ -23,7 +23,9 @@ const HeroSection: React.FC = () => {
       });
     }
   };
-  return <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
+  
+  return (
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
       {/* Content */}
       <div className="container relative z-10 flex flex-col items-center text-center px-[20px]">
         <ScrollReveal delay={0}>
@@ -50,17 +52,19 @@ const HeroSection: React.FC = () => {
         </ScrollReveal>
         
         <ScrollReveal delay={0.2}>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10">A plataforma de gestão musical que automatiza prazos, alinha sua equipe e garante que cada música chegue ao topo</p>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto mb-10">
+            A plataforma de gestão musical que automatiza prazos, alinha sua equipe e garante que cada música chegue ao topo
+          </p>
         </ScrollReveal>
         
         <ScrollReveal delay={0.3}>
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Button variant="outline" size="lg" className="border-border hover:bg-white/10 px-8 py-6 text-lg" asChild>
-              <Link to="/auth">Entrar</Link>
-            </Button>
-            
-            <Button size="lg" className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium px-8 py-6 text-lg" asChild>
-              <Link to="/auth">Cadastre-se</Link>
+            <Button 
+              size="lg" 
+              className="bg-yeon-purple hover:bg-yeon-dark-purple text-white font-medium px-8 py-6 text-lg"
+              onClick={openWaitlist}
+            >
+              Entrar na Lista VIP
             </Button>
           </div>
         </ScrollReveal>
@@ -76,6 +80,8 @@ const HeroSection: React.FC = () => {
       <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce cursor-pointer" onClick={scrollToNextSection}>
         <ChevronDown className="h-8 w-8 text-muted-foreground" />
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;

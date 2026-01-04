@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import { WaitlistProvider } from "./context/WaitlistContext";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Artists from "./pages/Artists";
@@ -22,22 +23,24 @@ const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/tools" element={<MusicTools />} />
-            <Route path="/artists" element={<Artists />} />
-            <Route path="/release-planner" element={<ReleasePlanner />} />
-            <Route path="/link-in-bio" element={<LinkInBio />} />
-            <Route path="/termos-de-uso" element={<TermsOfService />} />
-            <Route path="/contato" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
+        <WaitlistProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/tools" element={<MusicTools />} />
+              <Route path="/artists" element={<Artists />} />
+              <Route path="/release-planner" element={<ReleasePlanner />} />
+              <Route path="/link-in-bio" element={<LinkInBio />} />
+              <Route path="/termos-de-uso" element={<TermsOfService />} />
+              <Route path="/contato" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </WaitlistProvider>
       </TooltipProvider>
     </QueryClientProvider>
   );
