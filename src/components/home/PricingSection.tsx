@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { Check, Sparkles, Zap, ArrowRight } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { motion } from 'framer-motion';
+import { ZapAnimated, SparklesAnimated, type ZapAnimatedHandle, type SparklesAnimatedHandle } from '@/components/icons';
 interface PlanFeature {
   text: string;
   highlight?: boolean;
@@ -17,6 +18,8 @@ interface PricingPlan {
   popular?: boolean;
 }
 const PricingSection: React.FC = () => {
+  const starterIconRef = useRef<ZapAnimatedHandle>(null);
+  const premiumIconRef = useRef<SparklesAnimatedHandle>(null);
   const [isAnnual, setIsAnnual] = useState(false);
   const plans: PricingPlan[] = [{
     name: "Starter",
@@ -100,17 +103,19 @@ const PricingSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Starter Card */}
           <ScrollReveal delay={0.2}>
-            <motion.div whileHover={{
-            y: -4
-          }} transition={{
-            duration: 0.2
-          }} className="h-full">
+            <motion.div 
+              whileHover={{ y: -4 }} 
+              transition={{ duration: 0.2 }} 
+              className="h-full"
+              onMouseEnter={() => starterIconRef.current?.startAnimation()}
+              onMouseLeave={() => starterIconRef.current?.stopAnimation()}
+            >
               <div className="relative h-full rounded-3xl bg-white/[0.03] border border-white/[0.06] p-8 lg:p-10 flex flex-col backdrop-blur-sm">
                 {/* Header */}
                 <div className="mb-8">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
-                      <Zap className="h-5 w-5 text-white/70" />
+                      <ZapAnimated ref={starterIconRef} size={20} className="text-white/70" />
                     </div>
                     <h3 className="text-xl font-semibold text-white">{plans[0].name}</h3>
                   </div>
@@ -143,11 +148,13 @@ const PricingSection: React.FC = () => {
 
           {/* Pro Card */}
           <ScrollReveal delay={0.3}>
-            <motion.div whileHover={{
-            y: -4
-          }} transition={{
-            duration: 0.2
-          }} className="h-full">
+            <motion.div 
+              whileHover={{ y: -4 }} 
+              transition={{ duration: 0.2 }} 
+              className="h-full"
+              onMouseEnter={() => premiumIconRef.current?.startAnimation()}
+              onMouseLeave={() => premiumIconRef.current?.stopAnimation()}
+            >
               <div className="relative h-full rounded-3xl overflow-hidden">
                 {/* Gradient border effect */}
                 <div className="absolute inset-0 bg-gradient-to-b from-yeon-purple via-yeon-purple/30 to-transparent opacity-50" />
@@ -166,7 +173,7 @@ const PricingSection: React.FC = () => {
                   <div className="mb-8">
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-10 h-10 rounded-xl bg-yeon-purple/20 flex items-center justify-center">
-                        <Sparkles className="h-5 w-5 text-yeon-purple" />
+                        <SparklesAnimated ref={premiumIconRef} size={20} className="text-yeon-purple" />
                       </div>
                       <h3 className="text-xl font-semibold text-white">{plans[1].name}</h3>
                     </div>
