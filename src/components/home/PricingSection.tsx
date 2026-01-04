@@ -62,12 +62,7 @@ const PricingSection: React.FC = () => {
       
       <div className="container px-4 relative z-10">
         <ScrollReveal>
-          <div className="text-center mb-4">
-            <span className="inline-flex items-center gap-2 text-yeon-purple text-sm font-medium tracking-wide uppercase">
-              <Sparkles className="h-4 w-4" />
-              <span>Preços transparentes</span>
-            </span>
-          </div>
+          
         </ScrollReveal>
         
         <ScrollReveal delay={0.05}>
