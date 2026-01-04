@@ -50,7 +50,7 @@ const ValuePropositionSection: React.FC = () => {
               <ScrollReveal key={index} delay={0.2 + index * 0.1}>
                 <Card
                 key={index} 
-                className="border-0 bg-card overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-card hover:to-white/5 cursor-pointer"
+                className="border-0 bg-card overflow-hidden"
                 onMouseEnter={() => handleInteractionStart(index)}
                 onMouseLeave={() => handleInteractionEnd(index)}
                 onTouchStart={() => handleInteractionStart(index)}
