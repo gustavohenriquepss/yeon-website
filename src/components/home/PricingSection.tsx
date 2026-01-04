@@ -166,7 +166,7 @@ const PricingSection: React.FC = () => {
                   {/* Popular badge */}
                   <div className="absolute top-6 right-6">
                     <div className="px-3 py-1.5 rounded-full text-xs font-medium text-white bg-black/[0.29]">
-                      15 dias grátis
+                      7 dias grátis
                     </div>
                   </div>
                   
@@ -202,7 +202,7 @@ const PricingSection: React.FC = () => {
                   </div>
                   
                   {/* CTA */}
-                  <Button className="w-full py-6 text-sm font-semibold bg-yeon-purple hover:bg-yeon-dark-purple text-white shadow-lg shadow-yeon-purple/20 hover:shadow-yeon-purple/30 transition-all duration-300">
+                  <Button className="w-full py-6 text-sm font-semibold bg-yeon-purple hover:bg-yeon-dark-purple text-white transition-all duration-300">
                     {plans[1].ctaText}
                   </Button>
                 </div>
