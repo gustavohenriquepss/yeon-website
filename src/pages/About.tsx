@@ -279,33 +279,7 @@ const AboutContent: React.FC = () => {
       
       {/* Manifesto Section */}
       <section className="bg-yeon-dark-bg py-0">
-        <div className="container my-0 py-[32px] px-px">
-          <div className="max-w-4xl mx-auto text-center space-y-6 py-[32px] px-[32px] bg-[yeon-dark-purple] bg-card border-border border-solid rounded-md">
-            <ScrollReveal>
-              <p className="text-lg md:text-xl font-semibold">
-                A indústria musical não foi feita pra todos, então vamos construir algo novo.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.1}>
-              
-            </ScrollReveal>
-            <ScrollReveal delay={0.2}>
-              <p className="text-base md:text-lg text-white/80">
-                Conhecemos a correria. Conhecemos a dor. E sabemos que, com a orientação, a tecnologia e a equipe certas por trás de você, esse sonho é possível.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.3}>
-              <p className="text-base md:text-lg text-white/80">
-                Não estamos aqui para jogar.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.4}>
-              <p className="text-lg md:text-xl font-semibold">
-                Estamos aqui para reescrever as regras.
-              </p>
-            </ScrollReveal>
-          </div>
-        </div>
+        
       </section>
       
     </main>;
