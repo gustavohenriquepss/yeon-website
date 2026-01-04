@@ -195,13 +195,12 @@ const AboutContent: React.FC = () => {
             
             {/* Right Column - Team Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {teamMembers.slice(0, 2).map((member, index) => (
-                <ScrollReveal key={member.name} delay={0.1 + index * 0.1}>
+              {teamMembers.slice(0, 2).map((member, index) => <ScrollReveal key={member.name} delay={0.1 + index * 0.1}>
                   <div className="relative group overflow-hidden rounded-2xl cursor-pointer" onClick={e => {
-                    if (window.innerWidth < 640) {
-                      e.currentTarget.classList.toggle('active');
-                    }
-                  }}>
+                if (window.innerWidth < 640) {
+                  e.currentTarget.classList.toggle('active');
+                }
+              }}>
                     <div className="aspect-[3/4] w-full">
                       <img src={member.imageUrl} alt={member.name} className={`w-full h-full object-cover transition-all duration-500 ${member.name === 'Gustavo Padeiro' ? 'scale-150 object-[40%_top] group-hover:scale-150 group-hover:blur-sm group-[.active]:scale-150 group-[.active]:blur-sm' : 'group-hover:scale-105 group-hover:blur-sm group-[.active]:scale-105 group-[.active]:blur-sm'}`} />
                     </div>
@@ -231,20 +230,18 @@ const AboutContent: React.FC = () => {
                       </p>
                     </div>
                   </div>
-                </ScrollReveal>
-              ))}
+                </ScrollReveal>)}
               
               {/* Empty slot */}
               <div className="hidden sm:block aspect-[3/4]" />
               
               {/* Lucas Andrade - moved to 4th position */}
-              {teamMembers[2] && (
-                <ScrollReveal delay={0.3}>
+              {teamMembers[2] && <ScrollReveal delay={0.3}>
                   <div className="relative group overflow-hidden rounded-2xl cursor-pointer" onClick={e => {
-                    if (window.innerWidth < 640) {
-                      e.currentTarget.classList.toggle('active');
-                    }
-                  }}>
+                if (window.innerWidth < 640) {
+                  e.currentTarget.classList.toggle('active');
+                }
+              }}>
                     <div className="aspect-[3/4] w-full">
                       <img src={teamMembers[2].imageUrl} alt={teamMembers[2].name} className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-sm group-[.active]:scale-105 group-[.active]:blur-sm" />
                     </div>
@@ -274,8 +271,7 @@ const AboutContent: React.FC = () => {
                       </p>
                     </div>
                   </div>
-                </ScrollReveal>
-              )}
+                </ScrollReveal>}
             </div>
           </div>
         </div>
@@ -283,17 +279,15 @@ const AboutContent: React.FC = () => {
       
       {/* Manifesto Section */}
       <section className="py-16 bg-yeon-dark-bg">
-        <div className="container px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
+        <div className="container my-0 py-[32px] px-px">
+          <div className="max-w-4xl mx-auto text-center space-y-6 py-[32px] px-[32px] bg-[yeon-dark-purple] bg-card border-border border-solid rounded-md">
             <ScrollReveal>
               <p className="text-lg md:text-xl font-semibold">
                 A indústria musical não foi feita pra todos, então vamos construir algo novo.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <p className="text-base md:text-lg text-white/80">
-                Acreditamos que acesso, propriedade e suporte não devem ser reservados para poucos.
-              </p>
+              
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-base md:text-lg text-white/80">
